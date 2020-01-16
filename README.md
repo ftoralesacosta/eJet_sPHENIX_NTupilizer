@@ -36,7 +36,7 @@ By default, the only binning is in Jet pT, however adding eta dependency, or z-v
 4. Fill the string vectors shown in Line 672-673, using the newly created vectors containing bin information.
 5. Finally, add additional for loops for the new bins for the reconstructed and correction loops (shown in Lines 728 & 840. All the functions inside the loopstake a string in 1-D TH1F vector as arguments.
 
-#To Do:
+# To Do:
 Hard coded binning is of course a pain. Adding TEnv support or some external configuration file would be great.
 
 Large MC prodcution. The last iteration using this code had a hard cut on lower Jet pT, and utilized MC based on a much older version of Fun4All. An new large scale production implementing PhaseSpace:bias2SelectionPow in the pythia configuration file is highly recomended. The current pythia configuration file https://github.com/ftoralesacosta/macros/blob/master/macros/g4simulations/phpythia8.cfg has this implemented. The power and reference pT hat could use some tweaking.
