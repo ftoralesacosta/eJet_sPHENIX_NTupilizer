@@ -1,66 +1,45 @@
 
-# Welcome
+# Getting Started
 
-This is the standard macros respository for [sPHENIX collaboration](https://www.sphenix.bnl.gov/). Following is the 10-min tutorial on using the sPHENIX macros from [this wiki link](https://wiki.bnl.gov/sPHENIX/index.php/Tutorial/sPHENIX_simulation).
+This code generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER).
 
-[![Build Status](https://web.racf.bnl.gov/jenkins-sphenix/buildStatus/icon?job=sPHENIX/sPHENIX_CoreSoftware_MasterBranch)](https://web.racf.bnl.gov/jenkins-sphenix/job/sPHENIX/job/sPHENIX_CoreSoftware_MasterBranch/)
-[![Doxygen](https://img.shields.io/badge/code%20reference-Doxygen-green.svg)](https://www.phenix.bnl.gov/WWW/sPHENIX/doxygen/html/)
-[![Open Issues](https://img.shields.io/github/issues/sPHENIX-Collaboration/macros.svg)](https://github.com/sPHENIX-Collaboration/macros/issues)
-[![Open Pull Request](https://img.shields.io/github/issues-pr/sPHENIX-Collaboration/macros.svg)](https://github.com/sPHENIX-Collaboration/macros/pulls)
-[![Monthly Commits](https://img.shields.io/github/commit-activity/m/sPHENIX-Collaboration/macros.svg)](https://github.com/sPHENIX-Collaboration/macros/commits/master)
-[![Last Commit](https://img.shields.io/github/last-commit/sPHENIX-Collaboration/macros.svg)](https://github.com/sPHENIX-Collaboration/macros/commits/master)
+The code that does this is in the JES directory. The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed.
 
-# Get started
+This code used for fun4all is adapted from https://github.com/sPHENIX-Collaboration/macros, and works on TTrees made from https://github.com/sPHENIX-Collaboration/tutorials/tree/master/myjetanalysis 
 
-Please follow [SPHENIX software day-1 checklist](https://wiki.bnl.gov/sPHENIX/index.php/SPHENIX_software_day-1_checklist) to get started on [RHIC computing facility at BNL](https://www.racf.bnl.gov/), or follow the [sPHENIX container setup](https://github.com/sPHENIX-Collaboration/Singularity) for your own computing environment.
+The myjetanalysis code needs to built and installed with Fun4All, as outlined here: https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes
 
-# Check out macro repository
+The code was originally run inside a Singularity container, which can be found here:
+https://github.com/sPHENIX-Collaboration/Singularity
 
-Download the newest macro repository from GitHub:
+# Running
 
-```
-[jinhuang@rcas2073 test]$ git clone https://github.com/sPHENIX-Collaboration/macros.git
-Cloning into 'macros'...
-remote: Counting objects: 1125, done.
-remote: Total 1125 (delta 0), reused 0 (delta 0), pack-reused 1125
-Receiving objects: 100% (1125/1125), 181.75 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (471/471), done.
-Checking connectivity... done.
-[jinhuang@rcas2073 test]$ cd macros/macros/g4simulations/
-[jinhuang@rcas2073 g4simulations]$ # here is all the macros to run fsPHENIX and sPHENIX simulations
-```
+Once Fun4All with the myjetanalysis is built, and the JES code is compiled with the included Makefile, simply run by:
 
-The default sPHENIX simulation + reconstruction macro is [Fun4All_G4_sPHENIX.C](https://www.phenix.bnl.gov/WWW/sPHENIX/doxygen/html/d5/d2c/macros_2blob_2master_2macros_2g4simulations_2Fun4All__G4__sPHENIX_8C_source.html#l00001), which is self-explanatory. It is not a black box!. You are welcome to open/edit it to work for your purpose of study.
+`./JES_myjetanalysis [myjetanalysis_output.root]`
 
-# Try an event display
+There are two main loops to the JES analysis. The first loop goes through reconstructed and truth jets, and fits gausians to the distributions in pT Truth bins to eventuakly obtain the correction as a function of Reconstructed pT (saved as a TF1). The second loop then goes through reconstructed jets to apply the correction.
 
-Then let's see what is implemented by firing up one event:
-```
-[jinhuang@rcas2072 macros]$ source /opt/sphenix/core/bin/sphenix_setup.csh -n   # setup sPHENIX environment if not already done so
-# Note, for bash users, please use /opt/sphenix/core/bin/sphenix_setup.sh instead
-[jinhuang@rcas2072 macros]$ root
-root [] .x Fun4All_G4_sPHENIX.C(-1) // here negative value in event number start an event display of one event
-root [] .L DisplayOn.C 
-root [] PHG4Reco* g4 = DisplayOn()
-root [] Fun4AllServer *se = Fun4AllServer::instance();
-root [] se->run(1)
-root [] displaycmd() # this one show more Geant4 command we can run from the ROOT prompt
-```
+The result will be an output root file with several histograms/TGraphs, and the TF1 correction function. Several PDFs of plots will also be generated. Apologies for any clutter.
+
+Additionally, all the machinery is in place to run your own Monte Carlo Production. The main Fun4All_
+
+# Changing Bins and Adding Dependencies
+
+The bins are defined with arrays starting on Line 625. Simply change the min and max Truth pT, and the bin width (currently 2.5 GeV/c).
+
+By default, the only binning is in Jet pT, however adding eta dependency, or z-vertex dependance should be relativley simple. The implementation uses unfotunatly clunky strings to ensure unique historgram names, but is working as intended. I wrote eta depenence as an example in Line 651. The steps to add additional dependencies are as the follows:
+
+1. Create a vector for the the bin edges and a vector for the bin centers (shown in Line 651)
+2. Add an extra dimension to N-dimensional TH1F vector `v_Eta_pT_TH1F` and the N-dimensional TH2F vector `v_Eta_pT_TH2F`
+3. Add an extra dimension to the string vectors `root_cut_string` and `title_cut_string`
+4. Fill the string vectors shown in Line 672-673, using the newly created vectors containing bin information.
+5. Finally, add additional for loops for the new bins for the reconstructed and correction loops (shown in Lines 728 & 840. All the functions inside the loopstake a string in 1-D TH1F vector as arguments.
+
+#To Do:
+Hard coded binning is of course a pain. Adding TEnv support or some external configuration file would be great.
+
+Large MC prodcution. The last iteration using this code had a hard cut on lower Jet pT, and utilized MC based on a much older version of Fun4All. An new large scale production implementing PhaseSpace:bias2SelectionPow in the pythia configuration file is highly recomended. The current pythia configuration file https://github.com/ftoralesacosta/macros/blob/master/macros/g4simulations/phpythia8.cfg has this implemented. The power and reference pT hat could use some tweaking.
 
 
-# Run more events
 
-This is simpler, just run with first parameter as the intended number of event:
-```
-[jinhuang@rcas2072 macros]$ source /opt/sphenix/core/bin/sphenix_setup.csh -n   # setup sPHENIX environment if not already done so
-[jinhuang@rcas2072 macros]$ root
-root [] .x Fun4All_G4_sPHENIX.C(10) // run 10 events
-```
-
-# What next?
-
-Now you are able to run the whole sPHENIX simulation + reconstruction chain. Many next-step topics are listed in the [software](https://wiki.bnl.gov/sPHENIX/index.php/Software) page. And specifically, to use the simulation for your study, a few thing you might want to try:
-
-* Checkout the [evaluator Ntuples](https://wiki.bnl.gov/sPHENIX/index.php/Tracking) output from your 10 events for a generic look of the reconstructed data.
-* Run [sPHENIX software tutorials](https://github.com/sPHENIX-Collaboration/tutorials).
-* [Write your analysis module for more dedicated analysis](https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes), for which the module produced the evaluator NTuple ([CaloEvaluator](https://www.phenix.bnl.gov/WWW/sPHENIX/doxygen/html/dd/d59/classCaloEvaluator.html), [JetEvaluator](https://www.phenix.bnl.gov/WWW/sPHENIX/doxygen/html/d1/df4/classJetEvaluator.html), [SvtxEvaluator](https://www.phenix.bnl.gov/WWW/sPHENIX/doxygen/html/d6/d11/classSvtxEvaluator.html)) can usually serve as good examples.
