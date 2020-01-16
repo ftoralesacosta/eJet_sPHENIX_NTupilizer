@@ -2,10 +2,9 @@
 # Getting Started
 
 This code generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER).
+The code that does this is in the JES directory. The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple. The following is only required is you want make your own MonteCarlo prodction.
 
-The code that does this is in the JES directory. The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed.
-
-This code used for fun4all is adapted from https://github.com/sPHENIX-Collaboration/macros, and works on TTrees made from https://github.com/sPHENIX-Collaboration/tutorials/tree/master/myjetanalysis 
+The code used for fun4all is adapted from https://github.com/sPHENIX-Collaboration/macros, and works on TTrees made from https://github.com/sPHENIX-Collaboration/tutorials/tree/master/myjetanalysis 
 
 The myjetanalysis code needs to built and installed with Fun4All, as outlined here: https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes
 
@@ -22,7 +21,7 @@ There are two main loops to the JES analysis. The first loop goes through recons
 
 The result will be an output root file with several histograms/TGraphs, and the TF1 correction function. Several PDFs of plots will also be generated. Apologies for any clutter.
 
-Additionally, all the machinery is in place to run your own Monte Carlo Production. The main Fun4All_
+All the machinery is in place to run your own Monte Carlo Production. The main Fun4All_
 
 # Changing Bins and Adding Dependencies
 
@@ -34,12 +33,9 @@ By default, the only binning is in Jet pT, however adding eta dependency, or z-v
 2. Add an extra dimension to N-dimensional TH1F vector `v_Eta_pT_TH1F` and the N-dimensional TH2F vector `v_Eta_pT_TH2F`
 3. Add an extra dimension to the string vectors `root_cut_string` and `title_cut_string`
 4. Fill the string vectors shown in Line 672-673, using the newly created vectors containing bin information.
-5. Finally, add additional for loops for the new bins for the reconstructed and correction loops (shown in Lines 728 & 840. All the functions inside the loopstake a string in 1-D TH1F vector as arguments.
+5. Finally, add additional for loops for the new bins for the reconstructed and correction loops (shown in Lines 728 & 840. All the functions inside the loops take a string in 1-D TH1F vector as arguments.
 
 # To Do:
 Hard coded binning is of course a pain. Adding TEnv support or some external configuration file would be great.
 
 Large MC prodcution. The last iteration using this code had a hard cut on lower Jet pT, and utilized MC based on a much older version of Fun4All. An new large scale production implementing PhaseSpace:bias2SelectionPow in the pythia configuration file is highly recomended. The current pythia configuration file https://github.com/ftoralesacosta/macros/blob/master/macros/g4simulations/phpythia8.cfg has this implemented. The power and reference pT hat could use some tweaking.
-
-
-
