@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-c', '--config',type=str,default='pp',
                     help='base for config files')
 parser.add_argument('-d', '--dir',type=str,
-                    default='/g/g12/ftorales/batch/',
+                    default='/p/lustre2/ftorales/Singularity/',
                     help='top level scratch directory')
 parser.add_argument('-j', '--jobset',type=str,default='MinBias_MC',
                     help='jobset name for this jobset [MinBias_MC]')
