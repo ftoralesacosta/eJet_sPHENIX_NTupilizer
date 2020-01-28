@@ -2,7 +2,7 @@
 # Getting Started
 
 This code generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER).
-The code that does this is in the JES directory. The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple. The following is only required is you want make your own MonteCarlo prodction.
+The code that does this is in the JES directory. The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple. The following is only required is you want make your own MonteCarlo production.
 
 The code used for fun4all is adapted from https://github.com/sPHENIX-Collaboration/macros, and works on TTrees made from https://github.com/sPHENIX-Collaboration/tutorials/tree/master/myjetanalysis 
 
@@ -17,11 +17,11 @@ Once Fun4All with the myjetanalysis is built, and the JES code is compiled with 
 
 `./JES_myjetanalysis [myjetanalysis_output.root]`
 
-There are two main loops to the JES analysis. The first loop goes through reconstructed and truth jets, and fits gausians to the distributions in pT Truth bins to eventuakly obtain the correction as a function of Reconstructed pT (saved as a TF1). The second loop then goes through reconstructed jets to apply the correction.
+There are two main loops to the JES analysis. The first loop goes through reconstructed and truth jets, and fits gausians to the distributions in pT Truth bins to eventualy obtain the correction as a function of Reconstructed pT (saved as a TF1). The second loop then goes through reconstructed jets to apply the correction.
 
 The result will be an output root file with several histograms/TGraphs, and the TF1 correction function. Several PDFs of plots will also be generated. Apologies for any clutter.
 
-All the machinery is in place to run your own Monte Carlo Production. The main Fun4All_
+All the machinery is in place to run your own Monte Carlo Production. The main Fun4All_G4_sPHENIX.C macro calls the myjetanalysis code to create TTrees with jet variables.
 
 # Changing Bins and Adding Dependencies
 
