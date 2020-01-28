@@ -22,6 +22,7 @@
 #include <phhepmc/Fun4AllHepMCInputManager.h>
 
 //#include "/g/g12/ftorales/myjetanalysis/src/MyJetAnalysis.h"
+//#include <MyJetAnalysis.h>
 #include <myjetanalysis/MyJetAnalysis.h>
 
 #include "G4Setup_sPHENIX.C"
