@@ -27,13 +27,13 @@ All the machinery is in place to run your own Monte Carlo Production. The main F
 
 The bins are defined with arrays starting on Line 625. Simply change the min and max Truth pT, and the bin width (currently 2.5 GeV/c).
 
-By default, the only binning is in Jet pT, however adding eta dependency, or z-vertex dependance should be relativley simple. The implementation uses unfotunatly clunky strings to ensure unique historgram names, but is working as intended. I wrote eta depenence as an example in Line 651. The steps to add additional dependencies are as the follows:
+By default, the only binning is in Jet pT, however adding eta dependency, or z-vertex dependance should be relativley simple. The implementation uses unfortunatly clunky strings to ensure unique historgram names, but is working as intended. I wrote eta depenence as an example in Line 651. The steps to add additional dependencies are as the follows:
 
 1. Create a vector for the the bin edges and a vector for the bin centers (shown in Line 651)
 2. Add an extra dimension to N-dimensional TH1F vector `v_Eta_pT_TH1F` and the N-dimensional TH2F vector `v_Eta_pT_TH2F`
 3. Add an extra dimension to the string vectors `root_cut_string` and `title_cut_string`
 4. Fill the string vectors shown in Line 672-673, using the newly created vectors containing bin information.
-5. Finally, add additional for loops for the new bins for the reconstructed and correction loops (shown in Lines 728 & 840. All the functions inside the loops take a string in 1-D TH1F vector as arguments.
+5. Finally, add additional for loops for the new bins for the reconstructed and correction loops (shown in Lines 728 & 840. All the functions inside the loops take a string in 1-D TH1F vector as arguments. The outer loop is simply changed to go throught the N-dimensional vectors. In this way none of the functions need editing if all one wants to do is add additional dependencies.
 
 # To Do:
 Hard coded binning is of course a pain. Adding TEnv support or some external configuration file would be great.
