@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-c', '--config',type=str,default='pp',
                     help='base for config files')
 parser.add_argument('-d', '--dir',type=str,
-                    default='/p/lustre2/ftorales/Singularity/',
+                    default='/p/lustre2/ftorales/',
                     help='top level scratch directory')
 parser.add_argument('-j', '--jobset',type=str,default='MinBias_MC',
                     help='jobset name for this jobset [MinBias_MC]')
@@ -84,9 +84,10 @@ for n in nvals:
     f.write('#SBATCH -o '+outfile+'\n')
     f.write('#SBATCH -e '+errfile+'\n')
     f.write('#\n# Change directory and setup runtime environment\n#\n')
-    f.write('cd '+jobdir+'\n')
+    #f.write('cd '+jobdir+'\n')
     f.write('#\n# Run the MB MC sPHENIX chain\n#\n')
-    f.write('srun -n 1 /g/g12/ftorales/batch/jet_batch.sh '+jobdir+'.root\n')
+    #f.write('srun -n 1 /p/lustre2/ftorales/Singularity/macros/llnl_batch/jet_batch.sh '+jobdir+'.Root\n')
+    f.write('srun -n 1 /p/lustre2/ftorales/Singularity/macros/llnl_batch/jet_batch.sh /hip_sphenix/MinBias_MC/'+jobname+'.Root\n')
     f.write('date\n')
     f.close()
     

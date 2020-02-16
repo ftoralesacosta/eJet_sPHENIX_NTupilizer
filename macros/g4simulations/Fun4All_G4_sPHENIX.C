@@ -21,8 +21,6 @@
 #include <phhepmc/Fun4AllHepMCPileupInputManager.h>
 #include <phhepmc/Fun4AllHepMCInputManager.h>
 
-//#include "/g/g12/ftorales/myjetanalysis/src/MyJetAnalysis.h"
-//#include <MyJetAnalysis.h>
 #include <myjetanalysis/MyJetAnalysis.h>
 
 #include "G4Setup_sPHENIX.C"
@@ -599,7 +597,7 @@ int Fun4All_G4_sPHENIX(
   char jetoutputFile[256];
   strncpy(jetoutputFile, outputFile, sizeof(jetoutputFile));
   strncat(jetoutputFile, jetchar, sizeof(jetoutputFile) - strlen(jetoutputFile) - 1);
-  MyJetAnalysis *myJetAnalysis = new MyJetAnalysis("AntiKt_Tower_r04","AntiKt_Truth_r04",jetoutputFile);
+  MyJetAnalysis *myJetAnalysis = new MyJetAnalysis("AntiKt_Track_r08","AntiKt_Truth_r08",jetoutputFile);
   //MyJetAnalysis *myJetAnalysis = new MyJetAnalysis("AntiKt_Tower_r04","AntiKt_Truth_r04","../myjetanalysis.root");
   se->registerSubsystem(myJetAnalysis);
 

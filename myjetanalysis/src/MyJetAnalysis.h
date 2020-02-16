@@ -21,8 +21,8 @@ class MyJetAnalysis : public SubsysReco
 {
  public:
   MyJetAnalysis(
-      const std::string &recojetname = "AntiKt_Tower_r04",
-      const std::string &truthjetname = "AntiKt_Truth_r04",
+      const std::string &recojetname = "AntiKt_Track_r08",
+      const std::string &truthjetname = "AntiKt_Truth_r08",
       const std::string &outputfilename = "myjetanalysis.root");
 
   virtual ~MyJetAnalysis();

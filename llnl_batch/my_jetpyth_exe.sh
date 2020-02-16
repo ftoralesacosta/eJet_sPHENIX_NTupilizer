@@ -2,7 +2,7 @@
 ls -l
 date
 
-INST=/g/g12/ftorales/Singularity/install
+INST=/hip_sphenix/Singularity/install
 source /opt/sphenix/core/bin/sphenix_setup.sh -n
 source /opt/sphenix/core/bin/setup_local.sh $INST
 
