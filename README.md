@@ -1,5 +1,6 @@
 
 # Getting Started
+This code is adapted from the JES scale code, which is a fork of the sPHENIX/macros repository and edits Jin Huang's "myjetanalysis" code.
 
 This code generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER).
 The code that does this is in the JES directory. The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple. The following is only required is you want make your own MonteCarlo production.
