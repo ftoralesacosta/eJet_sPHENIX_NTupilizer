@@ -86,8 +86,7 @@ for n in nvals:
     f.write('#\n# Change directory and setup runtime environment\n#\n')
     #f.write('cd '+jobdir+'\n')
     f.write('#\n# Run the MB MC sPHENIX chain\n#\n')
-    #f.write('srun -n 1 /p/lustre2/ftorales/Singularity/macros/llnl_batch/jet_batch.sh '+jobdir+'.Root\n')
-    f.write('srun -n 1 /p/lustre2/ftorales/Singularity/macros/llnl_batch/jet_batch.sh /hip_sphenix/MinBias_MC/'+jobname+'.Root\n')
+    f.write('srun -n 1 /p/lustre2/ftorales/Singularity/e_Jet_sPHENIX/llnl_batch/jet_batch.sh /hip_sphenix/MinBias_MC/'+jobname+'.Root\n')
     f.write('date\n')
     f.close()
     
