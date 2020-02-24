@@ -5,6 +5,9 @@
 #include <fun4all/PHTFileServer.h>
 
 #include <phool/PHCompositeNode.h>
+#include <g4main/PHG4TruthInfoContainer.h>
+#include <g4main/PHG4Particle.h>
+
 #include <phool/getClass.h>
 
 #include <g4eval/JetEvalStack.h>
@@ -19,6 +22,7 @@
 #include <TString.h>
 #include <TTree.h>
 #include <TVector3.h>
+#include <TLorentzVector.h>
 
 #include <algorithm>
 #include <cassert>
@@ -55,6 +59,15 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_truthE(numeric_limits<float>::signaling_NaN())
   , m_truthPt(numeric_limits<float>::signaling_NaN())
   , m_nMatchedTrack(-1)
+    , m_etruthEta(numeric_limits<float>::signaling_NaN())
+  , m_etruthPhi(numeric_limits<float>::signaling_NaN())
+  , m_etruthE(numeric_limits<float>::signaling_NaN())
+  , m_etruthPt(numeric_limits<float>::signaling_NaN())
+  , m_etruthpX(numeric_limits<float>::signaling_NaN())
+  , m_etruthpY(numeric_limits<float>::signaling_NaN())
+  , m_etruthpZ(numeric_limits<float>::signaling_NaN())
+  , m_etruthPID(-1)
+  , m_etruthParentID(-1)
 {
   m_trackdR.fill(numeric_limits<float>::signaling_NaN());
   m_trackpT.fill(numeric_limits<float>::signaling_NaN());
@@ -120,10 +133,23 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   //      int m_nMatchedTrack;
   m_T->Branch("nMatchedTrack", &m_nMatchedTrack, "nMatchedTrack/I");
   //      std::array<float, kMaxMatchedTrack> m_trackdR;
-  m_T->Branch("id", m_trackdR.data(), "trackdR[nMatchedTrack]/F");
+  m_T->Branch("TrackdR", m_trackdR.data(), "trackdR[nMatchedTrack]/F");
   //      std::array<float, kMaxMatchedTrack> m_trackpT;
-  m_T->Branch("id", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
+  m_T->Branch("trackpT", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
 
+  m_T->Branch("etruthEta", &m_etruthEta, "etruthEta/F");
+  m_T->Branch("etruthPhi", &m_etruthPhi, "etruthPhi/F");
+  m_T->Branch("etruthE", &m_etruthE, "etruthE/F");
+  m_T->Branch("etruthPt", &m_etruthPt, "etruthPt/F");
+
+  m_T->Branch("etruthpX", &m_etruthpX, "etruthpX/F");
+  m_T->Branch("etruthpY", &m_etruthpY, "etruthpY/F");
+  m_T->Branch("etruthpZ", &m_etruthpZ, "etruthpZ/F");
+
+  m_T->Branch("etruthPt", &m_etruthPt, "etruthPt/F");
+  m_T->Branch("etruthPID", &m_etruthPID, "etruthPID/I");
+  m_T->Branch("etruthParentID", &m_etruthParentID, "etruthParentID/I");
+  
   return Fun4AllReturnCodes::EVENT_OK;
 }
 
@@ -193,7 +219,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
       }
       continue;
     }
-
+  
     // fill histograms
     assert(m_hInclusiveE);
     m_hInclusiveE->Fill(jet->get_e());
@@ -265,6 +291,36 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 
     m_T->Fill();
   }  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)
+  
+  //Interface to True Electrons    
+  PHG4TruthInfoContainer* truthinfo = findNode::getClass<PHG4TruthInfoContainer>(topNode,"G4TruthInfo");
+  if ( !truthinfo )
+    {
+      cerr << PHWHERE << " ERROR: Can't find G4TruthInfo" << endl;
+      exit(-1);
+    }
+  
+  PHG4TruthInfoContainer::Range range = truthinfo->GetPrimaryParticleRange();
+  for ( PHG4TruthInfoContainer::ConstIterator iter = range.first; iter != range.second; ++iter )
+    {
+      PHG4Particle* g4particle = iter->second;
+      int particleID = g4particle->get_pid();
+      //int parent_ID = g4partcile->get_parent_id(); Cut on parent electrons?
+      
+      bool iselectron = fabs(particleID) == 11;
+      if (!iselectron) continue;
+	
+      // float eTrue_energy = g4particle->get_e();
+      // float eTrue_px = g4particle->get_px();
+      // float eTrue_py = g4particle->get_py();
+      // float eTrue_pz = g4particle->get_pz();
+      //ROOT::Math::LorentzVector eLorentz(g4particle->get_px(),g4particle->get_py(),g4particle->get_pz(),g4particle->get_e());
+
+      TLorentzVector eLorentz;
+      eLorentz.SetPxPyPzE(g4particle->get_px(),g4particle->get_py(),g4particle->get_pz(),g4particle->get_e());
+
+    }
+
 
   return Fun4AllReturnCodes::EVENT_OK;
 }

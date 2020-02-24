@@ -94,6 +94,18 @@ class MyJetAnalysis : public SubsysReco
   //! number of matched tracks
   int m_nMatchedTrack;
 
+  //Electron Truth Variables
+  float m_etruthEta;
+  float m_etruthPhi;
+  float m_etruthE;
+  float m_etruthPt;
+
+  float m_etruthpX;
+  float m_etruthpY;
+  float m_etruthpZ;
+  int m_etruthPID;
+  int m_etruthParentID;
+
   enum
   {
     //! max number of tracks
