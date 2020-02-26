@@ -260,6 +260,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 
 	m_e = jet->get_e();
 	if (m_e < hardest_jet_e) continue; //take only the hardest jet
+	hardest_jet_e = m_e;
 
 	m_id = jet->get_id();
 	m_nComponent = jet->size_comp();
