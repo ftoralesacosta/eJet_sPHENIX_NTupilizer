@@ -103,7 +103,7 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_hInclusiveNJets =
       new TH1F(
 	   "hInclusive_njets",  //
-	   TString(m_recoJetName) + " inclusine number of jets",10,0,10);
+	   TString(m_recoJetName) + " inclusive number of jets",10,0,10);
 	       
   
   //Trees
@@ -204,9 +204,11 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
   {
     PHG4Particle* g4particle = iter->second;
     int particleID = g4particle->get_pid();
-    int parent_ID = g4particle->get_parent_id(); //Cut on parent electrons?
-    
-    bool iselectron = (fabs(particleID) == 11 && fabs(parent_ID) == 11 );
+
+    //int parent_ID = g4particle->get_parent_id(); //Cut on parent electrons?
+    //bool iselectron = (fabs(particleID) == 11 && fabs(parent_ID) == 11 );
+
+    bool iselectron = fabs(particleID) == 11;
     if (!iselectron) continue;
 
     m_etruthE = g4particle->get_e();
@@ -318,8 +320,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	      }
 
 	  }  //    for (SvtxTrackMap::Iter iter = trackmap->begin();
-      }  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)
-    
+      }  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)      
     m_T->Fill(); //Fill Tree inside electron Loop
   }//electron Loop  
   return Fun4AllReturnCodes::EVENT_OK;
