@@ -42,6 +42,12 @@ class MyJetAnalysis : public SubsysReco
     m_ptRange.second = high;
   }
 
+  void
+  setelectronEmin(double Emin)
+  {
+    m_eEmin = Emin;  
+  }
+  
   int Init(PHCompositeNode *topNode);
   int InitRun(PHCompositeNode *topNode);
   int process_event(PHCompositeNode *topNode);
@@ -65,6 +71,9 @@ class MyJetAnalysis : public SubsysReco
   //! pT range
   std::pair<double, double> m_ptRange;
 
+  //electron Energy min
+  double m_eEmin;
+  
   //! max track-jet matching radius
   double m_trackJetMatchingRadius;
 
@@ -72,7 +81,8 @@ class MyJetAnalysis : public SubsysReco
   TH1 *m_hInclusiveE;
   TH1 *m_hInclusiveEta;
   TH1 *m_hInclusivePhi;
-
+  TH1 *m_hInclusiveNJets;
+  
   //! Output Tree variables
   TTree *m_T;
 
