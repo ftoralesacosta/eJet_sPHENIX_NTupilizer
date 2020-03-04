@@ -187,6 +187,18 @@ int main(int argc, char *argv[])
 
     if(isnan(truthEta)) continue;
 
+    Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi));
+
+    if (True_DeltaPhi < M_PI/2) continue;
+
+    dPhiTj->Fill(True_DeltaPhi);
+    Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi));
+    dPhiRj->Fill(Reco_DeltaPhi);
+
+    dEtaTj->Fill(etruthEta-truthEta);
+    dEtaRj->Fill(etruthEta-eta);
+
+
     Rjve->Fill(e,etruthE);
     Tjve->Fill(truthE,etruthE);
 
@@ -196,13 +208,6 @@ int main(int argc, char *argv[])
     emTj->Fill(etruthE-truthE);
     emRj->Fill(etruthE-e);
 
-    Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi));
-    dPhiTj->Fill(True_DeltaPhi);
-    Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi));
-    dPhiRj->Fill(Reco_DeltaPhi);
-
-    dEtaTj->Fill(etruthEta-truthEta);
-    dEtaRj->Fill(etruthEta-eta);
     // if (already_matched)
     //   Extra_Match_Count ++;
     // already_matched = true;

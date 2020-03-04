@@ -40,7 +40,7 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_outputFileName(outputfilename)
   , m_etaRange(-.7, .7)
   , m_ptRange(0.5, 500)
-  , m_eEmin(5)
+  , m_eEmin(1.0)
   , m_trackJetMatchingRadius(.7)
   , m_hInclusiveE(nullptr)
   , m_hInclusiveEta(nullptr)
@@ -199,6 +199,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
       exit(-1);
     }
   
+  float hardest_electron_E = 0;
   PHG4TruthInfoContainer::Range range = truthinfo->GetPrimaryParticleRange();
   for ( PHG4TruthInfoContainer::ConstIterator iter = range.first; iter != range.second; ++iter )
   {
@@ -212,7 +213,10 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     if (!iselectron) continue;
 
     m_etruthE = g4particle->get_e();
+    if (m_etruthE < hardest_electron_E) continue;
+    hardest_electron_E = m_etruthE;
     if (m_etruthE < m_eEmin) continue;
+    
     m_etruthpX = g4particle->get_px();
     m_etruthpY = g4particle->get_py();
     m_etruthpZ = g4particle->get_pz();
@@ -231,7 +235,8 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	Jet* jet = iter->second;
 	assert(jet);
 
-	bool eta_cut = (jet->get_eta() >= m_etaRange.first) and (jet->get_eta() <= m_etaRange.second);
+	//Relaxing Eta_cut, to be done in analysis over trees
+	bool eta_cut = (jet->get_eta() >= m_etaRange.first) and (jet->get_eta() <= m_etaRange.second); 
 	bool pt_cut = (jet->get_pt() >= m_ptRange.first) and (jet->get_pt() <= m_ptRange.second);
 	if ((not eta_cut) or (not pt_cut))
 	  {
