@@ -173,7 +173,12 @@ int main(int argc, char *argv[])
   //Difference Histos
   TH1F * emTj = new TH1F("Eelectron_minus_ETrueJet", "E_{e}^{True} - E^{True}_{Jet} (|#eta^{Jet}|<0.7)",80,-20,20);
   TH1F * emRj = new TH1F("Eelectron_minus_ERecoJet", "E_{e}^{True} - E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",80,-20,20);
-
+  //Detector Coordinate Histos
+  TH1F * dPhiTj = new TH1F("dPhi_e_TrueJet", "|#Delta#varphi| (#varphi_{e} - #varphi^{True}_{Jet}) ", 32,0,M_PI);
+  TH1F * dPhiRj = new TH1F("dPhi_e_RecoJet", "|#Delta#varphi| #varphi_{e} - #varphi(Jet^{Reco}_{Jet}) ", 32,0,M_PI);
+  TH1F * dEtaTj = new TH1F("dEta_e_TrueJet", "|#Delta#eta| (#eta_{e} - #eta^{True}_{Jet})", 24,0,6);
+  TH1F * dEtaRj = new TH1F("dEta_e_RecoJet", "|#Delta#eta| (#eta_{e} - #eta^{Reco}_{Jet})", 24,0,6);
+  
   
   Long64_t nentries = _tree_event->GetEntries();
   for(Long64_t ie = 0; ie < nentries ; ie++){
@@ -190,7 +195,14 @@ int main(int argc, char *argv[])
 
     emTj->Fill(etruthE-truthE);
     emRj->Fill(etruthE-e);
-    
+
+    Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi));
+    dPhiTj->Fill(True_DeltaPhi);
+    Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi));
+    dPhiRj->Fill(Reco_DeltaPhi);
+
+    dEtaTj->Fill(etruthEta-truthEta);
+    dEtaRj->Fill(etruthEta-eta);
     // if (already_matched)
     //   Extra_Match_Count ++;
     // already_matched = true;
@@ -213,6 +225,11 @@ int main(int argc, char *argv[])
   emTj->Write();
   emRj->Write();
   
+  dPhiTj->Write();
+  dPhiRj->Write();
+  dEtaTj->Write();
+  dEtaRj->Write();
+
   // H_dR->Write();
   // H_NExtra_Matches->Write();
 
