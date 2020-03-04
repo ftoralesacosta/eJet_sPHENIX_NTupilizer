@@ -162,21 +162,35 @@ int main(int argc, char *argv[])
   gStyle->SetHistLineWidth(2.);
   gStyle->SetLineStyleString(2,"[12 12]"); // postscript dashes  
   TH1::SetDefaultSumw2(true);
+  TH2::SetDefaultSumw2(true);
   
-  //Define Histograms
+  //2D Histos
   TH2F * Tjve = new TH2F("ETrueJet_vs_Eelectron", "E^{True}_{Jet} (|#eta^{Jet}|<0.7) vs. E_{e}^{True}",100,0,25,100,0,25);
   TH2F * Rjve = new TH2F("ERecoJet_vs_Eelectron", "E^{Reco}_{Jet} (|#eta^{Jet}|<0.7) vs. E_{e}^{True}",100,0,25,100,0,25);
-    
+  //Ratio Histos
+  TH1F * eoTj = new TH1F("Eelectron_over_ETrueJet", "E_{e}^{True}/E^{True}_{Jet} (|#eta^{Jet}|<0.7)",20,0,2);
+  TH1F * eoRj = new TH1F("Eelectron_over_ERecoJet", "E_{e}^{True}/E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",20,0,2);
+  //Difference Histos
+  TH1F * emTj = new TH1F("Eelectron_minus_ETrueJet", "E_{e}^{True} - E^{True}_{Jet} (|#eta^{Jet}|<0.7)",80,-20,20);
+  TH1F * emRj = new TH1F("Eelectron_minus_ERecoJet", "E_{e}^{True} - E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",80,-20,20);
+
+  
   Long64_t nentries = _tree_event->GetEntries();
   for(Long64_t ie = 0; ie < nentries ; ie++){
     _tree_event->GetEntry(ie); //each entry is a 5GeV Electron
     fprintf(stderr, "\r%s:%d: %llu / %llu", __FILE__, __LINE__, ie, nentries);
 
-    Rjve->Fill(e,etruthE);
-
     if(isnan(truthEta)) continue;
+
+    Rjve->Fill(e,etruthE);
     Tjve->Fill(truthE,etruthE);
 
+    eoTj->Fill(etruthE/truthE);
+    eoRj->Fill(etruthE/e);
+
+    emTj->Fill(etruthE-truthE);
+    emRj->Fill(etruthE-e);
+    
     // if (already_matched)
     //   Extra_Match_Count ++;
     // already_matched = true;
@@ -192,6 +206,13 @@ int main(int argc, char *argv[])
 
   Tjve->Write();
   Rjve->Write();
+
+  eoTj->Write();
+  eoRj->Write();
+
+  emTj->Write();
+  emRj->Write();
+  
   // H_dR->Write();
   // H_NExtra_Matches->Write();
 
