@@ -188,25 +188,26 @@ int main(int argc, char *argv[])
     //Check for Truth Jets an NComponent > 2
     if(isnan(truthEta)) continue;
     if(nMatchedTrack < 3) continue;
+
+    //Detector Coordinate Histos
     Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi));
-    
-    dPhiTj->Fill(True_DeltaPhi);
     Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi));
+    dPhiTj->Fill(True_DeltaPhi);
     dPhiRj->Fill(Reco_DeltaPhi);
+    dEtaTj->Fill(etruthEta-truthEta);
+    dEtaRj->Fill(etruthEta-eta);
+
+    //Inclusive Spectra
+    Rjve->Fill(e,etruthE);
+    Tjve->Fill(truthE,etruthE);
 
     //Kinematic Cuts
     if (True_DeltaPhi < M_PI/2) continue;
     if (truthE < 3.0) continue;
-    dEtaTj->Fill(etruthEta-truthEta);
-    dEtaRj->Fill(etruthEta-eta);
 
-    
-    Rjve->Fill(e,etruthE);
-    Tjve->Fill(truthE,etruthE);
-
+    //Electron/Jet Comparisons
     eoTj->Fill(etruthE/truthE);
     eoRj->Fill(etruthE/e);
-
     emTj->Fill(etruthE-truthE);
     emRj->Fill(etruthE-e);
 
