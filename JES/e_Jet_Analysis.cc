@@ -190,6 +190,7 @@ int main(int argc, char *argv[])
     Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi));
     if(nMatchedTrack < 3) continue;
     if (True_DeltaPhi < M_PI/2) continue;
+    if (truthE < 3.0) continue;
     
     dPhiTj->Fill(True_DeltaPhi);
     Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi));
