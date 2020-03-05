@@ -185,17 +185,18 @@ int main(int argc, char *argv[])
     _tree_event->GetEntry(ie); //each entry is a 5GeV Electron
     fprintf(stderr, "\r%s:%d: %llu / %llu", __FILE__, __LINE__, ie, nentries);
 
-    //cuts
+    //Check for Truth Jets an NComponent > 2
     if(isnan(truthEta)) continue;
-    Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi));
     if(nMatchedTrack < 3) continue;
-    if (True_DeltaPhi < M_PI/2) continue;
-    if (truthE < 3.0) continue;
+    Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi));
     
     dPhiTj->Fill(True_DeltaPhi);
     Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi));
     dPhiRj->Fill(Reco_DeltaPhi);
 
+    //Kinematic Cuts
+    if (True_DeltaPhi < M_PI/2) continue;
+    if (truthE < 3.0) continue;
     dEtaTj->Fill(etruthEta-truthEta);
     dEtaRj->Fill(etruthEta-eta);
 
