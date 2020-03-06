@@ -64,7 +64,7 @@ std::vector<std::vector<TH1F*> > make_TH1F_Calib(int N_pT_Bins, float *pT_Edges,
       Reco_pT_Slices.push_back(new TH1F(Form("%s_pT_for_Truth_pT%1.0f_%1.0f_%s",r_c_string.Data(),
 					     pT_Truth*10,pT_Truth*10,pT_Truth_plus*10,r_cut_string.Data()),
 					Form("p_{T}^{%s}  (%1.2f < p_{T}^{Truth} < %1.2f, %s )",
-					     r_c_string.Data(),pT_Truth,pT_Truth_plus,cut_string.Data()), 150,0,25));
+					     r_c_string.Data(),pT_Truth,pT_Truth_plus,cut_string.Data()), 100,0,10));
 
       Phi_Deltas.push_back(new TH1F(Form("%s_dPhi_for_Truth_pT%1.0f_%1.0f_%s",r_c_string.Data(),
 					 pT_Truth*10,pT_Truth*10,pT_Truth_plus*10,r_cut_string.Data()),
@@ -97,11 +97,11 @@ std::vector<TH2F*>  make_TH2F(TString cut_string, TString r_cut_string,bool is_c
     std::vector<TH2F*> v_TH2F_Calib;
     
     TH2F* H_Diff_Tpt = new TH2F(Form("%s_H_2D_%s_pT_Residuals",r_c_string.Data(),r_cut_string.Data()),
-				Form("p_{T}^{%s} - p_{T}^{Truth} vs. p_{T}^{Truth}, %s",r_c_string.Data(),cut_string.Data()),130,0.5,25,50,-25,25);
+				Form("p_{T}^{%s} - p_{T}^{Truth} vs. p_{T}^{Truth}, %s",r_c_string.Data(),cut_string.Data()),38,0.5,10,50,-10,10);
     TH2F* H_Ratio_Tpt = new TH2F(Form("%s_H_2D_%s_pT_Ratios",r_c_string.Data(),r_cut_string.Data()),
-				 Form("p_{T}^{%s} / p_{T}^{Truth} vs. p_{T}^{Truth}, %s",r_c_string.Data(),cut_string.Data()),130,0.5,25,60,0,2);
+				 Form("p_{T}^{%s} / p_{T}^{Truth} vs. p_{T}^{Truth}, %s",r_c_string.Data(),cut_string.Data()),38,0.5,10,60,0,2);
     TH2F* H_Reco_Tpt = new TH2F(Form("H_2D_%s_%s_Tpt",r_c_string.Data(),r_cut_string.Data()),
-				Form("p_{T}^{%s} vs. p_{T}^{Truth}, %s",r_c_string.Data(),cut_string.Data()),130,0.5,25,130,0.5,25);
+				Form("p_{T}^{%s} vs. p_{T}^{Truth}, %s",r_c_string.Data(),cut_string.Data()),38,0.5,10,38,0.5,10);
 
     H_Diff_Tpt->GetXaxis()->SetTitle("p_{T}^{Truth}");
     H_Diff_Tpt->GetYaxis()->SetTitle(Form("p_{T}^{%s} - p_{T}^{Truth}",r_c_string.Data()));
@@ -410,7 +410,7 @@ TF1* do_gaus_fitting(int N_pT_Bins, float* pT_Centers, float Fit_pT_Min,TString 
     TGraph *Cor = new TGraph(N_pT_Bins,&v_Cor_pT[0],&v_Cor_Factors[0]);
     Cor->GetXaxis()->SetTitle("p_{T}^{Corrected} [GeV/c]");
     Cor->GetXaxis()->CenterTitle();
-    Cor->GetXaxis()->SetRangeUser(0.5,25);
+    Cor->GetXaxis()->SetRangeUser(0.5,10);
     Cor->GetYaxis()->SetTitle(" JES Correction ");
     Cor->SetTitle(Form("Jet p_{T} Correction  %s",cut_string.Data()));
     Cor->GetYaxis()->CenterTitle();
@@ -453,8 +453,8 @@ void Closure_Test(int N_pT_Bins,float* pT_Centers,TString cut_string,TString r_c
     Correction_Check->GetXaxis()->SetTitle("p_{T}^{Truth}");
     Correction_Check->GetYaxis()->CenterTitle();
     Correction_Check->GetXaxis()->CenterTitle();
-    Correction_Check->Fit("pol0","","",0.5,25);
-    Correction_Check->GetXaxis()->SetRangeUser(0.5,25);
+    Correction_Check->Fit("pol0","","",0.5,10);
+    Correction_Check->GetXaxis()->SetRangeUser(0.5,10);
     Correction_Check->GetYaxis()->SetRangeUser(-1,2);
     Correction_Check->Draw();
 
@@ -625,7 +625,7 @@ int main(int argc, char *argv[])
   //True pT Binning
   float bin_width = 0.5;
   float pT_min = 0.5;
-  float pT_max = 25.0;
+  float pT_max = 10.0;
   int N_pT_Bins = int((pT_max - pT_min)/bin_width);
   fprintf(stderr, "%d: N_pT_Bins = %i\n",__LINE__,N_pT_Bins);
   float Truth_pT_Array[N_pT_Bins+1]; //edges
