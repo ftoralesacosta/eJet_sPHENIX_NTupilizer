@@ -167,6 +167,7 @@ int main(int argc, char *argv[])
   //2D Histos
   TH2F * Tjve = new TH2F("ETrueJet_vs_Eelectron", "E^{True}_{Jet} (|#eta^{Jet}|<0.7) vs. E_{e}^{True}",100,0,25,100,0,25);
   TH2F * Rjve = new TH2F("ERecoJet_vs_Eelectron", "E^{Reco}_{Jet} (|#eta^{Jet}|<0.7) vs. E_{e}^{True}",100,0,25,100,0,25);
+
   //Ratio Histos
   TH1F * eoTj = new TH1F("Eelectron_over_ETrueJet", "E_{e}^{True}/E^{True}_{Jet} (|#eta^{Jet}|<0.7)",30,0,3);
   TH1F * eoRj = new TH1F("Eelectron_over_ERecoJet", "E_{e}^{True}/E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",30,0,3);
@@ -198,8 +199,8 @@ int main(int argc, char *argv[])
     dEtaRj->Fill(etruthEta-eta);
 
     //Inclusive Spectra
-    Rjve->Fill(e,etruthE);
-    Tjve->Fill(truthE,etruthE);
+    Rjve->Fill(etruthE,e);
+    Tjve->Fill(etruthE,truthE);
 
     //Kinematic Cuts
     if (True_DeltaPhi < M_PI/2) continue;
@@ -224,17 +225,30 @@ int main(int argc, char *argv[])
 //Write to new root file
   TFile* fout = new TFile("Histograms_Jet_Callibration.root","RECREATE");
 
+  Tjve->GetXaxis()->SetTitle("E^{True}_{electron} [GeV]");
+  Rjve->GetXaxis()->SetTitle("E^{True}_{electron} [GeV]");
+  Tjve->GetYaxis()->SetTitle("E^{True}_{Jet} [GeV]");
+  Rjve->GetYaxis()->SetTitle("E^{Reco}_{Jet} [GeV]");
   Tjve->Write();
   Rjve->Write();
 
+  eoTj->GetXaxis()->SetTitle("E_{e}/E_{jet}");
+  eoRj->GetXaxis()->SetTitle("E_{e}/E_{jet}");
   eoTj->Write();
   eoRj->Write();
 
+  emTj->GetXaxis()->SetTitle("E_{e}-E_{jet}");
+  emRj->GetXaxis()->SetTitle("E_{e}-E_{jet}");
   emTj->Write();
   emRj->Write();
-  
+
+  dPhiTj->GetXaxis()->SetTitle("#Delta#varphi");
+  dPhiRj->GetXaxis()->SetTitle("#Delta#varphi");
   dPhiTj->Write();
   dPhiRj->Write();
+
+  dEtaTj->GetXaxis()->SetTitle("#Delta#eta");
+  dEtaRj->GetXaxis()->SetTitle("#Delta#eta");
   dEtaTj->Write();
   dEtaRj->Write();
 
