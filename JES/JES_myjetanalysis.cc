@@ -623,9 +623,9 @@ int main(int argc, char *argv[])
   TH1::SetDefaultSumw2(true);
   
   //True pT Binning
-  float bin_width = 2.5;
-  float pT_min = 2.5;
-  float pT_max = 75;
+  float bin_width = 1.0;
+  float pT_min = 0.5;
+  float pT_max = 25.0;
   int N_pT_Bins = int((pT_max - pT_min)/bin_width);
   fprintf(stderr, "%d: N_pT_Bins = %i\n",__LINE__,N_pT_Bins);
   float Truth_pT_Array[N_pT_Bins+1]; //edges
@@ -637,7 +637,7 @@ int main(int argc, char *argv[])
   Truth_pT_Array[0] = pT_min;
 
   //minimum pT for Fitting JES and JER parametrization
-  float Fit_pT_Min = 7.5;
+  float Fit_pT_Min = 0;
   
   
   for (int ipt = 0; ipt < N_pT_Bins; ipt++){
