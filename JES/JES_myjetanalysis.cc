@@ -245,7 +245,7 @@ void Num_Gaus_Overlay(TH2F *H2, std::vector<TGraphErrors*> v_Graphs, TString des
     H2->Draw("COLZ");
     v_Graphs[0]->SetLineColor(2); //Gauss
     v_Graphs[0]->SetLineWidth(3);
-    v_Graphs[0]->Draw("SAME"); 
+    //v_Graphs[0]->Draw("SAME"); 
     v_Graphs[1]->SetLineColor(1); //Numerical
     v_Graphs[1]->SetMarkerStyle(8);
     v_Graphs[1]->Draw("SAME");
