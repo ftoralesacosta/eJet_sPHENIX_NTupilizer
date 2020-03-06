@@ -171,6 +171,7 @@ int main(int argc, char *argv[])
   //Ratio Histos
   TH1F * eoTj = new TH1F("Eelectron_over_ETrueJet", "E_{e}^{True}/E^{True}_{Jet} (|#eta^{Jet}|<0.7)",80,0,20);
   TH1F * eoRj = new TH1F("Eelectron_over_ERecoJet", "E_{e}^{True}/E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",80,0,20);
+  TH1F * RjoTj = new TH1F("ERecoJet_over_ETrueJet", "E_{Jet}^{Reco}/E^{True}_{Jet} (|#eta^{Jet}|<0.7)",80,0,20);
   //Difference Histos
   TH1F * emTj = new TH1F("Eelectron_minus_ETrueJet", "E_{e}^{True} - E^{True}_{Jet} (|#eta^{Jet}|<0.7)",100,-20,30);
   TH1F * emRj = new TH1F("Eelectron_minus_ERecoJet", "E_{e}^{True} - E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",100,-20,30);
@@ -201,7 +202,8 @@ int main(int argc, char *argv[])
     //Inclusive Spectra
     Rjve->Fill(etruthE,e);
     Tjve->Fill(etruthE,truthE);
-
+    RjoTj->Fill(e/truthE);
+    
     //Kinematic Cuts
     if (True_DeltaPhi < M_PI/2) continue;
     if (truthE < 3.0) continue;
@@ -236,6 +238,9 @@ int main(int argc, char *argv[])
   eoRj->GetXaxis()->SetTitle("E_{e}/E_{jet}");
   eoTj->Write();
   eoRj->Write();
+
+  RjoTj->GetXaxis()->SetTitle("E_{Jet}^{Reco}/E_{Jet}^{True}");
+  RjoTj->Write();
 
   emTj->GetXaxis()->SetTitle("E_{e}-E_{jet}");
   emRj->GetXaxis()->SetTitle("E_{e}-E_{jet}");
