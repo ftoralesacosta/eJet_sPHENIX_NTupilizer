@@ -38,7 +38,7 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_recoJetName(recojetname)
   , m_truthJetName(truthjetname)
   , m_outputFileName(outputfilename)
-  , m_etaRange(-.7, .7)
+  , m_etaRange(-5, 5)//-0.7 0.7 for track_reco jets
   , m_ptRange(0.5, 500)
   , m_eEmin(1.0)
   , m_trackJetMatchingRadius(.7)
@@ -200,23 +200,35 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     }
   
   float hardest_electron_E = 0;
+  int hardest_electron_int = -1;
   PHG4TruthInfoContainer::Range range = truthinfo->GetPrimaryParticleRange();
   for ( PHG4TruthInfoContainer::ConstIterator iter = range.first; iter != range.second; ++iter )
   {
     PHG4Particle* g4particle = iter->second;
     int particleID = g4particle->get_pid();
 
-    //int parent_ID = g4particle->get_parent_id(); //Cut on parent electrons?
+    //int parent_ID = g4particle->get_parent_id(); 
     //bool iselectron = (fabs(particleID) == 11 && fabs(parent_ID) == 11 );
-
+    //Cut on parent electrons. Nope. PID=NaN if hardscattered e
+    
     bool iselectron = fabs(particleID) == 11;
     if (!iselectron) continue;
 
     m_etruthE = g4particle->get_e();
+    if (m_etruthE < m_eEmin) continue;
+
     if (m_etruthE < hardest_electron_E) continue;
     hardest_electron_E = m_etruthE;
-    if (m_etruthE < m_eEmin) continue;
-    
+    hardest_electron_int = iter->first;
+  }
+
+
+  for ( PHG4TruthInfoContainer::ConstIterator iter = range.first; iter != range.second; ++iter )
+  {
+    if (not(iter->first == hardest_electron_int)) continue;
+    PHG4Particle* g4particle = iter->second;
+
+    m_etruthE = g4particle->get_e();
     m_etruthpX = g4particle->get_px();
     m_etruthpY = g4particle->get_py();
     m_etruthpZ = g4particle->get_pz();

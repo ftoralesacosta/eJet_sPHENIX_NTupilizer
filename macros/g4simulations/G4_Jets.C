@@ -30,6 +30,7 @@ void Jet_Reco(int verbosity = 0) {
   truthjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,0.6),"AntiKt_Truth_r06");
   truthjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,0.7),"AntiKt_Truth_r07");
   truthjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,0.8),"AntiKt_Truth_r08");
+  truthjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,1.0),"AntiKt_Truth_r10");
   truthjetreco->set_algo_node("ANTIKT");
   truthjetreco->set_input_node("TRUTH");
   truthjetreco->Verbosity(verbosity);
@@ -79,6 +80,7 @@ void Jet_Reco(int verbosity = 0) {
   trackjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,0.6),"AntiKt_Track_r06");
   trackjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,0.7),"AntiKt_Track_r07");
   trackjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,0.8),"AntiKt_Track_r08");
+  trackjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,1.0),"AntiKt_Track_r10");
   trackjetreco->set_algo_node("ANTIKT");
   trackjetreco->set_input_node("TRACK");
   trackjetreco->Verbosity(verbosity);
