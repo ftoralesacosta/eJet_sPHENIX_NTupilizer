@@ -10,7 +10,7 @@ cd /hip_sphenix/Singularity/e_Jet_sPHENIX/macros/g4simulations
 pwd
 
 echo "root -b -q Fun4All_G4_sPHENIX.C(500, \"__\", \"${1}\")"
-root -b -q Fun4All_G4_sPHENIX.C\(1,\"__\",\"${1}\"\) #Fun4All second argument is input HEPMC file. Current focus is on generating
+root -b -q Fun4All_G4_sPHENIX.C\(500,\"__\",\"${1}\"\) #Fun4All second argument is input HEPMC file. Current focus is on generating
 
 date
 ls -l
