@@ -94,6 +94,14 @@ class MyJetAnalysis : public SubsysReco
   float m_e;
   float m_pt;
 
+  int m_subleading_event;
+  int m_subleading_id;
+  int m_subleading_nComponent;
+  float m_subleading_eta;
+  float m_subleading_phi;
+  float m_subleading_e;
+  float m_subleading_pt;
+  
   int m_truthID;
   int m_truthNComponent;
   float m_truthEta;
@@ -101,8 +109,16 @@ class MyJetAnalysis : public SubsysReco
   float m_truthE;
   float m_truthPt;
 
+  int m_subleading_truthID;
+  int m_subleading_truthNComponent;
+  float m_subleading_truthEta;
+  float m_subleading_truthPhi;
+  float m_subleading_truthE;
+  float m_subleading_truthPt;
+  
   //! number of matched tracks
   int m_nMatchedTrack;
+  int m_subleading_nMatchedTrack;
 
   //Electron Truth Variables
   float m_etruthEta;
@@ -123,6 +139,8 @@ class MyJetAnalysis : public SubsysReco
   };
   std::array<float, kMaxMatchedTrack> m_trackdR;
   std::array<float, kMaxMatchedTrack> m_trackpT;
+  std::array<float, kMaxMatchedTrack> m_subleading_trackdR;
+  std::array<float, kMaxMatchedTrack> m_subleading_trackpT;
 
 #endif  // #ifndef __CINT__
 };
