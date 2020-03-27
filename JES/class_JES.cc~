@@ -1,0 +1,20 @@
+#include "class_JES.h"
+
+void MyClass::test_function()
+{
+  fprintf(stderr,"%i \n",test_int);
+}
+
+void MyClass::get_binning()
+{
+  if ((high-low)%width != 0)
+    fprintf(stderr,"Choice of binning leaves remainder \n");
+  
+}
+
+int main()
+{
+  MyClass myobj;
+  myobj.test_function();
+  return 0;
+}
