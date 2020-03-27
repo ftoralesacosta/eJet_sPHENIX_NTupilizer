@@ -180,9 +180,9 @@ int main(int argc, char *argv[])
   TH2F * Rjve = new TH2F("ERecoJet_vs_Eelectron", "E^{Reco}_{Jet} (|#eta^{Jet}|<0.7) vs. E_{e}^{True}",100,0,25,100,0,25);
 
   //Ratio Histos
-  TH1F * eoTj = new TH1F("ETrueJet_over_Eelectron", "E_{Reco}^{True}/E^{True}_{e} (|#eta^{Jet}|<0.7)",80,0,20);
-  TH1F * eoRj = new TH1F("Eelectron_over_ERecoJet_over_Eelectron", "E_{Jet}^{Reco}/E^{True}_{e} (|#eta^{Jet}|<0.7)",80,0,20);
-  TH1F * RjoTj = new TH1F("ERecoJet_over_ETrueJet", "E_{Jet}^{True}/E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",80,0,20);
+  TH1F * eoTj = new TH1F("ETrueJet_over_Eelectron", "E_{Reco}^{True}/E^{True}_{e} (|#eta^{Jet}|<0.7)",80,0,2);
+  TH1F * eoRj = new TH1F("Eelectron_over_ERecoJet_over_Eelectron", "E_{Jet}^{Reco}/E^{True}_{e} (|#eta^{Jet}|<0.7)",80,0,2);
+  TH1F * RjoTj = new TH1F("ERecoJet_over_ETrueJet", "E_{Jet}^{True}/E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",80,0,2);
   //Difference Histos
   TH1F * emTj = new TH1F("Eelectron_minus_ETrueJet", "E_{e}^{True} - E^{True}_{Jet} (|#eta^{Jet}|<0.7)",100,-20,30);
   TH1F * emRj = new TH1F("Eelectron_minus_ERecoJet", "E_{e}^{True} - E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",100,-20,30);
@@ -226,8 +226,8 @@ int main(int argc, char *argv[])
     if (truthE < 3.0) continue;
     if (TMath::Abs(eta) < 0.7) continue;
     //Electron/Jet Comparisons
-    eoTj->Fill(etruthE/truthE);
-    eoRj->Fill(etruthE/e);
+    eoTj->Fill(truthE/etruthE);
+    eoRj->Fill(e/etruthE);
     emTj->Fill(etruthE-truthE);
     emRj->Fill(etruthE-e);
 
