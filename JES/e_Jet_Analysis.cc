@@ -224,7 +224,7 @@ int main(int argc, char *argv[])
     //Kinematic Cuts
     if (True_DeltaPhi < M_PI/2) continue;
     if (truthE < 3.0) continue;
-
+    if (TMath::Abs(eta) < 0.7) continue;
     //Electron/Jet Comparisons
     eoTj->Fill(etruthE/truthE);
     eoRj->Fill(etruthE/e);
