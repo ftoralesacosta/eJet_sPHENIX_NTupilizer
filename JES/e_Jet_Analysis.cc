@@ -19,6 +19,7 @@
 #include <TProfile.h>
 #include <iostream>
 #include <fstream>
+#include <TMath.h>
 
 #define NTRACK_MAX (1U << 14)
 
@@ -26,8 +27,18 @@
 #include <math.h>
 
 const int MAX_INPUT_LENGTH = 200;
+int counter = 0;
 
+float calc_Q_square(float inE, TLorentzVector v)
+{
+  float Qs = 2.*inE*v.E()*(1-TMath::Abs(v.CosTheta()));
 
+  // if (Qs < 16.0){
+  //   counter++;
+  // std::cout<<" Energy = "<<v.E()<<" Theta = "<<v.Theta()<<" Q^2 = "<<Qs<< " Counter = "<<counter<<std::endl;
+  // }
+  return Qs;
+}
 int main(int argc, char *argv[])
 {
   if (argc < 2) {
@@ -169,9 +180,9 @@ int main(int argc, char *argv[])
   TH2F * Rjve = new TH2F("ERecoJet_vs_Eelectron", "E^{Reco}_{Jet} (|#eta^{Jet}|<0.7) vs. E_{e}^{True}",100,0,25,100,0,25);
 
   //Ratio Histos
-  TH1F * eoTj = new TH1F("Eelectron_over_ETrueJet", "E_{e}^{True}/E^{True}_{Jet} (|#eta^{Jet}|<0.7)",80,0,20);
-  TH1F * eoRj = new TH1F("Eelectron_over_ERecoJet", "E_{e}^{True}/E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",80,0,20);
-  TH1F * RjoTj = new TH1F("ERecoJet_over_ETrueJet", "E_{Jet}^{Reco}/E^{True}_{Jet} (|#eta^{Jet}|<0.7)",80,0,20);
+  TH1F * eoTj = new TH1F("ETrueJet_over_Eelectron", "E_{Reco}^{True}/E^{True}_{e} (|#eta^{Jet}|<0.7)",80,0,20);
+  TH1F * eoRj = new TH1F("Eelectron_over_ERecoJet_over_Eelectron", "E_{Jet}^{Reco}/E^{True}_{e} (|#eta^{Jet}|<0.7)",80,0,20);
+  TH1F * RjoTj = new TH1F("ERecoJet_over_ETrueJet", "E_{Jet}^{True}/E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",80,0,20);
   //Difference Histos
   TH1F * emTj = new TH1F("Eelectron_minus_ETrueJet", "E_{e}^{True} - E^{True}_{Jet} (|#eta^{Jet}|<0.7)",100,-20,30);
   TH1F * emRj = new TH1F("Eelectron_minus_ERecoJet", "E_{e}^{True} - E^{Reco}_{Jet} (|#eta^{Jet}|<0.7)",100,-20,30);
@@ -180,6 +191,8 @@ int main(int argc, char *argv[])
   TH1F * dPhiRj = new TH1F("dPhi_e_RecoJet", "|#Delta#varphi| #varphi_{e} - #varphi(Jet^{Reco}_{Jet}) ", 32,0,M_PI);
   TH1F * dEtaTj = new TH1F("dEta_e_TrueJet", "|#Delta#eta| (#eta_{e} - #eta^{True}_{Jet})", 80,-10,10);
   TH1F * dEtaRj = new TH1F("dEta_e_RecoJet", "|#Delta#eta| (#eta_{e} - #eta^{Reco}_{Jet})", 80,-10,10);
+  //Q^2
+  TH1F* Q2 = new TH1F("Q2","Q^{2}",500,0,500);
   
   
   Long64_t nentries = _tree_event->GetEntries();
@@ -199,6 +212,10 @@ int main(int argc, char *argv[])
     dEtaTj->Fill(etruthEta-truthEta);
     dEtaRj->Fill(etruthEta-eta);
 
+    TLorentzVector e_vector;
+    e_vector.SetPtEtaPhiE(etruthPt,etruthEta,etruthPhi,etruthE);
+    Float_t Q_square = calc_Q_square(20,e_vector); //Electron Beam of 20 GeV/c
+    Q2->Fill(Q_square);    
     //Inclusive Spectra
     Rjve->Fill(etruthE,e);
     Tjve->Fill(etruthE,truthE);
@@ -257,6 +274,7 @@ int main(int argc, char *argv[])
   dEtaTj->Write();
   dEtaRj->Write();
 
+  Q2->Write();
   // H_dR->Write();
   // H_NExtra_Matches->Write();
 
