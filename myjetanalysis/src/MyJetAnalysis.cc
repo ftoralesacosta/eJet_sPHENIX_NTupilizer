@@ -286,7 +286,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
       {
 	Jet* jet = jter->second;
 	assert(jet);
-
+	++jetcounter;
 	bool eta_cut = (jet->get_eta() >= m_etaRange.first) and (jet->get_eta() <= m_etaRange.second); 
 	bool pt_cut = (jet->get_pt() >= m_ptRange.first) and (jet->get_pt() <= m_ptRange.second);
 
@@ -301,8 +301,6 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	      }
 	    continue;
 	  }
-
-	++jetcounter;
 
 	// fill inclusive histograms
 	assert(m_hInclusiveE);
@@ -371,24 +369,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	      }
 	  }
 	
-	m_subleading_id = NAN;
-	m_subleading_nComponent = NAN;
-	m_subleading_eta = NAN;
-	m_subleading_phi = NAN;
-	m_subleading_pt = NAN;
-	
-	m_subleading_truthID = NAN;
-	m_subleading_truthNComponent = NAN;
-	m_subleading_truthEta = NAN;
-	m_subleading_truthPhi = NAN;
-	m_subleading_truthE = NAN;
-	m_subleading_truthPt = NAN;
-
 	//SUBLEADING JET
 	if (subleading_jet)
 	  {
 	    m_subleading_id = jet->get_id();
 	    m_subleading_nComponent = jet->size_comp();
+	    m_subleading_e = jet->get_e();
 	    m_subleading_eta = jet->get_eta();
 	    m_subleading_phi = jet->get_phi();
 	    m_subleading_pt = jet->get_pt();	    
