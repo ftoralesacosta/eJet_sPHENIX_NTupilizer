@@ -18,6 +18,9 @@ One needs to run ./updatebuild.sh and follow the steps in the README of that rep
 # Event Production
 First, [compile the code](https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes) and then make sure to source `local_setup.sh $MYINST` so the compiled libraries can be used in the macros
 
+## Copy the PYTHIA8 Configuration for electron-proton collisions
+Copy the phpythia8.cfg file into the macros/macros/g4simulation/ directory (note: this will overwrite the default file)
+
 ## The Fun4All_G4_sPHENIX.C and G4_Jets.C macro must be edited. 
 They can be found in macros/macros/g4simulation/ in the sPHENIX macros repository (https://github.com/sPHENIX-Collaboration/macros).
 
