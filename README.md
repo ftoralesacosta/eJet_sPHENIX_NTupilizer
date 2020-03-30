@@ -1,19 +1,22 @@
+# Extremely Interesting Background Information
+
+This code is adapted from the JES scale code, which I orginally forked from the sPHENIX/macros repository and edits Jin Huang's "myjetanalysis" code. The code now relies on a separate cloning the the sPHENIX/macros repo, but is still maintained as a fork of tutorials/myjetanalysis code.
+
+This code simulates electron proton collisions using the sPHENIX detector, and uses hybrid tracks. It outputs simple NTuples with true electron information, as well as reconstructed and truth level jets.
+
+The code in the JES directory generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER). The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple if simulations are provided.
 
 # Getting Started
-This code is adapted from the JES scale code, which is a fork of the sPHENIX/macros repository and edits Jin Huang's "myjetanalysis" code.
-
-This code generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER).
-The code that does this is in the JES directory. The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple. The following is only required is you want make your own MonteCarlo production.
-
-The code used for fun4all is adapted from https://github.com/sPHENIX-Collaboration/macros, and works on TTrees made from https://github.com/sPHENIX-Collaboration/tutorials/tree/master/myjetanalysis 
-
-The myjetanalysis code needs to built and installed with Fun4All, as outlined here: https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes
-
-The code was originally ran inside a Singularity container, which can be found here:
+1. The code was originally ran inside a Singularity container, which can be found here:
 https://github.com/sPHENIX-Collaboration/Singularity
 One needs to run ./updatebuild.sh and follow the steps in the README of that repo.
 
-### Finally, one needs to clone this repository: https://github.com/sPHENIX-Collaboration/macros
+2. One needs to clone the sPHENIX macro repository: https://github.com/sPHENIX-Collaboration/macros if they want to run their own simulation.
+
+3. The myjetanalysis code needs to built and installed with Fun4All, as outlined here: https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes. References to <sourcedir> for this repository mean `e_Jet_sPHENIX/myjetanalysis/src/ `, where one should see the autogen.sh file. Create a `build` and `install` directory (I suggest in the same directory that holds this repo) and follow the instructions under the "Building a package" section from the link.
+  
+4. Compile the JES code separately. There is a JES directory with an included make file. Once compiled, just run with:
+`./e_Jet_Analysis.cc <Input NTupple>` for simple electron+jet kinematic analysis. The JES is in progress from pp and AA collisions settings.
 
 # Event Production
 First, [compile the code](https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes) and then make sure to source `local_setup.sh $MYINST` so the compiled libraries can be used in the macros
