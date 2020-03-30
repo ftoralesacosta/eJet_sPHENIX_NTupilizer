@@ -9,10 +9,45 @@ The code used for fun4all is adapted from https://github.com/sPHENIX-Collaborati
 
 The myjetanalysis code needs to built and installed with Fun4All, as outlined here: https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes
 
-The code was originally run inside a Singularity container, which can be found here:
+The code was originally ran inside a Singularity container, which can be found here:
 https://github.com/sPHENIX-Collaboration/Singularity
+One needs to run ./updatebuild.sh and follow the steps in the README of that repo.
 
-# Running
+### Finally, one needs to clone this repository: https://github.com/sPHENIX-Collaboration/macros
+
+# Event Production
+First, [compile the code](https://wiki.bnl.gov/sPHENIX/index.php/Example_of_using_DST_nodes) and then make sure to source `local_setup.sh $MYINST` so the compiled libraries can be used in the macros
+
+## The Fun4All_G4_sPHENIX.C and G4_Jets.C macro must be edited. 
+They can be found in macros/macros/g4simulation/ in the sPHENIX macros repository (https://github.com/sPHENIX-Collaboration/macros).
+
+### Fun4All_G4_sPHENIX.C
+
+Line 31 (right before the first R_LOAD_LIBRARY):
+  ```
+  #include <myjetanalysis/MyJetAnalysis.h>
+  R__LOAD_LIBRARY(libmyjetanalysis.so)
+  ```
+
+Line 601 (right before event processing):
+  ```
+  gSystem->Load("libmyjetanalysis");
+  std::string jetoutputFile = std::string(outputFile) + std::string("electrons+jets.root");
+  MyJetAnalysis *myJetAnalysis = new MyJetAnalysis("AntiKt_Track_r10","AntiKt_Truth_r10",jetoutputFile.data());
+  se->registerSubsystem(myJetAnalysis);
+  ```
+### G4_Jets.C
+
+Line 33:
+ ```
+ truthjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,1.0),"AntiKt_Truth_r10");
+ ```
+Line 81:
+```
+trackjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,1.0),"AntiKt_Track_r10");
+```
+
+# Running Jet Energy Resolution
 
 Once Fun4All with the myjetanalysis is built, and the JES code is compiled with the included Makefile, simply run by:
 
