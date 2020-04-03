@@ -41,6 +41,14 @@ Makefile.in
 
 # http://www.gnu.org/software/autoconf
 
+# Ignore all
+*
+# Unignore all with extensions
+!*.*
+# Unignore all dirs
+!*/
+
+
 autom4te.cache
 aclocal.m4
 compile
