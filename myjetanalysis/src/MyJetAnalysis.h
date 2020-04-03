@@ -87,60 +87,45 @@ class MyJetAnalysis : public SubsysReco
   TTree *m_T;
 
   int m_event;
-  int m_id;
-  int m_nComponent;
-  float m_eta;
-  float m_phi;
-  float m_e;
-  float m_pt;
-
-  int m_subleading_event;
-  int m_subleading_id;
-  int m_subleading_nComponent;
-  float m_subleading_eta;
-  float m_subleading_phi;
-  float m_subleading_e;
-  float m_subleading_pt;
-  
-  int m_truthID;
-  int m_truthNComponent;
-  float m_truthEta;
-  float m_truthPhi;
-  float m_truthE;
-  float m_truthPt;
-
-  int m_subleading_truthID;
-  int m_subleading_truthNComponent;
-  float m_subleading_truthEta;
-  float m_subleading_truthPhi;
-  float m_subleading_truthE;
-  float m_subleading_truthPt;
-  
-  //! number of matched tracks
-  int m_nMatchedTrack;
-  int m_subleading_nMatchedTrack;
 
   //Electron Truth Variables
   float m_etruthEta;
   float m_etruthPhi;
   float m_etruthE;
   float m_etruthPt;
-
   float m_etruthpX;
   float m_etruthpY;
   float m_etruthpZ;
   int m_etruthPID;
-  int m_etruthParentID;
 
-  enum
-  {
-    //! max number of tracks
-    kMaxMatchedTrack = 1000
-  };
-  std::array<float, kMaxMatchedTrack> m_trackdR;
-  std::array<float, kMaxMatchedTrack> m_trackpT;
-  std::array<float, kMaxMatchedTrack> m_subleading_trackdR;
-  std::array<float, kMaxMatchedTrack> m_subleading_trackpT;
+  //enum {MaxNumJets = 10000001}; //don't run a single job with more than 1M events
+  enum {MaxNumJets = 10};
+  std::array<int,MaxNumJets> m_id;
+  std::array<int,MaxNumJets> m_nComponent;
+  std::array<float,MaxNumJets> m_eta;
+  std::array<float,MaxNumJets> m_phi;
+  std::array<float,MaxNumJets> m_e;
+  std::array<float,MaxNumJets> m_pt;
+  
+  std::array<int,MaxNumJets> m_truthID;
+  std::array<int,MaxNumJets> m_truthNComponent;
+  std::array<float,MaxNumJets> m_truthEta;
+  std::array<float,MaxNumJets> m_truthPhi;
+  std::array<float,MaxNumJets> m_truthE;
+  std::array<float,MaxNumJets> m_truthPt;  
+
+  //Tracks
+  //! number of matched tracks
+  //std::array<int,MaxNumJets> m_nMatchedTrack;
+
+  // enum
+  // {
+  //   //! max number of tracks
+  //   kMaxMatchedTrack = 1000
+  // };
+  
+  // std::array<std::array<float, kMaxMatchedTrack>, MaxNumJets > m_trackdR;
+  // std::array<std::array<float, kMaxMatchedTrack>, MaxNumJets > m_trackpT;
 
 #endif  // #ifndef __CINT__
 };

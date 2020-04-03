@@ -48,32 +48,6 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_hInclusiveNJets(nullptr)
   , m_T(nullptr)
   , m_event(-1)
-  , m_id(-1)
-  , m_nComponent(-1)
-  , m_eta(numeric_limits<float>::signaling_NaN())
-  , m_phi(numeric_limits<float>::signaling_NaN())
-  , m_e(numeric_limits<float>::signaling_NaN())
-  , m_pt(numeric_limits<float>::signaling_NaN())
-  , m_subleading_id(-1)
-  , m_subleading_nComponent(-1)
-  , m_subleading_eta(numeric_limits<float>::signaling_NaN())
-  , m_subleading_phi(numeric_limits<float>::signaling_NaN())
-  , m_subleading_e(numeric_limits<float>::signaling_NaN())
-  , m_subleading_pt(numeric_limits<float>::signaling_NaN())
-  , m_truthID(-1)
-  , m_truthNComponent(-1)
-  , m_truthEta(numeric_limits<float>::signaling_NaN())
-  , m_truthPhi(numeric_limits<float>::signaling_NaN())
-  , m_truthE(numeric_limits<float>::signaling_NaN())
-  , m_truthPt(numeric_limits<float>::signaling_NaN())
-  , m_subleading_truthID(-1)
-  , m_subleading_truthNComponent(-1)
-  , m_subleading_truthEta(numeric_limits<float>::signaling_NaN())
-  , m_subleading_truthPhi(numeric_limits<float>::signaling_NaN())
-  , m_subleading_truthE(numeric_limits<float>::signaling_NaN())
-  , m_subleading_truthPt(numeric_limits<float>::signaling_NaN())
-  , m_nMatchedTrack(-1)
-  , m_subleading_nMatchedTrack(-1)
   , m_etruthEta(numeric_limits<float>::signaling_NaN())
   , m_etruthPhi(numeric_limits<float>::signaling_NaN())
   , m_etruthE(numeric_limits<float>::signaling_NaN())
@@ -82,13 +56,23 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_etruthpY(numeric_limits<float>::signaling_NaN())
   , m_etruthpZ(numeric_limits<float>::signaling_NaN())
   , m_etruthPID(-1)
-  , m_etruthParentID(-1)
-{
-  m_trackdR.fill(numeric_limits<float>::signaling_NaN());
-  m_trackpT.fill(numeric_limits<float>::signaling_NaN());
-  m_subleading_trackdR.fill(numeric_limits<float>::signaling_NaN());
-  m_subleading_trackpT.fill(numeric_limits<float>::signaling_NaN());
 
+{
+  m_id.fill(-1);
+  m_nComponent.fill(-1);
+  m_eta.fill(numeric_limits<float>::signaling_NaN());
+  m_phi.fill(numeric_limits<float>::signaling_NaN());
+  m_e.fill(numeric_limits<float>::signaling_NaN());
+  m_pt.fill(numeric_limits<float>::signaling_NaN());
+  m_truthID.fill(-1);
+  m_truthNComponent.fill(-1);
+  m_truthEta.fill(numeric_limits<float>::signaling_NaN());
+  m_truthPhi.fill(numeric_limits<float>::signaling_NaN());
+  m_truthE.fill(numeric_limits<float>::signaling_NaN());
+  m_truthPt.fill(numeric_limits<float>::signaling_NaN());
+  // m_nMatchedTrack.fill(-1);
+  // std::fill( &m_trackdR[0][0], &m_trackdR[0][0] + sizeof(m_trackdR) /* / sizeof(flags[0][0]) */, 0);
+  // std::fill( &m_trackpT[0][0], &m_trackpT[0][0] + sizeof(m_trackpT)  /* / sizeof(flags[0][0]) */, 0);
 }
 
 MyJetAnalysis::~MyJetAnalysis()
@@ -124,43 +108,26 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   
   //Trees
   m_T = new TTree("T", "MyJetAnalysis Tree");
+  m_T->Branch("m_event", &m_event, "event/I");
 
   //Reconstructed Branches
-  m_T->Branch("m_event", &m_event, "event/I");
-  m_T->Branch("id", &m_id, "id/I");
-  m_T->Branch("nComponent", &m_nComponent, "nComponent/I");
-  m_T->Branch("eta", &m_eta, "eta/F");
-  m_T->Branch("phi", &m_phi, "phi/F");
-  m_T->Branch("e", &m_e, "e/F");
-  m_T->Branch("pt", &m_pt, "pt/F");
-
-  m_T->Branch("subleading_id", &m_subleading_id, "subleading_id/I");
-  m_T->Branch("subleading_nComponent", &m_subleading_nComponent, "subleading_nComponent/I");
-  m_T->Branch("subleading_eta", &m_subleading_eta, "subleading_eta/F");
-  m_T->Branch("subleading_phi", &m_subleading_phi, "subleading_phi/F");
-  m_T->Branch("subleading_e", &m_subleading_e, "subleading_e/F");
-  m_T->Branch("subleading_pt", &m_subleading_pt, "subleading_pt/F");
+  m_T->Branch("id", m_id.data(), "id/I");
+  m_T->Branch("nComponent", m_nComponent.data(), "nComponent/I");
+  m_T->Branch("eta", m_eta.data(), "eta/F");
+  m_T->Branch("phi", m_phi.data(), "phi/F");
+  m_T->Branch("e", m_e.data(), "e/F");
+  m_T->Branch("pt", m_pt.data(), "pt/F");
 
   //Truth Branches
-  m_T->Branch("truthID", &m_truthID, "truthID/I");
-  m_T->Branch("truthNComponent", &m_truthNComponent, "truthNComponent/I");
-  m_T->Branch("truthEta", &m_truthEta, "truthEta/F");
-  m_T->Branch("truthPhi", &m_truthPhi, "truthPhi/F");
-  m_T->Branch("truthE", &m_truthE, "truthE/F");
-  m_T->Branch("truthPt", &m_truthPt, "truthPt/F");
-  m_T->Branch("nMatchedTrack", &m_nMatchedTrack, "nMatchedTrack/I");
-  m_T->Branch("TrackdR", m_trackdR.data(), "trackdR[nMatchedTrack]/F");
-  m_T->Branch("trackpT", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
-
-  m_T->Branch("subleading_truthID", &m_subleading_truthID, "subleading_truthID/I");
-  m_T->Branch("subleading_truthNComponent", &m_subleading_truthNComponent, "subleading_truthNComponent/I");
-  m_T->Branch("subleading_truthEta", &m_subleading_truthEta, "subleading_truthEta/F");
-  m_T->Branch("subleading_truthPhi", &m_subleading_truthPhi, "subleading_truthPhi/F");
-  m_T->Branch("subleading_truthE", &m_subleading_truthE, "subleading_truthE/F");
-  m_T->Branch("subleading_truthPt", &m_subleading_truthPt, "subleading_truthPt/F");
-  m_T->Branch("subleading_nMatchedTrack", &m_subleading_nMatchedTrack, "subleading_nMatchedTrack/I");
-  m_T->Branch("subleading_TrackdR", m_subleading_trackdR.data(), "subleading_trackdR[nMatchedTrack]/F");
-  m_T->Branch("subleading_trackpT", m_subleading_trackpT.data(), "subleading_trackpT[nMatchedTrack]/F");
+  m_T->Branch("truthID", m_truthID.data(), "truthID/I");
+  m_T->Branch("truthNComponent", m_truthNComponent.data(), "truthNComponent/I");
+  m_T->Branch("truthEta", m_truthEta.data(), "truthEta/F");
+  m_T->Branch("truthPhi", m_truthPhi.data(), "truthPhi/F");
+  m_T->Branch("truthE", m_truthE.data(), "truthE/F");
+  m_T->Branch("truthPt", m_truthPt.data(), "truthPt/F");
+  //m_T->Branch("nMatchedTrack", m_nMatchedTrack.data(), "nMatchedTrack/I");
+  // m_T->Branch("TrackdR", m_trackdR.data(), "trackdR[nMatchedTrack]/F");
+  // m_T->Branch("trackpT", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
 
   //Electron Branches
   m_T->Branch("etruthEta", &m_etruthEta, "etruthEta/F");
@@ -172,7 +139,6 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_T->Branch("etruthpZ", &m_etruthpZ, "etruthpZ/F");
   m_T->Branch("etruthPt", &m_etruthPt, "etruthPt/F");
   m_T->Branch("etruthPID", &m_etruthPID, "etruthPID/I");
-  m_T->Branch("etruthParentID", &m_etruthParentID, "etruthParentID/I");
   
   return Fun4AllReturnCodes::EVENT_OK;
 }
@@ -188,7 +154,6 @@ int MyJetAnalysis::End(PHCompositeNode* topNode)
   m_hInclusiveNJets->Write();
   m_T->Write();
   
-
   return Fun4AllReturnCodes::EVENT_OK;
 }
 
@@ -217,15 +182,14 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     exit(-1);
   }
 
-  // interface to tracks
-  SvtxTrackMap* trackmap = findNode::getClass<SvtxTrackMap>(topNode, "SvtxTrackMap");
-  if (!trackmap)
-  {
-    cout
-        << "MyJetAnalysis::process_event - Error can not find DST trackmap node SvtxTrackMap" << endl;
-    exit(-1);
-  }
-
+  // // interface to tracks
+  // SvtxTrackMap* trackmap = findNode::getClass<SvtxTrackMap>(topNode, "SvtxTrackMap");
+  // if (!trackmap)
+  // {
+  //   cout
+  //       << "MyJetAnalysis::process_event - Error can not find DST trackmap node SvtxTrackMap" << endl;
+  //   exit(-1);
+  // }
 
   //Interface to True Electrons    
   PHG4TruthInfoContainer* truthinfo = findNode::getClass<PHG4TruthInfoContainer>(topNode,"G4TruthInfo");
@@ -250,43 +214,49 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     bool iselectron = fabs(particleID) == 11;
     if (!iselectron) continue;
 
-    m_etruthE = g4particle->get_e();
-    if (m_etruthE < m_eEmin) continue;
-
-    if (m_etruthE < hardest_electron_E) continue;
-    hardest_electron_E = m_etruthE;
+    float temp_etruthE = g4particle->get_e();
+    if (temp_etruthE < m_eEmin) continue;
+    if (temp_etruthE < hardest_electron_E) continue;
+    
+    hardest_electron_E = temp_etruthE;
     hardest_electron_int = eter->first;
   }
 
 
   for ( PHG4TruthInfoContainer::ConstIterator eter = range.first; eter != range.second; ++eter )
   {
-    if (not(eter->first == hardest_electron_int)) continue;
+    int e = eter->first;
+    if (not(e == hardest_electron_int)) continue;
     PHG4Particle* g4particle = eter->second;
-
+      
     m_etruthE = g4particle->get_e();
     m_etruthpX = g4particle->get_px();
     m_etruthpY = g4particle->get_py();
     m_etruthpZ = g4particle->get_pz();
 	
-    TLorentzVector e;
-    e.SetPxPyPzE(m_etruthpX,m_etruthpY,m_etruthpZ,m_etruthE);
-    m_etruthEta = e.Eta();
-    m_etruthPhi = e.Phi();
-    m_etruthPt = e.Pt();
-    
-    //Outer Jet Variables
-    int jetcounter = 0;
-    unsigned int hardest_jet_int = 0;
-    float hardest_jet_energy = 0;
-    unsigned int subleading_jet_int = 0;
-    float subleading_jet_energy = 0;
-    
+    TLorentzVector e_vec;
+    e_vec.SetPxPyPzE(m_etruthpX,m_etruthpY,m_etruthpZ,m_etruthE);
+    m_etruthEta = e_vec.Eta();
+    m_etruthPhi = e_vec.Phi();
+    m_etruthPt = e_vec.Pt();
+
+    int inc_jet_counter = 0;
+    int j = 0; //Jet element index
     for (JetMap::Iter jter = jets->begin(); jter != jets->end(); ++jter)
       {
 	Jet* jet = jter->second;
 	assert(jet);
-	++jetcounter;
+
+	// fill inclusive histograms
+	assert(m_hInclusiveE);
+	m_hInclusiveE->Fill(jet->get_e());
+	assert(m_hInclusiveEta);
+	m_hInclusiveEta->Fill(jet->get_eta());
+	assert(m_hInclusivePhi);
+	m_hInclusivePhi->Fill(jet->get_phi());
+	++inc_jet_counter;
+
+	//Apply cuts
 	bool eta_cut = (jet->get_eta() >= m_etaRange.first) and (jet->get_eta() <= m_etaRange.second); 
 	bool pt_cut = (jet->get_pt() >= m_ptRange.first) and (jet->get_pt() <= m_ptRange.second);
 
@@ -300,143 +270,73 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		jet->identify();
 	      }
 	    continue;
-	  }
-
-	// fill inclusive histograms
-	assert(m_hInclusiveE);
-	m_hInclusiveE->Fill(jet->get_e());
-	assert(m_hInclusiveEta);
-	m_hInclusiveEta->Fill(jet->get_eta());
-	assert(m_hInclusivePhi);
-	m_hInclusivePhi->Fill(jet->get_phi());
-
-	//determine hardest and subleading jets
-	float jet_e = jet->get_e();
-	if (jet_e < subleading_jet_energy) continue;
-
-	if ((jet_e >= subleading_jet_energy) && (jet_e < hardest_jet_energy))
-	  {
-	    subleading_jet_energy = jet_e;
-	    subleading_jet_int = jter->first;
-	  }
-
-	if (jet_e >= hardest_jet_energy)
-	  {
-	    hardest_jet_energy = jet_e;
-	    hardest_jet_int = jter->first;
-	  }	
-      }
-    assert(m_hInclusiveNJets);
-    m_hInclusiveNJets->Fill(jetcounter);
+	  }  
     
-    for (JetMap::Iter jter = jets->begin(); jter != jets->end(); ++jter)
-      {
-
-	bool hardest_jet = (jter->first == hardest_jet_int);
-	bool subleading_jet = (jter->first == subleading_jet_int);
-	if (not(hardest_jet) || (subleading_jet)) continue;
-
-
-	Jet* jet = jter->second;
-	assert(jet);
-
 	//LEADING JET
-	if (hardest_jet)
-	  {
-	    m_id = jet->get_id();
-	    m_nComponent = jet->size_comp();
-	    m_e = jet->get_e();
-	    m_eta = jet->get_eta();
-	    m_phi = jet->get_phi();
-	    m_pt = jet->get_pt();
+	    m_id[j] = jet->get_id();
+	    m_nComponent[j] = jet->size_comp();
+	    m_e[j] = jet->get_e();
+	    m_eta[j] = jet->get_eta();
+	    m_phi[j] = jet->get_phi();
+	    m_pt[j] = jet->get_pt();
 	
-	    m_truthID = NAN;
-	    m_truthNComponent = NAN;
-	    m_truthEta = NAN;
-	    m_truthPhi = NAN;
-	    m_truthE = NAN;
-	    m_truthPt = NAN;
+	    // m_truthID[j] = NAN;
+	    // m_truthNComponent[j] = NAN;
+	    // m_truthEta[j] = NAN;
+	    // m_truthPhi[j] = NAN;
+	    // m_truthE[j] = NAN;
+	    // m_truthPt[j] = NAN;
 
 	    Jet* truthjet = recoeval->max_truth_jet_by_energy(jet);
 	    if (truthjet)
 	      {
-		m_truthID = truthjet->get_id();
-		m_truthNComponent = truthjet->size_comp();
-		m_truthEta = truthjet->get_eta();
-		m_truthPhi = truthjet->get_phi();
-		m_truthE = truthjet->get_e();
-		m_truthPt = truthjet->get_pt();
+		m_truthID[j] = truthjet->get_id();
+		m_truthNComponent[j] = truthjet->size_comp();
+		m_truthEta[j] = truthjet->get_eta();
+		m_truthPhi[j] = truthjet->get_phi();
+		m_truthE[j] = truthjet->get_e();
+		m_truthPt[j] = truthjet->get_pt();
 	      }
-	  }
-	
-	//SUBLEADING JET
-	if (subleading_jet)
-	  {
-	    m_subleading_id = jet->get_id();
-	    m_subleading_nComponent = jet->size_comp();
-	    m_subleading_e = jet->get_e();
-	    m_subleading_eta = jet->get_eta();
-	    m_subleading_phi = jet->get_phi();
-	    m_subleading_pt = jet->get_pt();	    
-    
-	    Jet* truthjet = recoeval->max_truth_jet_by_energy(jet);
-	    if (truthjet)
-	      {
-		m_subleading_truthID = truthjet->get_id();
-		m_subleading_truthNComponent = truthjet->size_comp();
-		m_subleading_truthEta = truthjet->get_eta();
-		m_subleading_truthPhi = truthjet->get_phi();
-		m_subleading_truthE = truthjet->get_e();
-		m_subleading_truthPt = truthjet->get_pt();
-	      }
-	  }
+
+	    ++j;
 	
 	// fill trees - jet track matching
-	m_nMatchedTrack = 0;
-	m_subleading_nMatchedTrack = 0;
+
+	// m_nMatchedTrack[j] = 0;
 	
-	Float_t jet_eta = jet->get_eta();
-	Float_t jet_phi = jet->get_phi();
-	for (SvtxTrackMap::Iter iter = trackmap->begin();
-	     iter != trackmap->end(); ++iter)
+	// Float_t jet_eta = jet->get_eta();
+	// Float_t jet_phi = jet->get_phi();
+	// for (SvtxTrackMap::Iter iter = trackmap->begin();
+	//      iter != trackmap->end(); ++iter)
 
-	  {
-	    SvtxTrack* track = iter->second;
+	//   {
+	//     SvtxTrack* track = iter->second;
 
-	    TVector3 v(track->get_px(), track->get_py(), track->get_pz());
-	    const double dEta = v.Eta() - jet_eta;
-	    const double dPhi = v.Phi() - jet_phi;
-	    const double dR = sqrt(dEta * dEta + dPhi * dPhi);
+	//     TVector3 v(track->get_px(), track->get_py(), track->get_pz());
+	//     const double dEta = v.Eta() - jet_eta;
+	//     const double dPhi = v.Phi() - jet_phi;
+	//     const double dR = sqrt(dEta * dEta + dPhi * dPhi);
 
-	    if (dR < m_trackJetMatchingRadius)
-	      {
-		//matched track to jet
-
-		if (hardest_jet)
-		  {
-		    assert(m_nMatchedTrack < kMaxMatchedTrack);
-		    m_trackdR[m_nMatchedTrack] = dR;
-		    m_trackpT[m_nMatchedTrack] = v.Perp();
-		    ++m_nMatchedTrack;
-		  }
-		if (subleading_jet)
-		  {
-		    assert(m_subleading_nMatchedTrack < kMaxMatchedTrack);
-		    m_subleading_trackdR[m_subleading_nMatchedTrack] = dR;
-		    m_subleading_trackpT[m_subleading_nMatchedTrack] = v.Perp();
-		    ++m_subleading_nMatchedTrack;
-		  }
-	      }
-
-	    if ((m_nMatchedTrack >= kMaxMatchedTrack) || (m_nMatchedTrack >= kMaxMatchedTrack))
-	      {
-		cout << "MyJetAnalysis::process_event() - reached max track that matching a jet. Quit iterating tracks" << endl;
-		break;
-	      }
-
-	  }  //    for (SvtxTrackMap::Iter iter = trackmap->begin();
+	//     if (dR < m_trackJetMatchingRadius)
+	//       {
+	// 	//matched track to jet
+	// 	assert(m_nMatchedTrack[j] < kMaxMatchedTrack);
+	// 	m_trackdR[j][m_nMatchedTrack[j]] = dR;
+	// 	m_trackpT[j][m_nMatchedTrack[j]] = v.Perp();
+	// 	++m_nMatchedTrack[j];
+		
+	//       }
+	//     if (m_nMatchedTrack[j] >= kMaxMatchedTrack)
+	//       {
+	// 	cout << "MyJetAnalysis::process_event() - reached max track that matching a jet. Quit iterating tracks" << endl;
+	// 	break;
+	//       }
+	    
+	//   }  //    for (SvtxTrackMap::Iter iter = trackmap->begin();
 	
       }  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)      
+    assert(m_hInclusiveNJets);
+    m_hInclusiveNJets->Fill(inc_jet_counter);
     m_T->Fill(); //Fill Tree inside electron Loop
   }//electron Loop  
   return Fun4AllReturnCodes::EVENT_OK;

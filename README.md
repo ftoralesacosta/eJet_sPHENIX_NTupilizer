@@ -34,6 +34,8 @@ Line 31 (right before the first R_LOAD_LIBRARY):
   #include <myjetanalysis/MyJetAnalysis.h>
   R__LOAD_LIBRARY(libmyjetanalysis.so)
   ```
+Line 70:
+     const bool runpythia8 = false; -> true
 
 Line 601 (right before event processing):
   ```
