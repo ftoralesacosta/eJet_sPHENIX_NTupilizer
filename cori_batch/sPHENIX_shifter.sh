@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#dir="/global/project/projectdirs/alice/ftorales" #replace per user, often with ~
-dir="~"
+dir="/global/project/projectdirs/alice/ftorales" #replace per user, often with ~
+#dir="~"
 if [[ ! -e $dir/eP_MC ]]; then
     mkdir $dir/eP_MC
 fi
