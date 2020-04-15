@@ -6,7 +6,7 @@
 #include <TPaveStats.h>
 #include "Math/LorentzVector.h"
 #include "Math/Vector4D.h"
-#include  <TLegend.h>
+#include <TLegend.h>
 #include <TROOT.h>
 #include <TApplication.h>
 #include <TCanvas.h>
@@ -20,11 +20,175 @@
 #include <iostream>
 #include <fstream>
 #include <TMath.h>
-
-#define NTRACK_MAX (1U << 14)
-
 #include <vector>
 #include <math.h>
+
+int main(int argc, char *argv[])
+{
+  
+  if (argc < 2) {
+    std::cout<<"Syntax: [Command] [File]"<<std::endl;
+    exit(EXIT_FAILURE);
+  }
+
+  int iarg = 1;
+  TString root_file = (TString)argv[iarg];
+  std::cout << "Opening: " << (TString)argv[iarg] << std::endl;
+  TFile *file = TFile::Open(root_file);
+  
+  if (file == NULL) {
+    std::cout << " File Fail" << std::endl;
+    exit(EXIT_FAILURE); 
+  } 
+  
+  file->Print();
+  TTree *_tree_event = dynamic_cast<TTree *>(file->Get("T"));
+
+  if (_tree_event == NULL) {
+    std::cout << " Tree Fail " << std::endl;
+    exit(EXIT_FAILURE);
+  }
+
+  //Declare Leaf Types
+  Int_t           m_event;
+  Int_t           id;
+  Int_t           nComponent;
+  Float_t         eta;
+  Float_t         phi;
+  Float_t         e;
+  Float_t         pt;
+  Int_t           truthID;
+  Int_t           truthNComponent;
+  Float_t         truthEta;
+  Float_t         truthPhi;
+  Float_t         truthE;
+  Float_t         truthPt;
+
+  //Electron Truth Variables
+  Float_t         etruthEta;
+  Float_t         etruthPhi;
+  Float_t         etruthE;
+  Float_t         etruthPt;
+  Float_t         etruthpX;
+  Float_t         etruthpY;
+  Float_t         etruthpZ;
+  Int_t           etruthPID;
+  Int_t           etruthParentID;
+  Int_t		        nMatchedTrack;
+
+  //Declare Branches
+  TBranch        *b_event;
+  TBranch        *b_id;
+  TBranch        *b_nComponent;
+  TBranch        *b_eta;
+  TBranch        *b_phi;
+  TBranch        *b_e;
+  TBranch        *b_pt;
+  TBranch        *b_truthID;
+  TBranch        *b_truthNComponent;
+  TBranch        *b_truthEta;
+  TBranch        *b_truthPhi;
+  TBranch        *b_truthE;
+  TBranch        *b_truthPt;
+  TBranch        *b_nMatchedTrack;
+
+  TBranch        *b_etruthEta;
+  TBranch        *b_etruthPhi;
+  TBranch        *b_etruthE;
+  TBranch        *b_etruthPt;
+  TBranch        *b_etruthpX;
+  TBranch        *b_etruthpY;
+  TBranch        *b_etruthpZ;
+  TBranch        *b_etruthPID;
+  TBranch        *b_etruthParentID;
+
+  _tree_event->SetBranchAddress("m_event", &m_event, &b_event);
+  _tree_event->SetBranchAddress("id", &id, &b_id);
+  _tree_event->SetBranchAddress("nComponent", &nComponent, &b_nComponent);
+  _tree_event->SetBranchAddress("eta", &eta, &b_eta);
+  _tree_event->SetBranchAddress("phi", &phi, &b_phi);
+  _tree_event->SetBranchAddress("e", &e, &b_e);
+  _tree_event->SetBranchAddress("pt", &pt, &b_pt);
+  _tree_event->SetBranchAddress("truthID", &truthID, &b_truthID);
+  _tree_event->SetBranchAddress("truthNComponent", &truthNComponent, &b_truthNComponent);
+  _tree_event->SetBranchAddress("truthEta", &truthEta, &b_truthEta);
+  _tree_event->SetBranchAddress("truthPhi", &truthPhi, &b_truthPhi);
+  _tree_event->SetBranchAddress("truthE", &truthE, &b_truthE);
+  _tree_event->SetBranchAddress("truthPt", &truthPt, &b_truthPt);
+  _tree_event->SetBranchAddress("nMatchedTrack", &nMatchedTrack, &b_nMatchedTrack);
+  
+  _tree_event->SetBranchAddress("etruthEta", &etruthEta, &b_etruthEta);
+  _tree_event->SetBranchAddress("etruthPhi", &etruthPhi, &b_etruthPhi);
+  _tree_event->SetBranchAddress("etruthE", &etruthE, &b_etruthE);
+  _tree_event->SetBranchAddress("etruthPt", &etruthPt, &b_etruthPt);
+  _tree_event->SetBranchAddress("etruthpX", &etruthpX, &b_etruthpX);
+  _tree_event->SetBranchAddress("etruthpY", &etruthpY, &b_etruthpY);
+  _tree_event->SetBranchAddress("etruthpZ", &etruthpZ, &b_etruthpZ);
+  _tree_event->SetBranchAddress("etruthPt", &etruthPt, &b_etruthPt);
+  _tree_event->SetBranchAddress("etruthPID", &etruthPID, &b_etruthPID);
+  _tree_event->SetBranchAddress("etruthParentID", &etruthParentID, &b_etruthParentID);
+
+  int jet4_n;
+  Float_t reco_jet_pt[200];
+  Float_t reco_jet_E[200];
+  Float_t reco_jet_m[200];
+  int reco_jet_ncomp[250];
+  Float_t reco_jet_eta[200];
+  Float_t reco_jet_phi[200];
+  float reco_jet_E_layer0[200];
+  float reco_jet_E_layer1[200];
+  float reco_jet_E_layer2[200];
+
+  int truth_jet_n;
+  Float_t truth_jet_pt[200];
+  Float_t truth_jet_m[200];
+  Float_t truth_jet_eta[200];
+  Float_t truth_jet_phi[200];
+
+  int count [30] = {0};
+  int count_rec [30] = {0};
+
+  Long64_t nentries = _tree_event->GetEntries();
+  for(Long64_t ie = 0; ie < nentries ; ie++){
+    _tree_event->GetEntry(ie); //each entry is a 5 GeV Electron
+    fprintf(stderr, "\r%s:%d: %llu / %llu", __FILE__, __LINE__, ie, nentries);
+
+    //Check for Truth Jets an NComponent > 2
+    if(isnan(truthEta)) continue;
+    if(nMatchedTrack < 3) continue;
+
+    //Efficiency
+    for (int i = 0; i < 30; i++){
+	    if (truthE > i && truthE < i+1){
+		    count[i] += 1;
+		    if (TMath::Abs(eta-truthEta) < 0.5){
+			    count_rec[i] += 1;
+		    }
+	    }
+    }
+
+    //Kinematic Cuts
+    if (truthE < 3.0) continue;
+    if (TMath::Abs(eta) < 0.7) continue;
+  
+  } //entry loop
+    
+  //Write to new file
+  FILE *f;
+  char output[] = "output/eff.txt";
+  f = fopen(output, "w");
+  
+  for (int j = 0; j < 30; j++){
+  	fprintf(f, "%d\t%d\n", count[j], count_rec[j]);
+  }
+  
+  fclose(f);
+
+}
+
+/*
+
+#define NTRACK_MAX (1U << 14)
 
 const int MAX_INPUT_LENGTH = 200;
 int counter = 0;
@@ -175,7 +339,6 @@ int main(int argc, char *argv[])
   //Q^2
   TH1F* Q2 = new TH1F("Q2","Q^{2}",500,0,500);
   
-  
   Long64_t nentries = _tree_event->GetEntries();
   for(Long64_t ie = 0; ie < nentries ; ie++){
     _tree_event->GetEntry(ie); //each entry is a 5GeV Electron
@@ -232,8 +395,6 @@ int main(int argc, char *argv[])
 	
   } //entry loop
 
-
-
 //Write to new root file
   TFile* fout = new TFile("Histograms_Jet_Callibration.root","RECREATE");
 
@@ -272,3 +433,5 @@ int main(int argc, char *argv[])
   // H_NExtra_Matches->Write();
 
 }
+
+*/
