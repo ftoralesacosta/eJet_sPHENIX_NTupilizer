@@ -98,7 +98,9 @@ class MyJetAnalysis : public SubsysReco
   float m_etruthpZ;
   int m_etruthPID;
 
-  //enum {MaxNumJets = 10000001}; //don't run a single job with more than 1M events
+  int m_njets;
+  int m_ntruthjets;
+  
   enum {MaxNumJets = 10};
   std::array<int,MaxNumJets> m_id;
   std::array<int,MaxNumJets> m_nComponent;
@@ -114,9 +116,9 @@ class MyJetAnalysis : public SubsysReco
   std::array<float,MaxNumJets> m_truthE;
   std::array<float,MaxNumJets> m_truthPt;  
 
-  //Tracks
-  //! number of matched tracks
-  //std::array<int,MaxNumJets> m_nMatchedTrack;
+  // // Tracks
+  // // ! number of matched tracks
+  // std::array<int,MaxNumJets> m_nMatchedTrack;
 
   // enum
   // {

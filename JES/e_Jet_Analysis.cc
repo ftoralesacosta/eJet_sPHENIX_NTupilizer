@@ -179,7 +179,7 @@ int main(int argc, char *argv[])
   Long64_t nentries = _tree_event->GetEntries();
   for(Long64_t ie = 0; ie < nentries ; ie++){
     _tree_event->GetEntry(ie); //each entry is a 5GeV Electron
-    fprintf(stderr, "\r%s:%d: %llu / %llu", __FILE__, __LINE__, ie, nentries);
+    //fprintf(stderr, "\r%s:%d: %llu / %llu", __FILE__, __LINE__, ie, nentries);
 
     //Check for Truth Jets an NComponent > 2
     float Emin = 3.0;
@@ -187,7 +187,10 @@ int main(int argc, char *argv[])
     int hardest = -1; //hardest jet index
     for (int j = 0; j < e.size(); j++)
       {
-	if(isnan(truthEta[j])) continue;
+	std::cout<<j<<std::endl;
+	
+	if(isnan(e[j])) continue;
+	std::cout<<e[j]<<std::endl;
 	if(nComponent[j] < 3) continue;
 	if (e[j] < Emin) continue;
 

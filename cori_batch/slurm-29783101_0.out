@@ -1,0 +1,39 @@
+LD_LIBRARY_PATH now /global/project/projectdirs/alice/ftorales/Singularity/install/lib:.:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/root-6.16.00/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/geant4.10.02.p02/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/lhapdf-5.9.1/lib:/usr/local/lib64:/usr/lib64
+PATH now :.:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/root-6.16.00/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/geant4.10.02.p02/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+   ------------------------------------------------------------
+  | Welcome to ROOT 6.16/00                  https://root.cern |
+  |                               (c) 1995-2018, The ROOT Team |
+  | Built for linuxx8664gcc on Jan 23 2019, 09:06:13           |
+  | From tags/v6-16-00@v6-16-00                                |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q' |
+   ------------------------------------------------------------
+
+
+Processing Fun4All_G4_sPHENIX.C(100, "", "/global/project/projectdirs/alice/ftorales/eP_MC/eP_0")...
+input_line_180:1:10: fatal error: 'libmyjetanalysis.so' file not found
+#include "libmyjetanalysis.so"
+         ^~~~~~~~~~~~~~~~~~~~~
+Warning in <TInterpreter::TCling::RegisterModule>: Problems in compiling forward declarations for module libVMC: '
+#line 1 "libVMC dictionary forward declarations' payload"
+#pragma clang diagnostic ignored "-Wkeyword-compat"
+#pragma clang diagnostic ignored "-Wignored-attributes"
+#pragma clang diagnostic ignored "-Wreturn-type-c-linkage"
+extern int __Cling_Autoloading_Map;
+class __attribute__((annotate(R"ATTRDUMP(Interface to Monte Carlo geometry construction)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TVirtualMCGeometry.h")))  __attribute__((annotate("$clingAutoload$TGeoMCGeometry.h")))  TVirtualMCGeometry;
+class __attribute__((annotate(R"ATTRDUMP(VMC TGeo Geometry builder)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TGeoMCGeometry.h")))  TGeoMCGeometry;
+class __attribute__((annotate(R"ATTRDUMP(Verbose class for MC application)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TMCVerbose.h")))  TMCVerbose;
+class __attribute__((annotate(R"ATTRDUMP(Interface to MonteCarlo application)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TVirtualMCApplication.h")))  TVirtualMCApplication;
+class __attribute__((annotate(R"ATTRDUMP(Interface to a particles stack)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TVirtualMCStack.h")))  __attribute__((annotate("$clingAutoload$TVirtualMC.h")))  TVirtualMCStack;
+class __attribute__((annotate(R"ATTRDUMP(Interface to Monte Carlo)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TVirtualMC.h")))  TVirtualMC;
+class __attribute__((annotate(R"ATTRDUMP(Interface to a user sensitive detector)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TVirtualMCSensitiveDetector.h")))  TVirtualMCSensitiveDetector;
+'
+Warning in <TInterpreter::TCling::RegisterModule>: Problems in compiling forward declarations for module libEGPythia6: '
+#line 1 "libEGPythia6 dictionary forward declarations' payload"
+#pragma clang diagnostic ignored "-Wkeyword-compat"
+#pragma clang diagnostic ignored "-Wignored-attributes"
+#pragma clang diagnostic ignored "-Wreturn-type-c-linkage"
+extern int __Cling_Autoloading_Map;
+class __attribute__((annotate(R"ATTRDUMP(LUJETS particles data record.)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TMCParticle.h")))  TMCParticle;
+class __attribute__((annotate(R"ATTRDUMP(Particle Decayer Base Class)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TPythia6Decayer.h")))  TPythia6Decayer;
+class __attribute__((annotate(R"ATTRDUMP(Interface to Pythia6.1 Event Generator)ATTRDUMP"))) __attribute__((annotate("$clingAutoload$TPythia6.h")))  TPythia6;
+'

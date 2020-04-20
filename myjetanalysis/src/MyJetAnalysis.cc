@@ -38,7 +38,7 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_recoJetName(recojetname)
   , m_truthJetName(truthjetname)
   , m_outputFileName(outputfilename)
-  , m_etaRange(-5, 5)//-0.7 0.7 for track_reco jets
+  , m_etaRange(-8, 8)//-0.7 0.7 for track_reco jets
   , m_ptRange(0.5, 500)
   , m_eEmin(1.0)
   , m_trackJetMatchingRadius(.7)
@@ -56,7 +56,8 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_etruthpY(numeric_limits<float>::signaling_NaN())
   , m_etruthpZ(numeric_limits<float>::signaling_NaN())
   , m_etruthPID(-1)
-
+  , m_njets(-1)
+  , m_ntruthjets(-1)
 {
   m_id.fill(-1);
   m_nComponent.fill(-1);
@@ -106,26 +107,28 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
 	   TString(m_recoJetName) + " inclusive number of jets",10,0,10);
 	       
   
-  //Trees
+  //Event Branches
   m_T = new TTree("T", "MyJetAnalysis Tree");
-  m_T->Branch("m_event", &m_event, "event/I");
+  m_T->Branch("event", &m_event, "event/I");
+  m_T->Branch("njets", &m_njets, "njets/I");
+  m_T->Branch("ntruthjets", &m_ntruthjets, "ntruthjets/I");
 
-  //Reconstructed Branches
-  m_T->Branch("id", m_id.data(), "id/I");
-  m_T->Branch("nComponent", m_nComponent.data(), "nComponent/I");
-  m_T->Branch("eta", m_eta.data(), "eta/F");
-  m_T->Branch("phi", m_phi.data(), "phi/F");
-  m_T->Branch("e", m_e.data(), "e/F");
-  m_T->Branch("pt", m_pt.data(), "pt/F");
+  //Reconstructed Jet Branches
+  m_T->Branch("id", m_id.data(), "id[njets]/I");
+  m_T->Branch("nComponent", m_nComponent.data(), "nComponent[njets]/I");
+  m_T->Branch("eta", m_eta.data(), "eta[njets]/F");
+  m_T->Branch("phi", m_phi.data(), "phi[njets]/F");
+  m_T->Branch("e", m_e.data(), "e[njets]/F");
+  m_T->Branch("pt", m_pt.data(), "pt[njets]/F");
 
-  //Truth Branches
-  m_T->Branch("truthID", m_truthID.data(), "truthID/I");
-  m_T->Branch("truthNComponent", m_truthNComponent.data(), "truthNComponent/I");
-  m_T->Branch("truthEta", m_truthEta.data(), "truthEta/F");
-  m_T->Branch("truthPhi", m_truthPhi.data(), "truthPhi/F");
-  m_T->Branch("truthE", m_truthE.data(), "truthE/F");
-  m_T->Branch("truthPt", m_truthPt.data(), "truthPt/F");
-  //m_T->Branch("nMatchedTrack", m_nMatchedTrack.data(), "nMatchedTrack/I");
+  //Truth Jet Branches
+  m_T->Branch("truthID", m_truthID.data(), "truthID[ntruthjets]/I");
+  m_T->Branch("truthNComponent", m_truthNComponent.data(), "truthNComponent[ntruthjets]/I");
+  m_T->Branch("truthEta", m_truthEta.data(), "truthEta[ntruthjets]/F");
+  m_T->Branch("truthPhi", m_truthPhi.data(), "truthPhi[ntruthjets]/F");
+  m_T->Branch("truthE", m_truthE.data(), "truthE[ntruthjets]/F");
+  m_T->Branch("truthPt", m_truthPt.data(), "truthPt[ntruthjets]/F");
+  // m_T->Branch("nMatchedTrack", m_nMatchedTrack.data(), "nMatchedTrack/I");
   // m_T->Branch("TrackdR", m_trackdR.data(), "trackdR[nMatchedTrack]/F");
   // m_T->Branch("trackpT", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
 
@@ -207,10 +210,6 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     PHG4Particle* g4particle = eter->second;
     int particleID = g4particle->get_pid();
 
-    //int parent_ID = g4particle->get_parent_id(); 
-    //bool iselectron = (fabs(particleID) == 11 && fabs(parent_ID) == 11 );
-    //Cut on parent electrons. Nope. PID=NaN if hardscattered e
-    
     bool iselectron = fabs(particleID) == 11;
     if (!iselectron) continue;
 
@@ -242,10 +241,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 
     int inc_jet_counter = 0;
     int j = 0; //Jet element index
+    m_njets = 0;
+    m_ntruthjets=0;
     for (JetMap::Iter jter = jets->begin(); jter != jets->end(); ++jter)
       {
 	Jet* jet = jter->second;
-	assert(jet);
+	assert(jet); //checks if not null. Aborts if null pointer.
 
 	// fill inclusive histograms
 	assert(m_hInclusiveE);
@@ -272,7 +273,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	    continue;
 	  }  
     
-	//LEADING JET
+	//Jet Arrays
 	    m_id[j] = jet->get_id();
 	    m_nComponent[j] = jet->size_comp();
 	    m_e[j] = jet->get_e();
@@ -299,9 +300,11 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	      }
 
 	    ++j;
-	
-	// fill trees - jet track matching
+	    m_njets=j;
+	    m_ntruthjets=j;
+	    if (j >= MaxNumJets) break;
 
+	// //fill trees - jet track matching
 	// m_nMatchedTrack[j] = 0;
 	
 	// Float_t jet_eta = jet->get_eta();
@@ -335,9 +338,9 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	//   }  //    for (SvtxTrackMap::Iter iter = trackmap->begin();
 	
       }  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)      
-    assert(m_hInclusiveNJets);
     m_hInclusiveNJets->Fill(inc_jet_counter);
     m_T->Fill(); //Fill Tree inside electron Loop
+    assert(m_hInclusiveNJets);
   }//electron Loop  
   return Fun4AllReturnCodes::EVENT_OK;
 }

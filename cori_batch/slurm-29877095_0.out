@@ -1,0 +1,2230 @@
+LD_LIBRARY_PATH now /global/project/projectdirs/alice/ftorales/Singularity/install/lib:.:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/root-6.16.00/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/geant4.10.02.p02/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/lhapdf-5.9.1/lib:/usr/local/lib64:/usr/lib64
+PATH now :.:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/root-6.16.00/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/geant4.10.02.p02/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+   ------------------------------------------------------------
+  | Welcome to ROOT 6.16/00                  https://root.cern |
+  |                               (c) 1995-2018, The ROOT Team |
+  | Built for linuxx8664gcc on Jan 23 2019, 09:06:13           |
+  | From tags/v6-16-00@v6-16-00                                |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q' |
+   ------------------------------------------------------------
+
+
+Processing Fun4All_G4_sPHENIX.C(100, "", "/global/project/projectdirs/alice/ftorales/eP_MC/eP_0")...
+PHRandomSeed::GetSeed() seed: 4179477772
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.243      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change:  4 Jul 2019  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 20 Apr 2020 at 12:39:52    |  | 
+ |  |                                                                              |  | 
+ |  |   Christian Bierlich;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: christian.bierlich@thep.lu.se                                   |  | 
+ |  |   Nishita Desai;  Department of Theoretical Physics, Tata Institute,         |  | 
+ |  |      Homi Bhabha Road, Mumbai 400005, India;                                 |  | 
+ |  |      e-mail: desai@theory.tifr.res.in                                        |  | 
+ |  |   Ilkka Helenius;  Department of Physics, University of Jyvaskyla,           |  | 
+ |  |      P.O. Box 35, FI-40014 University of Jyvaskyla, Finland;                 |  | 
+ |  |      e-mail: ilkka.m.helenius@jyu.fi                                         |  | 
+ |  |   Philip Ilten;  School of Physics and Astronomy,                            |  | 
+ |  |      University of Birmingham, Birmingham, B152 2TT, UK;                     |  | 
+ |  |      e-mail: philten@cern.ch                                                 |  | 
+ |  |   Leif Lonnblad;  Department of Astronomy and Theoretical Physics,           |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: leif.lonnblad@thep.lu.se                                        |  | 
+ |  |   Stephen Mrenna;  Computing Division, Simulations Group,                    |  | 
+ |  |      Fermi National Accelerator Laboratory, MS 234, Batavia, IL 60510, USA;  |  | 
+ |  |      e-mail: mrenna@fnal.gov                                                 |  | 
+ |  |   Stefan Prestel;  Department of Astronomy and Theoretical Physics,          |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: stefan.prestel@thep.lu.se                                       |  | 
+ |  |   Christine O. Rasmussen;  Department of Astronomy and Theoretical Physics,  |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: christine.rasmussen@thep.lu.se                                  |  | 
+ |  |   Torbjorn Sjostrand;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: torbjorn@thep.lu.se                                             |  | 
+ |  |   Peter Skands;  School of Physics,                                          |  | 
+ |  |      Monash University, PO Box 27, 3800 Melbourne, Australia;                |  | 
+ |  |      e-mail: peter.skands@monash.edu                                         |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is 'An Introduction to PYTHIA 8.2',             |  | 
+ |  |   T. Sjostrand et al, Comput. Phys. Commun. 191 (2015) 159                   |  | 
+ |  |   [arXiv:1410.3012 [hep-ph]]                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   The main physics reference is the 'PYTHIA 6.4 Physics and Manual',         |  | 
+ |  |   T. Sjostrand, S. Mrenna and P. Skands, JHEP05 (2006) 026 [hep-ph/0603175]  |  | 
+ |  |                                                                              |  | 
+ |  |   An archive of program versions and documentation is found on the web:      |  | 
+ |  |   http://www.thep.lu.se/Pythia                                               |  | 
+ |  |                                                                              |  | 
+ |  |   This program is released under the GNU General Public Licence version 2.   |  | 
+ |  |   Please respect the MCnet Guidelines for Event Generator Authors and Users. |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2019 Torbjorn Sjostrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+PHRandomSeed::GetSeed() seed: 452481946
+PHPythia8 random seed: 452481946
+
+ *-------  PYTHIA Process Initialization  --------------------------*
+ |                                                                  |
+ | We collide p+ with e- at a CM energy of 8.945e+01 GeV            |
+ |                                                                  |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | Subprocess                                    Code |   Estimated |
+ |                                                    |    max (mb) |
+ |                                                    |             |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | g g -> g g                                     111 |   0.000e+00 |
+ | g g -> q qbar (uds)                            112 |   0.000e+00 |
+ | q g -> q g                                     113 |   0.000e+00 |
+ | q q(bar)' -> q q(bar)'                         114 |   0.000e+00 |
+ | q qbar -> g g                                  115 |   0.000e+00 |
+ | q qbar -> q' qbar' (uds)                       116 |   0.000e+00 |
+ | g g -> c cbar                                  121 |   0.000e+00 |
+ | q qbar -> c cbar                               122 |   0.000e+00 |
+ | g g -> b bbar                                  123 |   0.000e+00 |
+ | q qbar -> b bbar                               124 |   0.000e+00 |
+ | f f' -> f f' (t-channel gamma*/Z0)             211 |   9.265e-05 |
+ |                                                                  |
+ *-------  End PYTHIA Process Initialization -----------------------*
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Beams:eA                                      |                100.00000 |     7000.000         0.0             | 
+ | Beams:eB                                      |                 20.00000 |     7000.000         0.0             | 
+ | Beams:frameType                               |                        2 |            1           1           5 | 
+ | Beams:idB                                     |                       11 |         2212                         | 
+ | HardQCD:all                                   |                       on |          off                         | 
+ | Main:timesAllowErrors                         |                   900000 |           10           0             | 
+ | PDF:lepton                                    |                      off |           on                         | 
+ | PhaseSpace:Q2Min                              |                 16.00000 |          0.0         0.0             | 
+ | Random:seed                                   |                452481946 |           -1               900000000 | 
+ | Random:setSeed                                |                       on |          off                         | 
+ | SpaceShower:pTmaxMatch                        |                        2 |            0           0           2 | 
+ | TimeShower:QEDshowerByL                       |                      off |           on                         | 
+ | WeakBosonExchange:ff2ff(t:gmZ)                |                       on |          off                         | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+
+ --------  PYTHIA Particle Data Table (changed only)  ------------------------------------------------------------------------------
+ 
+      id   name            antiName         spn chg col      m0        mWidth      mMin       mMax       tau0    res dec ext vis wid
+             no onMode   bRatio   meMode     products 
+
+ no particle data has been changed from its default value 
+
+ --------  End PYTHIA Particle Data Table  -----------------------------------------------------------------------------------------
+
+PHRandomSeed::GetSeed() seed: 215190184
+PHRandomSeed::GetSeed() seed: 3123313034
+Intt has 4 layers with layer setup:
+ Intt layer 0 laddertype -2 nladders 15 sensor radius 9.0 offsetphi 0.0
+ Intt layer 1 laddertype -2 nladders 15 sensor radius 9.5 offsetphi 12.0
+ Intt layer 2 laddertype -2 nladders 18 sensor radius 10.8 offsetphi 0.0
+ Intt layer 3 laddertype -2 nladders 18 sensor radius 11.4 offsetphi 10.0
+HCalInner - construct inner HCal absorber with G4_Al
+PHRandomSeed::GetSeed() seed: 4092394829
+
+*************************************************************
+ Geant4 version Name: geant4-10-02-patch-02    (17-June-2016)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+<<< Geant4 Physics List simulation engine: QGSP_BERT 4.0
+
+PHG4MvtxHitReco: Setting Mvtx timing window defaults to tmin = -5000 and  tmax = 5000 ns
+PHG4MvtxHitReco: Set Mvtx timing window parameters from macro for layer = 0 to tmin = -5000.0 tmax = 5000.0
+PHG4MvtxHitReco: Set Mvtx timing window parameters from macro for layer = 1 to tmin = -5000.0 tmax = 5000.0
+PHG4MvtxHitReco: Set Mvtx timing window parameters from macro for layer = 2 to tmin = -5000.0 tmax = 5000.0
+PHRandomSeed::GetSeed() seed: 1966270255
+PHRandomSeed::GetSeed() seed: 4601284
+Registering padplane 
+padplane registered and parameters updated
+PHRandomSeed::GetSeed() seed: 766066066
+PHParameters::ReadFromFile - Reading from File: /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/share/calibrations/CEMC/TowerCalib_2017ProjTilted/cemc_geoparams-0-0-4294967295-1499354960.xml ... Received PdbParameterMap with (Hash = 0x883e8cf2a8d53c9f)
+BEmcProfile: Loading profile data from file /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/share/calibrations/EmcProfile/CEMCprof_Thresh30MeV.root
+  8 bin in energy:  0.5,  1.0,  2.0,  4.0, 10.0, 20.0, 40.0, 80.0, 
+  4 bin in theta:  0.05, 0.14, 0.25, 0.34, 
+PHParameters::ReadFromFile - Reading from File: /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/share/calibrations/CEMC/PositionRecalibration_EMCal_9deg_tilt/cemc_recalib_geoparams-0-0-4294967295-1532091513.xml ... Received PdbParameterMap with (Hash = 0x9eda525940469004)
+PHParameters::ReadFromFile - Reading from File: /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/share/calibrations/CEMC/PositionRecalibration_EMCal_9deg_tilt/cemc_ecore_recalib_geoparams-0-0-4294967295-1532091569.xml ... Received PdbParameterMap with (Hash = 0xe641b18750973639)
+PHRandomSeed::GetSeed() seed: 2920673409
+Warning from RawClusterBuilderTemplate::Detector(): no detector specific class BEmcRec{Name} defined for detector HCALIN. Default BEmcRec will be used
+PHRandomSeed::GetSeed() seed: 3667870301
+Warning from RawClusterBuilderTemplate::Detector(): no detector specific class BEmcRec{Name} defined for detector HCALOUT. Default BEmcRec will be used
+PHRandomSeed::GetSeed() seed: 3095759960
+PHG4MvtxDigitizer random seed: 3095759960
+PHRandomSeed::GetSeed() seed: 663854103
+PHG4InttDigitizer random seed: 663854103
+PHRandomSeed::GetSeed() seed: 2091462118
+PHG4TpcDigitizer random seed: 2091462118
+ Tpc digitizer: Setting ENC to 670.0 ADC threshold to 2680.0 maps+Intt layers set to 7
+PHRandomSeed::GetSeed() seed: 4038894109
+PHTFileServer::open - opening file /global/project/projectdirs/alice/ftorales/eP_MC/eP_0_electrons+jets.root (RECREATE)
+Fun4AllServer: Runnumber forced to 0 by RUNNUMBER IntFlag
+Fun4AllServer::setRun(): could not get timestamp for run  0, using tics(0) timestamp: Wed Dec 31 19:00:00 1969
+PHFieldUtility::GetFieldConfigNode - field map with configuration from input default: PHFieldConfigv1::identify - Field type of [2D field map expressed in cylindrical coordinates] from file [/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/share/calibrations/Field/Map/sPHENIX.2d.root] with a scale factor of -0.9
+PHParameters::ReadFromFile - Reading from File: /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/share/calibrations/CEMC/Geometry_2018ProjTilted/cemc_geoparams-0-0-4294967295-1536789215.xml ... Received PdbParameterMapContainer Detector Id 0 with (Hash = 0xaf819d10e459ac67)
+G4GDML: Reading '/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/share/calibrations/Tracking/geometry/mvtx_stave_v1.gdml'...
+G4GDML: Reading definitions...
+G4GDML: Reading materials...
+G4GDML: Reading solids...
+G4GDML: Reading structure...
+G4GDML: Reading setup...
+G4GDML: Reading '/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.4/share/calibrations/Tracking/geometry/mvtx_stave_v1.gdml' done!
+Stripping off GDML names of materials, solids and volumes ...
+north copy no: 1
+south copy no: 2
+PHG4FullProjTiltedSpacalDetector::Construct_AzimuthalSeg::CEMC_0 - constructed 192 unique towers
+PHG4Reco::InitRun - export geometry to DST via tmp file /tmp/PHGeomUtility_geom_file_47574.gdml
+PHG4GDML: Writing '/tmp/PHGeomUtility_geom_file_47574.gdml'...
+PHG4GDML: Writing definitions...
+G4GDML: Writing materials...
+PHG4GDML: Writing solids...
+PHG4GDML: Writing structure...
+G4GDML: Writing setup...
+PHG4GDML: Writing surfaces...
+PHG4GDML: Writing '/tmp/PHGeomUtility_geom_file_47574.gdml' done !
+PHRandomSeed::GetSeed() seed: 311159177
+Infor from RawClusterBuilderTemplate::InitRun(): Init geometry for CEMC: N of geom towers: 24576; ix=0-255 iy=0-95
+Infor from RawClusterBuilderTemplate::InitRun(): Init geometry for HCALIN: N of geom towers: 1536; ix=0-63 iy=0-23
+Infor from RawClusterBuilderTemplate::InitRun(): Init geometry for HCALOUT: N of geom towers: 1536; ix=0-63 iy=0-23
+PHG4InttDigitizer::InitRun: detector = INTT
+layer array size: 12
+init _nlayers_seeding 12
+init _min_layers_seeding 12
+init n min layers = 4
+GFRaveVertexFactory::setMethod ==> set method to avf-smoothing:1
+--------------------------------------
+
+List of Nodes in Fun4AllServer:
+Node Tree under TopNode TOP
+TOP (PHCompositeNode)/
+   DST (PHCompositeNode)/
+      PHHepMCGenEventMap (IO,PHHepMCGenEventMap)
+      PHG4INEVENT (PHDataNode)
+      PIPE (PHCompositeNode)/
+         G4HIT_PIPE (IO,PHG4HitContainer)
+      MVTX (PHCompositeNode)/
+         G4HIT_MVTX (IO,PHG4HitContainer)
+      INTT (PHCompositeNode)/
+         G4HIT_INTT (IO,PHG4HitContainer)
+      TPC (PHCompositeNode)/
+         G4HIT_ABSORBER_TPC (IO,PHG4HitContainer)
+         G4HIT_TPC (IO,PHG4HitContainer)
+      CEMC_ELECTRONICS (PHCompositeNode)/
+         G4HIT_CEMC_ELECTRONICS (IO,PHG4HitContainer)
+      CEMC_SPT (PHCompositeNode)/
+         G4HIT_CEMC_SPT (IO,PHG4HitContainer)
+      G4HIT_CEMC (IO,PHG4HitContainer)
+      G4HIT_ABSORBER_CEMC (IO,PHG4HitContainer)
+      HCALIN (PHCompositeNode)/
+         G4HIT_ABSORBER_HCALIN (IO,PHG4HitContainer)
+         G4HIT_HCALIN (IO,PHG4HitContainer)
+         G4CELL_HCALIN (IO,PHG4CellContainer)
+         TOWER_SIM_HCALIN (IO,RawTowerContainer)
+         TOWER_RAW_HCALIN (IO,RawTowerContainer)
+         TOWER_CALIB_HCALIN (IO,RawTowerContainer)
+         CLUSTER_HCALIN (IO,RawClusterContainer)
+      HCALIN_SPT (PHCompositeNode)/
+         G4HIT_HCALIN_SPT (IO,PHG4HitContainer)
+      MAGNET (PHCompositeNode)/
+         G4HIT_MAGNET (IO,PHG4HitContainer)
+      HCALOUT (PHCompositeNode)/
+         G4HIT_ABSORBER_HCALOUT (IO,PHG4HitContainer)
+         G4HIT_HCALOUT (IO,PHG4HitContainer)
+         G4CELL_HCALOUT (IO,PHG4CellContainer)
+         TOWER_SIM_HCALOUT (IO,RawTowerContainer)
+         TOWER_RAW_HCALOUT (IO,RawTowerContainer)
+         TOWER_CALIB_HCALOUT (IO,RawTowerContainer)
+         CLUSTER_HCALOUT (IO,RawClusterContainer)
+      G4HIT_BH_1 (IO,PHG4HitContainer)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4HIT_BH_FORWARD_PLUS (IO,PHG4HitContainer)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4HIT_BH_FORWARD_NEG (IO,PHG4HitContainer)
+      G4TruthInfo (IO,PHG4TruthInfoContainer)
+      BBC (PHCompositeNode)/
+         BbcVertexMap (IO,BbcVertexMapv1)
+      TRKR (PHCompositeNode)/
+         TRKR_HITSET (IO,TrkrHitSetContainer)
+         TRKR_HITTRUTHASSOC (IO,TrkrHitTruthAssoc)
+         TRKR_CLUSTER (IO,TrkrClusterContainer)
+         TRKR_CLUSTERHITASSOC (IO,TrkrClusterHitAssoc)
+      CEMC (PHCompositeNode)/
+         G4CELL_CEMC (IO,PHG4CellContainer)
+         TOWER_SIM_CEMC (IO,RawTowerContainer)
+         TOWER_RAW_CEMC (IO,RawTowerContainer)
+         TOWER_CALIB_CEMC (IO,RawTowerContainer)
+         CLUSTER_CEMC (IO,RawClusterContainer)
+         CLUSTER_POS_COR_CEMC (IO,RawClusterContainer)
+      SVTX (PHCompositeNode)/
+         SvtxVertexMap (IO,SvtxVertexMap_v1)
+         SvtxTrackMap (IO,SvtxTrackMap_v1)
+         AssocInfoContainer (IO,AssocInfoContainer)
+         SvtxVertexMapRefit (IO,SvtxVertexMap_v1)
+      GLOBAL (PHCompositeNode)/
+         GlobalVertexMap (IO,GlobalVertexMapv1)
+      TRIG (PHCompositeNode)/
+         CaloTriggerInfo (IO,CaloTriggerInfov1)
+      ANTIKT (PHCompositeNode)/
+         TRUTH (PHCompositeNode)/
+            AntiKt_Truth_r02 (IO,JetMapv1)
+            AntiKt_Truth_r03 (IO,JetMapv1)
+            AntiKt_Truth_r04 (IO,JetMapv1)
+            AntiKt_Truth_r05 (IO,JetMapv1)
+            AntiKt_Truth_r06 (IO,JetMapv1)
+            AntiKt_Truth_r07 (IO,JetMapv1)
+            AntiKt_Truth_r08 (IO,JetMapv1)
+            AntiKt_Truth_r10 (IO,JetMapv1)
+         TOWER (PHCompositeNode)/
+            AntiKt_Tower_r02 (IO,JetMapv1)
+            AntiKt_Tower_r03 (IO,JetMapv1)
+            AntiKt_Tower_r04 (IO,JetMapv1)
+            AntiKt_Tower_r05 (IO,JetMapv1)
+            AntiKt_Tower_r06 (IO,JetMapv1)
+            AntiKt_Tower_r07 (IO,JetMapv1)
+            AntiKt_Tower_r08 (IO,JetMapv1)
+         CLUSTER (PHCompositeNode)/
+            AntiKt_Cluster_r02 (IO,JetMapv1)
+            AntiKt_Cluster_r03 (IO,JetMapv1)
+            AntiKt_Cluster_r04 (IO,JetMapv1)
+            AntiKt_Cluster_r05 (IO,JetMapv1)
+            AntiKt_Cluster_r06 (IO,JetMapv1)
+            AntiKt_Cluster_r07 (IO,JetMapv1)
+            AntiKt_Cluster_r08 (IO,JetMapv1)
+         TRACK (PHCompositeNode)/
+            AntiKt_Track_r02 (IO,JetMapv1)
+            AntiKt_Track_r03 (IO,JetMapv1)
+            AntiKt_Track_r04 (IO,JetMapv1)
+            AntiKt_Track_r05 (IO,JetMapv1)
+            AntiKt_Track_r06 (IO,JetMapv1)
+            AntiKt_Track_r07 (IO,JetMapv1)
+            AntiKt_Track_r08 (IO,JetMapv1)
+            AntiKt_Track_r10 (IO,JetMapv1)
+   RUN (PHCompositeNode)/
+      PHGenIntegral (IO,PHGenIntegralv1)
+      FIELD_CONFIG (IO,PHFieldConfigv1)
+      PIPE (PHCompositeNode)/
+         G4GEOPARAM_PIPE (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_PIPE (IO,PHG4CylinderGeomContainer)
+      MVTX (PHCompositeNode)/
+         G4GEOPARAM_MVTX (IO,PdbParameterMapContainer)
+      INTT (PHCompositeNode)/
+         G4GEOPARAM_INTT (IO,PdbParameterMapContainer)
+         G4CELLPARAM_INTT (IO,PdbParameterMap)
+      TPC (PHCompositeNode)/
+         G4GEOPARAM_TPC (IO,PdbParameterMapContainer)
+         G4CELLPARAM_TPC (IO,PdbParameterMap)
+         G4TPCPADPLANE (IO,PdbParameterMap)
+      CEMC_ELECTRONICS (PHCompositeNode)/
+         G4GEOPARAM_CEMC_ELECTRONICS (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_CEMC_ELECTRONICS (IO,PHG4CylinderGeomContainer)
+      CEMC_SPT (PHCompositeNode)/
+         G4GEOPARAM_CEMC_SPT (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_CEMC_SPT (IO,PHG4CylinderGeomContainer)
+      CEMC (PHCompositeNode)/
+         G4GEOPARAM_CEMC (IO,PdbParameterMapContainer)
+         G4CELLPARAM_CEMC (IO,PdbParameterMap)
+         TOWERGEOM_CEMC (IO,RawTowerGeomContainer_Cylinderv1)
+      HCALIN (PHCompositeNode)/
+         G4GEOPARAM_HCALIN (IO,PdbParameterMapContainer)
+         G4CELLPARAM_HCALIN (IO,PdbParameterMap)
+         TOWERPARAM_HCALIN (IO,PdbParameterMap)
+         TOWERGEOM_HCALIN (IO,RawTowerGeomContainer_Cylinderv1)
+      HCALIN_SPT (PHCompositeNode)/
+         G4GEOPARAM_HCALIN_SPT (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_HCALIN_SPT (IO,PHG4CylinderGeomContainer)
+      MAGNET (PHCompositeNode)/
+         G4GEOPARAM_MAGNET (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_MAGNET (IO,PHG4CylinderGeomContainer)
+      HCALOUT (PHCompositeNode)/
+         G4GEOPARAM_HCALOUT (IO,PdbParameterMapContainer)
+         G4CELLPARAM_HCALOUT (IO,PdbParameterMap)
+         TOWERPARAM_HCALOUT (IO,PdbParameterMap)
+         TOWERGEOM_HCALOUT (IO,RawTowerGeomContainer_Cylinderv1)
+      G4GEOPARAM_BH_1 (IO,PdbParameterMapContainer)
+      CYLINDERGEOM_BH_1 (IO,PHG4CylinderGeomContainer)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4GEOPARAM_BH_FORWARD_PLUS (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_BH_FORWARD_PLUS (IO,PHG4CylinderGeomContainer)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4GEOPARAM_BH_FORWARD_NEG (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_BH_FORWARD_NEG (IO,PHG4CylinderGeomContainer)
+      CYLINDERGEOM_MVTX (IO,PHG4CylinderGeomContainer)
+      CYLINDERGEOM_INTT (IO,PHG4CylinderGeomContainer)
+      CYLINDERGEOM_CEMC (IO,PHG4CylinderGeomContainer)
+      CYLINDERGEOM_ABSORBER_CEMC (IO,PHG4CylinderGeomContainer)
+      GEOMETRY_IO (IO,PHGeomIOTGeo)
+      CYLINDERCELLGEOM_SVTX (IO,PHG4CylinderCellGeomContainer)
+      CYLINDERCELLGEOM_CEMC (IO,PHG4CylinderCellGeomContainer)
+      eclus_Recalibration_CEMC (IO,PdbParameterMap)
+      ecore_Recalibration_CEMC (IO,PdbParameterMap)
+   PAR (PHCompositeNode)/
+      FIELD_MAP (PHDataNode)
+      PIPE (PHCompositeNode)/
+         G4GEO_PIPE (PHDataNode)
+      MVTX (PHCompositeNode)/
+         G4GEO_MVTX (PHDataNode)
+      INTT (PHCompositeNode)/
+         G4GEO_INTT (PHDataNode)
+         CYLINDERGEOM_INTT (PHDataNode)
+         G4CELLGEO_INTT (PHDataNode)
+      TPC (PHCompositeNode)/
+         G4GEO_TPC (PHDataNode)
+         G4CELLPAR_TPC (PHDataNode)
+         G4TPCPADPLANEPAR (PHDataNode)
+      CEMC_ELECTRONICS (PHCompositeNode)/
+         G4GEO_CEMC_ELECTRONICS (PHDataNode)
+      CEMC_SPT (PHCompositeNode)/
+         G4GEO_CEMC_SPT (PHDataNode)
+      CEMC (PHCompositeNode)/
+         G4GEO_CEMC (PHDataNode)
+         G4CELLGEO_CEMC (PHDataNode)
+      G4GDML_CONFIG (PHDataNode)
+      HCALIN (PHCompositeNode)/
+         G4GEO_HCALIN (PHDataNode)
+         G4CELLGEO_HCALIN (PHDataNode)
+         TOWERGEO_HCALIN (PHDataNode)
+      HCALIN_SPT (PHCompositeNode)/
+         G4GEO_HCALIN_SPT (PHDataNode)
+      MAGNET (PHCompositeNode)/
+         G4GEO_MAGNET (PHDataNode)
+      HCALOUT (PHCompositeNode)/
+         G4GEO_HCALOUT (PHDataNode)
+         G4CELLGEO_HCALOUT (PHDataNode)
+         TOWERGEO_HCALOUT (PHDataNode)
+      G4GEO_BH_1 (PHDataNode)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4GEO_BH_FORWARD_PLUS (PHDataNode)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4GEO_BH_FORWARD_NEG (PHDataNode)
+      GEOMETRY (PHDataNode)
+
+
+
+ --------  PYTHIA Info Listing  ---------------------------------------- 
+ 
+ Beam A: id =   2212, pz =  4.472e+01, e =  4.473e+01, m =  9.383e-01.
+ Beam B: id =     11, pz = -4.472e+01, e =  4.472e+01, m =  5.110e-04.
+
+ In 1: id =    1, x =  9.893e-02, pdf =  3.911e-01 at Q2 =  9.262e+01.
+ In 2: id =   11, x =  1.000e+00, pdf =  1.000e+00 at same Q2.
+
+ Subprocess f f' -> f f' (t-channel gamma*/Z0) with code 211 is 2 -> 2.
+ It has sHat =  7.915e+02,    tHat = -1.071e+02,    uHat = -6.844e+02,
+       pTHat =  9.623e+00,   m3Hat =  3.300e-01,   m4Hat =  5.110e-04,
+    thetaHat =  7.535e-01,  phiHat =  3.210e+00.
+     alphaEM =  7.623e-03,  alphaS =  2.021e-01    at Q2 =  9.262e+01.
+
+ Impact parameter b =  0.000e+00 gives enhancement factor =  1.000e+00.
+ Max pT scale for MPI =  8.945e+01, ISR =  8.945e+01, FSR =  8.945e+01.
+ Number of MPI =     1, ISR =     0, FSRproc =     0, FSRreson =     0.
+
+ --------  End PYTHIA Info Listing  ------------------------------------
+
+ --------  PYTHIA Event Listing  (hard process)  -----------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.000      0.000     79.996    120.000     89.447
+     1       2212  (p+)               -12     0     0     3     0     0     0      0.000      0.000     99.996    100.000      0.938
+     2         11  (e-)               -12     0     0     4     0     0     0      0.000      0.000    -20.000     20.000      0.001
+     3          1  (d)                -21     1     0     5     6   101     0      0.000      0.000      9.893      9.893      0.000
+     4         11  (e-)               -21     2     0     5     6     0     0      0.000      0.000    -20.000     20.000      0.000
+     5          1  d                   23     3     4     0     0   101     0     -9.600     -0.655      5.845     11.264      0.330
+     6         11  e-                  23     3     4     0     0     0     0      9.600      0.655    -15.954     18.632      0.001
+                                   Charge sum: -1.333           Momentum sum:      0.000      0.000    -10.109     29.895     28.134
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.000      0.000     79.996    120.000     89.447
+     1       2212  (p+)               -12     0     0     7     0     0     0      0.000      0.000     99.996    100.001      0.938
+     2         11  (e-)               -12     0     0     4     0     0     0      0.000      0.000    -20.000     20.000      0.001
+     3          1  (d)                -21     7     7     5     6   101     0      0.000      0.000      9.893      9.893      0.000
+     4         11  (e-)               -21     2     0     5     6     0     0      0.000      0.000    -20.000     20.000      0.000
+     5          1  (d)                -23     3     4     8     8   101     0     -9.600     -0.655      5.845     11.264      0.330
+     6         11  e-                  23     3     4     0     0     0     0      9.600      0.655    -15.954     18.631      0.001
+     7          1  (d)                -61     1     0     3     3   101     0     -0.442      0.834     10.487     10.529      0.000
+     8          1  (d)                -62     5     5    11    20   101     0     -9.899      0.186      6.428     11.809      0.330
+     9       2203  (uu_1)             -63     1     0    11    20     0   101      0.063     -0.565     78.061     78.066      0.771
+    10        223  (omega)            -63     1     0    27    29     0     0      0.235     -0.276     11.461     11.494      0.783
+    11        111  (pi0)              -83     8     9    30    31     0     0     -1.692     -0.066      1.501      2.267      0.135
+    12       -211  pi-                 83     8     9     0     0     0     0     -5.491     -0.082      3.169      6.342      0.140
+    13        113  (rho0)             -83     8     9    21    22     0     0     -1.098     -0.125      0.724      1.521      0.753
+    14        211  pi+                 83     8     9     0     0     0     0     -0.460      0.650      2.633      2.754      0.140
+    15       -211  pi-                 83     8     9     0     0     0     0     -0.634     -0.395      0.881      1.163      0.140
+    16        213  (rho+)             -84     8     9    23    24     0     0      0.027     -0.176      5.019      5.098      0.871
+    17       -211  pi-                 84     8     9     0     0     0     0     -0.244      0.554      1.395      1.527      0.140
+    18        111  (pi0)              -84     8     9    32    33     0     0     -0.176     -0.411     11.263     11.272      0.135
+    19        111  (pi0)              -84     8     9    34    35     0     0      0.337      0.239     13.662     13.668      0.135
+    20       2224  (Delta++)          -84     8     9    25    26     0     0     -0.404     -0.567     44.241     44.262      1.152
+    21        211  pi+                 91    13     0     0     0     0     0     -0.312     -0.230      0.566      0.700      0.140
+    22       -211  pi-                 91    13     0     0     0     0     0     -0.786      0.106      0.159      0.821      0.140
+    23        211  pi+                 91    16     0     0     0     0     0     -0.257     -0.400      3.158      3.197      0.140
+    24        111  (pi0)              -91    16     0    36    37     0     0      0.284      0.223      1.861      1.901      0.135
+    25       2212  p+                  91    20     0     0     0     0     0     -0.193     -0.437     32.599     32.616      0.938
+    26        211  pi+                 91    20     0     0     0     0     0     -0.210     -0.130     11.643     11.646      0.140
+    27        211  pi+                 91    10     0     0     0     0     0      0.063     -0.290      3.316      3.332      0.140
+    28       -211  pi-                 91    10     0     0     0     0     0      0.248     -0.118      5.355      5.364      0.140
+    29        111  (pi0)              -91    10     0    38    39     0     0     -0.076      0.132      2.791      2.798      0.135
+    30         22  gamma               91    11     0     0     0     0     0     -0.877     -0.012      0.692      1.117      0.000
+    31         22  gamma               91    11     0     0     0     0     0     -0.815     -0.054      0.809      1.150      0.000
+    32         22  gamma               91    18     0     0     0     0     0     -0.155     -0.379      8.971      8.980      0.000
+    33         22  gamma               91    18     0     0     0     0     0     -0.020     -0.031      2.292      2.292      0.000
+    34         22  gamma               91    19     0     0     0     0     0      0.154      0.152      5.235      5.239      0.000
+    35         22  gamma               91    19     0     0     0     0     0      0.182      0.087      8.427      8.429      0.000
+    36         22  gamma               91    24     0     0     0     0     0      0.165      0.063      1.084      1.098      0.000
+    37         22  gamma               91    24     0     0     0     0     0      0.119      0.160      0.778      0.803      0.000
+    38         22  gamma               91    29     0     0     0     0     0      0.002      0.024      1.568      1.568      0.000
+    39         22  gamma               91    29     0     0     0     0     0     -0.078      0.108      1.223      1.230      0.000
+                                   Charge sum:  0.000           Momentum sum:      0.000      0.000     79.996    120.001     89.447
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+vertex x/y/z-1.794/-5.853/1220.504 outside world volume radius/z (+-) 500.000/500.000, dropping it and its particles
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.801°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.264°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.087°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.069°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.069°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.087°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.264°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.801°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.801°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.264°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.087°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.069°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.069°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.087°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.264°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.801°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.801°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.264°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.087°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.069°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.069°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.087°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.264°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.801°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.801°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.264°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.087°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.069°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.069°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.087°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.264°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.801°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+Warning: Conversion of SvtxTrack tracklet 0 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.812°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.273°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.098°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.084°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.084°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.098°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.273°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.812°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.812°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.273°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.098°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.084°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.084°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.098°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.273°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.812°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.812°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.273°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.098°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.084°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.084°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.098°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.273°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.812°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.812°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.273°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.098°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.084°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.084°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.098°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.273°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.812°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 10 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+Warning: Conversion of SvtxTrack tracklet 0 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 1 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 4 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 6 to PHGenFitTrack failed, moving to next tracklet 
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+Warning: Conversion of SvtxTrack tracklet 5 to PHGenFitTrack failed, moving to next tracklet 
+Warning: Conversion of SvtxTrack tracklet 12 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.423°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.423°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.423°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.423°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.423°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.423°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.423°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.347°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.423°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+Warning: Conversion of SvtxTrack tracklet 0 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> maximum number of iterations exceeded
+in line: 1860 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.414°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.414°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> maximum number of iterations exceeded
+in line: 1860 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> maximum number of iterations exceeded
+in line: 1860 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.414°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.414°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> maximum number of iterations exceeded
+in line: 1860 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> maximum number of iterations exceeded
+in line: 1860 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.414°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.414°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> maximum number of iterations exceeded
+in line: 1860 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> maximum number of iterations exceeded
+in line: 1860 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.414°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.343°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 365.414°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> maximum number of iterations exceeded
+in line: 1860 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 3 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+Warning: Conversion of SvtxTrack tracklet 2 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 3 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 11 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 12 to PHGenFitTrack failed, moving to next tracklet 
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+[0;33m[TwoTrackMinimumDistance] comparing track with itself![;0m
+[0;33m[TwoTrackMinimumDistance] Computation HelixHelix::CAIR failed.[;0m
+MyJetAnalysis::End - Outoput to /global/project/projectdirs/alice/ftorales/eP_MC/eP_0_electrons+jets.root
+All done
