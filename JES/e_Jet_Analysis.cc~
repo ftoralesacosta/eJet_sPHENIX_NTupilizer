@@ -361,7 +361,9 @@ int main(int argc, char *argv[])
     }
     //Detector Coordinate Histos
     Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi[hardest]));
+    if (True_DeltaPhi < M_PI/2) continue;
     Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi[hardest]));
+
     dPhiTj->Fill(True_DeltaPhi);
     dPhiRj->Fill(Reco_DeltaPhi);
     dEtaTj->Fill(etruthEta-truthEta[hardest]);
@@ -377,7 +379,6 @@ int main(int argc, char *argv[])
     RjoTj->Fill(e[hardest]/truthE[hardest]);
     
     //Kinematic Cuts
-    if (True_DeltaPhi < M_PI/2) continue;
     if (truthE[hardest] < 3.0) continue;
     if (TMath::Abs(eta[hardest]) < 0.7) continue;
     //Electron/Jet Comparisons

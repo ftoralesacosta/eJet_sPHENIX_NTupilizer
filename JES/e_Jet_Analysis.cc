@@ -245,6 +245,20 @@ int main(int argc, char *argv[])
   std::array <Float_t,MaxNumJets>         truthPhi;
   std::array <Float_t,MaxNumJets>         truthE;
   std::array <Float_t,MaxNumJets>         truthPt;
+
+//    Int_t           id[MaxNumJets];
+//    Int_t           nComponent[MaxNumJets];
+//    Float_t         eta[MaxNumJets];
+//    Float_t         phi[MaxNumJets];
+//    Float_t         e[MaxNumJets];
+//    Float_t         pt[MaxNumJets];
+//    Int_t           truthID[MaxNumJets];
+//    Int_t           truthNComponent[MaxNumJets];
+//    Float_t         truthEta[MaxNumJets];
+//    Float_t         truthPhi[MaxNumJets];
+//    Float_t         truthE[MaxNumJets];
+//    Float_t         truthPt[MaxNumJets];
+
   
   //Electron Truth Variables
   Float_t         etruthEta;
@@ -294,6 +308,19 @@ int main(int argc, char *argv[])
   _tree_event->SetBranchAddress("truthPhi", &truthPhi, &b_truthPhi);
   _tree_event->SetBranchAddress("truthE", &truthE, &b_truthE);
   _tree_event->SetBranchAddress("truthPt", &truthPt, &b_truthPt);
+
+//   _tree_event->SetBranchAddress("id", &id);
+//   _tree_event->SetBranchAddress("nComponent", &nComponent);
+//   _tree_event->SetBranchAddress("eta", &eta);
+//   _tree_event->SetBranchAddress("phi", &phi);
+//   _tree_event->SetBranchAddress("e", &e);
+//   _tree_event->SetBranchAddress("pt", &pt);
+//   _tree_event->SetBranchAddress("truthID", &truthID);
+//   _tree_event->SetBranchAddress("truthNComponent", &truthNComponent);
+//   _tree_event->SetBranchAddress("truthEta", &truthEta);
+//   _tree_event->SetBranchAddress("truthPhi", &truthPhi);
+//   _tree_event->SetBranchAddress("truthE", &truthE);
+//   _tree_event->SetBranchAddress("truthPt", &truthPt);
   
   _tree_event->SetBranchAddress("etruthEta", &etruthEta, &b_etruthEta);
   _tree_event->SetBranchAddress("etruthPhi", &etruthPhi, &b_etruthPhi);
@@ -336,20 +363,21 @@ int main(int argc, char *argv[])
   TH1F* Q2 = new TH1F("Q2","Q^{2}",500,0,500);
   
   Long64_t nentries = _tree_event->GetEntries();
-  for(Long64_t ie = 0; ie < nentries ; ie++){
-    _tree_event->GetEntry(ie); //each entry is a 5GeV Electron
-    //fprintf(stderr, "\r%s:%d: %llu / %llu", __FILE__, __LINE__, ie, nentries);
+  for(Long64_t ievent = 0; ievent < nentries ; ievent++){
+    _tree_event->GetEntry(ievent); //each entry is a 5GeV Electron
 
-    //Check for Truth Jets an NComponent > 2
+    std::cout<<"test enengy = "<<e[0]<<std::endl;
+    fprintf(stderr, "\r%s:%d: %llu / %llu\n", __FILE__, __LINE__, ievent, nentries);
     float Emin = 3.0;
     float hardest_jet_E = 0;
     int hardest = -1; //hardest jet index
-    for (int j = 0; j < e.size(); j++)
+    Float_t True_DeltaPhi = 0;
+    for (int j = 0; j < MaxNumJets; j++)
       {
-	//std::cout<<j<<std::endl;
-	
-	if(isnan(e[j])) continue;
-	//std::cout<<e[j]<<std::endl;
+	std::cout<<j<<" "<<e[j]<<" "<<True_DeltaPhi<<" "<<nComponent[j]<<std::endl; //debug
+	if(isnan(e[j]) || isnan(truthE[j])) continue;
+	True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi[j]));
+	if (True_DeltaPhi < M_PI/2) continue;
 	if(nComponent[j] < 3) continue;
 	if (e[j] < Emin) continue;
 
@@ -360,10 +388,9 @@ int main(int argc, char *argv[])
 	  }
     }
     //Detector Coordinate Histos
-    Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi[hardest]));
-    if (True_DeltaPhi < M_PI/2) continue;
     Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi[hardest]));
-
+    True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi[hardest]));
+    std::cout<<std::endl<<"HARDEST = "<<e[hardest]<<" "<<True_DeltaPhi<<" "<<hardest<<std::endl;
     dPhiTj->Fill(True_DeltaPhi);
     dPhiRj->Fill(Reco_DeltaPhi);
     dEtaTj->Fill(etruthEta-truthEta[hardest]);
@@ -429,6 +456,7 @@ int main(int argc, char *argv[])
   dEtaRj->Write();
 
   Q2->Write();
+  fout->Close();
   // H_dR->Write();
   // H_NExtra_Matches->Write();
 

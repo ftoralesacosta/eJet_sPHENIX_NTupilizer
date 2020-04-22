@@ -1,7 +1,7 @@
 CXX =           g++
 CC =            $(CXX)
-CXXFLAGS =      -g -O -s -frounding-math
-CXXFLAGS +=     -fopenmp
+CXXFLAGS =      -g -O -s #-frounding-math
+#CXXFLAGS +=     -fopenmp
 #CXXFLAGS =      -O                                                                                                                                                                                                                                                                                                                                                       
 #CXXFLAGS +=     -Wextra -Wall -Werror -fPIC                                                                                                                                                                                                                                                                                                                              
 #CXXFLAGS +=    -Wno-unused-variable -Wno-unused-parameter                                                                                                                                                                                                                                                                                                                
@@ -13,7 +13,7 @@ ifeq ($(findstring g++,$(CXX)),g++)
                 -D_FORTIFY_SOURCE=1 -fstack-protector
 endif
 CXXFLAGS +=     -std=c++11
-CXXFLAGS +=     -fopenmp
+#CXXFLAGS +=     -fopenmp
 CXXFLAGS +=     $(shell root-config --cflags)
 LDFLAGS =       $(shell root-config --ldflags)
 LDLIBS =        $(shell root-config --libs)
