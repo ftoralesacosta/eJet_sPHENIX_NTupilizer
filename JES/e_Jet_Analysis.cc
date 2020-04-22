@@ -23,6 +23,7 @@
 #include <vector>
 #include <math.h>
 
+/*
 int main(int argc, char *argv[])
 {
   
@@ -185,8 +186,7 @@ int main(int argc, char *argv[])
   fclose(f);
 
 }
-
-/*
+*/
 
 #define NTRACK_MAX (1U << 14)
 
@@ -232,8 +232,6 @@ int main(int argc, char *argv[])
   }
 
   //Declare Leaf Types
-  Int_t           m_event;
-
   enum {MaxNumJets = 10};
   std::array <Int_t,MaxNumJets>           id;
   std::array <Int_t,MaxNumJets>           nComponent;
@@ -260,7 +258,6 @@ int main(int argc, char *argv[])
   Int_t           etruthParentID;
 
   //Declare Branches
-  TBranch        *b_event;
   TBranch        *b_id;
   TBranch        *b_nComponent;
   TBranch        *b_eta;
@@ -285,7 +282,6 @@ int main(int argc, char *argv[])
   TBranch        *b_etruthParentID;
 
   
-  _tree_event->SetBranchAddress("m_event", &m_event, &b_event);
   _tree_event->SetBranchAddress("id", &id, &b_id);
   _tree_event->SetBranchAddress("nComponent", &nComponent, &b_nComponent);
   _tree_event->SetBranchAddress("eta", &eta, &b_eta);
@@ -350,10 +346,10 @@ int main(int argc, char *argv[])
     int hardest = -1; //hardest jet index
     for (int j = 0; j < e.size(); j++)
       {
-	std::cout<<j<<std::endl;
+	//std::cout<<j<<std::endl;
 	
 	if(isnan(e[j])) continue;
-	std::cout<<e[j]<<std::endl;
+	//std::cout<<e[j]<<std::endl;
 	if(nComponent[j] < 3) continue;
 	if (e[j] < Emin) continue;
 
@@ -436,5 +432,3 @@ int main(int argc, char *argv[])
   // H_NExtra_Matches->Write();
 
 }
-
-*/
