@@ -321,20 +321,28 @@ int main(int argc, char *argv[])
   
   Long64_t nentries = _tree_event->GetEntries();
   for(Long64_t ievent = 0; ievent < nentries ; ievent++){
+
     _tree_event->GetEntry(ievent); //each entry is a 5GeV Electron
 
-    std::cout<<"test enengy = "<<etruthE<<std::endl;
-    fprintf(stderr, "\r%s:%d: %llu / %llu\n", __FILE__, __LINE__, ievent, nentries);
+    //fprintf(stderr, "\r%s:%d: %llu / %llu\n", __FILE__, __LINE__, ievent, nentries);
+
     float Emin = 3.0;
     float hardest_jet_E = 0;
     int hardest = -1; //hardest jet index
-    Float_t True_DeltaPhi = 0;
+    int match = -1;
+    
+    Float_t Reco_DeltaPhi = 0;
+    TLorentzVector Tj_vector;
+    TLorentzVector Rj_vector;
+
+
     for (int j = 0; j < MaxNumJets; j++)
       {
 	//std::cout<<j<<" "<<e[j]<<" "<<True_DeltaPhi<<" "<<nComponent[j]<<" "<<njets<<std::endl; //debug
-	if(isnan(e[j]) || isnan(truthE[j])) continue;
-	True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi[j]));
-	if (True_DeltaPhi < M_PI/2) continue;
+	//Find hardest True Jet
+	if(isnan(e[j])) continue;
+	Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi[j]));
+	if (Reco_DeltaPhi < M_PI/2.0) continue;
 	if(nComponent[j] < 3) continue;
 	if (e[j] < Emin) continue;
 
@@ -342,34 +350,48 @@ int main(int argc, char *argv[])
 	  {
 	    hardest_jet_E = e[j];
 	    hardest = j;
+	    Rj_vector.SetPtEtaPhiE(pt[j],eta[j],phi[j],e[j]);
 	  }
-    }
+      }
+	//Find associated Truth Jet
+    for (int t = 0; t < MaxNumJets; t++)
+      {
+	if (isnan(truthE[t])) continue;
+	Tj_vector.SetPtEtaPhiE(truthPt[t],truthEta[t],truthPhi[t],truthE[t]);
+	if (Tj_vector.DeltaR(Rj_vector) <= 0.2){
+	  match = t;
+	  break;
+	}
+      }
+
     if (hardest == -1) continue;
-    //Detector Coordinate Histos
-    Float_t Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi[hardest]));
-    True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi[hardest]));
-    std::cout<<std::endl<<"HARDEST = "<<e[hardest]<<" "<<True_DeltaPhi<<" "<<hardest<<" "<<njets<<std::endl;
+    if (match == -1) continue;
+
+    Reco_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - phi[hardest]));
+    Float_t True_DeltaPhi = TMath::Abs(TVector2::Phi_mpi_pi(etruthPhi - truthPhi[match]));
+    std::cout<<"etruthE"<<"    "<<"dPhi_e"<<"    "<<"e[hardest]"<<"    "<<"truthe[match]"<<"    "<<"dPhi_j"<<std::endl;
+    std::cout<<etruthE<<"    "<<Reco_DeltaPhi<<"   "<<e[hardest]<<"          "<<truthE[match]<<"        "<<Tj_vector.DeltaR(Rj_vector)<<std::endl<<std::endl;
+    
     dPhiTj->Fill(True_DeltaPhi);
     dPhiRj->Fill(Reco_DeltaPhi);
-    dEtaTj->Fill(etruthEta-truthEta[hardest]);
+    dEtaTj->Fill(etruthEta-truthEta[match]);
     dEtaRj->Fill(etruthEta-eta[hardest]);
 
     TLorentzVector e_vector;
     e_vector.SetPtEtaPhiE(etruthPt,etruthEta,etruthPhi,etruthE);
     Float_t Q_square = calc_Q_square(20,e_vector); //Electron Beam of 20 GeV/c
     Q2->Fill(Q_square);    
-    //Inclusive Spectra
-    Rjve->Fill(etruthE,e[hardest]);
-    Tjve->Fill(etruthE,truthE[hardest]);
-    RjoTj->Fill(e[hardest]/truthE[hardest]);
+    Rjve->Fill(etruthE,e[hardest]); //"Inclusive" Spectra
+    Tjve->Fill(etruthE,truthE[match]);
+    RjoTj->Fill(e[hardest]/truthE[match]);
     
     //Kinematic Cuts
-    if (truthE[hardest] < 3.0) continue;
-    if (TMath::Abs(eta[hardest]) < 0.7) continue;
+    if (truthE[match] < 3.0) continue;
+    if (TMath::Abs(eta[match]) < 0.7) continue;
     //Electron/Jet Comparisons
-    eoTj->Fill(truthE[hardest]/etruthE);
+    eoTj->Fill(truthE[match]/etruthE);
     eoRj->Fill(e[hardest]/etruthE);
-    emTj->Fill(etruthE-truthE[hardest]);
+    emTj->Fill(etruthE-truthE[match]);
     emRj->Fill(etruthE-e[hardest]);
 
     // if (already_matched)
