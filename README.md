@@ -37,6 +37,9 @@ Line 31 (right before the first R_LOAD_LIBRARY):
 Line 70:
      const bool runpythia8 = false; -> true
 
+Line 81:
+     const bool particles = true && !readhits; -> false
+
 Line 601 (right before event processing):
   ```
   gSystem->Load("libmyjetanalysis");
