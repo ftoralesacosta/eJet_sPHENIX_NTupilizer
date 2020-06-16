@@ -19,15 +19,18 @@ libmyjetanalysis_la_LIBADD = \
 
 if ! MAKEROOT6
   ROOT5_DICTS = \
-    MyJetAnalysis_Dict.cc
+    MyJetAnalysis_Dict.cc \
+    MyJetAnalysis_AllSi_Dict.cc
 endif
 
 libmyjetanalysis_la_SOURCES = \
   $(ROOT5_DICTS) \
-  MyJetAnalysis.cc
+  MyJetAnalysis.cc \
+  MyJetAnalysis_AllSi.cc
 
 pkginclude_HEADERS = \
-  MyJetAnalysis.h
+  MyJetAnalysis.h \
+  MyJetAnalysis_AllSi.h
 
 
 %_Dict.cc: %.h %LinkDef.h

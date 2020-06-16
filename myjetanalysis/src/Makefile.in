@@ -126,9 +126,12 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgincludedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libmyjetanalysis_la_DEPENDENCIES =
 am__libmyjetanalysis_la_SOURCES_DIST = MyJetAnalysis_Dict.cc \
-	MyJetAnalysis.cc
-@MAKEROOT6_FALSE@am__objects_1 = MyJetAnalysis_Dict.lo
-am_libmyjetanalysis_la_OBJECTS = $(am__objects_1) MyJetAnalysis.lo
+	MyJetAnalysis_AllSi_Dict.cc MyJetAnalysis.cc \
+	MyJetAnalysis_AllSi.cc
+@MAKEROOT6_FALSE@am__objects_1 = MyJetAnalysis_Dict.lo \
+@MAKEROOT6_FALSE@	MyJetAnalysis_AllSi_Dict.lo
+am_libmyjetanalysis_la_OBJECTS = $(am__objects_1) MyJetAnalysis.lo \
+	MyJetAnalysis_AllSi.lo
 libmyjetanalysis_la_OBJECTS = $(am_libmyjetanalysis_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -362,14 +365,17 @@ libmyjetanalysis_la_LIBADD = \
   -lg4eval
 
 @MAKEROOT6_FALSE@ROOT5_DICTS = \
-@MAKEROOT6_FALSE@    MyJetAnalysis_Dict.cc
+@MAKEROOT6_FALSE@    MyJetAnalysis_Dict.cc \
+@MAKEROOT6_FALSE@    MyJetAnalysis_AllSi_Dict.cc
 
 libmyjetanalysis_la_SOURCES = \
   $(ROOT5_DICTS) \
-  MyJetAnalysis.cc
+  MyJetAnalysis.cc \
+  MyJetAnalysis_AllSi.cc
 
 pkginclude_HEADERS = \
-  MyJetAnalysis.h
+  MyJetAnalysis.h \
+  MyJetAnalysis_AllSi.h
 
 BUILT_SOURCES = \
   testexternals.cc
@@ -478,6 +484,8 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/MyJetAnalysis.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/MyJetAnalysis_AllSi.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/MyJetAnalysis_AllSi_Dict.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/MyJetAnalysis_Dict.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testexternals.Po@am__quote@
 
