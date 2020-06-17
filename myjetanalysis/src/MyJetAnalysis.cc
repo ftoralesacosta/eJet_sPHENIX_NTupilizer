@@ -41,6 +41,7 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_etaRange(-8, 8)//-0.7 0.7 for track_reco jets
   , m_ptRange(0.5, 500)
   , m_eEmin(1.0)
+  , m_electronJetMatchingRadius(0.5)  
   , m_trackJetMatchingRadius(.7)
   , m_hInclusiveE(nullptr)
   , m_hInclusiveEta(nullptr)
@@ -155,7 +156,6 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_T->Branch("electron_truthpX", &m_electron_truthpX, "electron_truthpX/F");
   m_T->Branch("electron_truthpY", &m_electron_truthpY, "electron_truthpY/F");
   m_T->Branch("electron_truthpZ", &m_electron_truthpZ, "electron_truthpZ/F");
-  m_T->Branch("electron_truthPt", &m_electron_truthPt, "electron_truthPt/F");
   m_T->Branch("electron_truthPID", &m_electron_truthPID, "electron_truthPID/I");
   
   return Fun4AllReturnCodes::EVENT_OK;
@@ -265,7 +265,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     m_electron_truthPt = e_vec.Pt();
 
     int inc_jet_counter = 0;
-    int j = 0; //Jet element index. Same for reco and matched truth in separate arrays
+    int j = 0; //Jet element index. Same index for reco and matched truth, but in separate arrays
     m_njets = 0;
     m_ntruthjets=0;
     for (JetMap::Iter jter = jets->begin(); jter != jets->end(); ++jter)
@@ -282,39 +282,38 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	m_hInclusivePhi->Fill(jet->get_phi());
 	++inc_jet_counter;
 
-	//Apply cuts
-	bool eta_cut = (jet->get_eta() >= m_etaRange.first) and (jet->get_eta() <= m_etaRange.second); 
-	bool pt_cut = (jet->get_pt() >= m_ptRange.first) and (jet->get_pt() <= m_ptRange.second);
+	TLorentzVector JReco_vec(jet->get_px(), jet->get_py(), jet->get_pz(),jet->get_e());
 
-	if ((not eta_cut) or (not pt_cut))
+	//Apply cuts
+ 	bool eta_cut = (jet->get_eta() >= m_etaRange.first) and (jet->get_eta() <= m_etaRange.second); 
+	bool pt_cut = (jet->get_pt() >= m_ptRange.first) and (jet->get_pt() <= m_ptRange.second);
+	bool electron_cut = (JReco_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
+	
+ 	if ((not eta_cut) or (not pt_cut) or (not electron_cut))
 	  {
 	    if (Verbosity() >= MyJetAnalysis::VERBOSITY_MORE)
 	      {
 		cout << "MyJetAnalysis::process_event() - jet failed acceptance cut: ";
 		cout << "eta cut: " << eta_cut << ", ptcut: " << pt_cut << endl;
 		cout << "jet eta: " << jet->get_eta() << ", jet pt: " << jet->get_pt() << endl;
+		cout << "electron dR cut: " << m_electronJetMatchingRadius << ", electron-jet dR: "
+		     << JReco_vec.DeltaR(e_vec) << endl;
 		jet->identify();
 	      }
 	    continue;
 	  }  
-    
+  
 	//Jet Arrays
-
-	// Electron Veto
-	TLorentzVector JReco_vec(jet->get_px(), jet->get_py(), jet->get_pz(),jet->get_e());
-	if (JReco_vec.DeltaR(e_vec) < 0.5)//Assuming Jet R of 1.0
-	  continue;
+	m_id[j] = jet->get_id();
+	m_nComponent[j] = jet->size_comp();
+	m_e[j] = jet->get_e();
+	m_eta[j] = jet->get_eta();
+	m_phi[j] = jet->get_phi();
+	m_pt[j] = jet->get_pt();
 	
-	    m_id[j] = jet->get_id();
-	    m_nComponent[j] = jet->size_comp();
-	    m_e[j] = jet->get_e();
-	    m_eta[j] = jet->get_eta();
-	    m_phi[j] = jet->get_phi();
-	    m_pt[j] = jet->get_pt();
-
 	    //Which truth jet contributed the most enery to this reco jet?
-	    Jet* truthjet = recoeval->max_truth_jet_by_energy(jet);
-	    if (truthjet)
+	Jet* truthjet = recoeval->max_truth_jet_by_energy(jet);
+	if (truthjet)
 	      {
 		m_matched_truthID[j] = truthjet->get_id();
 		m_matched_truthNComponent[j] = truthjet->size_comp();
@@ -323,12 +322,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		m_matched_truthE[j] = truthjet->get_e();
 		m_matched_truthPt[j] = truthjet->get_pt();
 	      }
-
-	    ++j;
-	    //j is incremented outside of the matching criteria so truth/reco elements match
-	    m_njets=j;
-	    m_ntruthjets=j;
-	    if (j >= MaxNumJets) break;
+	
+	++j;
+	//j is incremented outside of the matching criteria so truth/reco array elements match
+	m_njets=j;
+	m_ntruthjets=j;
+	if (j >= MaxNumJets) break;
 
 	// //fill trees - jet track matching
 	// m_nMatchedTrack[j] = 0;
@@ -364,19 +363,37 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	//   }  //    for (SvtxTrackMap::Iter iter = trackmap->begin();
 	
       }  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)      
+
     m_hInclusiveNJets->Fill(inc_jet_counter);
-    m_T->Fill(); //Fill Tree inside electron Loop
     assert(m_hInclusiveNJets);
+
     for (JetMap::Iter tter = all_truth_jets->begin(); tter != all_truth_jets->end(); ++tter)
       {
 
 	Jet* all_truthjet = tter->second;
 	assert(all_truthjet); //Check if null pointer. Abort if so.
 
-	//Electron Veto (Here such that reco efficiency is consistent)
-	TLorentzVector JTruth_vec(all_truthjet->get_px(), all_truthjet->get_py(), all_truthjet->get_pz(),all_truthjet->get_e());
-	if (JTruth_vec.DeltaR(e_vec) < 0.5)//Assuming Jet R of 1.0
-	  continue;
+ 	TLorentzVector JTruth_vec(all_truthjet->get_px(), all_truthjet->get_py(),
+				  all_truthjet->get_pz(),all_truthjet->get_e());
+
+     	//Apply cuts
+ 	bool eta_cut = (all_truthjet->get_eta() >= m_etaRange.first) and (all_truthjet->get_eta() <= m_etaRange.second); 
+	bool pt_cut = (all_truthjet->get_pt() >= m_ptRange.first) and (all_truthjet->get_pt() <= m_ptRange.second);
+	bool electron_cut = (JTruth_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
+	
+ 	if ((not eta_cut) or (not pt_cut) or (not electron_cut))
+	  {
+	    if (Verbosity() >= MyJetAnalysis::VERBOSITY_MORE)
+	      {
+		cout << "MyJetAnalysis::process_event() - jet failed acceptance cut: ";
+		cout << "eta cut: " << eta_cut << ", ptcut: " << pt_cut << endl;
+		cout << "jet eta: " << all_truthjet->get_eta() << ", jet pt: " << all_truthjet->get_pt() << endl;
+		cout << "electron dR cut: " << m_electronJetMatchingRadius << ", electron-jet dR: "
+		     << JTruth_vec.DeltaR(e_vec) << endl;
+		all_truthjet->identify();
+	      }
+	    continue;
+	  }  
 
 	m_all_truthID[j] = all_truthjet->get_id();
 	m_all_truthNComponent[j] = all_truthjet->size_comp();
@@ -385,6 +402,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	m_all_truthE[j] = all_truthjet->get_e();
 	m_all_truthPt[j] = all_truthjet->get_pt();
       }
+    m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
   }//electron Loop  
   return Fun4AllReturnCodes::EVENT_OK;
 }
