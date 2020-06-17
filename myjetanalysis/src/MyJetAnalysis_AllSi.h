@@ -89,7 +89,10 @@ class MyJetAnalysis_AllSi : public SubsysReco
 
   //electron Energy min
   double m_eEmin;
-  
+ 
+  //electron-jet matching radius for veto
+  double m_electronJetMatchingRadius;
+ 
   //! max track-jet matching radius
   double m_trackJetMatchingRadius;
 
