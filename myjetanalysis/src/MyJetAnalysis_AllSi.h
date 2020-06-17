@@ -89,7 +89,10 @@ class MyJetAnalysis_AllSi : public SubsysReco
 
   //electron Energy min
   double m_eEmin;
-  
+ 
+  //electron-jet matching radius for veto
+  double m_electronJetMatchingRadius;
+ 
   //! max track-jet matching radius
   double m_trackJetMatchingRadius;
 
@@ -105,14 +108,14 @@ class MyJetAnalysis_AllSi : public SubsysReco
   int m_event;
 
   //Electron Truth Variables
-  float m_etruthEta;
-  float m_etruthPhi;
-  float m_etruthE;
-  float m_etruthPt;
-  float m_etruthpX;
-  float m_etruthpY;
-  float m_etruthpZ;
-  int m_etruthPID;
+  float m_electron_truthEta;
+  float m_electron_truthPhi;
+  float m_electron_truthE;
+  float m_electron_truthPt;
+  float m_electron_truthpX;
+  float m_electron_truthpY;
+  float m_electron_truthpZ;
+  int m_electron_truthPID;
 
   int m_njets;
   int m_ntruthjets;
@@ -125,12 +128,19 @@ class MyJetAnalysis_AllSi : public SubsysReco
   std::array<float,MaxNumJets> m_e;
   std::array<float,MaxNumJets> m_pt;
   
-  std::array<int,MaxNumJets> m_truthID;
-  std::array<int,MaxNumJets> m_truthNComponent;
-  std::array<float,MaxNumJets> m_truthEta;
-  std::array<float,MaxNumJets> m_truthPhi;
-  std::array<float,MaxNumJets> m_truthE;
-  std::array<float,MaxNumJets> m_truthPt;  
+  std::array<int,MaxNumJets> m_matched_truthID;
+  std::array<int,MaxNumJets> m_matched_truthNComponent;
+  std::array<float,MaxNumJets> m_matched_truthEta;
+  std::array<float,MaxNumJets> m_matched_truthPhi;
+  std::array<float,MaxNumJets> m_matched_truthE;
+  std::array<float,MaxNumJets> m_matched_truthPt;  
+ 
+  std::array<int,MaxNumJets> m_all_truthID;
+  std::array<int,MaxNumJets> m_all_truthNComponent;
+  std::array<float,MaxNumJets> m_all_truthEta;
+  std::array<float,MaxNumJets> m_all_truthPhi;
+  std::array<float,MaxNumJets> m_all_truthE;
+  std::array<float,MaxNumJets> m_all_truthPt;
 
   // // Tracks
   // // ! number of matched tracks
