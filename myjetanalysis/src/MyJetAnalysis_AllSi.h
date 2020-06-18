@@ -141,6 +141,11 @@ class MyJetAnalysis_AllSi : public SubsysReco
   std::array<float,MaxNumJets> m_all_truthPhi;
   std::array<float,MaxNumJets> m_all_truthE;
   std::array<float,MaxNumJets> m_all_truthPt;
+ 
+  std::array<float,MaxNumJets> m_matched_charged_truthEta;
+  std::array<float,MaxNumJets> m_matched_charged_truthPhi;
+  std::array<float,MaxNumJets> m_matched_charged_truthE;
+  std::array<float,MaxNumJets> m_matched_charged_truthPt;
 
   // // Tracks
   // // ! number of matched tracks
