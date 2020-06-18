@@ -103,6 +103,7 @@ class MyJetAnalysis : public SubsysReco
 
   int m_njets;
   int m_ntruthjets;
+  int m_nAlltruthjets;
   
   enum {MaxNumJets = 10};
   std::array<int,MaxNumJets> m_id;

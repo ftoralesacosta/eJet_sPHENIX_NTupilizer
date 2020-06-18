@@ -59,6 +59,7 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_electron_truthPID(-1)
   , m_njets(-1)
   , m_ntruthjets(-1)
+  , m_nAlltruthjets(-1)
 {
   m_id.fill(-1);
   m_nComponent.fill(-1);
@@ -95,23 +96,17 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   PHTFileServer::get().open(m_outputFileName, "RECREATE");
 
   // Histograms
-  m_hInclusiveE = new TH1F(
-      "hInclusive_E",  //
-      TString(m_recoJetName) + " inclusive jet E;Total jet energy (GeV)", 100, 0, 100);
+  m_hInclusiveE = new TH1F("hInclusive_E",
+    TString(m_recoJetName) + " inclusive jet E;Total jet energy (GeV)", 100, 0, 100);
 
-  m_hInclusiveEta =
-      new TH1F(
-          "hInclusive_eta",  //
-          TString(m_recoJetName) + " inclusive jet #eta;#eta;Jet energy density", 50, -1, 1);
-  m_hInclusivePhi =
-      new TH1F(
-          "hInclusive_phi",  //
-          TString(m_recoJetName) + " inclusive jet #phi;#phi;Jet energy density", 50, -M_PI, M_PI);
+  m_hInclusiveEta = new TH1F("hInclusive_eta",
+    TString(m_recoJetName) + " inclusive jet #eta;#eta;Jet energy density", 50, -1, 1);
 
-  m_hInclusiveNJets =
-      new TH1F(
-	   "hInclusive_njets",  //
-	   TString(m_recoJetName) + " inclusive number of jets",10,0,10);
+  m_hInclusivePhi = new TH1F("hInclusive_phi",
+    TString(m_recoJetName) + " inclusive jet #phi;#phi;Jet energy density", 50, -M_PI, M_PI);
+
+  m_hInclusiveNJets = new TH1F("hInclusive_njets",
+    TString(m_recoJetName) + " inclusive number of jets",10,0,10);
 	       
   
   //Event Branches
@@ -119,6 +114,7 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_T->Branch("event", &m_event, "event/I");
   m_T->Branch("njets", &m_njets, "njets/I");
   m_T->Branch("ntruthjets", &m_ntruthjets, "ntruthjets/I");
+  m_T->Branch("nAlltruthjets", &m_nAlltruthjets, "nAlltruthjets/I");
 
   //Reconstructed Jet Branches
   m_T->Branch("id", m_id.data(), "id[njets]/I");
@@ -140,12 +136,12 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   // m_T->Branch("trackpT", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
 
   // ALL Truth Jet Branches
-  m_T->Branch("all_truthID", m_all_truthID.data(), "all_truthID[ntruthjets]/I");
-  m_T->Branch("all_truthNComponent", m_all_truthNComponent.data(), "all_truthNComponent[ntruthjets]/I");
-  m_T->Branch("all_truthEta", m_all_truthEta.data(), "all_truthEta[ntruthjets]/F");
-  m_T->Branch("all_truthPhi", m_all_truthPhi.data(), "all_truthPhi[ntruthjets]/F");
-  m_T->Branch("all_truthE", m_all_truthE.data(), "all_truthE[ntruthjets]/F");
-  m_T->Branch("all_truthPt", m_all_truthPt.data(), "all_truthPt[ntruthjets]/F");
+  m_T->Branch("all_truthID", m_all_truthID.data(), "all_truthID[nAlltruthjets]/I");
+  m_T->Branch("all_truthNComponent", m_all_truthNComponent.data(), "all_truthNComponent[nAlltruthjets]/I");
+  m_T->Branch("all_truthEta", m_all_truthEta.data(), "all_truthEta[nAlltruthjets]/F");
+  m_T->Branch("all_truthPhi", m_all_truthPhi.data(), "all_truthPhi[nAlltruthjets]/F");
+  m_T->Branch("all_truthE", m_all_truthE.data(), "all_truthE[nAlltruthjets]/F");
+  m_T->Branch("all_truthPt", m_all_truthPt.data(), "all_truthPt[nAlltruthjets]/F");
 
 
   //Electron Branches
@@ -322,11 +318,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		m_matched_truthE[j] = truthjet->get_e();
 		m_matched_truthPt[j] = truthjet->get_pt();
 	      }
-	
 	++j;
-	//j is incremented outside of the matching criteria so truth/reco array elements match
 	m_njets=j;
 	m_ntruthjets=j;
+	//j is incremented outside of the matching criteria so truth/reco array elements match
+	//njet and ntruthjet give the size of the arrays, and for matching must be equal.
+	
 	if (j >= MaxNumJets) break;
 
 	// //fill trees - jet track matching
@@ -367,11 +364,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     m_hInclusiveNJets->Fill(inc_jet_counter);
     assert(m_hInclusiveNJets);
 
+    int i_alltruth = 0;
     for (JetMap::Iter tter = all_truth_jets->begin(); tter != all_truth_jets->end(); ++tter)
       {
 
 	Jet* all_truthjet = tter->second;
-	assert(all_truthjet); //Check if null pointer. Abort if so.
+	assert(all_truthjet); //Check if null pointer.
 
  	TLorentzVector JTruth_vec(all_truthjet->get_px(), all_truthjet->get_py(),
 				  all_truthjet->get_pz(),all_truthjet->get_e());
@@ -393,14 +391,16 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		all_truthjet->identify();
 	      }
 	    continue;
-	  }  
-
-	m_all_truthID[j] = all_truthjet->get_id();
-	m_all_truthNComponent[j] = all_truthjet->size_comp();
-	m_all_truthEta[j] = all_truthjet->get_eta();
-	m_all_truthPhi[j] = all_truthjet->get_phi();
-	m_all_truthE[j] = all_truthjet->get_e();
-	m_all_truthPt[j] = all_truthjet->get_pt();
+	  }
+	
+	m_all_truthID[i_alltruth] = all_truthjet->get_id();
+	m_all_truthNComponent[i_alltruth] = all_truthjet->size_comp();
+	m_all_truthEta[i_alltruth] = all_truthjet->get_eta();
+	m_all_truthPhi[i_alltruth] = all_truthjet->get_phi();
+	m_all_truthE[i_alltruth] = all_truthjet->get_e();
+	m_all_truthPt[i_alltruth] = all_truthjet->get_pt();
+	i_alltruth++;
+	m_nAlltruthjets++;
       }
     m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
   }//electron Loop  
