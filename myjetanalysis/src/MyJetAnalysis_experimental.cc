@@ -81,6 +81,14 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   m_all_truthPt.fill(numeric_limits<float>::signaling_NaN());
 
   // m_nMatchedTrack.fill(-1);
+  // std::fill( m_Constituent_truthPID.begin(), m_Constituent_truthPID.end(), 0);
+  // std::fill( &m_Constituent_truthPID[0][0], &m_Constituent_truthPID[0][0] + sizeof(m_Constituent_truthPID), 0);
+  // std::fill( &m_Constituent_truthEta[0][0], &m_Constituent_truthEta[0][0] + sizeof(m_Constituent_truthEta), 0.);
+  // std::fill( &m_Constituent_truthPhi[0][0], &m_Constituent_truthPhi[0][0] + sizeof(m_Constituent_truthPhi), 0.);
+  // std::fill( &m_Constituent_truthPt[0][0], &m_Constituent_truthPt[0][0] + sizeof(m_Constituent_truthPt), -1.);
+  // std::fill( &m_Constituent_truthE[0][0], &m_Constituent_truthE[0][0] + sizeof(m_Constituent_truthE), -1.);
+   
+  // m_nMatchedTrack.fill(-1);
   // std::fill( &m_trackdR[0][0], &m_trackdR[0][0] + sizeof(m_trackdR) /* / sizeof(flags[0][0]) */, 0);
   // std::fill( &m_trackpT[0][0], &m_trackpT[0][0] + sizeof(m_trackpT)  /* / sizeof(flags[0][0]) */, 0);
 }
@@ -131,9 +139,12 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_T->Branch("matched_truthPhi", m_matched_truthPhi.data(), "matched_truthPhi[ntruthjets]/F");
   m_T->Branch("matched_truthE", m_matched_truthE.data(), "matched_truthE[ntruthjets]/F");
   m_T->Branch("matched_truthPt", m_matched_truthPt.data(), "matched_truthPt[ntruthjets]/F");
-  // m_T->Branch("nMatchedTrack", m_nMatchedTrack.data(), "nMatchedTrack/I");
-  // m_T->Branch("TrackdR", m_trackdR.data(), "trackdR[nMatchedTrack]/F");
-  // m_T->Branch("trackpT", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
+  // m_T->Branch("matched_Constituent_truthPID", m_Constituent_truthPID.data(),"matched_Constituent_truthPID[ntruthjets][matched_truthNComponent]/I");
+  // m_T->Branch("matched_Constituent_truthEta", m_Constituent_truthEta.data(),"matched_Constituent_truthEta[ntruthjets][matched_truthNComponent]/F");
+  // m_T->Branch("matched_Constituent_truthPhi", m_Constituent_truthPhi.data(),"matched_Constituent_truthPhi[ntruthjets][matched_truthNComponent]/F");
+  // m_T->Branch("matched_Constituent_truthPt", m_Constituent_truthPt.data(),"matched_Constituent_truthPt[ntruthjets][matched_truthNComponent]/F");
+  // m_T->Branch("matched_Constituent_truthE", m_Constituent_truthE.data(),"matched_Constituent_truthE[ntruthjets][matched_truthNComponent]/F");
+  //m_T->Branch("id", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
 
   // ALL Truth Jet Branches
   m_T->Branch("all_truthID", m_all_truthID.data(), "all_truthID[nAlltruthjets]/I");
@@ -259,33 +270,10 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     m_electron_truthPhi = e_vec.Phi();
     m_electron_truthPt = e_vec.Pt();
 
-    //Remove Previous Event Data
-    {
-      m_njets = 0;
-      m_ntruthjets=0;
-      m_id.fill(-1);
-      m_nComponent.fill(-1);
-      m_eta.fill(numeric_limits<float>::signaling_NaN());
-      m_phi.fill(numeric_limits<float>::signaling_NaN());
-      m_e.fill(numeric_limits<float>::signaling_NaN());
-      m_pt.fill(numeric_limits<float>::signaling_NaN());
-      m_matched_truthID.fill(-1);
-      m_matched_truthNComponent.fill(-1);
-      m_matched_truthEta.fill(numeric_limits<float>::signaling_NaN());
-      m_matched_truthPhi.fill(numeric_limits<float>::signaling_NaN());
-      m_matched_truthE.fill(numeric_limits<float>::signaling_NaN());
-      m_matched_truthPt.fill(numeric_limits<float>::signaling_NaN());
-      m_nAlltruthjets = 0;
-      m_all_truthID.fill(-1);
-      m_all_truthNComponent.fill(-1);
-      m_all_truthEta.fill(numeric_limits<float>::signaling_NaN());
-      m_all_truthPhi.fill(numeric_limits<float>::signaling_NaN());
-      m_all_truthE.fill(numeric_limits<float>::signaling_NaN());
-      m_all_truthPt.fill(numeric_limits<float>::signaling_NaN());
-    }
-
     int inc_jet_counter = 0;
     int j = 0; //Jet element index. Same index for reco and matched truth, but in separate arrays
+    m_njets = 0;
+    m_ntruthjets=0;
     for (JetMap::Iter jter = jets->begin(); jter != jets->end(); ++jter)
       {
 	Jet* jet = jter->second;
@@ -339,12 +327,28 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		m_matched_truthPhi[j] = truthjet->get_phi();
 		m_matched_truthE[j] = truthjet->get_e();
 		m_matched_truthPt[j] = truthjet->get_pt();
+
+		
+		// std::set<PHG4Particle*> truthj_particle_set = m_jetEvalStack->get_truth_eval()->all_truth_particles(truthjet);
+		// int c_index = 0;
+		// for (auto i_t:truthj_particle_set)
+		//   {
+		//     TLorentzVector constituent_vec;
+		//     constituent_vec.SetPxPyPzE(i_t->get_px(),i_t->get_py(),i_t->get_pz(),i_t->get_e());
+		//     m_Constituent_truthPID[j][c_index] = i_t->get_pid();
+		//     m_Constituent_truthEta[j][c_index] = constituent_vec.Eta();
+		//     m_Constituent_truthPhi[j][c_index] = constituent_vec.Phi();
+		//     m_Constituent_truthPt[j][c_index] = constituent_vec.Pt();
+		//     m_Constituent_truthE[j][c_index] = constituent_vec.E();
+		//     c_index++;
+		//   }
+
 	      }
 	++j;
 	m_njets=j;
 	m_ntruthjets=j;
 	//j is incremented outside of the matching criteria so truth/reco array elements match
-	//njet and ntruthjet give the size of the written arrays, and for matching must be equal.
+	//njet and ntruthjet give the size of the arrays, and for matching must be equal.
 	
 	if (j >= MaxNumJets) break;
 
@@ -386,10 +390,10 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     m_hInclusiveNJets->Fill(inc_jet_counter);
     assert(m_hInclusiveNJets);
 
-    //All Truth Jet Loop    
     int i_alltruth = 0;
     for (JetMap::Iter tter = all_truth_jets->begin(); tter != all_truth_jets->end(); ++tter)
       {
+
 	Jet* all_truthjet = tter->second;
 	assert(all_truthjet); //Check if null pointer.
 
@@ -421,8 +425,8 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	m_all_truthPhi[i_alltruth] = all_truthjet->get_phi();
 	m_all_truthE[i_alltruth] = all_truthjet->get_e();
 	m_all_truthPt[i_alltruth] = all_truthjet->get_pt();
-	++i_alltruth;
-	m_nAlltruthjets = i_alltruth;
+	i_alltruth++;
+	m_nAlltruthjets++;
       }
     m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
   }//electron Loop  

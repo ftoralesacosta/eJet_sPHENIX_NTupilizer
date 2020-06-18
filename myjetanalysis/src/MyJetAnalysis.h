@@ -105,7 +105,7 @@ class MyJetAnalysis : public SubsysReco
   int m_ntruthjets;
   int m_nAlltruthjets;
   
-  enum {MaxNumJets = 10};
+  enum {MaxNumJets = 20};
   std::array<int,MaxNumJets> m_id;
   std::array<int,MaxNumJets> m_nComponent;
   std::array<float,MaxNumJets> m_eta;
@@ -126,6 +126,16 @@ class MyJetAnalysis : public SubsysReco
   std::array<float,MaxNumJets> m_all_truthPhi;
   std::array<float,MaxNumJets> m_all_truthE;
   std::array<float,MaxNumJets> m_all_truthPt;  
+  
+  //Matched Constituens
+  // enum {kMaxConstituents = 100};
+  // std::array<std::array<int, kMaxConstituents >, MaxNumJets > m_Constituent_truthPID;
+  // std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthEta;
+  // std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthPhi;
+  // std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthPt;
+  // std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthE;
+
+
   
   // // Tracks
   // // ! number of matched tracks
