@@ -346,8 +346,9 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	m_phi[j] = jet->get_phi();
 	m_pt[j] = jet->get_pt();
 	
-	    //Which truth jet contributed the most enery to this reco jet?
-	Jet* truthjet = recoeval->max_truth_jet_by_energy(jet);
+	//Which truth jet contributed the most enery to this reco jet?
+	//Jet* truthjet = recoeval->max_truth_jet_by_energy(jet);
+	Jet* truthjet = recoeval->unique_truth_jet_from_reco(jet);
 	if (truthjet)
 	      {
 
@@ -357,7 +358,6 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		bool truth_eta_cut = (truthjet->get_eta() >= m_etaRange.first) and (truthjet->get_eta() <= m_etaRange.second); 
 		bool truth_pt_cut = (truthjet->get_pt() >= m_ptRange.first) and (truthjet->get_pt() <= m_ptRange.second);
 		bool truth_electron_cut = (JTruth_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
-	
 		if ((not truth_eta_cut) or (not truth_pt_cut) or (not truth_electron_cut))
 		  continue;
 
