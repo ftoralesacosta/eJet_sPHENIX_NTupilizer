@@ -127,13 +127,13 @@ class MyJetAnalysis : public SubsysReco
   std::array<float,MaxNumJets> m_all_truthE;
   std::array<float,MaxNumJets> m_all_truthPt;  
   
-  //Matched Constituens
-  // enum {kMaxConstituents = 100};
-  // std::array<std::array<int, kMaxConstituents >, MaxNumJets > m_Constituent_truthPID;
-  // std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthEta;
-  // std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthPhi;
-  // std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthPt;
-  // std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthE;
+  //Matched Constituents
+  enum {kMaxConstituents = 100};
+  std::array<std::array<int, kMaxConstituents >, MaxNumJets > m_Constituent_truthPID;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthEta;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthPhi;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthPt;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthE;
 
 
   
