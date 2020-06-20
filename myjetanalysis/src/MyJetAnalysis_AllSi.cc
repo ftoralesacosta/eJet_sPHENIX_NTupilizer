@@ -64,7 +64,7 @@ MyJetAnalysis_AllSi::MyJetAnalysis_AllSi(const std::string& recojetname, const s
 	, m_electron_truthpZ(numeric_limits<float>::signaling_NaN())
 	, m_electron_truthPID(-1)
 	, m_njets(-1)
-	  , m_ntruthjets(-1)
+	, m_ntruthjets(-1)
 {
 	m_id.fill(-1);
 	m_nComponent.fill(-1);
@@ -78,6 +78,7 @@ MyJetAnalysis_AllSi::MyJetAnalysis_AllSi(const std::string& recojetname, const s
 	m_matched_truthPhi.fill(numeric_limits<float>::signaling_NaN());
 	m_matched_truthE.fill(numeric_limits<float>::signaling_NaN());
 	m_matched_truthPt.fill(numeric_limits<float>::signaling_NaN());
+	m_matched_charged_truthNComponent.fill(-1);
 	m_matched_charged_truthEta.fill(numeric_limits<float>::signaling_NaN());
 	m_matched_charged_truthPhi.fill(numeric_limits<float>::signaling_NaN());
 	m_matched_charged_truthE.fill(numeric_limits<float>::signaling_NaN());
@@ -88,6 +89,8 @@ MyJetAnalysis_AllSi::MyJetAnalysis_AllSi(const std::string& recojetname, const s
 	m_all_truthPhi.fill(numeric_limits<float>::signaling_NaN());
 	m_all_truthE.fill(numeric_limits<float>::signaling_NaN());
 	m_all_truthPt.fill(numeric_limits<float>::signaling_NaN());
+
+	m_electronJetMatchingRadius = get_jet_radius_from_string(recojetname)/2.;
 
 	// m_nMatchedTrack.fill(-1);
 	// std::fill( &m_trackdR[0][0], &m_trackdR[0][0] + sizeof(m_trackdR) /* / sizeof(flags[0][0]) */, 0);
@@ -137,6 +140,7 @@ int MyJetAnalysis_AllSi::Init(PHCompositeNode* topNode)
 	// m_T->Branch("trackpT", m_trackpT.data(), "trackpT[nMatchedTrack]/F");
 
 	//Matched Charged Truth Jet Branches
+	m_T->Branch("matched_charged_truthNComponent", m_matched_charged_truthNComponent.data(), "matched_charged_truthNComponent[ntruthjets]/I");
 	m_T->Branch("matched_charged_truthEta", m_matched_charged_truthEta.data(), "matched_charged_truthEta[ntruthjets]/F");
 	m_T->Branch("matched_charged_truthPhi", m_matched_charged_truthPhi.data(), "matched_charged_truthPhi[ntruthjets]/F");
 	m_T->Branch("matched_charged_truthE", m_matched_charged_truthE.data(), "matched_charged_truthE[ntruthjets]/F");
@@ -319,7 +323,8 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 			m_matched_truthE[j] = NAN;
 			m_matched_truthPt[j] = NAN;
  
-                        m_matched_charged_truthEta[j] = NAN;
+                        m_matched_charged_truthNComponent[j] = NAN;
+			m_matched_charged_truthEta[j] = NAN;
                         m_matched_charged_truthPhi[j] = NAN;
                         m_matched_charged_truthE[j] = NAN;
                         m_matched_charged_truthPt[j] = NAN;
@@ -340,10 +345,11 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 				TLorentzVector truth_charged_jet;
 				truth_charged_jet.SetPtEtaPhiE(m_matched_truthPt[j],m_matched_truthEta[j],m_matched_truthPhi[j],m_matched_truthE[j]);
 
+				m_matched_charged_truthNComponent[j] = m_matched_truthNComponent[j];
+
 				std::set<PHG4Particle*> truthj_particle_set = m_jetEvalStack->get_truth_eval()->all_truth_particles(truthjet);
 				for (auto i_t:truthj_particle_set)
-				{ 
-					//cout << "Truth Jet Constituent PID: " << i_t->get_pid() << ", True Energy: " << i_t->get_e() << ", Charge: " << i_t->get_IonCharge() << endl;
+				{ 	
 					if(             (i_t->get_pid()== 111)|| // pi0
 							(i_t->get_pid()==2112)|| // neutron
 							(i_t->get_pid()== 130)|| // K0_L
@@ -354,6 +360,8 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 						TLorentzVector neutral_constituent;
 						neutral_constituent.SetPxPyPzE(i_t->get_px(),i_t->get_py(),i_t->get_pz(),i_t->get_e());
 						truth_charged_jet -= neutral_constituent;
+						
+						m_matched_charged_truthNComponent[j]--;
 					}
 				}
 
