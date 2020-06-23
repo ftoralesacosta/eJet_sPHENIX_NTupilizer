@@ -38,7 +38,7 @@ using namespace std;
 // =======================================================================================================================
 MyJetAnalysis_AllSi::MyJetAnalysis_AllSi(const std::string& recojetname, const std::string& truthjetname, const std::string& outputfilename)
 	: SubsysReco("MyJetAnalysis_AllSi_" + recojetname + "_" + truthjetname)	
-	, _truthjets(nullptr)
+	, all_truth_jets(nullptr)
 	, _trackmap(nullptr)
 	, _truthinfo(nullptr)
 	, m_recoJetName(recojetname)
@@ -65,6 +65,7 @@ MyJetAnalysis_AllSi::MyJetAnalysis_AllSi(const std::string& recojetname, const s
 	, m_electron_truthPID(-1)
 	, m_njets(-1)
 	, m_ntruthjets(-1)
+	  , m_nAlltruthjets(-1)
 {
 	m_id.fill(-1);
 	m_nComponent.fill(-1);
@@ -119,6 +120,7 @@ int MyJetAnalysis_AllSi::Init(PHCompositeNode* topNode)
 	m_T->Branch("event", &m_event, "event/I");
 	m_T->Branch("njets", &m_njets, "njets/I");
 	m_T->Branch("ntruthjets", &m_ntruthjets, "ntruthjets/I");
+	m_T->Branch("nAlltruthjets", &m_nAlltruthjets, "nAlltruthjets/I");
 
 	//Reconstructed Jet Branches
 	m_T->Branch("id", m_id.data(), "id[njets]/I");
@@ -147,12 +149,12 @@ int MyJetAnalysis_AllSi::Init(PHCompositeNode* topNode)
 	m_T->Branch("matched_charged_truthPt", m_matched_charged_truthPt.data(), "matched_charged_truthPt[ntruthjets]/F");
 
 	// ALL Truth Jet Branches
-	m_T->Branch("all_truthID", m_all_truthID.data(), "all_truthID[ntruthjets]/I");
-	m_T->Branch("all_truthNComponent", m_all_truthNComponent.data(), "all_truthNComponent[ntruthjets]/I");
-	m_T->Branch("all_truthEta", m_all_truthEta.data(), "all_truthEta[ntruthjets]/F");
-	m_T->Branch("all_truthPhi", m_all_truthPhi.data(), "all_truthPhi[ntruthjets]/F");
-	m_T->Branch("all_truthE", m_all_truthE.data(), "all_truthE[ntruthjets]/F");
-	m_T->Branch("all_truthPt", m_all_truthPt.data(), "all_truthPt[ntruthjets]/F");
+	m_T->Branch("all_truthID", m_all_truthID.data(), "all_truthID[nAlltruthjets]/I");
+	m_T->Branch("all_truthNComponent", m_all_truthNComponent.data(), "all_truthNComponent[nAlltruthjets]/I");
+	m_T->Branch("all_truthEta", m_all_truthEta.data(), "all_truthEta[nAlltruthjets]/F");
+	m_T->Branch("all_truthPhi", m_all_truthPhi.data(), "all_truthPhi[nAlltruthjets]/F");
+	m_T->Branch("all_truthE", m_all_truthE.data(), "all_truthE[nAlltruthjets]/F");
+	m_T->Branch("all_truthPt", m_all_truthPt.data(), "all_truthPt[nAlltruthjets]/F");
 
 	//Electron Branches
 	m_T->Branch("electron_truthEta", &m_electron_truthEta, "electron_truthEta/F");
@@ -185,8 +187,8 @@ int MyJetAnalysis_AllSi::InitRun(PHCompositeNode* topNode)
 {
 	m_jetEvalStack = shared_ptr<JetEvalStack>(new JetEvalStack(topNode, m_recoJetName, m_truthJetName));
 
-	_truthjets = findNode::getClass<JetMap>(topNode, m_truthJetName);
-	if (!_truthjets){
+	all_truth_jets = findNode::getClass<JetMap>(topNode, m_truthJetName);
+	if (!all_truth_jets){
 		cerr << PHWHERE << " ERROR: Can't find " << m_truthJetName << endl;
 		exit(-1);
 	}
@@ -322,12 +324,12 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 			m_matched_truthPhi[j] = NAN;
 			m_matched_truthE[j] = NAN;
 			m_matched_truthPt[j] = NAN;
- 
-                        m_matched_charged_truthNComponent[j] = NAN;
+
+			m_matched_charged_truthNComponent[j] = NAN;
 			m_matched_charged_truthEta[j] = NAN;
-                        m_matched_charged_truthPhi[j] = NAN;
-                        m_matched_charged_truthE[j] = NAN;
-                        m_matched_charged_truthPt[j] = NAN;
+			m_matched_charged_truthPhi[j] = NAN;
+			m_matched_charged_truthE[j] = NAN;
+			m_matched_charged_truthPt[j] = NAN;
 
 			//Which truth jet contributed the most enery to this reco jet?
 			//Jet* truthjet = recoeval->max_truth_jet_by_energy(jet);	// <-- this is what was used in the standard code
@@ -360,15 +362,15 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 						TLorentzVector neutral_constituent;
 						neutral_constituent.SetPxPyPzE(i_t->get_px(),i_t->get_py(),i_t->get_pz(),i_t->get_e());
 						truth_charged_jet -= neutral_constituent;
-						
+
 						m_matched_charged_truthNComponent[j]--;
 					}
 				}
 
-                        	m_matched_charged_truthEta[j] = truth_charged_jet.PseudoRapidity();
-                        	m_matched_charged_truthPhi[j] = truth_charged_jet.Phi();
-                        	m_matched_charged_truthE[j] = truth_charged_jet.E();
-                        	m_matched_charged_truthPt[j] = truth_charged_jet.Pt();
+				m_matched_charged_truthEta[j] = truth_charged_jet.PseudoRapidity();
+				m_matched_charged_truthPhi[j] = truth_charged_jet.Phi();
+				m_matched_charged_truthE[j] = truth_charged_jet.E();
+				m_matched_charged_truthPt[j] = truth_charged_jet.Pt();
 			}
 
 			++j;
@@ -377,56 +379,25 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 			m_ntruthjets=j;
 			if (j >= MaxNumJets) break;
 
-			// //fill trees - jet track matching
-			// m_nMatchedTrack[j] = 0;
-
-			// Float_t jet_eta = jet->get_eta();
-			// Float_t jet_phi = jet->get_phi();
-			// for (SvtxTrackMap::Iter iter = trackmap->begin();
-			//      iter != trackmap->end(); ++iter)
-
-			//   {
-			//     SvtxTrack* track = iter->second;
-
-			//     TVector3 v(track->get_px(), track->get_py(), track->get_pz());
-			//     const double dEta = v.Eta() - jet_eta;
-			//     const double dPhi = v.Phi() - jet_phi;
-			//     const double dR = sqrt(dEta * dEta + dPhi * dPhi);
-
-			//     if (dR < m_trackJetMatchingRadius)
-			//       {
-			// 	//matched track to jet
-			// 	assert(m_nMatchedTrack[j] < kMaxMatchedTrack);
-			// 	m_trackdR[j][m_nMatchedTrack[j]] = dR;
-			// 	m_trackpT[j][m_nMatchedTrack[j]] = v.Perp();
-			// 	++m_nMatchedTrack[j];
-
-			//       }
-			//     if (m_nMatchedTrack[j] >= kMaxMatchedTrack)
-			//       {
-			// 	cout << "MyJetAnalysis_AllSi::process_event() - reached max track that matching a jet. Quit iterating tracks" << endl;
-			// 	break;
-			//       }
-
-			//   }  //    for (SvtxTrackMap::Iter iter = trackmap->begin();
-
 		}  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)      
+		
 		m_hInclusiveNJets->Fill(inc_jet_counter);	
 		assert(m_hInclusiveNJets);
 
-		for (JetMap::Iter tter = _truthjets->begin(); tter != _truthjets->end(); ++tter)
+		//All Truth Jet Loop    
+		int i_alltruth = 0;
+		for (JetMap::Iter tter = all_truth_jets->begin(); tter != all_truth_jets->end(); ++tter)
 		{
-
 			Jet* all_truthjet = tter->second;
-			assert(all_truthjet); //Check if null pointer. Abort if so.
+			assert(all_truthjet); //Check if null pointer.
 
-			TLorentzVector JTruth_vec(all_truthjet->get_px(), all_truthjet->get_py(),
+			TLorentzVector JAllTruth_vec(all_truthjet->get_px(), all_truthjet->get_py(),
 					all_truthjet->get_pz(),all_truthjet->get_e());
 
 			//Apply cuts
 			bool eta_cut = (all_truthjet->get_eta() >= m_etaRange.first) and (all_truthjet->get_eta() <= m_etaRange.second); 
 			bool pt_cut = (all_truthjet->get_pt() >= m_ptRange.first) and (all_truthjet->get_pt() <= m_ptRange.second);
-			bool electron_cut = (JTruth_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
+			bool electron_cut = (JAllTruth_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
 
 			if ((not eta_cut) or (not pt_cut) or (not electron_cut))
 			{
@@ -436,18 +407,20 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 					cout << "eta cut: " << eta_cut << ", ptcut: " << pt_cut << endl;
 					cout << "jet eta: " << all_truthjet->get_eta() << ", jet pt: " << all_truthjet->get_pt() << endl;
 					cout << "electron dR cut: " << m_electronJetMatchingRadius << ", electron-jet dR: "
-						<< JTruth_vec.DeltaR(e_vec) << endl;
+						<< JAllTruth_vec.DeltaR(e_vec) << endl;
 					all_truthjet->identify();
 				}
 				continue;
 			}
 
-			m_all_truthID[j] = all_truthjet->get_id();
-			m_all_truthNComponent[j] = all_truthjet->size_comp();
-			m_all_truthEta[j] = all_truthjet->get_eta();
-			m_all_truthPhi[j] = all_truthjet->get_phi();
-			m_all_truthE[j] = all_truthjet->get_e();
-			m_all_truthPt[j] = all_truthjet->get_pt();
+			m_all_truthID[i_alltruth] = all_truthjet->get_id();
+			m_all_truthNComponent[i_alltruth] = all_truthjet->size_comp();
+			m_all_truthEta[i_alltruth] = all_truthjet->get_eta();
+			m_all_truthPhi[i_alltruth] = all_truthjet->get_phi();
+			m_all_truthE[i_alltruth] = all_truthjet->get_e();
+			m_all_truthPt[i_alltruth] = all_truthjet->get_pt();
+			++i_alltruth;
+			m_nAlltruthjets = i_alltruth;
 		}
 		m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
 	}//electron Loop
@@ -463,8 +436,8 @@ Jet* MyJetAnalysis_AllSi::max_truth_jet_by_track_fastsim(Jet* recojet)
 
 	int max_n_track = -1;
 
-	for (JetMap::Iter iter = _truthjets->begin();
-			iter != _truthjets->end();
+	for (JetMap::Iter iter = all_truth_jets->begin();
+			iter != all_truth_jets->end();
 			++iter)
 	{
 		Jet* candidate = iter->second;
