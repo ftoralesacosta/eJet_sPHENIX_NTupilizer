@@ -124,7 +124,7 @@ class MyJetAnalysis_AllSi : public SubsysReco
   int m_njets;
   int m_ntruthjets;
   
-  enum {MaxNumJets = 10};
+  enum {MaxNumJets = 20};
   std::array<int,MaxNumJets> m_id;
   std::array<int,MaxNumJets> m_nComponent;
   std::array<float,MaxNumJets> m_eta;
