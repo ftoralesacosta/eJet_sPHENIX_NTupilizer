@@ -35,11 +35,18 @@ class MyJetAnalysis : public SubsysReco
     m_etaRange.second = high;
   }
   //! set eta range
-  void
-  setPtRange(double low, double high)
-  {
-    m_ptRange.first = low;
-    m_ptRange.second = high;
+  // void
+  // setPtRange(double low, double high)
+  // {
+  //   m_ptRange.first = low;
+  //   m_ptRange.second = high;
+  // }
+
+  double
+  get_jet_radius_from_string(std::string jetname){
+    //Assumes string compatible with G4_Jets.C
+    std::string substring = jetname.substr(jetname.find("_r")+2);
+    return .1*stof(substring);
   }
 
   void
@@ -71,11 +78,13 @@ class MyJetAnalysis : public SubsysReco
   //! pT range
   std::pair<double, double> m_ptRange;
 
+  //Jet Resolution Parameter
+  double m_jet_R;
+  
+  double m_electronJetMatchingRadius;
+  
   //electron Energy min
   double m_eEmin;
-
-  //electron-jet matching radius for veto
-  double m_electronJetMatchingRadius;
   
   //! max track-jet matching radius
   double m_trackJetMatchingRadius;
