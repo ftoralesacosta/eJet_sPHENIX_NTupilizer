@@ -61,6 +61,10 @@ class MyJetAnalysis_AllSi : public SubsysReco
   int InitRun(PHCompositeNode *topNode);
   int process_event(PHCompositeNode *topNode);
   int End(PHCompositeNode *topNode);
+  
+  float get_jet_radius_from_string( string jetname ){ // Assumming jetname is a string that ends, for instance, in "_r04" if the radius is 0.4 
+        return .1*stof(jetname.substr(jetname.find("_r")+2));
+  }
 
  private:
 
@@ -73,7 +77,7 @@ class MyJetAnalysis_AllSi : public SubsysReco
   int get_track_fastsim_contribution(Jet* recojet, Jet* truthjet);
   std::set<PHG4Particle*> all_truth_particles(Jet* truthjet);
 
-  JetMap* _truthjets;
+  JetMap* all_truth_jets;
   SvtxTrackMap* _trackmap;
   PHG4TruthInfoContainer* _truthinfo;
 
@@ -119,8 +123,9 @@ class MyJetAnalysis_AllSi : public SubsysReco
 
   int m_njets;
   int m_ntruthjets;
+  int m_nAlltruthjets;
   
-  enum {MaxNumJets = 10};
+  enum {MaxNumJets = 20};
   std::array<int,MaxNumJets> m_id;
   std::array<int,MaxNumJets> m_nComponent;
   std::array<float,MaxNumJets> m_eta;
@@ -141,7 +146,8 @@ class MyJetAnalysis_AllSi : public SubsysReco
   std::array<float,MaxNumJets> m_all_truthPhi;
   std::array<float,MaxNumJets> m_all_truthE;
   std::array<float,MaxNumJets> m_all_truthPt;
- 
+
+  std::array<int,MaxNumJets> m_matched_charged_truthNComponent; 
   std::array<float,MaxNumJets> m_matched_charged_truthEta;
   std::array<float,MaxNumJets> m_matched_charged_truthPhi;
   std::array<float,MaxNumJets> m_matched_charged_truthE;
