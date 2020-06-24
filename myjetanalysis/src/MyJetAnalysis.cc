@@ -40,8 +40,9 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_outputFileName(outputfilename)
   , m_etaRange(-8, 8)//-0.7 0.7 for track_reco jets
   , m_ptRange(0.5, 500)
+  , m_jet_R(get_jet_radius_from_string(recojetname))
+  , m_electronJetMatchingRadius(m_jet_R/2.0)
   , m_eEmin(1.0)
-  , m_electronJetMatchingRadius(0.5)  
   , m_trackJetMatchingRadius(.7)
   , m_hInclusiveE(nullptr)
   , m_hInclusiveEta(nullptr)
@@ -137,7 +138,7 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_T->Branch("matched_truthE", m_matched_truthE.data(), "matched_truthE[ntruthjets]/F");
   m_T->Branch("matched_truthPt", m_matched_truthPt.data(), "matched_truthPt[ntruthjets]/F");
   m_T->Branch("matched_Constituent_truthPID", m_Constituent_truthPID.data(),"matched_Constituent_truthPID[ntruthjets][matched_truthNComponent[j]]/I");
-  m_T->Branch("matched_Constituent_truthEta", m_Constituent_truthEta.data(),"matched_Constituent_truthEta[ntruthjets][matched_truthNComponent[j]]/F");
+  m_T->Branch("matched_Constituent_truthEta", m_Constituent_truthEta.data(),"matched_Constituent_truthEta[ntruthjets]50]/F");
   m_T->Branch("matched_Constituent_truthPhi", m_Constituent_truthPhi.data(),"matched_Constituent_truthPhi[ntruthjets][matched_truthNComponent[j]]/F");
   m_T->Branch("matched_Constituent_truthPt", m_Constituent_truthPt.data(),"matched_Constituent_truthPt[ntruthjets][matched_truthNComponent[j]]/F");
   m_T->Branch("matched_Constituent_truthE", m_Constituent_truthE.data(),"matched_Constituent_truthE[ntruthjets][matched_truthNComponent[j]]/F");
@@ -225,6 +226,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
   // }
 
   //Interface to True Electrons    
+  cout<<"Jet Radius = "<<m_jet_R<<" and electron dR = "<<m_electronJetMatchingRadius<<std::endl;
   PHG4TruthInfoContainer* truthinfo = findNode::getClass<PHG4TruthInfoContainer>(topNode,"G4TruthInfo");
   if ( !truthinfo )
     {
@@ -318,7 +320,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	++inc_jet_counter;
 
 	TLorentzVector JReco_vec(jet->get_px(), jet->get_py(), jet->get_pz(),jet->get_e());
-
+	
  	//Apply cuts
  	bool eta_cut = (jet->get_eta() >= m_etaRange.first) and (jet->get_eta() <= m_etaRange.second); 
 	bool pt_cut = (jet->get_pt() >= m_ptRange.first) and (jet->get_pt() <= m_ptRange.second);
@@ -336,7 +338,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		jet->identify();
 	      }
 	    continue;
-	  }  
+	  }
   
 	//Jet Arrays
 	m_id[j] = jet->get_id();
@@ -375,10 +377,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		    TLorentzVector constituent_vec;
 		    constituent_vec.SetPxPyPzE(i_t->get_px(),i_t->get_py(),i_t->get_pz(),i_t->get_e());
 		    m_Constituent_truthPID[j][c_index] = i_t->get_pid();
-		    m_Constituent_truthEta[j][c_index] = constituent_vec.Eta();
+		    m_Constituent_truthEta[j][c_index] = constituent_vec.Eta();		  
 		    m_Constituent_truthPhi[j][c_index] = constituent_vec.Phi();
 		    m_Constituent_truthPt[j][c_index] = constituent_vec.Pt();
 		    m_Constituent_truthE[j][c_index] = constituent_vec.E();
+  		    // std::cout<<"Jet Number = "<<j<<" Constituent Number = "<<c_index
+		    // <<" Constituent Eta = "<<m_Constituent_truthEta[j][c_index]<<std::endl;
 		    c_index++;
 		  }
 	      }
@@ -466,7 +470,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	++i_alltruth;
 	m_nAlltruthjets = i_alltruth;
       }
-    
+    std::cout<<"Outside the loop"<<"Jet Number = "<<0<<" Constituent Number = "<<0<<" Constituent Eta = "<<m_Constituent_truthEta[0][0]<<std::endl;
     m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
   }//electron Loop  
   return Fun4AllReturnCodes::EVENT_OK;
