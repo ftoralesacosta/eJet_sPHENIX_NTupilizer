@@ -25,6 +25,8 @@
 #include <TTree.h>
 #include <TVector3.h>
 #include <TLorentzVector.h>
+#include <TParticlePDG.h>
+#include <TDatabasePDG.h>
 
 #include <algorithm>
 #include <cassert>
@@ -351,20 +353,25 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 
 				std::set<PHG4Particle*> truthj_particle_set = m_jetEvalStack->get_truth_eval()->all_truth_particles(truthjet);
 				for (auto i_t:truthj_particle_set)
-				{ 	
-					if(             (i_t->get_pid()== 111)|| // pi0
-							(i_t->get_pid()==2112)|| // neutron
-							(i_t->get_pid()== 130)|| // K0_L
-							(i_t->get_pid()== 310)|| // K0_S
-							(i_t->get_pid()== 311)|| // K0
-							(i_t->get_pid()==  22)   // photon
+				{ 
+					/*	
+					if(             (abs(i_t->get_pid())== 111)|| // pi0
+							(abs(i_t->get_pid())==2112)|| // neutron
+							(abs(i_t->get_pid())== 130)|| // K0_L
+							(abs(i_t->get_pid())== 310)|| // K0_S
+							(abs(i_t->get_pid())== 311)|| // K0
+							(abs(i_t->get_pid())==  22)   // photon
 					  ){
+					*/
+
+					TParticlePDG * pdg_p = TDatabasePDG::Instance()->GetParticle( i_t->get_pid() );
+					if( abs(pdg_p -> Charge()/3.) < 1.0E-05 ){
 						TLorentzVector neutral_constituent;
 						neutral_constituent.SetPxPyPzE(i_t->get_px(),i_t->get_py(),i_t->get_pz(),i_t->get_e());
 						truth_charged_jet -= neutral_constituent;
 
 						m_matched_charged_truthNComponent[j]--;
-					}
+					}	
 				}
 
 				m_matched_charged_truthEta[j] = truth_charged_jet.PseudoRapidity();
