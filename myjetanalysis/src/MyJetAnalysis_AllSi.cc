@@ -295,7 +295,6 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 			//Apply cuts
 			bool eta_cut = (jet->get_eta() >= m_etaRange.first) and (jet->get_eta() <= m_etaRange.second); 
 			bool pt_cut = (jet->get_pt() >= m_ptRange.first) and (jet->get_pt() <= m_ptRange.second);
-
 			bool electron_cut = (JReco_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
 
 			if ((not eta_cut) or (not pt_cut) or (not electron_cut))
@@ -339,6 +338,15 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 
 			if (truthjet)
 			{	
+				TLorentzVector JTruth_vec(truthjet->get_px(), truthjet->get_py(), truthjet->get_pz(),truthjet->get_e());
+
+				//Apply cuts
+				bool truth_eta_cut = (truthjet->get_eta() >= m_etaRange.first) and (truthjet->get_eta() <= m_etaRange.second); 
+				bool truth_pt_cut = (truthjet->get_pt() >= m_ptRange.first) and (truthjet->get_pt() <= m_ptRange.second);
+				bool truth_electron_cut = (JTruth_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
+				if ((not truth_eta_cut) or (not truth_pt_cut) or (not truth_electron_cut))
+					continue;
+
 				m_matched_truthID[j] = truthjet->get_id();
 				m_matched_truthNComponent[j] = truthjet->size_comp();
 				m_matched_truthEta[j] = truthjet->get_eta();
@@ -355,14 +363,14 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 				for (auto i_t:truthj_particle_set)
 				{ 
 					/*	
-					if(             (abs(i_t->get_pid())== 111)|| // pi0
-							(abs(i_t->get_pid())==2112)|| // neutron
-							(abs(i_t->get_pid())== 130)|| // K0_L
-							(abs(i_t->get_pid())== 310)|| // K0_S
-							(abs(i_t->get_pid())== 311)|| // K0
-							(abs(i_t->get_pid())==  22)   // photon
-					  ){
-					*/
+						if(             (abs(i_t->get_pid())== 111)|| // pi0
+						(abs(i_t->get_pid())==2112)|| // neutron
+						(abs(i_t->get_pid())== 130)|| // K0_L
+						(abs(i_t->get_pid())== 310)|| // K0_S
+						(abs(i_t->get_pid())== 311)|| // K0
+						(abs(i_t->get_pid())==  22)   // photon
+						){
+						*/
 
 					TParticlePDG * pdg_p = TDatabasePDG::Instance()->GetParticle( i_t->get_pid() );
 					if( abs(pdg_p -> Charge()/3.) < 1.0E-05 ){
@@ -378,136 +386,136 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 				m_matched_charged_truthPhi[j] = truth_charged_jet.Phi();
 				m_matched_charged_truthE[j] = truth_charged_jet.E();
 				m_matched_charged_truthPt[j] = truth_charged_jet.Pt();
-			}
-
-			++j;
-			//j is incremented outside of the matching criteria so truth/reco array elements match
-			m_njets=j;
-			m_ntruthjets=j;
-			if (j >= MaxNumJets) break;
-
-		}  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)      
-		
-		m_hInclusiveNJets->Fill(inc_jet_counter);	
-		assert(m_hInclusiveNJets);
-
-		//All Truth Jet Loop    
-		int i_alltruth = 0;
-		for (JetMap::Iter tter = all_truth_jets->begin(); tter != all_truth_jets->end(); ++tter)
-		{
-			Jet* all_truthjet = tter->second;
-			assert(all_truthjet); //Check if null pointer.
-
-			TLorentzVector JAllTruth_vec(all_truthjet->get_px(), all_truthjet->get_py(),
-					all_truthjet->get_pz(),all_truthjet->get_e());
-
-			//Apply cuts
-			bool eta_cut = (all_truthjet->get_eta() >= m_etaRange.first) and (all_truthjet->get_eta() <= m_etaRange.second); 
-			bool pt_cut = (all_truthjet->get_pt() >= m_ptRange.first) and (all_truthjet->get_pt() <= m_ptRange.second);
-			bool electron_cut = (JAllTruth_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
-
-			if ((not eta_cut) or (not pt_cut) or (not electron_cut))
-			{
-				if (Verbosity() >= MyJetAnalysis_AllSi::VERBOSITY_MORE)
-				{
-					cout << "MyJetAnalysis_AllSi::process_event() - jet failed acceptance cut: ";
-					cout << "eta cut: " << eta_cut << ", ptcut: " << pt_cut << endl;
-					cout << "jet eta: " << all_truthjet->get_eta() << ", jet pt: " << all_truthjet->get_pt() << endl;
-					cout << "electron dR cut: " << m_electronJetMatchingRadius << ", electron-jet dR: "
-						<< JAllTruth_vec.DeltaR(e_vec) << endl;
-					all_truthjet->identify();
 				}
-				continue;
+
+				++j;
+				//j is incremented outside of the matching criteria so truth/reco array elements match
+				m_njets=j;
+				m_ntruthjets=j;
+				if (j >= MaxNumJets) break;
+
+			}  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)      
+
+			m_hInclusiveNJets->Fill(inc_jet_counter);	
+			assert(m_hInclusiveNJets);
+
+			//All Truth Jet Loop    
+			int i_alltruth = 0;
+			for (JetMap::Iter tter = all_truth_jets->begin(); tter != all_truth_jets->end(); ++tter)
+			{
+				Jet* all_truthjet = tter->second;
+				assert(all_truthjet); //Check if null pointer.
+
+				TLorentzVector JAllTruth_vec(all_truthjet->get_px(), all_truthjet->get_py(),
+						all_truthjet->get_pz(),all_truthjet->get_e());
+
+				//Apply cuts
+				bool eta_cut = (all_truthjet->get_eta() >= m_etaRange.first) and (all_truthjet->get_eta() <= m_etaRange.second); 
+				bool pt_cut = (all_truthjet->get_pt() >= m_ptRange.first) and (all_truthjet->get_pt() <= m_ptRange.second);
+				bool electron_cut = (JAllTruth_vec.DeltaR(e_vec) > m_electronJetMatchingRadius);
+
+				if ((not eta_cut) or (not pt_cut) or (not electron_cut))
+				{
+					if (Verbosity() >= MyJetAnalysis_AllSi::VERBOSITY_MORE)
+					{
+						cout << "MyJetAnalysis_AllSi::process_event() - jet failed acceptance cut: ";
+						cout << "eta cut: " << eta_cut << ", ptcut: " << pt_cut << endl;
+						cout << "jet eta: " << all_truthjet->get_eta() << ", jet pt: " << all_truthjet->get_pt() << endl;
+						cout << "electron dR cut: " << m_electronJetMatchingRadius << ", electron-jet dR: "
+							<< JAllTruth_vec.DeltaR(e_vec) << endl;
+						all_truthjet->identify();
+					}
+					continue;
+				}
+
+				m_all_truthID[i_alltruth] = all_truthjet->get_id();
+				m_all_truthNComponent[i_alltruth] = all_truthjet->size_comp();
+				m_all_truthEta[i_alltruth] = all_truthjet->get_eta();
+				m_all_truthPhi[i_alltruth] = all_truthjet->get_phi();
+				m_all_truthE[i_alltruth] = all_truthjet->get_e();
+				m_all_truthPt[i_alltruth] = all_truthjet->get_pt();
+				++i_alltruth;
+				m_nAlltruthjets = i_alltruth;
+			}
+			m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
+		}//electron Loop
+
+		return Fun4AllReturnCodes::EVENT_OK;
+	}
+	// =======================================================================================================================
+	Jet* MyJetAnalysis_AllSi::max_truth_jet_by_track_fastsim(Jet* recojet)
+	{
+		// loop over all jets and look for this particle...
+
+		Jet* truthjet = nullptr;
+
+		int max_n_track = -1;
+
+		for (JetMap::Iter iter = all_truth_jets->begin();
+				iter != all_truth_jets->end();
+				++iter)
+		{
+			Jet* candidate = iter->second;
+			assert(candidate);
+
+			int n_track = get_track_fastsim_contribution(recojet, candidate);
+
+			if (n_track > max_n_track)
+			{
+				truthjet = candidate;
+				max_n_track = n_track;
+			}
+		}
+
+		return truthjet;
+	}
+	// =======================================================================================================================
+	int MyJetAnalysis_AllSi::get_track_fastsim_contribution(Jet* recojet, Jet* truthjet)
+	{
+		int nmatch = 0;
+		std::set<PHG4Particle*> truthjetcomp = all_truth_particles(truthjet);
+
+		for (Jet::ConstIter jter = recojet->begin_comp();jter != recojet->end_comp();++jter)
+		{
+			Jet::SRC source = jter->first;
+			unsigned int index = jter->second;
+
+			assert(_trackmap);
+			SvtxTrack* track = dynamic_cast<SvtxTrack_FastSim*>(_trackmap->get(index));
+
+			assert(source == Jet::TRACK); // make sure you are analyzing a track jet
+			assert(track); // make sure you are analyzing a track jet based on SvtxTrack_FastSim
+
+			for (PHG4Particle* particle : truthjetcomp)
+			{
+				if ( abs(track -> get_truth_track_id ())  ==  abs(particle-> get_track_id ()) )
+					++nmatch;
+			}
+		}
+
+		return nmatch;
+	}
+	// =======================================================================================================================
+	std::set<PHG4Particle*> MyJetAnalysis_AllSi::all_truth_particles(Jet* truthjet)
+	{
+		std::set<PHG4Particle*> truth_particles;
+
+		// loop over all the entries in the truthjet
+		for (Jet::ConstIter iter = truthjet->begin_comp();
+				iter != truthjet->end_comp();
+				++iter)
+		{
+			Jet::SRC source = iter->first;
+			unsigned int index = iter->second;
+			if (source != Jet::PARTICLE)
+			{
+				cout << PHWHERE << " truth jet contains something other than particles!" << endl;
+				exit(-1);
 			}
 
-			m_all_truthID[i_alltruth] = all_truthjet->get_id();
-			m_all_truthNComponent[i_alltruth] = all_truthjet->size_comp();
-			m_all_truthEta[i_alltruth] = all_truthjet->get_eta();
-			m_all_truthPhi[i_alltruth] = all_truthjet->get_phi();
-			m_all_truthE[i_alltruth] = all_truthjet->get_e();
-			m_all_truthPt[i_alltruth] = all_truthjet->get_pt();
-			++i_alltruth;
-			m_nAlltruthjets = i_alltruth;
+			PHG4Particle* truth_particle = _truthinfo->GetParticle(index);
+			assert(truth_particle);
+			truth_particles.insert(truth_particle);
 		}
-		m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
-	}//electron Loop
-
-	return Fun4AllReturnCodes::EVENT_OK;
-}
-// =======================================================================================================================
-Jet* MyJetAnalysis_AllSi::max_truth_jet_by_track_fastsim(Jet* recojet)
-{
-	// loop over all jets and look for this particle...
-
-	Jet* truthjet = nullptr;
-
-	int max_n_track = -1;
-
-	for (JetMap::Iter iter = all_truth_jets->begin();
-			iter != all_truth_jets->end();
-			++iter)
-	{
-		Jet* candidate = iter->second;
-		assert(candidate);
-
-		int n_track = get_track_fastsim_contribution(recojet, candidate);
-
-		if (n_track > max_n_track)
-		{
-			truthjet = candidate;
-			max_n_track = n_track;
-		}
+		return truth_particles;
 	}
-
-	return truthjet;
-}
-// =======================================================================================================================
-int MyJetAnalysis_AllSi::get_track_fastsim_contribution(Jet* recojet, Jet* truthjet)
-{
-	int nmatch = 0;
-	std::set<PHG4Particle*> truthjetcomp = all_truth_particles(truthjet);
-
-	for (Jet::ConstIter jter = recojet->begin_comp();jter != recojet->end_comp();++jter)
-	{
-		Jet::SRC source = jter->first;
-		unsigned int index = jter->second;
-
-		assert(_trackmap);
-		SvtxTrack* track = dynamic_cast<SvtxTrack_FastSim*>(_trackmap->get(index));
-
-		assert(source == Jet::TRACK); // make sure you are analyzing a track jet
-		assert(track); // make sure you are analyzing a track jet based on SvtxTrack_FastSim
-
-		for (PHG4Particle* particle : truthjetcomp)
-		{
-			if ( abs(track -> get_truth_track_id ())  ==  abs(particle-> get_track_id ()) )
-				++nmatch;
-		}
-	}
-
-	return nmatch;
-}
-// =======================================================================================================================
-std::set<PHG4Particle*> MyJetAnalysis_AllSi::all_truth_particles(Jet* truthjet)
-{
-	std::set<PHG4Particle*> truth_particles;
-
-	// loop over all the entries in the truthjet
-	for (Jet::ConstIter iter = truthjet->begin_comp();
-			iter != truthjet->end_comp();
-			++iter)
-	{
-		Jet::SRC source = iter->first;
-		unsigned int index = iter->second;
-		if (source != Jet::PARTICLE)
-		{
-			cout << PHWHERE << " truth jet contains something other than particles!" << endl;
-			exit(-1);
-		}
-
-		PHG4Particle* truth_particle = _truthinfo->GetParticle(index);
-		assert(truth_particle);
-		truth_particles.insert(truth_particle);
-	}
-	return truth_particles;
-}
