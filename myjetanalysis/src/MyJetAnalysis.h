@@ -6,10 +6,13 @@
 #include <memory>
 #include <string>
 #include <utility>  // std::pair, std::make_pair
+#include <limits>
 
 #if ! defined(__CINT__) || defined(__CLING__)
 #include <array>
 #endif  // #ifndef __CINT__
+
+#define NaN numeric_limits<float>::signaling_NaN()
 
 class PHCompositeNode;
 class JetEvalStack;
@@ -27,32 +30,12 @@ class MyJetAnalysis : public SubsysReco
 
   virtual ~MyJetAnalysis();
 
-  //! set eta range
-  void
-  setEtaRange(double low, double high)
-  {
-    m_etaRange.first = low;
-    m_etaRange.second = high;
-  }
-  //! set eta range
-  // void
-  // setPtRange(double low, double high)
-  // {
-  //   m_ptRange.first = low;
-  //   m_ptRange.second = high;
-  // }
-
+  
   double
   get_jet_radius_from_string(std::string jetname){
     //Assumes string compatible with G4_Jets.C
     std::string substring = jetname.substr(jetname.find("_r")+2);
     return .1*stof(substring);
-  }
-
-  void
-  setelectronEmin(double Emin)
-  {
-    m_eEmin = Emin;  
   }
   
   int Init(PHCompositeNode *topNode);
@@ -66,24 +49,21 @@ class MyJetAnalysis : public SubsysReco
 
   //! cache the jet evaluation modules
   std::shared_ptr<JetEvalStack> m_jetEvalStack;
-
-
+  
   std::string m_recoJetName;
   std::string m_truthJetName;
   std::string m_outputFileName;
 
   //! eta range
   std::pair<double, double> m_etaRange;
-
   //! pT range
   std::pair<double, double> m_ptRange;
 
   //Jet Resolution Parameter
   double m_jet_R;
-  
+
+  //Electrons
   double m_electronJetMatchingRadius;
-  
-  //electron Energy min
   double m_eEmin;
   
   //! max track-jet matching radius
@@ -111,10 +91,9 @@ class MyJetAnalysis : public SubsysReco
   int m_electron_truthPID;
 
   int m_njets;
-  int m_ntruthjets;
   int m_nAlltruthjets;
-  
-  enum {MaxNumJets = 20};
+
+  enum {MaxNumJets = 20, kMaxConstituents = 100};  
   std::array<int,MaxNumJets> m_id;
   std::array<int,MaxNumJets> m_nComponent;
   std::array<float,MaxNumJets> m_eta;
@@ -127,38 +106,29 @@ class MyJetAnalysis : public SubsysReco
   std::array<float,MaxNumJets> m_matched_truthEta;
   std::array<float,MaxNumJets> m_matched_truthPhi;
   std::array<float,MaxNumJets> m_matched_truthE;
-  std::array<float,MaxNumJets> m_matched_truthPt;  
+  std::array<float,MaxNumJets> m_matched_truthPt;
+
+  //PID float in order to fill branches with NaN correctly.
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthPID;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthCharge;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthEta;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthPhi;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthPt;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthE;
 
   std::array<int,MaxNumJets> m_all_truthID;
   std::array<int,MaxNumJets> m_all_truthNComponent;
   std::array<float,MaxNumJets> m_all_truthEta;
   std::array<float,MaxNumJets> m_all_truthPhi;
   std::array<float,MaxNumJets> m_all_truthE;
-  std::array<float,MaxNumJets> m_all_truthPt;  
+  std::array<float,MaxNumJets> m_all_truthPt;
   
-  //Matched Constituents
-  enum {kMaxConstituents = 100};
-  std::array<std::array<int, kMaxConstituents >, MaxNumJets > m_Constituent_truthPID;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthEta;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthPhi;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthPt;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_Constituent_truthE;
-
-
-  
-  // // Tracks
-  // // ! number of matched tracks
-  // std::array<int,MaxNumJets> m_nMatchedTrack;
-
-  // enum
-  // {
-  //   //! max number of tracks
-  //   kMaxMatchedTrack = 1000
-  // };
-  
-  // std::array<std::array<float, kMaxMatchedTrack>, MaxNumJets > m_trackdR;
-  // std::array<std::array<float, kMaxMatchedTrack>, MaxNumJets > m_trackpT;
-
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthPID;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthCharge;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthEta;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthPhi;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthPt;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthE;
 #endif  // #ifndef __CINT__
 };
 
