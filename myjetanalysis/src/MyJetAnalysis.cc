@@ -383,10 +383,11 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 
 		
 		cout<<"EVENT NUMBER "<<m_event<<", Jet Number = "<<j
-		      <<", # Constituents = "<<m_matched_truthNComponent[j]<<std::endl;
+		    <<", # Constituents = "<<m_matched_truthNComponent[j]<<std::endl;
 		  		
 		std::set<PHG4Particle*> truthj_particle_set = m_jetEvalStack->get_truth_eval()->all_truth_particles(truthjet);
 		int c_index = 0;
+		int num_pi = 0;
 		for (auto i_t:truthj_particle_set)
 		  {
 		    TLorentzVector constituent_vec;
@@ -398,13 +399,19 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		    m_matched_Constituent_truthPhi[j][c_index] = constituent_vec.Phi();
 		    m_matched_Constituent_truthPt[j][c_index] = constituent_vec.Pt();
 		    m_matched_Constituent_truthE[j][c_index] = constituent_vec.E();
-		    cout<<"Constituent Number = "<<c_index;
-		    cout<<", PID = "<<m_matched_Constituent_truthPID[j][c_index];
-		    cout<<", C = "<<m_matched_Constituent_truthCharge[j][c_index];
-		    cout<<", Eta = "<<m_matched_Constituent_truthEta[j][c_index];
-		    cout<<", Phi = "<<m_matched_Constituent_truthPhi[j][c_index];
-		    cout<<", Pt = "<<m_matched_Constituent_truthPt[j][c_index];
-		    cout<<", E = "<<m_matched_Constituent_truthE[j][c_index]<<std::endl;
+
+		    int parent_ID = i_t->get_parent_id();
+		    if (parent_ID == 111){
+		      cout<<"Constituent Number = "<<c_index;
+		      cout<<", PID = "<<m_matched_Constituent_truthPID[j][c_index];
+		      cout<<",Parent PID = "<<i_t->get_parent_id()<<endl;
+		      num_pi++;
+		    }
+		    // cout<<", C = "<<m_matched_Constituent_truthCharge[j][c_index];
+		    // cout<<", Eta = "<<m_matched_Constituent_truthEta[j][c_index];
+		    // cout<<", Phi = "<<m_matched_Constituent_truthPhi[j][c_index];
+		    // cout<<", Pt = "<<m_matched_Constituent_truthPt[j][c_index];
+		    // cout<<", E = "<<m_matched_Constituent_truthE[j][c_index]<<std::endl;
 		    c_index++;
 		  }
 	      }
@@ -506,11 +513,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	    m_All_Constituent_truthE[i_alltruth][c_Allindex] = constituent_vec.E();
 	    cout<<"Constituent Number = "<<c_Allindex;
 	    cout<<", PID = "<<m_All_Constituent_truthPID[i_alltruth][c_Allindex];
-	    cout<<", C = "<<m_All_Constituent_truthCharge[i_alltruth][c_Allindex];
-	    cout<<", Eta = "<<m_All_Constituent_truthEta[i_alltruth][c_Allindex];
-	    cout<<", Phi = "<<m_All_Constituent_truthPhi[i_alltruth][c_Allindex];
-	    cout<<", Pt = "<<m_All_Constituent_truthPt[i_alltruth][c_Allindex];
-	    cout<<", E = "<<m_All_Constituent_truthE[i_alltruth][c_Allindex]<<std::endl;
+	    cout<<", Parent ID = "<<i_At->get_parent_id()<<endl;
+	    // cout<<", C = "<<m_All_Constituent_truthCharge[i_alltruth][c_Allindex];
+	    // cout<<", Eta = "<<m_All_Constituent_truthEta[i_alltruth][c_Allindex];
+	    // cout<<", Phi = "<<m_All_Constituent_truthPhi[i_alltruth][c_Allindex];
+	    // cout<<", Pt = "<<m_All_Constituent_truthPt[i_alltruth][c_Allindex];
+	    // cout<<", E = "<<m_All_Constituent_truthE[i_alltruth][c_Allindex]<<std::endl;
 	    c_Allindex++;
 	  }
 	
