@@ -1,0 +1,1950 @@
+LD_LIBRARY_PATH now /global/project/projectdirs/alice/ftorales/Singularity/install/lib:.:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/root-6.16.00/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/geant4.10.02.p02/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/lhapdf-5.9.1/lib:/usr/local/lib64:/usr/lib64
+PATH now :.:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/utils/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/root-6.16.00/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/opt/sphenix/core/geant4.10.02.p02/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+   ------------------------------------------------------------
+  | Welcome to ROOT 6.16/00                  https://root.cern |
+  |                               (c) 1995-2018, The ROOT Team |
+  | Built for linuxx8664gcc on Jan 23 2019, 09:06:13           |
+  | From tags/v6-16-00@v6-16-00                                |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q' |
+   ------------------------------------------------------------
+
+
+Processing Fun4All_G4_sPHENIX.C(100, "", "/global/project/projectdirs/alice/ftorales/eP_MC/eP_0")...
+PHRandomSeed::GetSeed() seed: 3719383087
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.243      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change:  4 Jul 2019  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 30 Jun 2020 at 11:43:31    |  | 
+ |  |                                                                              |  | 
+ |  |   Christian Bierlich;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: christian.bierlich@thep.lu.se                                   |  | 
+ |  |   Nishita Desai;  Department of Theoretical Physics, Tata Institute,         |  | 
+ |  |      Homi Bhabha Road, Mumbai 400005, India;                                 |  | 
+ |  |      e-mail: desai@theory.tifr.res.in                                        |  | 
+ |  |   Ilkka Helenius;  Department of Physics, University of Jyvaskyla,           |  | 
+ |  |      P.O. Box 35, FI-40014 University of Jyvaskyla, Finland;                 |  | 
+ |  |      e-mail: ilkka.m.helenius@jyu.fi                                         |  | 
+ |  |   Philip Ilten;  School of Physics and Astronomy,                            |  | 
+ |  |      University of Birmingham, Birmingham, B152 2TT, UK;                     |  | 
+ |  |      e-mail: philten@cern.ch                                                 |  | 
+ |  |   Leif Lonnblad;  Department of Astronomy and Theoretical Physics,           |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: leif.lonnblad@thep.lu.se                                        |  | 
+ |  |   Stephen Mrenna;  Computing Division, Simulations Group,                    |  | 
+ |  |      Fermi National Accelerator Laboratory, MS 234, Batavia, IL 60510, USA;  |  | 
+ |  |      e-mail: mrenna@fnal.gov                                                 |  | 
+ |  |   Stefan Prestel;  Department of Astronomy and Theoretical Physics,          |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: stefan.prestel@thep.lu.se                                       |  | 
+ |  |   Christine O. Rasmussen;  Department of Astronomy and Theoretical Physics,  |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: christine.rasmussen@thep.lu.se                                  |  | 
+ |  |   Torbjorn Sjostrand;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: torbjorn@thep.lu.se                                             |  | 
+ |  |   Peter Skands;  School of Physics,                                          |  | 
+ |  |      Monash University, PO Box 27, 3800 Melbourne, Australia;                |  | 
+ |  |      e-mail: peter.skands@monash.edu                                         |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is 'An Introduction to PYTHIA 8.2',             |  | 
+ |  |   T. Sjostrand et al, Comput. Phys. Commun. 191 (2015) 159                   |  | 
+ |  |   [arXiv:1410.3012 [hep-ph]]                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   The main physics reference is the 'PYTHIA 6.4 Physics and Manual',         |  | 
+ |  |   T. Sjostrand, S. Mrenna and P. Skands, JHEP05 (2006) 026 [hep-ph/0603175]  |  | 
+ |  |                                                                              |  | 
+ |  |   An archive of program versions and documentation is found on the web:      |  | 
+ |  |   http://www.thep.lu.se/Pythia                                               |  | 
+ |  |                                                                              |  | 
+ |  |   This program is released under the GNU General Public Licence version 2.   |  | 
+ |  |   Please respect the MCnet Guidelines for Event Generator Authors and Users. |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2019 Torbjorn Sjostrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+PHRandomSeed::GetSeed() seed: 4267727987
+PHPythia8 random seed: 667727987
+
+ *-------  PYTHIA Process Initialization  --------------------------*
+ |                                                                  |
+ | We collide p+ with e- at a CM energy of 8.945e+01 GeV            |
+ |                                                                  |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | Subprocess                                    Code |   Estimated |
+ |                                                    |    max (mb) |
+ |                                                    |             |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | g g -> g g                                     111 |   0.000e+00 |
+ | g g -> q qbar (uds)                            112 |   0.000e+00 |
+ | q g -> q g                                     113 |   0.000e+00 |
+ | q q(bar)' -> q q(bar)'                         114 |   0.000e+00 |
+ | q qbar -> g g                                  115 |   0.000e+00 |
+ | q qbar -> q' qbar' (uds)                       116 |   0.000e+00 |
+ | g g -> c cbar                                  121 |   0.000e+00 |
+ | q qbar -> c cbar                               122 |   0.000e+00 |
+ | g g -> b bbar                                  123 |   0.000e+00 |
+ | q qbar -> b bbar                               124 |   0.000e+00 |
+ | f f' -> f f' (t-channel gamma*/Z0)             211 |   9.265e-05 |
+ |                                                                  |
+ *-------  End PYTHIA Process Initialization -----------------------*
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Beams:eA                                      |                100.00000 |     7000.000         0.0             | 
+ | Beams:eB                                      |                 20.00000 |     7000.000         0.0             | 
+ | Beams:frameType                               |                        2 |            1           1           5 | 
+ | Beams:idB                                     |                       11 |         2212                         | 
+ | HardQCD:all                                   |                       on |          off                         | 
+ | Main:timesAllowErrors                         |                   900000 |           10           0             | 
+ | PDF:lepton                                    |                      off |           on                         | 
+ | PhaseSpace:Q2Min                              |                 16.00000 |          0.0         0.0             | 
+ | Random:seed                                   |                667727987 |           -1               900000000 | 
+ | Random:setSeed                                |                       on |          off                         | 
+ | SpaceShower:pTmaxMatch                        |                        2 |            0           0           2 | 
+ | TimeShower:QEDshowerByL                       |                      off |           on                         | 
+ | WeakBosonExchange:ff2ff(t:gmZ)                |                       on |          off                         | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+
+ --------  PYTHIA Particle Data Table (changed only)  ------------------------------------------------------------------------------
+ 
+      id   name            antiName         spn chg col      m0        mWidth      mMin       mMax       tau0    res dec ext vis wid
+             no onMode   bRatio   meMode     products 
+
+     111  pi0                                 1   0   0    0.13498    0.00000    0.00000    0.00000  2.55313e-05   0   0   0   1   0
+              0     1   0.9879900    0       22       22 
+              1     1   0.0119800   11       22       11      -11 
+              2     1   0.0000300   13       11      -11       11      -11 
+
+ --------  End PYTHIA Particle Data Table  -----------------------------------------------------------------------------------------
+
+PHRandomSeed::GetSeed() seed: 2026860908
+Intt has 4 layers with layer setup:
+ Intt layer 0 laddertype -2 nladders 15 sensor radius 8.9870000 offsetphi 0.0000000
+ Intt layer 1 laddertype -2 nladders 15 sensor radius 9.5450000 offsetphi 12.0000000
+ Intt layer 2 laddertype -2 nladders 18 sensor radius 10.8350000 offsetphi 0.0000000
+ Intt layer 3 laddertype -2 nladders 18 sensor radius 11.3610000 offsetphi 10.0000000
+HCalInner - construct inner HCal absorber with G4_Al
+PHRandomSeed::GetSeed() seed: 2551049375
+
+*************************************************************
+ Geant4 version Name: geant4-10-02-patch-02    (17-June-2016)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+<<< Geant4 Physics List simulation engine: QGSP_BERT 4.0
+
+PHG4MvtxHitReco: Setting Mvtx timing window defaults to tmin = -5000 and  tmax = 5000 ns
+PHG4MvtxHitReco: Set Mvtx timing window parameters from macro for layer = 0 to tmin = -5000.0000000 tmax = 5000.0000000
+PHG4MvtxHitReco: Set Mvtx timing window parameters from macro for layer = 1 to tmin = -5000.0000000 tmax = 5000.0000000
+PHG4MvtxHitReco: Set Mvtx timing window parameters from macro for layer = 2 to tmin = -5000.0000000 tmax = 5000.0000000
+PHRandomSeed::GetSeed() seed: 410904143
+PHRandomSeed::GetSeed() seed: 1130939141
+Registering padplane 
+padplane registered and parameters updated
+PHRandomSeed::GetSeed() seed: 409947777
+PHParameters::ReadFromFile - Reading from File: /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/share/calibrations/CEMC/TowerCalib_2017ProjTilted/cemc_geoparams-0-0-4294967295-1499354960.xml ... Received PdbParameterMap with (Hash = 0x883e8cf2a8d53c9f)
+BEmcProfile: Loading profile data from file /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/share/calibrations/EmcProfile/CEMCprof_Thresh30MeV.root
+  8 bin in energy:  0.5,  1.0,  2.0,  4.0, 10.0, 20.0, 40.0, 80.0, 
+  4 bin in theta:  0.05, 0.14, 0.25, 0.34, 
+PHParameters::ReadFromFile - Reading from File: /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/share/calibrations/CEMC/PositionRecalibration_EMCal_9deg_tilt/cemc_recalib_geoparams-0-0-4294967295-1532091513.xml ... Received PdbParameterMap with (Hash = 0x9eda525940469004)
+PHParameters::ReadFromFile - Reading from File: /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/share/calibrations/CEMC/PositionRecalibration_EMCal_9deg_tilt/cemc_ecore_recalib_geoparams-0-0-4294967295-1532091569.xml ... Received PdbParameterMap with (Hash = 0xe641b18750973639)
+PHRandomSeed::GetSeed() seed: 1758106229
+Warning from RawClusterBuilderTemplate::Detector(): no detector specific class BEmcRec{Name} defined for detector HCALIN. Default BEmcRec will be used
+PHRandomSeed::GetSeed() seed: 451174759
+Warning from RawClusterBuilderTemplate::Detector(): no detector specific class BEmcRec{Name} defined for detector HCALOUT. Default BEmcRec will be used
+PHRandomSeed::GetSeed() seed: 483909204
+PHG4MvtxDigitizer random seed: 483909204
+PHRandomSeed::GetSeed() seed: 3910817349
+PHG4InttDigitizer random seed: 3910817349
+PHRandomSeed::GetSeed() seed: 670826080
+PHG4TpcDigitizer random seed: 670826080
+ Tpc digitizer: Setting ENC to 670.0000000 ADC threshold to 2680.0000000 maps+Intt layers set to 7
+PHRandomSeed::GetSeed() seed: 1381055801
+PHTFileServer::open - opening file /global/project/projectdirs/alice/ftorales/eP_MC/eP_0_electrons+jets.root (RECREATE)
+Fun4AllServer: Runnumber forced to 0 by RUNNUMBER IntFlag
+Fun4AllServer::setRun(): could not get timestamp for run  0, using tics(0) timestamp: Wed Dec 31 19:00:00 1969
+PHFieldUtility::GetFieldConfigNode - field map with configuration from input default: PHFieldConfigv1::identify - Field type of [2D field map expressed in cylindrical coordinates] from file [/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/share/calibrations/Field/Map/sPHENIX.2d.root] with a scale factor of -0.9333333
+PHParameters::ReadFromFile - Reading from File: /global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/share/calibrations/CEMC/Geometry_2018ProjTilted/cemc_geoparams-0-0-4294967295-1536789215.xml ... Received PdbParameterMapContainer Detector Id 0 with (Hash = 0xaf819d10e459ac67)
+G4GDML: Reading '/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/share/calibrations/Tracking/geometry/mvtx_stave_v1.gdml'...
+G4GDML: Reading definitions...
+G4GDML: Reading materials...
+G4GDML: Reading solids...
+G4GDML: Reading structure...
+G4GDML: Reading setup...
+G4GDML: Reading '/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/x8664_sl7/release/release_new/new.1/share/calibrations/Tracking/geometry/mvtx_stave_v1.gdml' done!
+Stripping off GDML names of materials, solids and volumes ...
+north copy no: 1
+south copy no: 2
+PHG4FullProjTiltedSpacalDetector::Construct_AzimuthalSeg::CEMC_0 - constructed 192 unique towers
+PHG4Reco::InitRun - export geometry to DST via tmp file /tmp/PHGeomUtility_geom_file_48828.gdml
+PHG4GDML: Writing '/tmp/PHGeomUtility_geom_file_48828.gdml'...
+PHG4GDML: Writing definitions...
+G4GDML: Writing materials...
+PHG4GDML: Writing solids...
+PHG4GDML: Writing structure...
+G4GDML: Writing setup...
+PHG4GDML: Writing surfaces...
+PHG4GDML: Writing '/tmp/PHGeomUtility_geom_file_48828.gdml' done !
+PHRandomSeed::GetSeed() seed: 331156013
+Infor from RawClusterBuilderTemplate::InitRun(): Init geometry for CEMC: N of geom towers: 24576; ix=0-255 iy=0-95
+Infor from RawClusterBuilderTemplate::InitRun(): Init geometry for HCALIN: N of geom towers: 1536; ix=0-63 iy=0-23
+Infor from RawClusterBuilderTemplate::InitRun(): Init geometry for HCALOUT: N of geom towers: 1536; ix=0-63 iy=0-23
+PHG4InttDigitizer::InitRun: detector = INTT
+layer array size: 12
+init _nlayers_seeding 12
+init _min_layers_seeding 12
+init n min layers = 4
+GFRaveVertexFactory::setMethod ==> set method to avf-smoothing:1
+--------------------------------------
+
+List of Nodes in Fun4AllServer:
+Node Tree under TopNode TOP
+TOP (PHCompositeNode)/
+   DST (PHCompositeNode)/
+      PHHepMCGenEventMap (IO,PHHepMCGenEventMap)
+      PHG4INEVENT (PHDataNode)
+      PIPE (PHCompositeNode)/
+         G4HIT_PIPE (IO,PHG4HitContainer)
+      MVTX (PHCompositeNode)/
+         G4HIT_MVTX (IO,PHG4HitContainer)
+      INTT (PHCompositeNode)/
+         G4HIT_INTT (IO,PHG4HitContainer)
+      TPC (PHCompositeNode)/
+         G4HIT_ABSORBER_TPC (IO,PHG4HitContainer)
+         G4HIT_TPC (IO,PHG4HitContainer)
+      CEMC_ELECTRONICS (PHCompositeNode)/
+         G4HIT_CEMC_ELECTRONICS (IO,PHG4HitContainer)
+      CEMC_SPT (PHCompositeNode)/
+         G4HIT_CEMC_SPT (IO,PHG4HitContainer)
+      G4HIT_CEMC (IO,PHG4HitContainer)
+      G4HIT_ABSORBER_CEMC (IO,PHG4HitContainer)
+      HCALIN (PHCompositeNode)/
+         G4HIT_ABSORBER_HCALIN (IO,PHG4HitContainer)
+         G4HIT_HCALIN (IO,PHG4HitContainer)
+         G4CELL_HCALIN (IO,PHG4CellContainer)
+         TOWER_SIM_HCALIN (IO,RawTowerContainer)
+         TOWER_RAW_HCALIN (IO,RawTowerContainer)
+         TOWER_CALIB_HCALIN (IO,RawTowerContainer)
+         CLUSTER_HCALIN (IO,RawClusterContainer)
+      HCALIN_SPT (PHCompositeNode)/
+         G4HIT_HCALIN_SPT (IO,PHG4HitContainer)
+      MAGNET (PHCompositeNode)/
+         G4HIT_MAGNET (IO,PHG4HitContainer)
+      HCALOUT (PHCompositeNode)/
+         G4HIT_ABSORBER_HCALOUT (IO,PHG4HitContainer)
+         G4HIT_HCALOUT (IO,PHG4HitContainer)
+         G4CELL_HCALOUT (IO,PHG4CellContainer)
+         TOWER_SIM_HCALOUT (IO,RawTowerContainer)
+         TOWER_RAW_HCALOUT (IO,RawTowerContainer)
+         TOWER_CALIB_HCALOUT (IO,RawTowerContainer)
+         CLUSTER_HCALOUT (IO,RawClusterContainer)
+      G4HIT_BH_1 (IO,PHG4HitContainer)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4HIT_BH_FORWARD_PLUS (IO,PHG4HitContainer)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4HIT_BH_FORWARD_NEG (IO,PHG4HitContainer)
+      G4TruthInfo (IO,PHG4TruthInfoContainer)
+      BBC (PHCompositeNode)/
+         BbcVertexMap (IO,BbcVertexMapv1)
+      TRKR (PHCompositeNode)/
+         TRKR_HITSET (IO,TrkrHitSetContainer)
+         TRKR_HITTRUTHASSOC (IO,TrkrHitTruthAssoc)
+         TRKR_CLUSTER (IO,TrkrClusterContainer)
+         TRKR_CLUSTERHITASSOC (IO,TrkrClusterHitAssoc)
+      CEMC (PHCompositeNode)/
+         G4CELL_CEMC (IO,PHG4CellContainer)
+         TOWER_SIM_CEMC (IO,RawTowerContainer)
+         TOWER_RAW_CEMC (IO,RawTowerContainer)
+         TOWER_CALIB_CEMC (IO,RawTowerContainer)
+         CLUSTER_CEMC (IO,RawClusterContainer)
+         CLUSTER_POS_COR_CEMC (IO,RawClusterContainer)
+      SVTX (PHCompositeNode)/
+         SvtxVertexMap (IO,SvtxVertexMap_v1)
+         SvtxTrackMap (IO,SvtxTrackMap_v1)
+         AssocInfoContainer (IO,AssocInfoContainer)
+         SvtxVertexMapRefit (IO,SvtxVertexMap_v1)
+      GLOBAL (PHCompositeNode)/
+         GlobalVertexMap (IO,GlobalVertexMapv1)
+      TRIG (PHCompositeNode)/
+         CaloTriggerInfo (IO,CaloTriggerInfov1)
+      ANTIKT (PHCompositeNode)/
+         TRUTH (PHCompositeNode)/
+            AntiKt_Truth_r02 (IO,JetMapv1)
+            AntiKt_Truth_r03 (IO,JetMapv1)
+            AntiKt_Truth_r04 (IO,JetMapv1)
+            AntiKt_Truth_r05 (IO,JetMapv1)
+            AntiKt_Truth_r06 (IO,JetMapv1)
+            AntiKt_Truth_r07 (IO,JetMapv1)
+            AntiKt_Truth_r08 (IO,JetMapv1)
+            AntiKt_Truth_r10 (IO,JetMapv1)
+         TOWER (PHCompositeNode)/
+            AntiKt_Tower_r02 (IO,JetMapv1)
+            AntiKt_Tower_r03 (IO,JetMapv1)
+            AntiKt_Tower_r04 (IO,JetMapv1)
+            AntiKt_Tower_r05 (IO,JetMapv1)
+            AntiKt_Tower_r06 (IO,JetMapv1)
+            AntiKt_Tower_r07 (IO,JetMapv1)
+            AntiKt_Tower_r08 (IO,JetMapv1)
+         CLUSTER (PHCompositeNode)/
+            AntiKt_Cluster_r02 (IO,JetMapv1)
+            AntiKt_Cluster_r03 (IO,JetMapv1)
+            AntiKt_Cluster_r04 (IO,JetMapv1)
+            AntiKt_Cluster_r05 (IO,JetMapv1)
+            AntiKt_Cluster_r06 (IO,JetMapv1)
+            AntiKt_Cluster_r07 (IO,JetMapv1)
+            AntiKt_Cluster_r08 (IO,JetMapv1)
+         TRACK (PHCompositeNode)/
+            AntiKt_Track_r02 (IO,JetMapv1)
+            AntiKt_Track_r03 (IO,JetMapv1)
+            AntiKt_Track_r04 (IO,JetMapv1)
+            AntiKt_Track_r05 (IO,JetMapv1)
+            AntiKt_Track_r06 (IO,JetMapv1)
+            AntiKt_Track_r07 (IO,JetMapv1)
+            AntiKt_Track_r08 (IO,JetMapv1)
+            AntiKt_Track_r10 (IO,JetMapv1)
+   RUN (PHCompositeNode)/
+      PHGenIntegral (IO,PHGenIntegralv1)
+      FIELD_CONFIG (IO,PHFieldConfigv1)
+      PIPE (PHCompositeNode)/
+         G4GEOPARAM_PIPE (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_PIPE (IO,PHG4CylinderGeomContainer)
+      MVTX (PHCompositeNode)/
+         G4GEOPARAM_MVTX (IO,PdbParameterMapContainer)
+      INTT (PHCompositeNode)/
+         G4GEOPARAM_INTT (IO,PdbParameterMapContainer)
+         G4CELLPARAM_INTT (IO,PdbParameterMap)
+      TPC (PHCompositeNode)/
+         G4GEOPARAM_TPC (IO,PdbParameterMapContainer)
+         G4CELLPARAM_TPC (IO,PdbParameterMap)
+         G4TPCPADPLANE (IO,PdbParameterMap)
+      CEMC_ELECTRONICS (PHCompositeNode)/
+         G4GEOPARAM_CEMC_ELECTRONICS (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_CEMC_ELECTRONICS (IO,PHG4CylinderGeomContainer)
+      CEMC_SPT (PHCompositeNode)/
+         G4GEOPARAM_CEMC_SPT (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_CEMC_SPT (IO,PHG4CylinderGeomContainer)
+      CEMC (PHCompositeNode)/
+         G4GEOPARAM_CEMC (IO,PdbParameterMapContainer)
+         G4CELLPARAM_CEMC (IO,PdbParameterMap)
+         TOWERGEOM_CEMC (IO,RawTowerGeomContainer_Cylinderv1)
+      HCALIN (PHCompositeNode)/
+         G4GEOPARAM_HCALIN (IO,PdbParameterMapContainer)
+         G4CELLPARAM_HCALIN (IO,PdbParameterMap)
+         TOWERPARAM_HCALIN (IO,PdbParameterMap)
+         TOWERGEOM_HCALIN (IO,RawTowerGeomContainer_Cylinderv1)
+      HCALIN_SPT (PHCompositeNode)/
+         G4GEOPARAM_HCALIN_SPT (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_HCALIN_SPT (IO,PHG4CylinderGeomContainer)
+      MAGNET (PHCompositeNode)/
+         G4GEOPARAM_MAGNET (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_MAGNET (IO,PHG4CylinderGeomContainer)
+      HCALOUT (PHCompositeNode)/
+         G4GEOPARAM_HCALOUT (IO,PdbParameterMapContainer)
+         G4CELLPARAM_HCALOUT (IO,PdbParameterMap)
+         TOWERPARAM_HCALOUT (IO,PdbParameterMap)
+         TOWERGEOM_HCALOUT (IO,RawTowerGeomContainer_Cylinderv1)
+      G4GEOPARAM_BH_1 (IO,PdbParameterMapContainer)
+      CYLINDERGEOM_BH_1 (IO,PHG4CylinderGeomContainer)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4GEOPARAM_BH_FORWARD_PLUS (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_BH_FORWARD_PLUS (IO,PHG4CylinderGeomContainer)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4GEOPARAM_BH_FORWARD_NEG (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_BH_FORWARD_NEG (IO,PHG4CylinderGeomContainer)
+      CYLINDERGEOM_MVTX (IO,PHG4CylinderGeomContainer)
+      CYLINDERGEOM_INTT (IO,PHG4CylinderGeomContainer)
+      CYLINDERGEOM_CEMC (IO,PHG4CylinderGeomContainer)
+      CYLINDERGEOM_ABSORBER_CEMC (IO,PHG4CylinderGeomContainer)
+      GEOMETRY_IO (IO,PHGeomIOTGeo)
+      CYLINDERCELLGEOM_SVTX (IO,PHG4CylinderCellGeomContainer)
+      CYLINDERCELLGEOM_CEMC (IO,PHG4CylinderCellGeomContainer)
+      eclus_Recalibration_CEMC (IO,PdbParameterMap)
+      ecore_Recalibration_CEMC (IO,PdbParameterMap)
+   PAR (PHCompositeNode)/
+      FIELD_MAP (PHDataNode)
+      PIPE (PHCompositeNode)/
+         G4GEO_PIPE (PHDataNode)
+      MVTX (PHCompositeNode)/
+         G4GEO_MVTX (PHDataNode)
+      INTT (PHCompositeNode)/
+         G4GEO_INTT (PHDataNode)
+         CYLINDERGEOM_INTT (PHDataNode)
+         G4CELLGEO_INTT (PHDataNode)
+      TPC (PHCompositeNode)/
+         G4GEO_TPC (PHDataNode)
+         G4CELLPAR_TPC (PHDataNode)
+         G4TPCPADPLANEPAR (PHDataNode)
+      CEMC_ELECTRONICS (PHCompositeNode)/
+         G4GEO_CEMC_ELECTRONICS (PHDataNode)
+      CEMC_SPT (PHCompositeNode)/
+         G4GEO_CEMC_SPT (PHDataNode)
+      CEMC (PHCompositeNode)/
+         G4GEO_CEMC (PHDataNode)
+         G4CELLGEO_CEMC (PHDataNode)
+      G4GDML_CONFIG (PHDataNode)
+      HCALIN (PHCompositeNode)/
+         G4GEO_HCALIN (PHDataNode)
+         G4CELLGEO_HCALIN (PHDataNode)
+         TOWERGEO_HCALIN (PHDataNode)
+      HCALIN_SPT (PHCompositeNode)/
+         G4GEO_HCALIN_SPT (PHDataNode)
+      MAGNET (PHCompositeNode)/
+         G4GEO_MAGNET (PHDataNode)
+      HCALOUT (PHCompositeNode)/
+         G4GEO_HCALOUT (PHDataNode)
+         G4CELLGEO_HCALOUT (PHDataNode)
+         TOWERGEO_HCALOUT (PHDataNode)
+      G4GEO_BH_1 (PHDataNode)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4GEO_BH_FORWARD_PLUS (PHDataNode)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4GEO_BH_FORWARD_NEG (PHDataNode)
+      GEOMETRY (PHDataNode)
+
+
+
+ --------  PYTHIA Info Listing  ---------------------------------------- 
+ 
+ Beam A: id =   2212, pz =  4.472e+01, e =  4.473e+01, m =  9.383e-01.
+ Beam B: id =     11, pz = -4.472e+01, e =  4.472e+01, m =  5.110e-04.
+
+ In 1: id =   -4, x =  1.918e-02, pdf =  8.105e-02 at Q2 =  2.608e+01.
+ In 2: id =   11, x =  1.000e+00, pdf =  1.000e+00 at same Q2.
+
+ Subprocess f f' -> f f' (t-channel gamma*/Z0) with code 211 is 2 -> 2.
+ It has sHat =  1.535e+02,    tHat = -3.331e+01,    uHat = -1.202e+02,
+       pTHat =  5.032e+00,   m3Hat =  1.500e+00,   m4Hat =  5.110e-04,
+    thetaHat =  9.692e-01,  phiHat =  4.944e+00.
+     alphaEM =  7.572e-03,  alphaS =  2.395e-01    at Q2 =  2.608e+01.
+
+ Impact parameter b =  0.000e+00 gives enhancement factor =  1.000e+00.
+ Max pT scale for MPI =  8.945e+01, ISR =  8.945e+01, FSR =  8.945e+01.
+ Number of MPI =     1, ISR =     2, FSRproc =     0, FSRreson =     0.
+
+ --------  End PYTHIA Info Listing  ------------------------------------
+
+ --------  PYTHIA Event Listing  (hard process)  -----------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.000      0.000     79.996    120.000     89.447
+     1       2212  (p+)               -12     0     0     3     0     0     0      0.000      0.000     99.996    100.000      0.938
+     2         11  (e-)               -12     0     0     4     0     0     0      0.000      0.000    -20.000     20.000      0.001
+     3         -4  (cbar)             -21     1     0     5     6     0   101      0.000      0.000      1.918      1.918      0.000
+     4         11  (e-)               -21     2     0     5     6     0     0      0.000      0.000    -20.000     20.000      0.000
+     5         -4  cbar                23     3     4     0     0     0   101      1.157     -4.897     -3.063      6.079      1.500
+     6         11  e-                  23     3     4     0     0     0     0     -1.157      4.897    -15.021     15.842      0.001
+                                   Charge sum: -1.667           Momentum sum:      0.000      0.000    -18.084     21.920     12.389
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.000      0.000     79.996    120.000     89.447
+     1       2212  (p+)               -12     0     0    18     0     0     0      0.000      0.000     99.996    100.000      0.938
+     2         11  (e-)               -12     0     0    13     0     0     0      0.000     -0.000    -20.000     20.000      0.001
+     3         -4  (cbar)             -21     7     0     5     6     0   101     -0.000      0.000      1.918      1.918      0.000
+     4         11  (e-)               -21     8     8     5     6     0     0      0.000      0.000    -20.000     20.000      0.000
+     5         -4  (cbar)             -23     3     4     9     9     0   101      1.157     -4.897     -3.063      6.079      1.500
+     6         11  (e-)               -23     3     4    10    10     0     0     -1.157      4.897    -15.021     15.842      0.001
+     7         -4  (cbar)             -41    12     0    11     3     0   102     -0.000      0.000      3.227      3.227      0.000
+     8         11  (e-)               -42    13    13     4     4     0     0      0.000      0.000    -20.000     20.000      0.000
+     9         -4  (cbar)             -44     5     5    14    14     0   101      2.628     -3.863     -1.979      5.291      1.500
+    10         11  (e-)               -44     6     6    15    15     0     0     -0.757      5.178    -14.749     15.650      0.001
+    11         21  (g)                -43     7     0    16    16   101   102     -1.871     -1.315     -0.047      2.288      0.000
+    12         21  (g)                -41    18    18    17     7   103   102     -0.000      0.000      4.486      4.486      0.000
+    13         11  (e-)               -42     2     0     8     8     0     0      0.000      0.000    -20.000     20.000      0.000
+    14         -4  (cbar)             -44     9     9    19    19     0   101      2.705     -3.828     -1.870      5.264      1.500
+    15         11  e-                  44    10    10     0     0     0     0     -0.736      5.188    -14.407     15.330      0.001
+    16         21  (g)                -44    11    11    20    20   101   102     -1.819     -1.291      0.064      2.232      0.000
+    17          4  (c)                -43    12     0    21    21   103     0     -0.149     -0.069      0.697      1.662      1.500
+    18         21  (g)                -61     1     0    12    12   103   102     -0.348     -0.462      4.672      4.708      0.000
+    19         -4  (cbar)             -62    14    14    33    33     0   101      2.466     -4.122     -1.782      5.339      1.500
+    20         21  (g)                -62    16    16    32    32   101   102     -1.894     -1.389      0.182      2.356      0.000
+    21          4  (c)                -62    17    17    24    24   103     0     -0.186     -0.114      0.710      1.674      1.500
+    22          2  (u)                -63     1     0    31    31   102     0      0.319      0.017     36.789     36.792      0.330
+    23       2103  (ud_1)             -63     1     0    25    25     0   103      0.031      0.421     58.503     58.509      0.771
+    24          4  (c)                -71    21    21    26    30   103     0     -0.186     -0.114      0.710      1.674      1.500
+    25       2103  (ud_1)             -71    23    23    26    30     0   103      0.031      0.421     58.503     58.509      0.771
+    26        413  (D*+)              -83    24    25    49    50     0     0      0.164     -0.306      2.118      2.940      2.010
+    27       -211  pi-                 83    24    25     0     0     0     0     -0.210      0.347      1.867      1.916      0.140
+    28        113  (rho0)             -83    24    25    41    42     0     0     -0.093     -0.261      3.780      3.853      0.696
+    29        111  pi0                 83    24    25     0     0     0     0     -0.118      0.259      3.237      3.253      0.135
+    30       2212  p+                  84    24    25     0     0     0     0      0.102      0.268     48.211     48.221      0.938
+    31          2  (u)                -71    22    22    34    40   102     0      0.319      0.017     36.789     36.792      0.330
+    32         21  (g)                -71    20    20    34    40   101   102     -1.894     -1.389      0.182      2.356      0.000
+    33         -4  (cbar)             -71    19    19    34    40     0   101      2.466     -4.122     -1.782      5.339      1.500
+    34        113  (rho0)             -83    31    33    43    44     0     0      0.026     -0.028     15.265     15.291      0.893
+    35       2212  p+                  83    31    33     0     0     0     0     -0.137      0.083     16.220     16.248      0.938
+    36      -2112  nbar0               83    31    33     0     0     0     0      0.048     -0.594      2.257      2.516      0.940
+    37        111  pi0                 83    31    33     0     0     0     0      0.027      0.770      1.539      1.726      0.135
+    38        313  (K*0)              -84    31    33    45    46     0     0     -0.846     -0.934      1.903      2.446      0.880
+    39       -311  (Kbar0)            -84    31    33    47    47     0     0     -0.359     -1.266     -0.514      1.498      0.498
+    40       -411  (D-)               -84    31    33    51    52     0     0      2.131     -3.526     -1.481      4.761      1.870
+    41        211  pi+                 91    28     0     0     0     0     0      0.174     -0.319      2.792      2.819      0.140
+    42       -211  pi-                 91    28     0     0     0     0     0     -0.267      0.057      0.988      1.035      0.140
+    43        211  pi+                 91    34     0     0     0     0     0     -0.409      0.029      7.629      7.642      0.140
+    44       -211  pi-                 91    34     0     0     0     0     0      0.435     -0.056      7.636      7.649      0.140
+    45        311  (K0)               -91    38     0    48    48     0     0     -0.663     -0.874      1.181      1.687      0.498
+    46        111  pi0                 91    38     0     0     0     0     0     -0.183     -0.060      0.722      0.759      0.135
+    47        310  (K_S0)             -91    39    39    53    54     0     0     -0.359     -1.266     -0.514      1.498      0.498
+    48        310  (K_S0)             -91    45    45    55    56     0     0     -0.663     -0.874      1.181      1.687      0.498
+    49        411  (D+)               -91    26     0    57    59     0     0      0.172     -0.276      2.015      2.768      1.870
+    50        111  pi0                 91    26     0     0     0     0     0     -0.008     -0.030      0.102      0.172      0.135
+    51     -20213  (a_1(1260)-)       -91    40     0    60    61     0     0      1.031     -1.322     -0.559      2.084      1.104
+    52       -311  (Kbar0)            -91    40     0    62    62     0     0      1.100     -2.204     -0.922      2.677      0.498
+    53        111  pi0                 91    47     0     0     0     0     0     -0.102     -0.173      0.028      0.244      0.135
+    54        111  pi0                 91    47     0     0     0     0     0     -0.257     -1.093     -0.543      1.254      0.135
+    55        111  pi0                 91    48     0     0     0     0     0     -0.661     -0.643      0.976      1.349      0.135
+    56        111  pi0                 91    48     0     0     0     0     0     -0.001     -0.231      0.206      0.338      0.135
+    57        -13  mu+                 91    49     0     0     0     0     0     -0.465     -0.100      0.340      0.595      0.106
+    58         14  nu_mu               91    49     0     0     0     0     0      0.345     -0.336      0.697      0.847      0.000
+    59       -313  (K*bar0)           -91    49     0    63    64     0     0      0.293      0.160      0.978      1.326      0.831
+    60        113  (rho0)             -91    51     0    65    66     0     0      0.789     -1.018     -0.374      1.631      0.928
+    61       -211  pi-                 91    51     0     0     0     0     0      0.243     -0.304     -0.185      0.453      0.140
+    62        130  K_L0                91    52    52     0     0     0     0      1.100     -2.204     -0.922      2.677      0.498
+    63       -321  K-                  91    59     0     0     0     0     0      0.029      0.224      0.406      0.678      0.494
+    64        211  pi+                 91    59     0     0     0     0     0      0.264     -0.064      0.572      0.648      0.140
+    65        211  pi+                 91    60     0     0     0     0     0     -0.183     -0.233     -0.036      0.329      0.140
+    66       -211  pi-                 91    60     0     0     0     0     0      0.972     -0.785     -0.338      1.302      0.140
+                                   Charge sum:  0.000           Momentum sum:      0.000      0.000     79.996    120.000     89.447
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+EVENT NUMBER 0, Jet Number = 0, # Constituents = 3
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+EVENT NUMBER 1, Jet Number = 0, # Constituents = 6
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+EVENT NUMBER 3, Jet Number = 0, # Constituents = 9
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 211.000, Parent ID = 0
+Constituent Number = 6, PID = 211.000, Parent ID = 0
+Constituent Number = 7, PID = 111.000, Parent ID = 0
+Constituent Number = 8, PID = -321.000, Parent ID = 0
+EVENT NUMBER 4, Jet Number = 0, # Constituents = 3
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 2112.000, Parent ID = 0
+EVENT NUMBER 6, Jet Number = 0, # Constituents = 5
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 2, PID = 2212.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = -2112.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+EVENT NUMBER 8, Jet Number = 0, # Constituents = 2
+EVENT NUMBER 8, Jet Number = 1, # Constituents = 7
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 2112.000, Parent ID = 0
+Constituent Number = 3, PID = 22.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+Constituent Number = 6, PID = -211.000, Parent ID = 0
+EVENT NUMBER 9, Jet Number = 0, # Constituents = 1
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+EVENT NUMBER 10, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+EVENT NUMBER 11, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+EVENT NUMBER 12, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 12, Jet Number = 1, # Constituents = 4
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -2112.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+EVENT NUMBER 13, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 13, Jet Number = 1, # Constituents = 8
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 1, PID = -2112.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+Constituent Number = 6, PID = 111.000, Parent ID = 0
+Constituent Number = 7, PID = 111.000, Parent ID = 0
+EVENT NUMBER 14, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -2212.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+EVENT NUMBER 15, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 15, Jet Number = 1, # Constituents = 4
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+EVENT NUMBER 16, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+EVENT NUMBER 17, Jet Number = 0, # Constituents = 5
+EVENT NUMBER 17, Jet Number = 1, # Constituents = 1
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 321.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+EVENT NUMBER 18, Jet Number = 0, # Constituents = 1
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 5, PID = -211.000, Parent ID = 0
+Constituent Number = 6, PID = 211.000, Parent ID = 0
+EVENT NUMBER 20, Jet Number = 0, # Constituents = 2
+EVENT NUMBER 20, Jet Number = 1, # Constituents = 3
+EVENT NUMBER 20, Jet Number = 2, # Constituents = 3
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+vertex x/y/z-2.063/0.324/516.078 outside world volume radius/z (+-) 500.000/500.000, dropping it and its particles
+EVENT NUMBER 21, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 21, Jet Number = 1, # Constituents = 4
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+EVENT NUMBER 22, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 22, Jet Number = 1, # Constituents = 4
+EVENT NUMBER 22, Jet Number = 2, # Constituents = 2
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = -2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -321.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+EVENT NUMBER 23, Jet Number = 0, # Constituents = 6
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 5, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+EVENT NUMBER 26, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -2212.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -2212.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 2112.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+EVENT NUMBER 31, Jet Number = 0, # Constituents = 7
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = -2212.000, Parent ID = 0
+Constituent Number = 4, PID = 211.000, Parent ID = 0
+Constituent Number = 5, PID = 2112.000, Parent ID = 0
+Constituent Number = 6, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 22.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 5, PID = -211.000, Parent ID = 0
+Constituent Number = 6, PID = 111.000, Parent ID = 0
+Constituent Number = 7, PID = -211.000, Parent ID = 0
+EVENT NUMBER 32, Jet Number = 0, # Constituents = 4
+EVENT NUMBER 32, Jet Number = 1, # Constituents = 4
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -321.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -2212.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -321.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+EVENT NUMBER 35, Jet Number = 0, # Constituents = 8
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+Constituent Number = 6, PID = 211.000, Parent ID = 0
+Constituent Number = 7, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 211.000, Parent ID = 0
+Constituent Number = 5, PID = 130.000, Parent ID = 0
+Constituent Number = 6, PID = -211.000, Parent ID = 0
+EVENT NUMBER 37, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 321.000, Parent ID = 0
+Constituent Number = 3, PID = 130.000, Parent ID = 0
+Constituent Number = 4, PID = 211.000, Parent ID = 0
+EVENT NUMBER 40, Jet Number = 0, # Constituents = 2
+EVENT NUMBER 40, Jet Number = 1, # Constituents = 5
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 1, PID = 2112.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -321.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+EVENT NUMBER 41, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -321.000, Parent ID = 0
+Constituent Number = 3, PID = 321.000, Parent ID = 0
+EVENT NUMBER 42, Jet Number = 0, # Constituents = 2
+EVENT NUMBER 42, Jet Number = 1, # Constituents = 1
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 22.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+Constituent Number = 6, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+EVENT NUMBER 45, Jet Number = 0, # Constituents = 2
+EVENT NUMBER 45, Jet Number = 1, # Constituents = 1
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 22.000, Parent ID = 0
+EVENT NUMBER 46, Jet Number = 0, # Constituents = 3
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -2212.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+EVENT NUMBER 47, Jet Number = 0, # Constituents = 3
+EVENT NUMBER 47, Jet Number = 1, # Constituents = 1
+EVENT NUMBER 47, Jet Number = 2, # Constituents = 1
+EVENT NUMBER 47, Jet Number = 3, # Constituents = 5
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = -2212.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 2212.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+EVENT NUMBER 48, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 1, PID = -321.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+EVENT NUMBER 50, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -2212.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 2212.000, Parent ID = 0
+EVENT NUMBER 52, Jet Number = 0, # Constituents = 1
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+EVENT NUMBER 54, Jet Number = 0, # Constituents = 2
+EVENT NUMBER 54, Jet Number = 1, # Constituents = 3
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -2212.000, Parent ID = 0
+Constituent Number = 1, PID = -321.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -2112.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 2112.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+EVENT NUMBER 56, Jet Number = 0, # Constituents = 2
+EVENT NUMBER 56, Jet Number = 1, # Constituents = 2
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+EVENT NUMBER 58, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+EVENT NUMBER 59, Jet Number = 0, # Constituents = 3
+EVENT NUMBER 59, Jet Number = 1, # Constituents = 4
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.306°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.357°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.645°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.462°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.462°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.645°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.357°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.306°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.306°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.357°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.645°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.462°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.462°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.645°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.357°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.306°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.306°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.357°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.645°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.462°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.462°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.645°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.357°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.306°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.306°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.357°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.645°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.462°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.462°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 363.645°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 361.357°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 366.306°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 4 to PHGenFitTrack failed, moving to next tracklet 
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 11 to PHGenFitTrack failed, moving to next tracklet 
+EVENT NUMBER 60, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 60, Jet Number = 1, # Constituents = 1
+EVENT NUMBER 60, Jet Number = 2, # Constituents = 5
+EVENT NUMBER 60, Jet Number = 3, # Constituents = 4
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+EVENT NUMBER 62, Jet Number = 0, # Constituents = 3
+EVENT NUMBER 62, Jet Number = 1, # Constituents = 10
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 2112.000, Parent ID = 0
+Constituent Number = 2, PID = 321.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = 211.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+Constituent Number = 6, PID = -2112.000, Parent ID = 0
+Constituent Number = 7, PID = -321.000, Parent ID = 0
+Constituent Number = 8, PID = 211.000, Parent ID = 0
+Constituent Number = 9, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+EVENT NUMBER 64, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 64, Jet Number = 1, # Constituents = 8
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 2112.000, Parent ID = 0
+Constituent Number = 3, PID = 321.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = -211.000, Parent ID = 0
+Constituent Number = 6, PID = 111.000, Parent ID = 0
+Constituent Number = 7, PID = -2212.000, Parent ID = 0
+EVENT NUMBER 65, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 1, PID = 2112.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+EVENT NUMBER 66, Jet Number = 0, # Constituents = 6
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -2112.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 5, PID = 211.000, Parent ID = 0
+EVENT NUMBER 67, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+EVENT NUMBER 68, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 22.000, Parent ID = 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.407°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.407°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.407°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.407°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.407°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.407°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.407°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::Extrap ==> maximum number of iterations exceeded
+in line: 2349 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get to an active plane! Already extrapolated 362.407°.
+in line: 1940 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+genfit::Exception thrown with excString:
+RKTrackRep::RKutta ==> Do not get closer to plane!
+in line: 1950 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/need_root_version/root-6.16.00/genfit/trackReps/src/RKTrackRep.cc
+with fatal flag 0
+Warning: Conversion of SvtxTrack tracklet 1 to PHGenFitTrack failed, moving to next tracklet 
+EVENT NUMBER 69, Jet Number = 0, # Constituents = 6
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 211.000, Parent ID = 0
+EVENT NUMBER 70, Jet Number = 0, # Constituents = 1
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+EVENT NUMBER 71, Jet Number = 0, # Constituents = 2
+EVENT NUMBER 71, Jet Number = 1, # Constituents = 2
+EVENT NUMBER 71, Jet Number = 2, # Constituents = 6
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = -321.000, Parent ID = 0
+Constituent Number = 4, PID = 130.000, Parent ID = 0
+Constituent Number = 5, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = -321.000, Parent ID = 0
+Constituent Number = 4, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 2, PID = -11.000, Parent ID = 0
+Constituent Number = 3, PID = 11.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 5, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 130.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+EVENT NUMBER 73, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 73, Jet Number = 1, # Constituents = 2
+Constituent Number = 0, PID = -2112.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+EVENT NUMBER 74, Jet Number = 0, # Constituents = 6
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 4, PID = 130.000, Parent ID = 0
+Constituent Number = 5, PID = 211.000, Parent ID = 0
+EVENT NUMBER 75, Jet Number = 0, # Constituents = 4
+EVENT NUMBER 75, Jet Number = 1, # Constituents = 3
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 22.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -321.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+EVENT NUMBER 76, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 76, Jet Number = 1, # Constituents = 3
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = -2112.000, Parent ID = 0
+EVENT NUMBER 77, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+EVENT NUMBER 78, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+EVENT NUMBER 79, Jet Number = 0, # Constituents = 5
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -2212.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 4, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+EVENT NUMBER 82, Jet Number = 0, # Constituents = 6
+EVENT NUMBER 82, Jet Number = 1, # Constituents = 3
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+EVENT NUMBER 84, Jet Number = 0, # Constituents = 6
+EVENT NUMBER 84, Jet Number = 1, # Constituents = 5
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 211.000, Parent ID = 0
+Constituent Number = 5, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+Constituent Number = 5, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -321.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 4, PID = 111.000, Parent ID = 0
+EVENT NUMBER 85, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = -2212.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 2112.000, Parent ID = 0
+EVENT NUMBER 86, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -2212.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 3, PID = 2112.000, Parent ID = 0
+EVENT NUMBER 87, Jet Number = 0, # Constituents = 1
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+EVENT NUMBER 89, Jet Number = 0, # Constituents = 4
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+EVENT NUMBER 91, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -2212.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 130.000, Parent ID = 0
+EVENT NUMBER 92, Jet Number = 0, # Constituents = 2
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 130.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+EVENT NUMBER 93, Jet Number = 0, # Constituents = 6
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 4, PID = 22.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+EVENT NUMBER 94, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 94, Jet Number = 1, # Constituents = 2
+EVENT NUMBER 94, Jet Number = 2, # Constituents = 1
+EVENT NUMBER 94, Jet Number = 3, # Constituents = 3
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 22.000, Parent ID = 0
+Constituent Number = 0, PID = 22.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 2112.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -321.000, Parent ID = 0
+Constituent Number = 3, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 2, PID = 321.000, Parent ID = 0
+EVENT NUMBER 97, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 97, Jet Number = 1, # Constituents = 1
+EVENT NUMBER 97, Jet Number = 2, # Constituents = 4
+EVENT NUMBER 97, Jet Number = 3, # Constituents = 5
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = -321.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 2212.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = -211.000, Parent ID = 0
+Constituent Number = 3, PID = 321.000, Parent ID = 0
+Constituent Number = 4, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 2212.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 130.000, Parent ID = 0
+Constituent Number = 3, PID = 22.000, Parent ID = 0
+Constituent Number = 4, PID = -321.000, Parent ID = 0
+Constituent Number = 5, PID = 111.000, Parent ID = 0
+Constituent Number = 6, PID = 111.000, Parent ID = 0
+Constituent Number = 7, PID = -211.000, Parent ID = 0
+Constituent Number = 8, PID = 22.000, Parent ID = 0
+EVENT NUMBER 99, Jet Number = 0, # Constituents = 1
+EVENT NUMBER 99, Jet Number = 1, # Constituents = 1
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 1, PID = -211.000, Parent ID = 0
+Constituent Number = 0, PID = 321.000, Parent ID = 0
+Constituent Number = 0, PID = 211.000, Parent ID = 0
+Constituent Number = 0, PID = 111.000, Parent ID = 0
+Constituent Number = 1, PID = 111.000, Parent ID = 0
+Constituent Number = 2, PID = 111.000, Parent ID = 0
+Constituent Number = 0, PID = -211.000, Parent ID = 0
+Constituent Number = 1, PID = 211.000, Parent ID = 0
+Constituent Number = 2, PID = 130.000, Parent ID = 0
+Constituent Number = 3, PID = 111.000, Parent ID = 0
+MyJetAnalysis::End - Output to /global/project/projectdirs/alice/ftorales/eP_MC/eP_0_electrons+jets.root
+All done
