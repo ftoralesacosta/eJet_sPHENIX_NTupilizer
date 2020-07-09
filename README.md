@@ -56,7 +56,12 @@ Line 33:
 Line 81:
 ```
 trackjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,1.0),"AntiKt_Track_r10");
+
 ```
+
+## Reco-Truth Jet Matching
+The original source code uses the function *max_truth_jet_by_enengy(jet)*.
+This has been changed to *unique_truth_jet_from_reco(jet);* in order to obtain 1:1 truth-reco matches. This is done at the exclusion of fake  jets in order to specifically study the jet reconstruction efficency, Energy/Momentum scale, and angular resolutions where a precise matching is important. For future studies of the fake rate of jets, one should likely switch to the original matching function.
 
 # Running Jet Energy Resolution
 
