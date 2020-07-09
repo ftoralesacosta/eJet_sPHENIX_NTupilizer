@@ -75,10 +75,16 @@ class MyJetAnalysis_AllSi : public SubsysReco
 		Jet* max_truth_jet_by_track_fastsim(Jet*);
 		int get_track_fastsim_contribution(Jet* recojet, Jet* truthjet);
 		std::set<PHG4Particle*> all_truth_particles(Jet* truthjet);
+		Jet* unique_truth_jet_from_reco_fastsim(Jet* recojet);
+		Jet* fastsim_best_jet_from(Jet* truthjet);
+		std::set<Jet*> fastsim_all_jets_from(Jet* truthjet);
+		std::set<Jet*> fastsim_all_truth_jets(Jet* recojet);
+		std::set<PHG4Particle*> fastsim_all_truth_particles(Jet* recojet);
 
 		JetMap* all_truth_jets;
 		SvtxTrackMap* _trackmap;
 		PHG4TruthInfoContainer* _truthinfo;
+		JetMap* jets;
 
 		std::string m_recoJetName;
 		std::string m_truthJetName;
@@ -125,7 +131,7 @@ class MyJetAnalysis_AllSi : public SubsysReco
 		int m_nAlltruthjets;
 
 		enum {MaxNumJets = 20, kMaxConstituents = 100};
-		
+
 		// Reconstructed jets
 		std::array<int,MaxNumJets> m_id;
 		std::array<int,MaxNumJets> m_nComponent;

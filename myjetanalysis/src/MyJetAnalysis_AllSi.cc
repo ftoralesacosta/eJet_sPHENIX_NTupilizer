@@ -43,6 +43,7 @@ MyJetAnalysis_AllSi::MyJetAnalysis_AllSi(const std::string& recojetname, const s
 	, all_truth_jets(nullptr)
 	, _trackmap(nullptr)
 	, _truthinfo(nullptr)
+	, jets(nullptr)
 	, m_recoJetName(recojetname)
 	, m_truthJetName(truthjetname)
 	, m_outputFileName(outputfilename)
@@ -222,6 +223,13 @@ int MyJetAnalysis_AllSi::InitRun(PHCompositeNode* topNode)
 		exit(-1);
 	}
 
+	// interface to jets
+	jets = findNode::getClass<JetMap>(topNode, m_recoJetName);
+	if (!jets){
+		cout << "MyJetAnalysis_AllSi::process_event - Error can not find DST JetMap node " << m_recoJetName << endl;
+		exit(-1);
+	}
+
 	return Fun4AllReturnCodes::EVENT_OK;
 }
 // =======================================================================================================================
@@ -234,18 +242,18 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 	++m_event;
 
 	// interface to jets
-	JetMap* jets = findNode::getClass<JetMap>(topNode, m_recoJetName);
-	if (!jets){
-		cout << "MyJetAnalysis_AllSi::process_event - Error can not find DST JetMap node " << m_recoJetName << endl;
-		exit(-1);
-	}
+	//JetMap* jets = findNode::getClass<JetMap>(topNode, m_recoJetName);
+	//if (!jets){
+	//	cout << "MyJetAnalysis_AllSi::process_event - Error can not find DST JetMap node " << m_recoJetName << endl;
+	//	exit(-1);
+	//}
 
 	//Interface to True Electrons    
 	PHG4TruthInfoContainer* truthinfo = findNode::getClass<PHG4TruthInfoContainer>(topNode,"G4TruthInfo");
 	if ( !truthinfo ){
 		cerr << PHWHERE << " ERROR: Can't find G4TruthInfo" << endl;
 		exit(-1);
-	}
+	}	
 
 	float hardest_electron_E = 0;
 	int hardest_electron_int = -1;
@@ -331,7 +339,9 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 		for (JetMap::Iter jter = jets->begin(); jter != jets->end(); ++jter)
 		{
 			Jet* jet = jter->second;
-			assert(jet); //checks if not null. Aborts if null pointer.
+
+			assert(jet); //checks if not null. Aborts if null pointer.	
+
 
 			// fill inclusive histograms
 			assert(m_hInclusiveE);
@@ -372,7 +382,7 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 
 			// Truth jet Arrays
 			m_matched_truthID[j] = NAN;
-			m_matched_truthNComponent[j] = NAN;
+			m_matched_truthNComponent[j] = NAN;	
 			m_matched_truthEta[j] = NAN;
 			m_matched_truthPhi[j] = NAN;
 			m_matched_truthE[j] = NAN;
@@ -386,10 +396,11 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 
 			//Which truth jet contributed the most enery to this reco jet?
 			//Jet* truthjet = recoeval->max_truth_jet_by_energy(jet);	// <-- this is what was used in the standard code
-			Jet* truthjet = max_truth_jet_by_track_fastsim(jet);		// <-- this is what is used in the 
+			//Jet* truthjet = max_truth_jet_by_track_fastsim(jet);
+			Jet* truthjet = unique_truth_jet_from_reco_fastsim(jet);
 
 			if (truthjet)
-			{	
+			{			
 				TLorentzVector JTruth_vec(truthjet->get_px(), truthjet->get_py(), truthjet->get_pz(),truthjet->get_e());
 
 				//Apply cuts
@@ -416,7 +427,7 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 				for (auto i_t:truthj_particle_set)
 				{
 					TParticlePDG * pdg_p = TDatabasePDG::Instance()->GetParticle( i_t->get_pid() );
-					
+
 					if( abs(pdg_p -> Charge()/3.) < 1.0E-05 ){
 						TLorentzVector neutral_constituent;
 						neutral_constituent.SetPxPyPzE(i_t->get_px(),i_t->get_py(),i_t->get_pz(),i_t->get_e());
@@ -449,6 +460,8 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 			if (j >= MaxNumJets) break;
 
 		}  //   for (JetMap::Iter iter = jets->begin(); iter != jets->end(); ++iter)      
+
+		if(m_ntruthjets==0) continue;
 
 		m_hInclusiveNJets->Fill(inc_jet_counter);	
 		assert(m_hInclusiveNJets);
@@ -586,5 +599,151 @@ std::set<PHG4Particle*> MyJetAnalysis_AllSi::all_truth_particles(Jet* truthjet)
 		assert(truth_particle);
 		truth_particles.insert(truth_particle);
 	}
+	return truth_particles;
+}
+// =======================================================================================================================
+Jet* MyJetAnalysis_AllSi::unique_truth_jet_from_reco_fastsim(Jet* recojet)
+{
+	Jet* truthjet = max_truth_jet_by_track_fastsim(recojet); // max_truth_jet_by_energy is used instead in JetRecoEval
+
+	if (truthjet)
+	{
+		Jet* back_matching = fastsim_best_jet_from(truthjet);
+
+		if (back_matching->get_id() == recojet->get_id()){	
+			return truthjet;  // uniquely matched
+		}
+		else{
+			return nullptr;
+		}
+	}
+	else
+		return nullptr;
+}
+// =======================================================================================================================
+Jet* MyJetAnalysis_AllSi::fastsim_best_jet_from(Jet* truthjet)
+{
+	Jet* bestrecojet = nullptr;
+	//float max_energy = FLT_MAX * -1.0;
+	int max_n_track = -1;
+
+	std::set<Jet*> recojets = fastsim_all_jets_from(truthjet);
+	for (std::set<Jet*>::iterator iter = recojets.begin();
+			iter != recojets.end();
+			++iter)
+	{
+		Jet* recojet = *iter;
+		assert(recojet);
+
+		//float energy = get_track_fastsim_contribution(recojet, truthjet);
+		//if (energy > max_energy)
+		//{
+		//	bestrecojet = recojet;
+		//	max_energy = energy;
+		//}
+		
+ 		int n_track = get_track_fastsim_contribution(recojet, truthjet);
+
+                if (n_track > max_n_track)
+                {
+                        bestrecojet = recojet;
+                        max_n_track = n_track;
+                }
+	}
+
+	return bestrecojet;
+}
+// =======================================================================================================================
+std::set<Jet*> MyJetAnalysis_AllSi::fastsim_all_jets_from(Jet* truthjet)
+{
+	std::set<Jet*> recojets;
+
+	// loop over all reco jets
+	for (JetMap::Iter iter = jets->begin();
+			iter != jets->end();
+			++iter)
+	{
+		Jet* recojet = iter->second;
+
+		// if this jet back tracks to the truth jet
+		//std::set<Jet*> truthcandidates = fastsim_all_truth_jets(recojet);
+		//for (std::set<Jet*>::iterator jter = truthcandidates.begin();jter != truthcandidates.end();++jter){
+		//	Jet* truthcandidate = *jter;
+		for (JetMap::Iter jter = all_truth_jets->begin(); jter != all_truth_jets->end(); ++jter){
+			Jet* truthcandidate = jter->second;
+			assert(truthcandidate);
+
+			if (truthcandidate->get_id() == truthjet->get_id())
+			{
+				recojets.insert(recojet);
+			}
+		}
+	}
+	
+	return recojets;
+}
+// =======================================================================================================================
+std::set<Jet*> MyJetAnalysis_AllSi::fastsim_all_truth_jets(Jet* recojet)
+{
+	std::set<Jet*> truth_jets;
+
+	// get all truth particles (this can include muons and other truth excludes)...
+	std::set<PHG4Particle*> particles = fastsim_all_truth_particles(recojet);
+
+	// backtrack from the truth particles to the truth jets...
+	for (std::set<PHG4Particle*>::iterator iter = particles.begin();
+			iter != particles.end();
+			++iter)
+	{
+		PHG4Particle* particle = *iter;
+
+		assert(particle);
+
+		Jet* truth_jet = m_jetEvalStack -> get_truth_eval() -> get_truth_jet(particle);
+		if (!truth_jet) continue;
+
+		truth_jets.insert(truth_jet);
+	}
+	
+	return truth_jets;
+}
+// =======================================================================================================================
+std::set<PHG4Particle*> MyJetAnalysis_AllSi::fastsim_all_truth_particles(Jet* recojet)
+{
+	std::set<PHG4Particle*> truth_particles;
+
+	// loop over all the jet constituents, backtrack each reco object to the
+	// truth hits and combine with other consituents
+
+	for (Jet::ConstIter iter = recojet->begin_comp();
+			iter != recojet->end_comp();
+			++iter)
+	{	
+		Jet::SRC source = iter->first;
+		unsigned int index = iter->second;
+
+		std::set<PHG4Particle*> new_particles;
+
+		assert(source == Jet::TRACK); // make sure you are analyzing a track jet
+		if (!_trackmap)
+		{
+			cout << PHWHERE << "ERROR: can't find SvtxTrackMap" << endl;
+			exit(-1);
+		}
+
+		SvtxTrack* track = _trackmap->get(index);
+		assert(track);
+
+		new_particles = m_jetEvalStack -> get_truth_eval() -> get_svtx_eval_stack()->get_track_eval()->all_truth_particles(track);	// <----------------------
+		//new_particles = m_jetEvalStack -> get_truth_eval() -> all_truth_particles(all_truthjet);
+
+		for (std::set<PHG4Particle*>::iterator jter = new_particles.begin();
+				jter != new_particles.end();
+				++jter)
+		{ 
+			truth_particles.insert(*jter);
+		}
+	}
+	
 	return truth_particles;
 }
