@@ -2,9 +2,9 @@
 
 This code is adapted from the JES scale code, which I orginally forked from the sPHENIX/macros repository and edits Jin Huang's "myjetanalysis" code. The code now relies on a separate cloning the the sPHENIX/macros repo, but is still maintained as a fork of tutorials/myjetanalysis code.
 
-This code simulates electron proton collisions using the sPHENIX detector, and uses hybrid tracks. It outputs simple NTuples with true electron information, as well as reconstructed and truth level jets.
+This code simulates electron proton collisions using the sPHENIX detector, and uses hybrid tracks. It outputs simple NTuples with true electron information, as well as reconstructed and truth level jets. Rey Cruz Torres has implemented an **all silicon** tracking design for a futer EIC based on the same code based (denoted with AllSi prefixes) that outputs NTupples with same structure.
 
-The code in the JES directory generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER). The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple if simulations are provided.
+(Depricated as of 7/2020): The code in the JES directory generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER). The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple if simulations are provided. 
 
 # Getting Started
 1. The code was originally ran inside a Singularity container, which can be found here:
