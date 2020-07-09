@@ -2,7 +2,7 @@
 
 This code is adapted from the JES scale code, which I orginally forked from the sPHENIX/macros repository and edits Jin Huang's "myjetanalysis" code. The code now relies on a separate cloning the the sPHENIX/macros repo, but is still maintained as a fork of tutorials/myjetanalysis code.
 
-This code simulates electron proton collisions using the sPHENIX detector, and uses hybrid tracks. It outputs simple NTuples with true electron information, as well as reconstructed and truth level jets. Rey Cruz Torres has implemented an **all silicon** tracking design for a futer EIC based on the same code based (denoted with AllSi prefixes) that outputs NTupples with same structure.
+This code simulates electron proton collisions using the sPHENIX detector, and uses hybrid tracks. It outputs simple NTuples with true electron information, as well as reconstructed and truth level jets. Rey Cruz Torres has implemented an **all silicon** tracking design for a future EIC based on the same code based (denoted with AllSi prefixes) that outputs NTupples with same structure.
 
 (Depricated as of 7/2020): The code in the JES directory generates the Jet Energy Scale (JES) correction factor, as well as parametrizes the Jet Energy Resolution (JER). The code needs to be compiled, but is compiled separatly from Fun4All, and simply needs ROOT installed. All that needs to be done is to point it at the correct NTuple if simulations are provided. 
 
@@ -75,6 +75,7 @@ The result will be an output root file with several histograms/TGraphs, and the 
 
 All the machinery is in place to run your own Monte Carlo Production. The main Fun4All_G4_sPHENIX.C macro calls the myjetanalysis code to create TTrees with jet variables.
 
+<!---
 # Changing Bins and Adding Dependencies
 
 The bins are defined with arrays starting on Line 625. Simply change the min and max Truth pT, and the bin width (currently 2.5 GeV/c).
@@ -86,6 +87,7 @@ By default, the only binning is in Jet pT, however adding eta dependency, or z-v
 3. Add an extra dimension to the string vectors `root_cut_string` and `title_cut_string`
 4. Fill the string vectors shown in Line 672-673, using the newly created vectors containing bin information.
 5. Finally, add additional for loops for the new bins for the reconstructed and correction loops (shown in Lines 728 & 840. All the functions inside the loops take a string in 1-D TH1F vector as arguments. The outer loop is simply changed to go throught the N-dimensional vectors. In this way none of the functions need editing if all one wants to do is add additional dependencies.
+-->
 
 # To Do:
 Hard coded binning is of course a pain. Adding TEnv support or some external configuration file would be great.
