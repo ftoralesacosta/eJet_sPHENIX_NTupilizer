@@ -59,6 +59,18 @@ trackjetreco->add_algo(new FastJetAlgo(Jet::ANTIKT,1.0),"AntiKt_Track_r10");
 
 ```
 
+### Running the main Fun4All Macro:
+Can be done from the command line inside the sPHENIX environment:
+```
+r Fun4All_G4_sPHENIX.C\(10,\"\",\"Jul15_EMCal_AllTruth_Const_HeaderEdit\"\)
+```
+or inside ROOT:
+```
+.x Fun4All_G4_sPHENIX.C(10,"","Jul15_EMCal_AllTruth_Const_HeaderEdit")
+```
+
+The middle argument is the name of an input HEPMC file, which is not compatible with running PYTHIA at the same time (It's actually redundand anyway)
+
 ## Reco-Truth Jet Matching
 The original source code uses the function *max_truth_jet_by_enengy(jet)*.
 This has been changed to *unique_truth_jet_from_reco(jet);* in order to obtain 1:1 truth-reco matches. This is done at the exclusion of fake  jets in order to specifically study the jet reconstruction efficency, Energy/Momentum scale, and angular resolutions where a precise matching is important. For future studies of the fake rate of jets, one should likely switch to the original matching function.
