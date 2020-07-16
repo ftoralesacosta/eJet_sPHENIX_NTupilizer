@@ -108,6 +108,13 @@ class MyJetAnalysis : public SubsysReco
   std::array<float,MaxNumJets> m_matched_truthE;
   std::array<float,MaxNumJets> m_matched_truthPt;
 
+  std::array<int,MaxNumJets> m_all_truthID;
+  std::array<int,MaxNumJets> m_all_truthNComponent;
+  std::array<float,MaxNumJets> m_all_truthEta;
+  std::array<float,MaxNumJets> m_all_truthPhi;
+  std::array<float,MaxNumJets> m_all_truthE;
+  std::array<float,MaxNumJets> m_all_truthPt;
+
   //PID float in order to fill branches with NaN correctly.
   std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthPID;
   std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthCharge;
@@ -115,20 +122,12 @@ class MyJetAnalysis : public SubsysReco
   std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthPhi;
   std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthPt;
   std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_matched_Constituent_truthE;
-
-  std::array<int,MaxNumJets> m_all_truthID;
-  std::array<int,MaxNumJets> m_all_truthNComponent;
-  std::array<float,MaxNumJets> m_all_truthEta;
-  std::array<float,MaxNumJets> m_all_truthPhi;
-  std::array<float,MaxNumJets> m_all_truthE;
-  std::array<float,MaxNumJets> m_all_truthPt;
-  
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthPID;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthCharge;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthEta;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthPhi;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthPt;
-  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_All_Constituent_truthE;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_all_Constituent_truthPID;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_all_Constituent_truthCharge;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_all_Constituent_truthEta;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_all_Constituent_truthPhi;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_all_Constituent_truthPt;
+  std::array<std::array<float, kMaxConstituents >, MaxNumJets > m_all_Constituent_truthE;
 #endif  // #ifndef __CINT__
 };
 

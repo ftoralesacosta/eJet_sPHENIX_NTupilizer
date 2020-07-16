@@ -88,6 +88,13 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   std::fill_n(&m_matched_Constituent_truthPhi[0][0],MaxNumJets*kMaxConstituents,NaN);
   std::fill_n(&m_matched_Constituent_truthPt[0][0],MaxNumJets*kMaxConstituents,NaN);
   std::fill_n(&m_matched_Constituent_truthE[0][0],MaxNumJets*kMaxConstituents,NaN);
+
+  std::fill_n(&m_all_Constituent_truthPID[0][0],MaxNumJets*kMaxConstituents,NaN);
+  std::fill_n(&m_all_Constituent_truthCharge[0][0],MaxNumJets*kMaxConstituents,NaN);
+  std::fill_n(&m_all_Constituent_truthEta[0][0],MaxNumJets*kMaxConstituents,NaN);
+  std::fill_n(&m_all_Constituent_truthPhi[0][0],MaxNumJets*kMaxConstituents,NaN);
+  std::fill_n(&m_all_Constituent_truthPt[0][0],MaxNumJets*kMaxConstituents,NaN);
+  std::fill_n(&m_all_Constituent_truthE[0][0],MaxNumJets*kMaxConstituents,NaN);
 }
 
 MyJetAnalysis::~MyJetAnalysis()
@@ -118,7 +125,8 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_T->Branch("event", &m_event, "event/I");
   m_T->Branch("njets", &m_njets, "njets/I");
   m_T->Branch("nAlltruthjets", &m_nAlltruthjets, "nAlltruthjets/I");
-
+  //Root name (sans "m_") is in dynamic array size
+  
   //Reconstructed Jet Branches
   m_T->Branch("id", m_id.data(), "id[njets]/I");
   m_T->Branch("nComponent", m_nComponent.data(), "nComponent[njets]/I");
@@ -155,13 +163,14 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_T->Branch("all_truthE", m_all_truthE.data(), "all_truthE[nAlltruthjets]/F");
   m_T->Branch("all_truthPt", m_all_truthPt.data(), "all_truthPt[nAlltruthjets]/F");
 
-  m_T->Branch("all_Constituent_truthPID", &m_All_Constituent_truthPID,"All_Constituent_truthPID[nAlltruthjets][100]/F");
-  m_T->Branch("all_Constituent_truthCharge", &m_All_Constituent_truthCharge,"All_Constituent_truthCharge[nAlltruthjets][100]/F");
-  m_T->Branch("all_Constituent_truthEta", &m_All_Constituent_truthEta,"All_Constituent_truthEta[nAlltruthjets][100]/F");
-  m_T->Branch("all_Constituent_truthPhi", &m_All_Constituent_truthPhi,"All_Constituent_truthPhi[nAlltruthjets][100]/F");
-  m_T->Branch("all_Constituent_truthPt", &m_All_Constituent_truthPt,"All_Constituent_truthPt[nAlltruthjets][100]/F");
-  m_T->Branch("all_Constituent_truthE", &m_All_Constituent_truthE,"All_Constituent_truthE[nAlltruthjets][100]/F");
-
+  m_T->Branch("all_Constituent_truthPID", &m_all_Constituent_truthPID,"all_Constituent_truthPID[nAlltruthjets][100]/F");
+  m_T->Branch("all_Constituent_truthCharge", &m_all_Constituent_truthCharge,"all_Constituent_truthCharge[nAlltruthjets][100]/F");
+  m_T->Branch("all_Constituent_truthEta", &m_all_Constituent_truthEta,"all_Constituent_truthEta[nAlltruthjets][100]/F");
+  m_T->Branch("all_Constituent_truthPhi", &m_all_Constituent_truthPhi,"all_Constituent_truthPhi[nAlltruthjets][100]/F");
+  m_T->Branch("all_Constituent_truthPt", &m_all_Constituent_truthPt,"all_Constituent_truthPt[nAlltruthjets][100]/F");
+  m_T->Branch("all_Constituent_truthE", &m_all_Constituent_truthE,"all_Constituent_truthE[nAlltruthjets][100]/F");
+  //100 = max number of constituents. ROOT does not support branches of 2D dynamic arrays nor with 2+ alpha-numeric dimensions
+  
   //Electron Branches
   m_T->Branch("electron_truthEta", &m_electron_truthEta, "electron_truthEta/F");
   m_T->Branch("electron_truthPhi", &m_electron_truthPhi, "electron_truthPhi/F");
@@ -270,7 +279,8 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     m_electron_truthpX = g4particle->get_px();
     m_electron_truthpY = g4particle->get_py();
     m_electron_truthpZ = g4particle->get_pz();
-	
+    //Scalars need not be manually reset
+    
     TLorentzVector e_vec;
     e_vec.SetPxPyPzE(m_electron_truthpX,m_electron_truthpY,m_electron_truthpZ,m_electron_truthE);
     m_electron_truthEta = e_vec.Eta();
@@ -308,12 +318,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
       m_all_truthE.fill(numeric_limits<float>::signaling_NaN());
       m_all_truthPt.fill(numeric_limits<float>::signaling_NaN());
 
-      std::fill_n(&m_All_Constituent_truthPID[0][0],MaxNumJets*kMaxConstituents,NaN);
-      std::fill_n(&m_All_Constituent_truthCharge[0][0],MaxNumJets*kMaxConstituents,NaN);
-      std::fill_n(&m_All_Constituent_truthEta[0][0],MaxNumJets*kMaxConstituents,NaN);
-      std::fill_n(&m_All_Constituent_truthPhi[0][0],MaxNumJets*kMaxConstituents,NaN);
-      std::fill_n(&m_All_Constituent_truthPt[0][0],MaxNumJets*kMaxConstituents,NaN);
-      std::fill_n(&m_All_Constituent_truthE[0][0],MaxNumJets*kMaxConstituents,NaN);
+      std::fill_n(&m_all_Constituent_truthPID[0][0],MaxNumJets*kMaxConstituents,NaN);
+      std::fill_n(&m_all_Constituent_truthCharge[0][0],MaxNumJets*kMaxConstituents,NaN);
+      std::fill_n(&m_all_Constituent_truthEta[0][0],MaxNumJets*kMaxConstituents,NaN);
+      std::fill_n(&m_all_Constituent_truthPhi[0][0],MaxNumJets*kMaxConstituents,NaN);
+      std::fill_n(&m_all_Constituent_truthPt[0][0],MaxNumJets*kMaxConstituents,NaN);
+      std::fill_n(&m_all_Constituent_truthE[0][0],MaxNumJets*kMaxConstituents,NaN);
     }
 
     int inc_jet_counter = 0;
@@ -387,7 +397,6 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		  		
 		std::set<PHG4Particle*> truthj_particle_set = m_jetEvalStack->get_truth_eval()->all_truth_particles(truthjet);
 		int c_index = 0;
-		int num_pi = 0;
 		for (auto i_t:truthj_particle_set)
 		  {
 		    TLorentzVector constituent_vec;
@@ -399,19 +408,6 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 		    m_matched_Constituent_truthPhi[j][c_index] = constituent_vec.Phi();
 		    m_matched_Constituent_truthPt[j][c_index] = constituent_vec.Pt();
 		    m_matched_Constituent_truthE[j][c_index] = constituent_vec.E();
-
-		    int parent_ID = i_t->get_parent_id();
-		    if (parent_ID == 111){
-		      cout<<"Constituent Number = "<<c_index;
-		      cout<<", PID = "<<m_matched_Constituent_truthPID[j][c_index];
-		      cout<<",Parent PID = "<<i_t->get_parent_id()<<endl;
-		      num_pi++;
-		    }
-		    // cout<<", C = "<<m_matched_Constituent_truthCharge[j][c_index];
-		    // cout<<", Eta = "<<m_matched_Constituent_truthEta[j][c_index];
-		    // cout<<", Phi = "<<m_matched_Constituent_truthPhi[j][c_index];
-		    // cout<<", Pt = "<<m_matched_Constituent_truthPt[j][c_index];
-		    // cout<<", E = "<<m_matched_Constituent_truthE[j][c_index]<<std::endl;
 		    c_index++;
 		  }
 	      }
@@ -421,6 +417,8 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	//s.t. matched_truth is filled NaN if no match.
 	
 	if (j >= MaxNumJets) break;
+
+	////// TRACK-JET MATCHING //////
 
 	// //fill trees - jet track matching
 	// m_nMatchedTrack[j] = 0;
@@ -495,8 +493,6 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	m_all_truthPhi[i_alltruth] = all_truthjet->get_phi();
 	m_all_truthE[i_alltruth] = all_truthjet->get_e();
 	m_all_truthPt[i_alltruth] = all_truthjet->get_pt();
-	++i_alltruth;
-	m_nAlltruthjets = i_alltruth;
 
 	std::set<PHG4Particle*> all_truthj_particle_set = m_jetEvalStack->get_truth_eval()->all_truth_particles(all_truthjet);
 	int c_Allindex = 0;
@@ -505,24 +501,24 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
 	    TLorentzVector constituent_vec;
 	    constituent_vec.SetPxPyPzE(i_At->get_px(),i_At->get_py(),i_At->get_pz(),i_At->get_e());
 	    TParticlePDG * pdg_p = TDatabasePDG::Instance()->GetParticle(i_At->get_pid());
-	    m_All_Constituent_truthPID[i_alltruth][c_Allindex] = i_At->get_pid();
-	    m_All_Constituent_truthCharge[i_alltruth][c_Allindex] = (pdg_p->Charge()/3.);
-	    m_All_Constituent_truthEta[i_alltruth][c_Allindex] = constituent_vec.Eta();		  
-	    m_All_Constituent_truthPhi[i_alltruth][c_Allindex] = constituent_vec.Phi();
-	    m_All_Constituent_truthPt[i_alltruth][c_Allindex] = constituent_vec.Pt();
-	    m_All_Constituent_truthE[i_alltruth][c_Allindex] = constituent_vec.E();
-	    cout<<"Constituent Number = "<<c_Allindex;
-	    cout<<", PID = "<<m_All_Constituent_truthPID[i_alltruth][c_Allindex];
+	    m_all_Constituent_truthPID[i_alltruth][c_Allindex] = i_At->get_pid();
+	    m_all_Constituent_truthCharge[i_alltruth][c_Allindex] = (pdg_p->Charge()/3.);
+	    m_all_Constituent_truthEta[i_alltruth][c_Allindex] = constituent_vec.Eta();		  
+	    m_all_Constituent_truthPhi[i_alltruth][c_Allindex] = constituent_vec.Phi();
+	    m_all_Constituent_truthPt[i_alltruth][c_Allindex] = constituent_vec.Pt();
+	    m_all_Constituent_truthE[i_alltruth][c_Allindex] = constituent_vec.E();
+	    cout<<"All Constituent Number = "<<c_Allindex;
+	    cout<<", PID = "<<m_all_Constituent_truthPID[i_alltruth][c_Allindex];
 	    cout<<", Parent ID = "<<i_At->get_parent_id()<<endl;
-	    // cout<<", C = "<<m_All_Constituent_truthCharge[i_alltruth][c_Allindex];
-	    // cout<<", Eta = "<<m_All_Constituent_truthEta[i_alltruth][c_Allindex];
-	    // cout<<", Phi = "<<m_All_Constituent_truthPhi[i_alltruth][c_Allindex];
-	    // cout<<", Pt = "<<m_All_Constituent_truthPt[i_alltruth][c_Allindex];
-	    // cout<<", E = "<<m_All_Constituent_truthE[i_alltruth][c_Allindex]<<std::endl;
+	    cout<<", C = "<<m_all_Constituent_truthCharge[i_alltruth][c_Allindex];
+	    cout<<", Eta = "<<m_all_Constituent_truthEta[i_alltruth][c_Allindex];
+	    cout<<", Phi = "<<m_all_Constituent_truthPhi[i_alltruth][c_Allindex];
+	    cout<<", Pt = "<<m_all_Constituent_truthPt[i_alltruth][c_Allindex];
+	    cout<<", E = "<<m_all_Constituent_truthE[i_alltruth][c_Allindex]<<std::endl;
 	    c_Allindex++;
-	  }
-	
-	
+	  }	
+	++i_alltruth;
+	m_nAlltruthjets = i_alltruth;
       }
     m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
   }//electron Loop  
