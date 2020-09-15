@@ -500,8 +500,6 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 			m_all_truthPhi[i_alltruth] = all_truthjet->get_phi();
 			m_all_truthE[i_alltruth] = all_truthjet->get_e();
 			m_all_truthPt[i_alltruth] = all_truthjet->get_pt();
-			++i_alltruth;
-			m_nAlltruthjets = i_alltruth;
 
 			std::set<PHG4Particle*> all_truthj_particle_set = m_jetEvalStack->get_truth_eval()->all_truth_particles(all_truthjet);
 			int c_Allindex = 0;
@@ -518,6 +516,8 @@ int MyJetAnalysis_AllSi::process_event(PHCompositeNode* topNode)
 				m_All_Constituent_truthE[i_alltruth][c_Allindex] = constituent_vec.E();
 				c_Allindex++;
 			}
+			++i_alltruth;
+                        m_nAlltruthjets = i_alltruth;
 		}
 		m_T->Fill(); //Fill Tree inside electron Loop, after reco&truth loops
 	} //electron Loop
