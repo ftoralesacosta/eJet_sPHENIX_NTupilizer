@@ -36,6 +36,7 @@ class MyClass {
   std::vector<TH2F*> Slice_TH2F_v;
 
   TString reco_or_corr;
+  
 public:
       
   void set_binning(std::vector<float> &edges, std::vector<float> &centers,
@@ -45,11 +46,11 @@ public:
   void set_eta_binning(float low, float high, float width);
   void set_pT_FitRange(float low, float high);
   TString set_reco_or_corr(TString input_string);
-  //FIXME: edit other function to no longer take reco_or.. argument
-  std::vector<TH1F*> create_TH1F(TString reco_or_corr,
+
+  std::vector<TH1F*> create_TH1F(
      TString root_name, TString title,float *binning);
 
-  std::vector<TH2F*> create_TH2F(TString reco_or_corr,
+  std::vector<TH2F*> create_TH2F(
      TString root_name, TString title,float *binning);
 
   void initialize_histograms();

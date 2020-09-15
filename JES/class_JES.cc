@@ -74,15 +74,12 @@ TString MyClass::set_reco_or_corr(TString input_string)
 //   // TTreeReaderArray<Float_t> JetAllTruthpT(The_Tree,"all_truthPt");
 // }
 
-std::vector<TH1F*> MyClass::create_TH1F(TString reco_or_corr,TString root_name,
+std::vector<TH1F*> MyClass::create_TH1F(TString root_name,
 					  TString title,float *binning)
 {
   std::vector<TH1F*> TH1F_vector;
 
-  //Internal Root Name.
-  root_name = reco_or_corr + root_name;
-
-  //Histogram title
+  root_name = reco_or_corr + root_name;  
   title = title.Insert(title.First("^")+2,reco_or_corr); //insert into latex
   
   for (auto it = pT_bins.begin(); std::next(it,1) != pT_bins.end(); ++it){
@@ -100,7 +97,7 @@ std::vector<TH1F*> MyClass::create_TH1F(TString reco_or_corr,TString root_name,
   return TH1F_vector;
 }
 
-std::vector<TH2F*> MyClass::create_TH2F(TString reco_or_corr,TString root_name,
+std::vector<TH2F*> MyClass::create_TH2F(TString root_name,
 					TString title,float *binning)
 {
   std::vector<TH2F*> TH2F_vector;
@@ -136,16 +133,17 @@ void MyClass::initialize_histograms(){
 
   float binning[3] = {16,-2,2}; //{nbins,min,max}
   //FIXME: Pass this as argument. For pT_Slices copy pT truth binning member variable
-  pT_Differences = create_TH1F("Reco","_pT_Difference_","p_{T}^{} - p_{T}^{Truth} ",binning);
-  pT_Ratios = create_TH1F("Reco","_pT_Ratio_","p_{T}^{} / p_{T}^{Truth} ",binning);
-  pT_Slices = create_TH1F("Reco","_pT_Slices","p_{T}^{} ",binning);
+  pT_Differences = create_TH1F("_pT_Difference_","p_{T}^{} - p_{T}^{Truth} ",binning);
+  pT_Ratios = create_TH1F("_pT_Ratio_","p_{T}^{} / p_{T}^{Truth} ",binning);
+  pT_Slices = create_TH1F("_pT_Slices","p_{T}^{} ",binning);
   
-  Phi_Deltas = create_TH1F("Reco","_delta_phi_","#varphi^{} - #varphi^{Truth} ",binning);
-  Eta_Deltas = create_TH1F("Reco","_delta_eta_","#eta^{} - #eta^{Truth} ",binning);
+  Phi_Deltas = create_TH1F("_delta_phi_","#varphi^{} - #varphi^{Truth} ",binning);
+  Eta_Deltas = create_TH1F("_delta_eta_","#eta^{} - #eta^{Truth} ",binning);
   
-  Ratio_TH2F_v = create_TH2F("Reco","_pT_Ratio_","p_{T}^{} / p_{T}^{Truth} ",binning);
-  Diff_TH2F_v = create_TH2F("Reco","_pT_Difference_","p_{T}^{} - p_{T}^{Truth} ",binning);
-  Slice_TH2F_v = create_TH2F("Reco","_pT_Slices","p_{T}^{} ",binning);
+  Ratio_TH2F_v = create_TH2F("_pT_Ratio_","p_{T}^{} / p_{T}^{Truth} ",binning);
+  Diff_TH2F_v = create_TH2F("_pT_Difference_","p_{T}^{} - p_{T}^{Truth} ",binning);
+  Slice_TH2F_v = create_TH2F("_pT_Slices","p_{T}^{} ",binning);
+  //written s.t. strings specified at function call
 }
 
 int main(int argc, char *argv[])
@@ -168,8 +166,8 @@ int main(int argc, char *argv[])
   myobj.set_pT_FitRange(2,20);
   //FIXME: Add TEnv capabilit
 
-  myobj.initialize_histograms();
-  
+  myobj.set_reco_or_corr(TString("Reco"));
+  myobj.initialize_histograms();  
   
   //float 2d binning = {idk idk idk idk}
   //calll myobj.create_TH1F_Calib the same way
