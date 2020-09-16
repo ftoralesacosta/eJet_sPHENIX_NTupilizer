@@ -24,6 +24,12 @@ class MyClass {
   float Fit_pT_Min;
   float Fit_pT_Max;
 
+  //Reco Jet Cuts
+  int min_N;
+  float min_E;
+  float min_Eta;//FIXME: Maybe just set them here? Do the same for binning?
+  std::vector<std::vector<int> > jet_list;
+  
   //JES Histos
   std::vector<TH1F*> pT_Differences;
   std::vector<TH1F*> pT_Ratios;
@@ -54,6 +60,10 @@ public:
      TString root_name, TString title,float *binning);
 
   void initialize_histograms();
+
+  void apply_cuts(TTreeReader Tree);
+  
+  void reco_loop(TTreeReader Tree);
 
 };
 

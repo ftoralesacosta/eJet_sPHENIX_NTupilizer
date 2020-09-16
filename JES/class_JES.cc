@@ -1,7 +1,6 @@
 #include "class_JES.h"
 #include <iostream>
 
-
 void MyClass::set_binning(std::vector <float> &edges, std::vector <float> &centers,
 			  float low, float high, float width)
 {
@@ -38,41 +37,37 @@ TString MyClass::set_reco_or_corr(TString input_string)
   reco_or_corr = input_string;
 }
 
-// TTreeReader MyClass::get_TTree(TString file_name)
-// {//FIXME: make a TTreeReader member variable
-//   std::cout << "Opening: " << file_name << std::endl;
-//   TFile *file = TFile::Open(file_name);
+void MyClass::reco_loop(TTreeReader Tree)
+{
+  TTreeReaderArray<Int_t> Track_JetRecoNConst(Tree,"nComponent");
+  TTreeReaderArray<Float_t> Track_JetRecoE(Tree,"e");
+  TTreeReaderArray<Float_t> Track_JetRecopT(Tree,"pt");
 
-//   if (file == NULL) {
-//     std::cout << " Failed to open "<<file_name<< std::endl;
-//     exit(EXIT_FAILURE);
-//   }
+  TTreeReaderArray<Int_t> Track_JetMatchedTruthNConst(Tree,"matched_truthNComponent");
+  TTreeReaderArray<Float_t> Track_JetMatchedTruthE(Tree,"matched_truthE");
+  TTreeReaderArray<Float_t> Track_JetMatchedTruthpT(Tree,"matched_truthPt");
+}
 
-//   TString tree_name = "T";
-//   TTree *_tree_event = dynamic_cast<TTree *>(file->Get("T"));
+void MyClass::apply_cuts(TTreeReader Tree){
+  //apply cuts to eta
+  TTreeReaderValue<int> njets(Tree,"njets");
+  TTreeReaderArray<Int_t> JetRecoNConst(Tree,"nComponent");
+  TTreeReaderArray<Float_t> JetRecoE(Tree,"e");
+  TTreeReaderArray<Float_t> JetRecopT(Tree,"pt");
+  TTreeReaderArray<Float_t> JetRecoEta(Tree,"eta");
 
-//   if (_tree_event == NULL) {
-//     std::cout << " Failed to load TTree \""<< tree_name<<"\""<<std::endl;
-//     exit(EXIT_FAILURE);
-//   }
+  while (Tree.Next()){
+    std::vector<int> subevent_jets;
+    for (int n = 0; n < *njets; ++n) {
+      if (JetRecoNConst[n] < min_N) continue;
+      if (JetRecoE[n] < min_E) continue;
+      if (JetRecoEta[n] < min_Eta) continue;
+      subevent_jets.push_back(n);
+    }
+    jet_list.push_back(subevent_jets);
+  }
+}
 
-//   TTreeReader The_Tree(_tree_event);
-//   return The_Tree;
-//   //Would like to return pointer, but don't want to make a member variable of TTReader as I want to change it in loops, and one should never return a pointer to a local variable (local in the sense that the scope is within the function).
-
-//   //This is because the variable the pointer points to is out of scope after the function, and this memeroy is freed. But as soon as memory is used, the pointer will point to whatever occupies that memory now.
-
-  
-//   // TTreeReaderValue<int> njets(The_Tree,"njets");
-//   // TTreeReaderArray<Int_t> JetRecoNConst(The_Tree,"nComponent");
-//   // TTreeReaderArray<Float_t> JetRecoE(The_Tree,"e");
-//   // TTreeReaderArray<Float_t> JetRecopT(The_Tree,"pt");
-
-//   // TTreeReaderValue<int> nAlltruthjets(The_Tree,"nAlltruthjets");
-//   // TTreeReaderArray<Int_t> JetAllTruthNConst(The_Tree,"all_truthNComponent");
-//   // TTreeReaderArray<Float_t> JetAllTruthE(The_Tree,"all_truthE");
-//   // TTreeReaderArray<Float_t> JetAllTruthpT(The_Tree,"all_truthPt");
-// }
 
 std::vector<TH1F*> MyClass::create_TH1F(TString root_name,
 					  TString title,float *binning)
@@ -80,7 +75,7 @@ std::vector<TH1F*> MyClass::create_TH1F(TString root_name,
   std::vector<TH1F*> TH1F_vector;
 
   root_name = reco_or_corr + root_name;  
-  title = title.Insert(title.First("^")+2,reco_or_corr); //insert into latex
+  title = title.Insert(title.First("^")+2,reco_or_corr); //for latex
   
   for (auto it = pT_bins.begin(); std::next(it,1) != pT_bins.end(); ++it){
 
@@ -104,10 +99,7 @@ std::vector<TH2F*> MyClass::create_TH2F(TString root_name,
 
   TString vs_pT = " vs. p_{T}^{Truth}";
   
-  //Internal Root Name.
   root_name = reco_or_corr + root_name;
-
-  //Histogram title, insert reco/corr for latex
   title = title.Insert(title.First("^")+2,reco_or_corr);
   title = title + vs_pT;
   
@@ -127,11 +119,9 @@ std::vector<TH2F*> MyClass::create_TH2F(TString root_name,
   return TH2F_vector;
 }
 
-//void get_calibration()
-
-void MyClass::initialize_histograms(){
-
-  float binning[3] = {16,-2,2}; //{nbins,min,max}
+void MyClass::initialize_histograms()
+{
+  float binning[3] = {16,-2,2}; //nbins,min,max
   //FIXME: Pass this as argument. For pT_Slices copy pT truth binning member variable
   pT_Differences = create_TH1F("_pT_Difference_","p_{T}^{} - p_{T}^{Truth} ",binning);
   pT_Ratios = create_TH1F("_pT_Ratio_","p_{T}^{} / p_{T}^{Truth} ",binning);
