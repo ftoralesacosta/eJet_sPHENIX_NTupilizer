@@ -2,13 +2,14 @@
 #define __PHOTONJET_H__
 
 //#include <vector>
+#include <math.h>
 
 #include <TFile.h>
 #include <TH1.h>
 #include <TH2.h>
 #include <TMath.h>
 #include <TTree.h>
-#include <math.h>
+#include <TLorentzVector.h>
 
 #include <TTreeReader.h>
 #include <TTreeReaderValue.h>
@@ -21,6 +22,9 @@ class MyClass {
   std::vector<float> E_Bin_Centers;
   std::vector<float> eta_bins;
   std::vector<float> eta_Centers;
+
+  //Fitting Parameters
+  float stdv_range = 1.5;
   float Fit_E_Min;
   float Fit_E_Max;
 
@@ -30,7 +34,7 @@ class MyClass {
   /* Jet Cuts */
   int min_N;// Jet constituents
   float min_E;
-  float min_Eta;//FIXME: Maybe just set them here? Do the same for binning?
+  float max_Eta;//FIXME: Maybe just set them here? Do the same for binning?
   
   //JES Histos
   std::vector<TH1F*> E_Differences;
@@ -43,9 +47,12 @@ class MyClass {
   std::vector<TH2F*> Ratio_TH2F_v;
   std::vector<TH2F*> Diff_TH2F_v;
   std::vector<TH2F*> Slice_TH2F_v;
+  //FIXME: Can these all be put into a struct
+  //Don't use vectors. It makes vector[2]->Fill(E_diff) hard to read
 
-  TString reco_or_corr;
   
+  TString reco_or_corr;
+
 public:
       
   void set_binning(std::vector<float> &edges, std::vector<float> &centers,
@@ -64,8 +71,12 @@ public:
 
   void initialize_histograms();
 
-  void apply_cuts(TTreeReader *Tree);
+  void reconstructed_loop(TTreeReader *Tree);
 
+  void fill_histograms(TLorentzVector *truth, TLorentzVector *reco, int Ebin);
+
+  void fit_histograms();
+  
   void write_histograms(TFile *out_file);
   
   //void reco_loop(TTreeReader Tree);

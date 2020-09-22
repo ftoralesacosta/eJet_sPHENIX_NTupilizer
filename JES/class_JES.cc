@@ -37,44 +37,105 @@ TString MyClass::set_reco_or_corr(TString input_string)
   reco_or_corr = input_string;
 }
 
-void MyClass::apply_cuts(TTreeReader* Tree){
+void MyClass::reconstructed_loop(TTreeReader* Tree){
 
   TTreeReaderValue<int> njets(*Tree,"njets");
-  TTreeReaderArray<Int_t> JetRecoNConst(*Tree,"nComponent");
-  TTreeReaderArray<Float_t> JetRecoE(*Tree,"e");
-  TTreeReaderArray<Float_t> JetRecoEta(*Tree,"eta");
+  TTreeReaderArray<Int_t> RecoNConst(*Tree,"nComponent");
+  TTreeReaderArray<Float_t> RecoE(*Tree,"e");
+  TTreeReaderArray<Float_t> RecoEta(*Tree,"eta");
+  TTreeReaderArray<Float_t> RecoPhi(*Tree,"phi");
+  TTreeReaderArray<Float_t> RecoPt(*Tree,"pt");
 
-  TTreeReaderArray<Int_t> Track_JetMatchedTruthNConst(*Tree,"matched_truthNComponent");
-  TTreeReaderArray<Float_t> Track_JetMatchedTruthE(*Tree,"matched_truthE");
-  TTreeReaderArray<Float_t> Track_JetMatchedTruthEta(*Tree,"matched_truthEta");
+  TTreeReaderArray<Int_t> MatchedTruthNConst(*Tree,"matched_truthNComponent");
+  TTreeReaderArray<Float_t> MatchedTruthE(*Tree,"matched_truthE");
+  TTreeReaderArray<Float_t> MatchedTruthEta(*Tree,"matched_truthEta");
+    TTreeReaderArray<Float_t> MatchedTruthPhi(*Tree,"matched_truthPhi");
+    TTreeReaderArray<Float_t> MatchedTruthPt(*Tree,"matched_truthPt");
   
   while (Tree->Next()){
     for (int n = 0; n < *njets; ++n) {
-      if (JetRecoNConst[n] < min_N) continue;
-      if (JetRecoE[n] < min_E) continue;
-      if (JetRecoEta[n] < min_Eta) continue;
 
+      //CUTS
+      if (RecoNConst[n] < min_N) continue;
+      if (RecoE[n] < min_E) continue;
+      if (RecoEta[n] > max_Eta) continue;
       
+      for (int i = 0; i < E_Bin_Edges.size(); ++i) {
+	bool leftedge = RecoE[n] >= E_Bin_Edges[i];
+	bool rightedge = RecoE[n] < E_Bin_Edges[i+1];
+	if (not((leftedge) and (rightedge))) continue;
+	
+	//FILLING
+	Float_t E_diff = abs(MatchedTruthE[n]-RecoE[n]);
+	Float_t E_ratio = (RecoE[n]/MatchedTruthEta[n]);
+	TLorentzVector *RecoLorentz;
+	RecoLorentz->SetPtEtaPhiE(RecoPt[n],RecoEta[n],RecoPhi[n],RecoE[n]);
+
+	TLorentzVector *TruthLorentz;
+	TruthLorentz->SetPtEtaPhiE(MatchedTruthPt[n],MatchedTruthEta[n],
+				  MatchedTruthPhi[n],MatchedTruthE[n]);
+
+	fill_histograms(RecoLorentz, TruthLorentz, i);
+	
+      }
     }
   }
 }
 
-// void MyClass::reco_loop(TTreeReader Tree)
-// {
-//   TTreeReaderArray<Int_t> Track_JetRecoNConst(Tree,"nComponent");
-//   TTreeReaderArray<Float_t> Track_JetRecoE(Tree,"e");
-//   TTreeReaderArray<Float_t> Track_JetRecoE(Tree,"pt");
+void MyClass::fill_histograms(TLorentzVector *reco, TLorentzVector *truth, int Ebin)
+{
+  Float_t E_diff = abs( reco->E() - truth->E() );
+  Float_t E_ratio = reco->E()/truth->E();
+  
+  E_Differences[Ebin]->Fill(E_diff);
+  E_Ratios[Ebin]->Fill(E_ratio);
+  E_Slices[Ebin]->Fill(reco->E());
+  Phi_Deltas[Ebin]->Fill(reco->DeltaPhi(*truth));
+  Eta_Deltas[Ebin]->Fill(abs(reco->Eta() - truth->Eta()));
+  Ratio_TH2F_v[Ebin]->Fill(truth->E(),E_ratio);
+  Diff_TH2F_v[Ebin]->Fill(truth->E(),E_diff);
+  Slice_TH2F_v[Ebin]->Fill(truth->E(),reco->E());
+  //FIXME: Add Delta R
+}
 
-//   TTreeReaderArray<Int_t> Track_JetMatchedTruthNConst(Tree,"matched_truthNComponent");
-//   TTreeReaderArray<Float_t> Track_JetMatchedTruthE(Tree,"matched_truthE");
-//   TTreeReaderArray<Float_t> Track_JetMatchedTruthE(Tree,"matched_truthPt");
+void MyClass::fit_histograms()
+{
 
-//   for (auto event = jet_list.begin(); event != jet_list.end(); ++event) {
-//     for (auto jet = event->begin(); jet != event->end(); ++jet) {
+  /*for (int ipt = 0; ipt < N_pT_Bins; ipt++){
+
+      float c = 1.5;
+      float mean = Histo[ipt]->GetMean();
+      float stdev = Histo[ipt]->GetStdDev();
+      Numerical_Mean.push_back(mean);
+      Numerical_Sigma.push_back(stdev);
+
+      float num_min = mean-(stdv_range*stdev);
+      float num_max = mean+(stdv_range*stdev);
+
+      gStyle->SetStatY(0.85);
+      TF1* num_fit = new TF1("nfit","gaus",num_min,num_max);
+
+      Histo[ipt]->Fit(num_fit,"QR");
+
+      float gaus_mean = num_fit->GetParameters()[1];
+      float gaus_sigma = num_fit->GetParameters()[2];
+      float mean_error = num_fit->GetParError(1);
+      float sigma_error = num_fit->GetParError(2);
+
+      Gauss_Mean.push_back(gaus_mean);
+      Gauss_Sigma.push_back(gaus_sigma);
+      Gauss_Mean_Error.push_back(mean_error);
+      Gauss_Sigma_Error.push_back(sigma_error);*/
       
-//     }
-//   }
-// }
+      //stdv_range
+  for (auto it = E_Differences.begin(); it != E_Differences.end(); ++it) (*it)->Write();
+  for (auto it = E_Ratios.begin(); it != E_Ratios.end(); ++it) (*it)->Write();
+  for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
+  for (auto it = Phi_Deltas.begin(); it != Phi_Deltas.end(); ++it) (*it)->Write();
+  for (auto it = Eta_Deltas.begin(); it != Eta_Deltas.end(); ++it) (*it)->Write();
+
+  
+}
 
 std::vector<TH1F*> MyClass::create_TH1F(TString root_name,
 					TString title)
@@ -94,7 +155,7 @@ std::vector<TH1F*> MyClass::create_TH1F(TString root_name,
       memcpy(&binning, &th1_binning, sizeof(th1_binning));
     else
       binning[0] = n_slice_bins; binning[1] = *it, binning[2] = *std::next(it,1);
-    //energy th1f get binning from loop
+    //energy slcie TH1F gets binning from E bin loop.
     
     TH1F* Single_Histo = new TH1F();
     Single_Histo->SetName(root_name + root_range);
@@ -118,7 +179,8 @@ std::vector<TH2F*> MyClass::create_TH2F(TString root_name,
   root_name = reco_or_corr + root_name;
   title = title.Insert(title.First("^")+2,reco_or_corr);
   title = title + vs_E;
-  
+
+  //outer eta loop soon
   for (auto it = E_Bin_Edges.begin(); std::next(it,1) != E_Bin_Edges.end(); ++it){
 
     TString root_range = Form("E%1.0f_%1.0f",*it*10,*std::next(it,1)*10);
@@ -130,7 +192,6 @@ std::vector<TH2F*> MyClass::create_TH2F(TString root_name,
     else
       binning[0] = n_slice_bins; binning[1] = *it, binning[2] =	*std::next(it,1);
 
-    
     TH2F* Single_Histo = new TH2F();
     Single_Histo->SetName(root_name + root_range);
     Single_Histo->SetTitle(title + title_range);
@@ -159,9 +220,14 @@ void MyClass::initialize_histograms()
 
 void MyClass::write_histograms(TFile *out_file)
 {
-  for (auto it = E_Differences.begin(); it != E_Differences.end(); ++it)
-    (*it)->Write();
-  //FIXME: write for other TH1Vecs and TH2Vecs
+  for (auto it = E_Differences.begin(); it != E_Differences.end(); ++it) (*it)->Write();
+  for (auto it = E_Ratios.begin(); it != E_Ratios.end(); ++it) (*it)->Write();
+  for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
+  for (auto it = Phi_Deltas.begin(); it != Phi_Deltas.end(); ++it) (*it)->Write();
+  for (auto it = Eta_Deltas.begin(); it != Eta_Deltas.end(); ++it) (*it)->Write();
+  for (auto it = Ratio_TH2F_v.begin(); it != Ratio_TH2F_v.end(); ++it) (*it)->Write();
+  for (auto it = Diff_TH2F_v.begin(); it != Diff_TH2F_v.end(); ++it) (*it)->Write();
+  for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
 }
 
 
@@ -177,18 +243,17 @@ int main(int argc, char *argv[])
   TTreeReader Tree("T",file); //T is the Tree name within the file
   
   MyClass myobj;\
-  myobj.apply_cuts(&Tree);
   myobj.set_E_binning(0,10,2);
   myobj.set_eta_binning(0,10,1);
   myobj.set_E_FitRange(2,20);
+  myobj.reconstructed_loop(&Tree);
   //FIXME: Add TEnv capabilit
 
   myobj.set_reco_or_corr(TString("Reco"));
   myobj.initialize_histograms();  
 
-  TFile outfile("EIC_JetEnergy_Scale_Resolution.root","recreate");
+  TFile outfile("EIC_JetEnergy_Scale+Resolution.root","recreate");
 
   myobj.write_histograms(&outfile);
-  //calll myobj.create_TH1F_Calib the same way
   return 0;
 }
