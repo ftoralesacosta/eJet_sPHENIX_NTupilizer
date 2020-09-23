@@ -42,11 +42,31 @@ class MyClass {
   std::vector<TH1F*> E_Slices;
   std::vector<TH1F*> Phi_Deltas;
   std::vector<TH1F*> Eta_Deltas;
-
+  //FIXME: will most likely need to make this 2d or flattened vector for eta. Need to access all bins simoultaneously for resolution vs eta and resolution vs E plots. Will want overlays as well.
+  std::vector< std::vector<TH1F*> > TH1F_2DVec =
+    {//swtich to vector of vector-pointers
+      E_Differences,
+      E_Ratios,
+      E_Slices,
+      Phi_Deltas,
+      Eta_Deltas
+    };
   //TH2s: TH1s vs Jet E
   std::vector<TH2F*> Ratio_TH2F_v;
   std::vector<TH2F*> Diff_TH2F_v;
   std::vector<TH2F*> Slice_TH2F_v;
+
+  std::vector<TH2F*> Ratio_vs_Truth;
+  std::vector<TH2F*> Diff_vs_Truth;
+  std::vector<TH2F*> Reco_vs_Truth;
+  
+  std::map<TString ,std::vector<TH2F*> > TH2F_map =
+    {
+      {"Ratio", Ratio_vs_Truth},
+      {"Diff", Diff_vs_Truth},
+      {"Reco", Reco_vs_Truth}
+    };
+  //TH2F_map['raio'] = std::vector<TH2F*> Ratio_TH2F_test;
   //FIXME: Can these all be put into a struct
   //Don't use vectors. It makes vector[2]->Fill(E_diff) hard to read
 
@@ -78,7 +98,10 @@ public:
   void fit_histograms();
   
   void write_histograms(TFile *out_file);
-  
+
+  void resolution_vs_eta();
+
+  void resolution_vs_E();
   //void reco_loop(TTreeReader Tree);
 
 };

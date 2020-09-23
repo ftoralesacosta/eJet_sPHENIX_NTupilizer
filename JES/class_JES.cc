@@ -49,9 +49,9 @@ void MyClass::reconstructed_loop(TTreeReader* Tree){
   TTreeReaderArray<Int_t> MatchedTruthNConst(*Tree,"matched_truthNComponent");
   TTreeReaderArray<Float_t> MatchedTruthE(*Tree,"matched_truthE");
   TTreeReaderArray<Float_t> MatchedTruthEta(*Tree,"matched_truthEta");
-    TTreeReaderArray<Float_t> MatchedTruthPhi(*Tree,"matched_truthPhi");
-    TTreeReaderArray<Float_t> MatchedTruthPt(*Tree,"matched_truthPt");
-  
+  TTreeReaderArray<Float_t> MatchedTruthPhi(*Tree,"matched_truthPhi");
+  TTreeReaderArray<Float_t> MatchedTruthPt(*Tree,"matched_truthPt");
+
   while (Tree->Next()){
     for (int n = 0; n < *njets; ++n) {
 
@@ -69,13 +69,21 @@ void MyClass::reconstructed_loop(TTreeReader* Tree){
 	Float_t E_diff = abs(MatchedTruthE[n]-RecoE[n]);
 	Float_t E_ratio = (RecoE[n]/MatchedTruthEta[n]);
 	TLorentzVector *RecoLorentz;
-	RecoLorentz->SetPtEtaPhiE(RecoPt[n],RecoEta[n],RecoPhi[n],RecoE[n]);
 
+	std::cout<<"Line: "<<__LINE__<<std::endl;
+	std::cout<<RecoPt[n]<<std::endl;
+	std::cout<<RecoEta[n]<<std::endl;
+	std::cout<<RecoPhi[n]<<std::endl;
+	std::cout<<RecoE[n]<<std::endl;
+	//FIXME: Lorentz broken
+	//RecoLorentz->SetPtEtaPhiE(RecoPt[n],RecoEta[n],RecoPhi[n],RecoE[n]);
+	std::cout<<"Line: "<<__LINE__<<std::endl;
+	if (isnan(MatchedTruthE[n])) continue;
 	TLorentzVector *TruthLorentz;
-	TruthLorentz->SetPtEtaPhiE(MatchedTruthPt[n],MatchedTruthEta[n],
-				  MatchedTruthPhi[n],MatchedTruthE[n]);
+	//TruthLorentz->SetPtEtaPhiE(MatchedTruthPt[n],MatchedTruthEta[n],
+	//MatchedTruthPhi[n],MatchedTruthE[n]);
 
-	fill_histograms(RecoLorentz, TruthLorentz, i);
+	//fill_histograms(RecoLorentz, TruthLorentz, i);
 	
       }
     }
@@ -98,9 +106,14 @@ void MyClass::fill_histograms(TLorentzVector *reco, TLorentzVector *truth, int E
   //FIXME: Add Delta R
 }
 
-void MyClass::fit_histograms()
-{
 
+
+void MyClass::fit_histograms()
+{//Get Numerical Mean+Sigma. Fit gaus. Get Gauss mean+sigma
+  //Can pass output to map of vectors using map keys
+  
+
+  
   /*for (int ipt = 0; ipt < N_pT_Bins; ipt++){
 
       float c = 1.5;
@@ -128,11 +141,16 @@ void MyClass::fit_histograms()
       Gauss_Sigma_Error.push_back(sigma_error);*/
       
       //stdv_range
-  for (auto it = E_Differences.begin(); it != E_Differences.end(); ++it) (*it)->Write();
-  for (auto it = E_Ratios.begin(); it != E_Ratios.end(); ++it) (*it)->Write();
-  for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
-  for (auto it = Phi_Deltas.begin(); it != Phi_Deltas.end(); ++it) (*it)->Write();
-  for (auto it = Eta_Deltas.begin(); it != Eta_Deltas.end(); ++it) (*it)->Write();
+  // for (auto TH1F_vec = TH1F_2DVec.begin(); TH1F_vec != TH1F_2DVec.end(); ++TH1F_vec)
+  //   for (auto TH1_histo = TH1F_vec->begin(); TH1_histo != TH1F_vec->end(); ++TH1_histo)
+  //     (*TH1_histo)->Write();
+
+
+  // for (auto it = E_Differences.begin(); it != E_Differences.end(); ++it) (*it)->Write();
+  // for (auto it = E_Ratios.begin(); it != E_Ratios.end(); ++it) (*it)->Write();
+  // for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
+  // for (auto it = Phi_Deltas.begin(); it != Phi_Deltas.end(); ++it) (*it)->Write();
+  // for (auto it = Eta_Deltas.begin(); it != Eta_Deltas.end(); ++it) (*it)->Write();
 
   
 }
@@ -215,19 +233,29 @@ void MyClass::initialize_histograms()
   Ratio_TH2F_v = create_TH2F("_E_Ratio_","E^{} / E^{Truth} ");
   Diff_TH2F_v = create_TH2F("_E_Difference_","E^{} - E^{Truth} ");
   Slice_TH2F_v = create_TH2F("_E_Slices","E^{} ");
-  //written s.t. strings specified at function call
+  //written s.t. strings specified at function call here
 } 
 
 void MyClass::write_histograms(TFile *out_file)
 {
-  for (auto it = E_Differences.begin(); it != E_Differences.end(); ++it) (*it)->Write();
-  for (auto it = E_Ratios.begin(); it != E_Ratios.end(); ++it) (*it)->Write();
-  for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
-  for (auto it = Phi_Deltas.begin(); it != Phi_Deltas.end(); ++it) (*it)->Write();
-  for (auto it = Eta_Deltas.begin(); it != Eta_Deltas.end(); ++it) (*it)->Write();
-  for (auto it = Ratio_TH2F_v.begin(); it != Ratio_TH2F_v.end(); ++it) (*it)->Write();
-  for (auto it = Diff_TH2F_v.begin(); it != Diff_TH2F_v.end(); ++it) (*it)->Write();
-  for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
+
+  for (auto TH1F_vec = TH1F_2DVec.begin(); TH1F_vec != TH1F_2DVec.end(); ++TH1F_vec)
+    for (auto TH1_histo = TH1F_vec->begin(); TH1_histo != TH1F_vec->end(); ++TH1_histo)
+      (*TH1_histo)->Write();
+  
+  for (auto TH2F_pair = TH2F_map.begin(); TH2F_pair != TH2F_map.end(); ++TH2F_pair) //{
+    for (auto iTH2F = TH2F_pair->second.begin(); iTH2F != TH2F_pair->second.begin(); iTH2F++)
+      (*iTH2F)->Write();
+
+  // for (auto it = E_Differences.begin(); it != E_Differences.end(); ++it) (*it)->Write();
+  // for (auto it = E_Ratios.begin(); it != E_Ratios.end(); ++it) (*it)->Write();
+  // for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
+  // for (auto it = Phi_Deltas.begin(); it != Phi_Deltas.end(); ++it) (*it)->Write();
+  // for (auto it = Eta_Deltas.begin(); it != Eta_Deltas.end(); ++it) (*it)->Write();
+
+  // for (auto it = Ratio_TH2F_v.begin(); it != Ratio_TH2F_v.end(); ++it) (*it)->Write();
+  // for (auto it = Diff_TH2F_v.begin(); it != Diff_TH2F_v.end(); ++it) (*it)->Write();
+  // for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
 }
 
 
@@ -246,9 +274,10 @@ int main(int argc, char *argv[])
   myobj.set_E_binning(0,10,2);
   myobj.set_eta_binning(0,10,1);
   myobj.set_E_FitRange(2,20);
+  std::cout<<"before"<<std::endl;
   myobj.reconstructed_loop(&Tree);
   //FIXME: Add TEnv capabilit
-
+  std::cout<<"after"<<std::endl;
   myobj.set_reco_or_corr(TString("Reco"));
   myobj.initialize_histograms();  
 
