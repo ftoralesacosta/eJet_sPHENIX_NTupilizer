@@ -18,13 +18,13 @@
 #include <TTreeReaderArray.h>
 
 class MyClass {
-
+public:
   //Binning
   int num_E_Bins;
   float E_Max = 80.; //GeV
   float E_Min = 2.; 
   float E_Bin_Width = 1.0;
-  std::vector<float> E_Bin_Edges; //coarse Energy slices for analysis (gaus)
+  std::vector<float> E_Bin_Edges;
   std::vector<float> E_Bin_Centers;
 
   int num_eta_Bins;
@@ -36,8 +36,8 @@ class MyClass {
 
   //Fitting Parameters
   float stdv_range = 1.5;
-  float Fit_E_Min;
-  float Fit_E_Max;
+  float Fit_E_Min = E_Min;//for JES function correction
+  float Fit_E_Max = E_Max;
 
   float th1_binning[3] = {16,-2,2}; //n,min,max. use diff$ratio
   int n_slice_bins = 10; //# bins in recoE TH1, within slices of truthE
@@ -101,7 +101,7 @@ class MyClass {
   
   TString reco_or_corr;
 
-public:
+
       
   void set_binning(std::vector<float> &edges, std::vector<float> &centers,
 		   float low, float high, float width);

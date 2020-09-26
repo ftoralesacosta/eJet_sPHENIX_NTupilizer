@@ -56,24 +56,19 @@ void MyClass::reconstructed_loop(TTreeReader* Tree){
     
     for (int n = 0; n < *njets; ++n) {
       
-      //CUTS
       if (RecoNConst[n] < min_N) continue;
       if (RecoE[n] < E_Min) continue;
       if (RecoEta[n] > eta_Max) continue;
-      //if (isnan(MatchedTruthE[n])) continue;
+      if (isnan(MatchedTruthE[n])) continue;
       
       for (int i_eta = 0; i_eta < eta_Bin_Edges.size(); ++i_eta) {
-  	bool eta_leftedge = RecoE[n] >= E_Bin_Edges[i_eta];
-	bool eta_rightedge = RecoE[n] < E_Bin_Edges[i_eta+1];
-	if (not((eta_leftedge) and (eta_rightedge))) continue;	
-
+	if (not(RecoE[n] >= E_Bin_Edges[i_eta]) and
+	    not(RecoE[n] < E_Bin_Edges[i_eta+1])) continue;
+	
 	for (int i_E= 0; i_E< E_Bin_Edges.size(); ++i_E) {
-	  bool E_leftedge = RecoE[n] >= E_Bin_Edges[i_E];
-	  bool E_rightedge = RecoE[n] < E_Bin_Edges[i_E+1];
-	  if (not((E_leftedge) and (E_rightedge))) continue;
-	  std::cout<<E_Bin_Edges[i_E]<<" < "<<RecoE[n]<<" < "<<E_Bin_Edges[i_E+1]<<std::endl;
+	  if (not(RecoE[n] >= E_Bin_Edges[i_E]) and
+	      not(RecoE[n] < E_Bin_Edges[i_E+1])) continue;
 	  
-	  //FILLING
 	  Float_t E_diff = abs(MatchedTruthE[n]-RecoE[n]);
 	  Float_t E_ratio = (RecoE[n]/MatchedTruthEta[n]);
 	  TLorentzVector RecoLorentz;
@@ -81,7 +76,7 @@ void MyClass::reconstructed_loop(TTreeReader* Tree){
 	  TLorentzVector TruthLorentz;
 	  TruthLorentz.SetPtEtaPhiE(MatchedTruthPt[n],MatchedTruthEta[n],
 				    MatchedTruthPhi[n],MatchedTruthE[n]);
-	  
+	  //std::cout<<"index = "<<i_E+(i_E*i_eta)<<std::endl;
 	  fill_histograms(RecoLorentz, TruthLorentz, i_eta, i_E);
 	
 	}
@@ -93,85 +88,41 @@ void MyClass::reconstructed_loop(TTreeReader* Tree){
 void MyClass::fill_histograms(TLorentzVector reco, TLorentzVector truth, int etabin, int Ebin)
 {//TLorentz used for DeltaPhi function
   
-  int index = Ebin + etabin*Ebin;
+  int index = Ebin + etabin*Ebin; //flat 2d vector
   Float_t E_diff = abs( reco.E() - truth.E() );
   Float_t E_ratio = reco.E()/truth.E();
 
-  std::cout<<"Filling Histos"<<std::endl;
-  std::cout<<"size of diffs = "<<E_Differences.size()<<std::endl;
   E_Differences[index]->Fill(E_diff);
-    std::cout<<"Filling Histos"<<std::endl;
   E_Ratios[index]->Fill(E_ratio);
   E_Slices[index]->Fill(reco.E());
   Phi_Deltas[index]->Fill(reco.DeltaPhi(truth));
   Eta_Deltas[index]->Fill(abs(reco.Eta() - truth.Eta()));
-  // Ratio_TH2F_v[index]->Fill(truth.E(),E_ratio);
-  // Diff_TH2F_v[index]->Fill(truth.E(),E_diff);
-  // Slice_TH2F_v[index]->Fill(truth.E(),reco.E());
   //FIXME: Add Delta R
 }
 
 void MyClass::fit_histograms()
 {  
-  //for (auto it = all_TH1F_vecs.begin(); it != all_TH1F_vecs.end(); ++it) {
-  //for (auto TH1F_vec = all_TH1F_vecs.begin(); TH1F_vec != all_TH1F_vecs.end(); ++TH1F_vec){
-
   for (int i = 0; i < all_TH1F_vecs.size(); ++i) {
 
-    //for (auto it = TH1F_vec->begin(); it != TH1F_vec->end(); ++it){
     std::pair<float,float> mean_sigma = {NAN, NAN};
     for (auto it = all_TH1F_vecs[i]->begin(); it != all_TH1F_vecs[i]->end(); ++it){
       
       float num_mean = (*it)->GetMean();
-      //std::cout<<"mean ="<<num_mean<<std::endl;
       float num_stdev = (*it)->GetStdDev();
+      //test:float num_mean = E_Differences[2]->GetMean();
+      //FIXME: TH1F vector container not written. Could write a function after filling to pushback TH1F vectors to containers. Same problem will happen later though...
       float fit_min = num_mean-(stdv_range*num_stdev);
       float fit_max = num_mean+(stdv_range*num_stdev);
+      fprintf(stderr,"%s: %d: mean = %f\n",__func__,__LINE__,num_mean);
       TF1 *gaus_fit = new TF1("gaus_fit","gaus",fit_min,fit_max);
       //(*it)->Fit(gaus_fit,"QR");
-      mean_sigma = {gaus_fit->GetParameters()[1],gaus_fit->GetParameters()[2]};
+      mean_sigma = {gaus_fit->GetParameters()[1],
+		    gaus_fit->GetParameters()[2]};
+      fprintf(stderr,"%s: %d: mean from fit = %f\n",__func__,__LINE__,mean_sigma.first);
       all_mean_vecs[i].push_back(mean_sigma);
-    }
-  }
-  // std::cout<<all_mean_vecs[0].size()<<std::endl;
-  // for (int i = 0; i < all_mean_vecs[0].size(); ++i){
-  //   std::cout<<"Diff_means = "<<all_mean_vecs[0][i].first<<std::endl;
-  //   std::cout<<"Diff_means = "<<E_Differences[i]->GetMean()<<std::endl;
-  //}
-  /*for (int ipt = 0; ipt < N_pT_Bins; ipt++){
-      float c = 1.5;
-      float mean = Histo[ipt]->GetMean();
-      float stdev = Histo[ipt]->GetStdDev();
-      Numerical_Mean.push_back(mean);
-      Numerical_Sigma.push_back(stdev);
-
-      float num_min = mean-(stdv_range*stdev);
-      float num_max = mean+(stdv_range*stdev);
-
-      gStyle->SetStatY(0.85);
-      TF1* num_fit = new TF1("nfit","gaus",num_min,num_max);
-
-      Histo[ipt]->Fit(num_fit,"QR");
-
-      float gaus_mean = num_fit->GetParameters()[1];
-      float gaus_sigma = num_fit->GetParameters()[2];
-      float mean_error = num_fit->GetParError(1);
-      float sigma_error = num_fit->GetParError(2);
-
-      Gauss_Mean.push_back(gaus_mean);
-      Gauss_Sigma.push_back(gaus_sigma);
-      Gauss_Mean_Error.push_back(mean_error);
-      Gauss_Sigma_Error.push_back(sigma_error);*/
       
-      //stdv_range
-
-
-  // for (auto it = E_Differences.begin(); it != E_Differences.end(); ++it) (*it)->Write();
-  // for (auto it = E_Ratios.begin(); it != E_Ratios.end(); ++it) (*it)->Write();
-  // for (auto it = E_Slices.begin(); it != E_Slices.end(); ++it) (*it)->Write();
-  // for (auto it = Phi_Deltas.begin(); it != Phi_Deltas.end(); ++it) (*it)->Write();
-  // for (auto it = Eta_Deltas.begin(); it != Eta_Deltas.end(); ++it) (*it)->Write();
-  
+    }
+  }       //gStyle->SetStatY(0.85);  
 }
 
 std::vector<TH1F*> MyClass::create_TH1F(TString root_name,
@@ -181,14 +132,14 @@ std::vector<TH1F*> MyClass::create_TH1F(TString root_name,
 
   root_name = reco_or_corr + root_name;  
   title = title.Insert(title.First("^")+2,reco_or_corr); //for latex
-
-  //Eta loop here
+  
   for (auto i_eta = eta_Bin_Edges.begin(); i_eta != eta_Bin_Edges.end(); ++i_eta) {    
-    for (auto i_E = E_Bin_Edges.begin(); std::next(i_E,1) != E_Bin_Edges.end(); ++i_E){
+    for (auto i_E = E_Bin_Edges.begin(); i_E != E_Bin_Edges.end(); ++i_E){
 
       TString root_range = Form("eta_%1.0f_%1.0X10__E_%1.0f_%1.0fX10",
-				*i_eta*19,*std::next(i_eta,1)*10,*i_E*10,*std::next(i_E,1)*10);
-
+				*i_eta*10,*std::next(i_eta,1)*10,*i_E*10,*std::next(i_E,1)*10);
+      //FIXME: Pad with zeros instead of X10
+      
       TString title_range = TString(Form("(%1.2f < E^{Truth} < %1.2f GeV, %1.2f < #eta %1.2fB)",
 					 *i_eta,*std::next(i_eta,1), *i_E,*std::next(i_E,1)));
       float binning[3];
@@ -233,7 +184,7 @@ std::vector<TH2F*> MyClass::create_TH2F(TString root_name,
     y_binning[0] = E_Bin_Centers.size();
     y_binning[1] = *E_Bin_Edges.begin();
     y_binning[2] = *E_Bin_Edges.end();
-  }
+  }//deref iterator for value
   
   float x_binning[3];
   if (strstr(root_name, TString("E_")) != NULL){
@@ -265,8 +216,8 @@ void MyClass::initialize_histograms()
   E_Ratios = create_TH1F("_E_Ratio_","E^{} / E^{Truth} ");
   E_Slices = create_TH1F("_E_Slices","E^{} ");
   
-  Phi_Deltas = create_TH1F("_delta_phi_","#varphi^{} - #varphi^{Truth} ");
-  Eta_Deltas = create_TH1F("_delta_eta_","#eta^{} - #eta^{Truth} ");
+  Phi_Deltas = create_TH1F("_deltaPhi_","#varphi^{} - #varphi^{Truth} ");
+  Eta_Deltas = create_TH1F("_deltaEta_","#eta^{} - #eta^{Truth} ");
   
   Ratio_TH2F_v = create_TH2F("_E_Ratio_","E^{} / E^{Truth} ");
   Diff_TH2F_v = create_TH2F("_E_Difference_","E^{} - E^{Truth} ");
@@ -308,18 +259,16 @@ int main(int argc, char *argv[])
   TTreeReader Tree("T",file); //T is the Tree name within the file
   
   MyClass myobj;
-  //myobj.set_E_binning(0,80,1);
-  //myobj.set_eta_binning(0,10,1);
+  myobj.set_E_binning();
+  myobj.set_eta_binning();
   myobj.set_E_FitRange(2,80);
-  myobj.reconstructed_loop(&Tree);
   //FIXME: Add TEnv capabilit
   myobj.set_reco_or_corr(TString("Reco"));
   myobj.initialize_histograms();  
-
-  TFile outfile("EIC_JetEnergy_Scale+Resolution.root","recreate");
-
+  myobj.reconstructed_loop(&Tree);
   myobj.fit_histograms();
   
+  TFile outfile("EIC_JetEnergy_Scale+Resolution.root","recreate");
   myobj.write_histograms(&outfile);
   return 0;
 }
