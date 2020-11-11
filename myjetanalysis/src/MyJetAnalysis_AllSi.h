@@ -61,7 +61,7 @@ class MyJetAnalysis_AllSi : public SubsysReco
 		int process_event(PHCompositeNode *topNode);
 		int End(PHCompositeNode *topNode);
 
-		float get_jet_radius_from_string( string jetname ){ // Assumming jetname is a string that ends, for instance, in "_r04" if the radius is 0.4 
+		float get_jet_radius_from_string( std::string jetname ){ // Assumming jetname is a string that ends, for instance, in "_r04" if the radius is 0.4 
 			return .1*stof(jetname.substr(jetname.find("_r")+2));
 		}
 
