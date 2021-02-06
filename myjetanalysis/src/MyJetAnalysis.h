@@ -51,8 +51,8 @@ class MyJetAnalysis : public SubsysReco
 
   //! cache the jet evaluation modules
   std::shared_ptr<JetEvalStack> m_jetEvalStack;
-  std::shared_ptr<CaloEvalStack> m_eemcEvalStack;
-  std::shared_ptr<CaloEvalStack> m_cemcEvalStack;
+//  std::shared_ptr<CaloEvalStack> m_eemcEvalStack;
+//  std::shared_ptr<CaloEvalStack> m_cemcEvalStack;
   std::string m_recoJetName;
   std::string m_truthJetName;
   std::string m_outputFileName;
@@ -88,6 +88,7 @@ class MyJetAnalysis : public SubsysReco
   float m_electron_truthPhi;
   float m_electron_truthE;
   float m_electron_truthPt;
+  float m_electron_truthP;
   int m_electron_truthPID;
 
   //Electron Reco Variables
@@ -95,6 +96,7 @@ class MyJetAnalysis : public SubsysReco
   float m_electron_recoPhi;
   float m_electron_recoE;
   float m_electron_recoPt;
+  float m_electron_recoP;
 
   int m_njets;
   int m_nAlltruthjets;

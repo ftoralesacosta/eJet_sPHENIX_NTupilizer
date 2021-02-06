@@ -57,11 +57,13 @@ MyJetAnalysis::MyJetAnalysis(const std::string& recojetname, const std::string& 
   , m_electron_truthPhi(numeric_limits<float>::signaling_NaN())
   , m_electron_truthE(numeric_limits<float>::signaling_NaN())
   , m_electron_truthPt(numeric_limits<float>::signaling_NaN())
+  , m_electron_truthP(numeric_limits<float>::signaling_NaN())
   , m_electron_truthPID(-1)
   , m_electron_recoEta(numeric_limits<float>::signaling_NaN())
   , m_electron_recoPhi(numeric_limits<float>::signaling_NaN())
   , m_electron_recoE(numeric_limits<float>::signaling_NaN())
   , m_electron_recoPt(numeric_limits<float>::signaling_NaN())
+  , m_electron_recoP(numeric_limits<float>::signaling_NaN())
   , m_njets(-1)
   , m_nAlltruthjets(-1)
 {
@@ -187,12 +189,14 @@ int MyJetAnalysis::Init(PHCompositeNode* topNode)
   m_T->Branch("electron_truthPhi", &m_electron_truthPhi, "electron_truthPhi/F");
   m_T->Branch("electron_truthE", &m_electron_truthE, "electron_truthE/F");
   m_T->Branch("electron_truthPt", &m_electron_truthPt, "electron_truthPt/F");
+  m_T->Branch("electron_truthP", &m_electron_truthP, "electron_truthP/F");
   m_T->Branch("electron_truthPID", &m_electron_truthPID, "electron_truthPID/I");
 
   m_T->Branch("electron_recoEta", &m_electron_recoEta, "electron_recoEta/F");
   m_T->Branch("electron_recoPhi", &m_electron_recoPhi, "electron_recoPhi/F");
   m_T->Branch("electron_recoE", &m_electron_recoE, "electron_recoE/F");
   m_T->Branch("electron_recoPt", &m_electron_recoPt, "electron_recoPt/F");
+  m_T->Branch("electron_recoP", &m_electron_recoP, "electron_recoP/F");
 
   return Fun4AllReturnCodes::EVENT_OK;
   return Fun4AllReturnCodes::EVENT_OK;
@@ -216,8 +220,9 @@ int MyJetAnalysis::InitRun(PHCompositeNode* topNode)
 {
   m_jetEvalStack = shared_ptr<JetEvalStack>(new JetEvalStack(topNode, m_recoJetName, m_truthJetName));
   m_jetEvalStack->get_stvx_eval_stack()->set_use_initial_vertex(initial_vertex);
-  m_eemcEvalStack = shared_ptr<CaloEvalStack>(new CaloEvalStack(topNode, "EEMC"));
-  m_cemcEvalStack = shared_ptr<CaloEvalStack>(new CaloEvalStack(topNode, "CEMC"));
+  //m_eemcEvalStack = shared_ptr<CaloEvalStack>(new CaloEvalStack(topNode, "EEMC"));
+  //m_cemcEvalStack = shared_ptr<CaloEvalStack>(new CaloEvalStack(topNode, "CEMC"));
+  //if(!m_cemcEvalStack) cout<<"NO CEMC STACK"<<endl<<endl;
   return Fun4AllReturnCodes::EVENT_OK;
 }
 
@@ -266,17 +271,17 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
   }
 
   //Interface to Clusters
-  CaloRawClusterEval* eemc_clustereval = m_eemcEvalStack->get_rawcluster_eval();
-  if (!eemc_clustereval)
-  {
-    cout<< "MyJetAnalysis::process_event - Error cannot find CLUSTER EEMC node"<<endl;
-  }    
+  //CaloRawClusterEval* eemc_clustereval = m_eemcEvalStack->get_rawcluster_eval();
+  //if (!eemc_clustereval)
+  //{
+  //  cout<< "MyJetAnalysis::process_event - Error cannot find CLUSTER EEMC node"<<endl;
+  //}    
 
-  CaloRawClusterEval* cemc_clustereval = m_cemcEvalStack->get_rawcluster_eval();
-  if (!cemc_clustereval)
-  {
-    cout<< "MyJetAnalysis::process_event - Error cannot find CLUSTER CEMC node"<<endl;
-  } 
+  //CaloRawClusterEval* cemc_clustereval = m_cemcEvalStack->get_rawcluster_eval();
+  //if (!cemc_clustereval)
+  //{
+  //  cout<< "MyJetAnalysis::process_event - Error cannot find CLUSTER CEMC node"<<endl;
+  //} 
 
   //Interface to True Electrons
   PHG4TruthInfoContainer* truthinfo = findNode::getClass<PHG4TruthInfoContainer>(topNode,"G4TruthInfo");
@@ -324,49 +329,44 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     m_electron_truthEta = e_vec.Eta();
     m_electron_truthPhi = e_vec.Phi();
     m_electron_truthPt = e_vec.Pt();
+    m_electron_truthP = e_vec.P();
 
     //Reco Electron Information. Loof at EEMC, then CEMC
-    RawCluster* cluster = eemc_clustereval->best_cluster_from(g4particle);
-    if (!cluster)
-    {
-      cluster = cemc_clustereval->best_cluster_from(g4particle);
+    //RawCluster* cluster = eemc_clustereval->best_cluster_from(g4particle);
+    //if (!cluster)
+    //  {
+    //    cout<<"No Cluster for this leading electron"<<endl<<endl;
+    //    //FIXME: Add cemc option if no eemc. cemc_clustereval->best_cluster_from(g4particle) currently crashes
+    //  }
+    //else
+    //  m_electron_recoE = cluster->get_energy();
 
-      if (!cluster)
-        cout<<"No Cluster for this leading electron"<<endl<<endl;
-    }
-
-    else
+    //map track to true electron
+    SvtxTrack_FastSim *track = nullptr;
+    for (SvtxTrackMap::ConstIter track_itr = trackmap->begin();
+        track_itr != trackmap->end();
+        track_itr++)
     {
-      cout<<endl<<endl<<"electron E = "<<m_electron_truthE<<" Cluster E = "<<cluster->get_energy()<<endl<<endl;
-      m_electron_recoE = cluster->get_energy();
-      
-      //map track to true electron
-      SvtxTrack_FastSim *track = nullptr;
-      for (SvtxTrackMap::ConstIter track_itr = trackmap->begin();
-          track_itr != trackmap->end();
-          track_itr++)
+      SvtxTrack_FastSim *temp = dynamic_cast<SvtxTrack_FastSim *>(track_itr->second);
+      if (!temp)
       {
-        SvtxTrack_FastSim *temp = dynamic_cast<SvtxTrack_FastSim *>(track_itr->second);
-        if (!temp)
-        {
-          cout<<endl<<"Null SvtxTrack_FastSim Pointer"<<endl<<endl;
-          continue;
-        }
-
-        if ((temp->get_truth_track_id() - g4particle->get_track_id()) == 0)
-          track = temp;
+        cout<<endl<<"Null SvtxTrack_FastSim Pointer"<<endl<<endl;
+        continue;
       }
-      if (!track) continue;
-      float electron_recopX = track->get_px();
-      float electron_recopY = track->get_py();
-      float electron_recopZ = track->get_pz();
 
-      TLorentzVector e_vec_reco;
-      e_vec_reco.SetPxPyPzE(electron_recopX,electron_recopY,electron_recopZ,m_electron_recoE);
-      m_electron_recoEta = e_vec_reco.Eta();
-      m_electron_recoPhi = e_vec_reco.Phi();
-      m_electron_recoPt = e_vec_reco.Pt();
+      if ((temp->get_truth_track_id() - g4particle->get_track_id()) == 0)
+        track = temp;
     }
+    if (!track) continue;
+    //TLorentzVector e_vec_reco;
+    //e_vec_reco.SetPxPyPzE(electron_recopX,electron_recopY,electron_recopZ,m_electron_recoE);
+    TVector3 e_vec_reco(track->get_px(), track->get_py(), track->get_pz());
+    m_electron_recoEta = e_vec_reco.Eta();
+    m_electron_recoPhi = e_vec_reco.Phi();
+    m_electron_recoPt = e_vec_reco.Pt();
+    m_electron_recoP = e_vec_reco.Mag();
+    //Leading Electron Information Done.
+
     //Remove Previous Event Data as a precaution
     {  
       m_njets=0;
@@ -376,12 +376,12 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
       m_phi.fill(numeric_limits<float>::signaling_NaN());
       m_e.fill(numeric_limits<float>::signaling_NaN());
       m_pt.fill(numeric_limits<float>::signaling_NaN());
-      
+
       std::fill_n(&m_Constituent_recoP[0][0],MaxNumJets*kMaxConstituents,NaN);
       std::fill_n(&m_Constituent_recoEta[0][0],MaxNumJets*kMaxConstituents,NaN);
       std::fill_n(&m_Constituent_recoPhi[0][0],MaxNumJets*kMaxConstituents,NaN);
       std::fill_n(&m_Constituent_recoPt[0][0],MaxNumJets*kMaxConstituents,NaN);
-      
+
       m_matched_truthID.fill(-1);
       m_matched_truthNComponent.fill(-1);
       m_matched_truthEta.fill(numeric_limits<float>::signaling_NaN());
@@ -457,31 +457,23 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
       m_phi[j] = jet->get_phi();
       m_pt[j] = jet->get_pt();
 
-      for (Jet::ConstIter iter = jet->begin_comp();
-          iter != jet->end_comp();
-          ++iter)
-      {                
-        Jet::SRC source = iter->first;
-        unsigned int c_index = iter->second;
-        if (source == Jet::TRACK)
-        {
-          if (!trackmap)
-          {
-            cout << PHWHERE << "ERROR: can't find TrackMap" << endl;
-            exit(-1);
-          }
-          SvtxTrack* track = trackmap->get(c_index);
-          if (!track) continue;
-          TVector3 vec(track->get_px(), track->get_py(), track->get_pz());
-          m_Constituent_recoP[j][c_index] = vec.Mag();
-          m_Constituent_recoEta[j][c_index] = vec.Eta();		  
+      for (Jet::ConstIter iter = jet->begin_comp(); iter != jet->end_comp(); ++iter)
+      {                                                                                                                                                      
+        Jet::SRC source = iter->first;                                                                                                                       
+        unsigned int c_index = iter->second;                                                                                                                 
+        if (source == Jet::TRACK)                                                                                                                            
+        {                                                                                                                                                    
+          SvtxTrack* track = trackmap->get(c_index);                                                                                                         
+          if (!track) continue;                                                                                                                              
+          TVector3 vec(track->get_px(), track->get_py(), track->get_pz());                                                                                   
+          m_Constituent_recoP[j][c_index] = vec.Mag();                                                                                                       
+          m_Constituent_recoEta[j][c_index] = vec.Eta();
           m_Constituent_recoPhi[j][c_index] = vec.Phi();
           m_Constituent_recoPt[j][c_index] = vec.Pt();
-        }//Reason for Loop: add source == Jet::Cluster... for future calo jets
+        }//Reason for Loop: add source == Jet::Cluster... for calo jets
       }
 
-      //Which unique truth jet contributed the most enery to this reco jet?
-      //Match: Look if any reco particles have truth-level that make up truth jet.
+      //Which unique truth jet c ntributed the most enery to this reco jet?  //Match: Look if any reco particles have truth-level that make up truth jet.
       //Then it takes the truth jet with the largest energy contribution
       //and makes sure that the same reco-jet has the largest energy matched to truth.
       Jet* truthjet = recoeval->unique_truth_jet_from_reco(jet);
@@ -502,9 +494,6 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
         m_matched_truthPhi[j] = truthjet->get_phi();
         m_matched_truthE[j] = truthjet->get_e();
         m_matched_truthPt[j] = truthjet->get_pt();
-
-        cout<<"EVENT NUMBER "<<m_event<<", Jet Number = "<<j
-          <<", # Constituents = "<<m_matched_truthNComponent[j]<<std::endl;
 
         std::set<PHG4Particle*> truthj_particle_set = m_jetEvalStack->get_truth_eval()->all_truth_particles(truthjet);
         int c_index = 0;
