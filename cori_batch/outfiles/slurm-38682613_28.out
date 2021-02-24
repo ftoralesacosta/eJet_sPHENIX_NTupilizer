@@ -1,0 +1,3429 @@
+LD_LIBRARY_PATH now /global/project/projectdirs/alice/ftorales//Singularity//install/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/gcc/8.3.0.1-0a5ad/x86_64-centos7/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/gcc/8.3.0.1-0a5ad/x86_64-centos7/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/binutils/2.30-e5b21/x86_64-centos7/lib:.:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/release/release_new/new.4/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/release/release_new/new.4/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/utils/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/utils/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/root-6.22.02/lib:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/geant4.10.06.p02/lib64:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/lhapdf-5.9.1/lib:/usr/local/lib64:/usr/lib64
+PATH now :/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/gcc/8.3.0.1-0a5ad/x86_64-centos7/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/binutils/2.30-e5b21/x86_64-centos7/bin:.:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/release/release_new/new.4/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/utils/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/root-6.22.02/bin:/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/opt/sphenix/core/geant4.10.06.p02/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.22/02                        https://root.cern |
+  | (c) 1995-2020, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Aug 17 2020, 12:46:52                 |
+  | From tags/v6-22-02@v6-22-02                                      |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing Fun4All_G4_EICDetector.C(1000, 28*12201,"","/global/project/projectdirs/alice/ftorales/slurm_allsi_reco_branches/eP_28")...
+PHRandomSeed::GetSeed() seed: 301335402
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.303      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change:  1 Sep 2020  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 03 Feb 2021 at 23:05:13    |  | 
+ |  |                                                                              |  | 
+ |  |   Christian Bierlich;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: christian.bierlich@thep.lu.se                                   |  | 
+ |  |   Nishita Desai;  Department of Theoretical Physics, Tata Institute,         |  | 
+ |  |      Homi Bhabha Road, Mumbai 400005, India;                                 |  | 
+ |  |      e-mail: desai@theory.tifr.res.in                                        |  | 
+ |  |   Leif Gellersen;  Department of Astronomy and Theoretical Physics,          |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: leif.gellersen@thep.lu.se                                       |  | 
+ |  |   Ilkka Helenius;  Department of Physics, University of Jyvaskyla,           |  | 
+ |  |      P.O. Box 35, FI-40014 University of Jyvaskyla, Finland;                 |  | 
+ |  |      e-mail: ilkka.m.helenius@jyu.fi                                         |  | 
+ |  |   Philip Ilten;  Department of Physics,                                      |  | 
+ |  |      University of Cincinnati, Cincinnati, OH 45221, USA;                    |  | 
+ |  |      School of Physics and Astronomy,                                        |  | 
+ |  |      University of Birmingham, Birmingham, B152 2TT, UK;                     |  | 
+ |  |      e-mail: philten@cern.ch                                                 |  | 
+ |  |   Leif Lonnblad;  Department of Astronomy and Theoretical Physics,           |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: leif.lonnblad@thep.lu.se                                        |  | 
+ |  |   Stephen Mrenna;  Computing Division, Simulations Group,                    |  | 
+ |  |      Fermi National Accelerator Laboratory, MS 234, Batavia, IL 60510, USA;  |  | 
+ |  |      e-mail: mrenna@fnal.gov                                                 |  | 
+ |  |   Stefan Prestel;  Department of Astronomy and Theoretical Physics,          |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: stefan.prestel@thep.lu.se                                       |  | 
+ |  |   Christine O. Rasmussen;  Department of Astronomy and Theoretical Physics,  |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: christine.rasmussen@thep.lu.se                                  |  | 
+ |  |   Torbjorn Sjostrand;  Department of Astronomy and Theoretical Physics,      |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: torbjorn@thep.lu.se                                             |  | 
+ |  |   Peter Skands;  School of Physics and Astronomy,                            |  | 
+ |  |      Monash University, PO Box 27, 3800 Melbourne, Australia;                |  | 
+ |  |      e-mail: peter.skands@monash.edu                                         |  | 
+ |  |   Marius Utheim;  Department of Astronomy and Theoretical Physics,           |  | 
+ |  |      Lund University, Solvegatan 14A, SE-223 62 Lund, Sweden;                |  | 
+ |  |      e-mail: marius.utheim@thep.lu.se                                        |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is 'An Introduction to PYTHIA 8.2',             |  | 
+ |  |   T. Sjostrand et al, Comput. Phys. Commun. 191 (2015) 159                   |  | 
+ |  |   [arXiv:1410.3012 [hep-ph]]                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   The main physics reference is the 'PYTHIA 6.4 Physics and Manual',         |  | 
+ |  |   T. Sjostrand, S. Mrenna and P. Skands, JHEP05 (2006) 026 [hep-ph/0603175]  |  | 
+ |  |                                                                              |  | 
+ |  |   An archive of program versions and documentation is found on the web:      |  | 
+ |  |   http://www.thep.lu.se/Pythia                                               |  | 
+ |  |                                                                              |  | 
+ |  |   This program is released under the GNU General Public Licence version 2.   |  | 
+ |  |   Please respect the MCnet Guidelines for Event Generator Authors and Users. |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2020 Torbjorn Sjostrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+USING RANDOM SEED OF 341628
+
+PHRandomSeed: using fixed seed 341628
+PHRandomSeed::GetSeed() seed: 735567883
+PHPythia8 random seed: 735567883
+
+ *-------  PYTHIA Process Initialization  --------------------------*
+ |                                                                  |
+ | We collide p+ with e- at a CM energy of 8.945e+01 GeV            |
+ |                                                                  |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | Subprocess                                    Code |   Estimated |
+ |                                                    |    max (mb) |
+ |                                                    |             |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | g g -> g g                                     111 |   0.000e+00 |
+ | g g -> q qbar (uds)                            112 |   0.000e+00 |
+ | q g -> q g                                     113 |   0.000e+00 |
+ | q q(bar)' -> q q(bar)'                         114 |   0.000e+00 |
+ | q qbar -> g g                                  115 |   0.000e+00 |
+ | q qbar -> q' qbar' (uds)                       116 |   0.000e+00 |
+ | g g -> c cbar                                  121 |   0.000e+00 |
+ | q qbar -> c cbar                               122 |   0.000e+00 |
+ | g g -> b bbar                                  123 |   0.000e+00 |
+ | q qbar -> b bbar                               124 |   0.000e+00 |
+ | f f' -> f f' (t-channel gamma*/Z0)             211 |   9.266e-05 |
+ |                                                                  |
+ *-------  End PYTHIA Process Initialization -----------------------*
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Beams:eA                                      |                100.00000 |     7000.000         0.0             | 
+ | Beams:eB                                      |                 20.00000 |     7000.000         0.0             | 
+ | Beams:frameType                               |                        2 |            1           1           5 | 
+ | Beams:idB                                     |                       11 |         2212                         | 
+ | HardQCD:all                                   |                       on |          off                         | 
+ | Main:timesAllowErrors                         |                   900000 |           10           0             | 
+ | PDF:lepton                                    |                      off |           on                         | 
+ | PhaseSpace:Q2Min                              |                 16.00000 |          0.0         0.0             | 
+ | Random:seed                                   |                735567883 |           -1               900000000 | 
+ | Random:setSeed                                |                       on |          off                         | 
+ | SpaceShower:pTmaxMatch                        |                        2 |            0           0           2 | 
+ | TimeShower:QEDshowerByL                       |                      off |           on                         | 
+ | WeakBosonExchange:ff2ff(t:gmZ)                |                       on |          off                         | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+
+ --------  PYTHIA Particle Data Table (changed only)  ------------------------------------------------------------------------------
+ 
+      id   name            antiName         spn chg col      m0        mWidth      mMin       mMax       tau0    res dec ext vis wid
+             no onMode   bRatio   meMode     products 
+
+ no particle data has been changed from its default value 
+
+ --------  End PYTHIA Particle Data Table  -----------------------------------------------------------------------------------------
+
+PHRandomSeed::GetSeed() seed: 1386533593
+/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/release/release_new/new.4/share/calibrations/ForwardEcal/mapping/towerMap_FEMC_v007.txt
+PHRandomSeed::GetSeed() seed: 3788008010
+
+**************************************************************
+ Geant4 version Name: geant4-10-06-patch-02    (29-May-2020)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+<<< Geant4 Physics List simulation engine: QGSP_BERT
+
+### Birks coefficients used in run time
+   G4_PbWO4     0.0333333 mm/MeV     0.0276 g/cm^2/MeV  massFactor=  5.89329 effCharge= 2407.4
+   G4_lAr     0.032 mm/MeV     0.0044672 g/cm^2/MeV  massFactor=  23.4875 effCharge= 324
+   G4_POLYSTYRENE     0.07943 mm/MeV     0.00841958 g/cm^2/MeV  massFactor=  101.167 effCharge= 0.027027
+   G4_BGO     0.008415 mm/MeV     0.00599989 g/cm^2/MeV  massFactor=  6.63951 effCharge= 1.56555
+PHRandomSeed::GetSeed() seed: 1819667712
+PHRandomSeed::GetSeed() seed: 2511191865
+Warning from RawClusterBuilderTemplate::Detector(): no detector specific class HcalInRawClusterBuilderTemplate defined for detector HCALIN. Default BEmcRec will be used
+PHRandomSeed::GetSeed() seed: 176994786
+Warning from RawClusterBuilderTemplate::Detector(): no detector specific class HcalOutRawClusterBuilderTemplate defined for detector HCALOUT. Default BEmcRec will be used
+PHRandomSeed::GetSeed() seed: 2730715241
+PHRandomSeed::GetSeed() seed: 1979411091
+Warning from RawClusterBuilderTemplate::Detector(): no detector specific class FHCALRawClusterBuilderTemplate defined for detector FHCAL. Default BEmcRec will be used
+PHRandomSeed::GetSeed() seed: 999776207
+PHRandomSeed::GetSeed() seed: 1976327069
+/home/phnxbld/sPHENIX/gcc-8.3/new/source/coresoftware/simulation/g4simulation/g4trackfastsim/PHG4TrackFastSimEval.cc:74:  Openning file /global/project/projectdirs/alice/ftorales/slurm_allsi_reco_branches/eP_28_g4tracking_eval.root
+PHTFileServer::open - opening file /global/project/projectdirs/alice/ftorales/slurm_allsi_reco_branches/eP_28_g4tracking_eval.root (RECREATE)
+PHTFileServer::open - opening file /global/project/projectdirs/alice/ftorales/slurm_allsi_reco_branches/eP_28_e+jet_Tree.root (RECREATE)
+Fun4AllServer: Runnumber forced to 0 by RUNNUMBER IntFlag
+Fun4AllServer::setRun(): could not get timestamp for run  0, using tics(0) timestamp: Wed Dec 31 19:00:00 1969
+PHFieldUtility::GetFieldConfigNode - field map with configuration from input default: PHFieldConfigv1::identify - Field type of [2D field map expressed in cylindrical coordinates] from file [/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/release/release_new/new.4/share/calibrations/Field/Map/sPHENIX.2d.root] with a scale factor of -0.9
+G4GDML: Reading 'Detector_chamber_3-20-20.G4Import.gdml'...
+G4GDML: Reading materials...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading structure...
+G4GDML: Reading setup...
+G4GDML: Reading 'Detector_chamber_3-20-20.G4Import.gdml' done!
+Stripping off GDML names of materials, solids and volumes ...
+G4GDML: Reading '/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/release/release_new/new.4/share/calibrations/Beam/Detector_chamber_3-20-20.G4Import.gdml'...
+G4GDML: Reading materials...
+G4Material WARNING: duplicate name of material ALUMINUM
+G4Material WARNING: duplicate name of material VACUUM
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading definitions...
+G4GDML: Reading solids...
+G4GDML: Reading structure...
+G4GDML: Reading setup...
+G4GDML: Reading '/global/project/projectdirs/alice/ftorales/Singularity/cvmfs/sphenix.sdcc.bnl.gov/gcc-8.3/release/release_new/new.4/share/calibrations/Beam/Detector_chamber_3-20-20.G4Import.gdml' done!
+Stripping off GDML names of materials, solids and volumes ...
+G4GDML: Reading 'genfitGeom_AllSi_v2.gdml'...
+G4GDML: Reading definitions...
+G4GDML: Reading materials...
+G4GDML: Reading solids...
+G4GDML: Reading structure...
+G4GDML: Reading setup...
+G4GDML: Reading 'genfitGeom_AllSi_v2.gdml' done!
+Stripping off GDML names of materials, solids and volumes ...
+Checking overlaps for volume BH_1 (G4Tubs) ... OK! 
+Checking overlaps for volume BH_FORWARD_PLUS_1 (G4Tubs) ... OK! 
+Checking overlaps for volume BH_FORWARD_NEG_1 (G4Tubs) ... OK! 
+PHG4Reco::InitRun - export geometry to DST via tmp file /tmp/PHGeomUtility_geom_file_64765.gdml
+PHG4GDML: Writing '/tmp/PHGeomUtility_geom_file_64765.gdml'...
+PHG4GDML: Writing definitions...
+G4GDML: Writing materials...
+PHG4GDML: Writing solids...
+PHG4GDML: Writing structure...
+G4GDML: Writing setup...
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : Obsolete
+      issued by : G4MaterialPropertiesTable::GetPropertiesMap()
+GetPropertiesMap will be obsolete from the next release Use G4MaterialPropertiesTable::GetPropertyMap() instead
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : Obsolete
+      issued by : G4MaterialPropertiesTable::GetPropertiesCMap()
+GetPropertiesCMap will be obsolete from the next release Use G4MaterialPropertiesTable::GetConstPropertyMap() instead
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+PHG4GDML: Writing surfaces...
+PHG4GDML: Writing '/tmp/PHGeomUtility_geom_file_64765.gdml' done !
+PHRandomSeed::GetSeed() seed: 591598156
+Info from RawClusterBuilderTemplate::InitRun(): Init geometry for CEMC: N of geom towers: 39064; ix = 0-256, iy = 0-151
+Info from RawClusterBuilderTemplate::InitRun(): Init geometry for HCALIN: N of geom towers: 1536; ix = 0-63, iy = 0-23
+Info from RawClusterBuilderTemplate::InitRun(): Init geometry for HCALOUT: N of geom towers: 1536; ix = 0-63, iy = 0-23
+Info from RawClusterBuilderTemplate::InitRun(): Init geometry for FEMC: N of geom towers: 3244; ix = 0-64, iy = 0-64
+Info from RawClusterBuilderTemplate::InitRun(): Init geometry for FHCAL: N of geom towers: 2020; ix = 2-52, iy = 2-52
+Info from RawClusterBuilderTemplate::InitRun(): Init geometry for EEMC: N of geom towers: 2904; ix = 19-80, iy = 19-80
+GFRaveVertexFactory::setMethod ==> set method to kalman-smoothing:1
+--------------------------------------
+
+List of Nodes in Fun4AllServer:
+Node Tree under TopNode TOP
+TOP (PHCompositeNode)/
+   DST (PHCompositeNode)/
+      PHHepMCGenEventMap (IO,PHHepMCGenEventMap)
+      PHG4INEVENT (PHDataNode)
+      G4HIT_EGEM_0 (IO,PHG4HitContainer)
+      G4HIT_EGEM_1 (IO,PHG4HitContainer)
+      G4HIT_EGEM_2 (IO,PHG4HitContainer)
+      G4HIT_EGEM_3 (IO,PHG4HitContainer)
+      G4HIT_FGEM_2 (IO,PHG4HitContainer)
+      G4HIT_FGEM_3 (IO,PHG4HitContainer)
+      G4HIT_FGEM_4 (IO,PHG4HitContainer)
+      G4HIT_FHCAL (IO,PHG4HitContainer)
+      G4HIT_ABSORBER_FHCAL (IO,PHG4HitContainer)
+      G4HIT_DIRC (IO,PHG4HitContainer)
+      G4HIT_RICH (IO,PHG4HitContainer)
+      CEMC (PHCompositeNode)/
+         G4HIT_CEMC (IO,PHG4HitContainer)
+         G4CELL_CEMC (IO,PHG4CellContainer)
+         TOWER_SIM_CEMC (IO,RawTowerContainer)
+         TOWER_RAW_CEMC (IO,RawTowerContainer)
+         TOWER_CALIB_CEMC (IO,RawTowerContainer)
+         CLUSTER_CEMC (IO,RawClusterContainer)
+      HCALIN (PHCompositeNode)/
+         G4HIT_HCALIN (IO,PHG4HitContainer)
+         G4CELL_HCALIN (IO,PHG4CellContainer)
+         TOWER_SIM_HCALIN (IO,RawTowerContainer)
+         TOWER_RAW_HCALIN (IO,RawTowerContainer)
+         TOWER_CALIB_HCALIN (IO,RawTowerContainer)
+         CLUSTER_HCALIN (IO,RawClusterContainer)
+      HCALOUT (PHCompositeNode)/
+         G4HIT_HCALOUT (IO,PHG4HitContainer)
+         G4CELL_HCALOUT (IO,PHG4CellContainer)
+         TOWER_SIM_HCALOUT (IO,RawTowerContainer)
+         TOWER_RAW_HCALOUT (IO,RawTowerContainer)
+         TOWER_CALIB_HCALOUT (IO,RawTowerContainer)
+         CLUSTER_HCALOUT (IO,RawClusterContainer)
+      FEMC (PHCompositeNode)/
+         G4HIT_FEMC (IO,PHG4HitContainer)
+         TOWER_SIM_FEMC (IO,RawTowerContainer)
+         TOWER_RAW_FEMC (IO,RawTowerContainer)
+         TOWER_CALIB_FEMC (IO,RawTowerContainer)
+         CLUSTER_FEMC (IO,RawClusterContainer)
+      EEMC (PHCompositeNode)/
+         G4HIT_EEMC (IO,PHG4HitContainer)
+         TOWER_SIM_EEMC (IO,RawTowerContainer)
+         TOWER_RAW_EEMC (IO,RawTowerContainer)
+         TOWER_CALIB_EEMC (IO,RawTowerContainer)
+         CLUSTER_EEMC (IO,RawClusterContainer)
+      G4HIT_BH_1 (IO,PHG4HitContainer)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4HIT_BH_FORWARD_PLUS (IO,PHG4HitContainer)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4HIT_BH_FORWARD_NEG (IO,PHG4HitContainer)
+      G4TruthInfo (IO,PHG4TruthInfoContainer)
+      LBLVTX (PHCompositeNode)/
+         G4HIT_ABSORBER_LBLVTX (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_BACKWARD_30 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_BACKWARD_31 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_BACKWARD_32 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_BACKWARD_33 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_BACKWARD_34 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_CENTRAL_10 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_CENTRAL_11 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_CENTRAL_12 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_CENTRAL_13 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_CENTRAL_14 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_CENTRAL_15 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_FORWARD_20 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_FORWARD_21 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_FORWARD_22 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_FORWARD_23 (IO,PHG4HitContainer)
+         G4HIT_LBLVTX_FORWARD_24 (IO,PHG4HitContainer)
+      BBC (PHCompositeNode)/
+         BbcVertexMap (IO,BbcVertexMapv1)
+      FHCAL (PHCompositeNode)/
+         TOWER_SIM_FHCAL (IO,RawTowerContainer)
+         TOWER_RAW_FHCAL (IO,RawTowerContainer)
+         TOWER_CALIB_FHCAL (IO,RawTowerContainer)
+         CLUSTER_FHCAL (IO,RawClusterContainer)
+      TRACKS (PHCompositeNode)/
+         TrackMap (IO,SvtxTrackMap_v1)
+         SvtxVertexMap (IO,SvtxVertexMap_v1)
+      GLOBAL (PHCompositeNode)/
+         GlobalVertexMap (IO,GlobalVertexMapv1)
+      TRIG (PHCompositeNode)/
+         CaloTriggerInfo (IO,CaloTriggerInfov1)
+      ANTIKT (PHCompositeNode)/
+         TRUTH (PHCompositeNode)/
+            AntiKt_Truth_r02 (IO,JetMapv1)
+            AntiKt_Truth_r03 (IO,JetMapv1)
+            AntiKt_Truth_r04 (IO,JetMapv1)
+            AntiKt_Truth_r05 (IO,JetMapv1)
+            AntiKt_Truth_r06 (IO,JetMapv1)
+            AntiKt_Truth_r07 (IO,JetMapv1)
+            AntiKt_Truth_r08 (IO,JetMapv1)
+            AntiKt_Truth_r10 (IO,JetMapv1)
+         TOWER (PHCompositeNode)/
+            AntiKt_Tower_r02 (IO,JetMapv1)
+            AntiKt_Tower_r03 (IO,JetMapv1)
+            AntiKt_Tower_r04 (IO,JetMapv1)
+            AntiKt_Tower_r05 (IO,JetMapv1)
+            AntiKt_Tower_r06 (IO,JetMapv1)
+            AntiKt_Tower_r07 (IO,JetMapv1)
+            AntiKt_Tower_r08 (IO,JetMapv1)
+            AntiKt_Tower_r10 (IO,JetMapv1)
+         CLUSTER (PHCompositeNode)/
+            AntiKt_Cluster_r02 (IO,JetMapv1)
+            AntiKt_Cluster_r03 (IO,JetMapv1)
+            AntiKt_Cluster_r04 (IO,JetMapv1)
+            AntiKt_Cluster_r05 (IO,JetMapv1)
+            AntiKt_Cluster_r06 (IO,JetMapv1)
+            AntiKt_Cluster_r07 (IO,JetMapv1)
+            AntiKt_Cluster_r08 (IO,JetMapv1)
+            AntiKt_Cluster_r10 (IO,JetMapv1)
+         TRACK (PHCompositeNode)/
+            AntiKt_Track_r02 (IO,JetMapv1)
+            AntiKt_Track_r03 (IO,JetMapv1)
+            AntiKt_Track_r04 (IO,JetMapv1)
+            AntiKt_Track_r05 (IO,JetMapv1)
+            AntiKt_Track_r06 (IO,JetMapv1)
+            AntiKt_Track_r07 (IO,JetMapv1)
+            AntiKt_Track_r08 (IO,JetMapv1)
+            AntiKt_Track_r10 (IO,JetMapv1)
+   RUN (PHCompositeNode)/
+      PHGenIntegral (IO,PHGenIntegralv1)
+      FIELD_CONFIG (IO,PHFieldConfigv1)
+      PIPE (PHCompositeNode)/
+         G4GEOPARAM_PIPE (IO,PdbParameterMapContainer)
+      G4GEOPARAM_ElectronForwardEnvelope_0 (IO,PdbParameterMapContainer)
+      G4GEOPARAM_HadronForwardEnvelope_0 (IO,PdbParameterMapContainer)
+      LBLVTX (PHCompositeNode)/
+         G4GEOPARAM_LBLVTX (IO,PdbParameterMapContainer)
+      ABSORBER_CEMC (PHCompositeNode)/
+         G4GEOPARAM_ABSORBER_CEMC (IO,PdbParameterMapContainer)
+      CEMC (PHCompositeNode)/
+         G4GEOPARAM_CEMC (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_CEMC (IO,PHG4CylinderGeomContainer)
+         G4CELLPARAM_CEMC (IO,PdbParameterMapContainer)
+         TOWERGEOM_CEMC (IO,RawTowerGeomContainer_Cylinderv1)
+      G4GEOPARAM_CEMC_ELECTRONICS_0 (IO,PdbParameterMapContainer)
+      HCALIN (PHCompositeNode)/
+         G4GEOPARAM_HCALIN (IO,PdbParameterMapContainer)
+         G4CELLPARAM_HCALIN (IO,PdbParameterMap)
+         TOWERPARAM_HCALIN (IO,PdbParameterMap)
+         TOWERGEOM_HCALIN (IO,RawTowerGeomContainer_Cylinderv1)
+      HCALIN_SPT (PHCompositeNode)/
+         G4GEOPARAM_HCALIN_SPT (IO,PdbParameterMapContainer)
+      MAGNET (PHCompositeNode)/
+         G4GEOPARAM_MAGNET (IO,PdbParameterMapContainer)
+      HCALOUT (PHCompositeNode)/
+         G4GEOPARAM_HCALOUT (IO,PdbParameterMapContainer)
+         G4CELLPARAM_HCALOUT (IO,PdbParameterMap)
+         TOWERPARAM_HCALOUT (IO,PdbParameterMap)
+         TOWERGEOM_HCALOUT (IO,RawTowerGeomContainer_Cylinderv1)
+      FEMC (PHCompositeNode)/
+         G4GEOPARAM_FEMC (IO,PdbParameterMapContainer)
+      EEMC (PHCompositeNode)/
+         G4GEOPARAM_EEMC (IO,PdbParameterMapContainer)
+      DIRC (PHCompositeNode)/
+         G4GEOPARAM_DIRC (IO,PdbParameterMapContainer)
+      FLUXRET_ETA_MINUS (PHCompositeNode)/
+         G4GEOPARAM_FLUXRET_ETA_MINUS (IO,PdbParameterMapContainer)
+      G4GEOPARAM_BH_1 (IO,PdbParameterMapContainer)
+      CYLINDERGEOM_BH_1 (IO,PHG4CylinderGeomContainer)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4GEOPARAM_BH_FORWARD_PLUS (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_BH_FORWARD_PLUS (IO,PHG4CylinderGeomContainer)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4GEOPARAM_BH_FORWARD_NEG (IO,PdbParameterMapContainer)
+         CYLINDERGEOM_BH_FORWARD_NEG (IO,PHG4CylinderGeomContainer)
+      GEOMETRY_IO (IO,PHGeomIOTGeo)
+      CYLINDERCELLGEOM_CEMC (IO,PHG4CylinderCellGeomContainer)
+      TOWERGEOM_FEMC (IO,RawTowerGeomContainerv1)
+      TOWERGEOM_FHCAL (IO,RawTowerGeomContainerv1)
+      TOWERGEOM_EEMC (IO,RawTowerGeomContainerv1)
+   PAR (PHCompositeNode)/
+      FIELD_MAP (PHDataNode)
+      PIPE (PHCompositeNode)/
+         G4GEO_PIPE (PHDataNode)
+      G4GEO_ElectronForwardEnvelope_0 (PHDataNode)
+      G4GDML_CONFIG (PHDataNode)
+      G4GEO_HadronForwardEnvelope_0 (PHDataNode)
+      LBLVTX (PHCompositeNode)/
+         G4GEO_LBLVTX (PHDataNode)
+      ABSORBER_CEMC (PHCompositeNode)/
+         G4GEO_ABSORBER_CEMC (PHDataNode)
+      CEMC (PHCompositeNode)/
+         G4GEO_CEMC (PHDataNode)
+      G4GEO_CEMC_ELECTRONICS_0 (PHDataNode)
+      HCALIN (PHCompositeNode)/
+         G4GEO_HCALIN (PHDataNode)
+         G4CELLGEO_HCALIN (PHDataNode)
+         TOWERGEO_HCALIN (PHDataNode)
+      HCALIN_SPT (PHCompositeNode)/
+         G4GEO_HCALIN_SPT (PHDataNode)
+      MAGNET (PHCompositeNode)/
+         G4GEO_MAGNET (PHDataNode)
+      HCALOUT (PHCompositeNode)/
+         G4GEO_HCALOUT (PHDataNode)
+         G4CELLGEO_HCALOUT (PHDataNode)
+         TOWERGEO_HCALOUT (PHDataNode)
+      FEMC (PHCompositeNode)/
+         G4GEO_FEMC (PHDataNode)
+      EEMC (PHCompositeNode)/
+         G4GEO_EEMC (PHDataNode)
+      DIRC (PHCompositeNode)/
+         G4GEO_DIRC (PHDataNode)
+      FLUXRET_ETA_MINUS (PHCompositeNode)/
+         G4GEO_FLUXRET_ETA_MINUS (PHDataNode)
+      G4GEO_BH_1 (PHDataNode)
+      BH_FORWARD_PLUS (PHCompositeNode)/
+         G4GEO_BH_FORWARD_PLUS (PHDataNode)
+      BH_FORWARD_NEG (PHCompositeNode)/
+         G4GEO_BH_FORWARD_NEG (PHDataNode)
+      GEOMETRY (PHDataNode)
+
+
+
+ --------  PYTHIA Info Listing  ---------------------------------------- 
+ 
+ Beam A: id =   2212, pz =  4.472e+01, e =  4.473e+01, m =  9.383e-01.
+ Beam B: id =     11, pz = -4.472e+01, e =  4.472e+01, m =  5.110e-04.
+
+ In 1: id =   -4, x =  2.144e-01, pdf =  1.010e-02 at Q2 =  9.286e+01.
+ In 2: id =   11, x =  1.000e+00, pdf =  1.000e+00 at same Q2.
+
+ Subprocess f f' -> f f' (t-channel gamma*/Z0) with code 211 is 2 -> 2.
+ It has sHat =  1.716e+03,    tHat = -9.852e+01,    uHat = -1.617e+03,
+       pTHat =  9.624e+00,   m3Hat =  1.500e+00,   m4Hat =  5.110e-04,
+    thetaHat =  4.840e-01,  phiHat =  2.954e+00.
+     alphaEM =  7.623e-03,  alphaS =  2.020e-01    at Q2 =  9.286e+01.
+
+ Impact parameter b =  0.000e+00 gives enhancement factor =  1.000e+00.
+ Max pT scale for MPI =  8.945e+01, ISR =  8.945e+01, FSR =  8.945e+01.
+ Number of MPI =     1, ISR =     2, FSRproc =     0, FSRreson =     0.
+
+ --------  End PYTHIA Info Listing  ------------------------------------
+
+ --------  PYTHIA Event Listing  (hard process)  -----------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.000      0.000     79.996    120.000     89.447
+     1       2212  (p+)               -12     0     0     3     0     0     0      0.000      0.000     99.996    100.000      0.938
+     2         11  (e-)               -12     0     0     4     0     0     0      0.000      0.000    -20.000     20.000      0.001
+     3         -4  (cbar)             -21     1     0     5     6     0   101      0.000      0.000     21.444     21.444      0.000
+     4         11  (e-)               -21     2     0     5     6     0     0      0.000      0.000    -20.000     20.000      0.000
+     5         -4  cbar                23     3     4     0     0     0   101     -9.455      1.796     19.041     21.387      1.500
+     6         11  e-                  23     3     4     0     0     0     0      9.455     -1.796    -17.599     20.059      0.001
+                                   Charge sum: -1.667           Momentum sum:      0.000      0.000      1.441     41.446     41.421
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.000     -0.000     79.997    120.001     89.447
+     1       2212  (p+)               -12     0     0    18     0     0     0      0.000     -0.000     99.997    100.001      0.938
+     2         11  (e-)               -12     0     0    13     0     0     0      0.000     -0.000    -20.000     20.000      0.001
+     3         -4  (cbar)             -21     7     0     5     6     0   101      0.000      0.000     21.444     21.444      0.000
+     4         11  (e-)               -21     8     8     5     6     0     0      0.000     -0.000    -20.000     20.000      0.000
+     5         -4  (cbar)             -23     3     4     9     9     0   101     -9.455      1.796     19.041     21.387      1.500
+     6         11  (e-)               -23     3     4    10    10     0     0      9.455     -1.796    -17.599     20.058      0.001
+     7         21  (g)                -41    12     0    11     3   102   101      0.000      0.000     38.352     38.352      0.000
+     8         11  (e-)               -42    13    13     4     4     0     0      0.000     -0.000    -20.000     20.000      0.000
+     9         -4  (cbar)             -44     5     5    14    14     0   101      1.014      2.985     24.959     25.201      1.500
+    10         11  (e-)               -44     6     6    15    15     0     0     10.091     -1.724    -15.648     18.699      0.001
+    11          4  (c)                -43     7     0    16    16   102     0    -11.105     -1.261      9.039     14.453      1.500
+    12         21  (g)                -41    18    18    17     7   103   101      0.000      0.000     40.463     40.463      0.000
+    13         11  (e-)               -42     2     0     8     8     0     0      0.000     -0.000    -20.000     20.000      0.000
+    14         -4  (cbar)             -44     9     9    19    19     0   101      0.477      3.578     25.229     25.530      1.500
+    15         11  e-                  44    10    10     0     0     0     0     10.059     -1.688    -15.301     18.389      0.001
+    16          4  (c)                -44    11    11    20    20   102     0    -11.357     -0.983      9.106     14.666      1.500
+    17         21  (g)                -43    12     0    21    21   103   102      0.821     -0.907      1.428      1.880      0.000
+    18         21  (g)                -61     1     0    12    12   103   101     -0.751     -1.196     41.297     41.321      0.000
+    19         -4  (cbar)             -62    14    14    25    25     0   101      0.369      3.274     25.068     25.328      1.500
+    20          4  (c)                -62    16    16    30    35   102     0    -11.828     -1.791     10.302     15.858      1.500
+    21         21  (g)                -62    17    17    30    35   103   102      0.763     -1.010      1.556      2.005      0.000
+    22       2203  (uu_1)             -63     1     0    30    35     0   103      0.294      0.455     10.905     10.945      0.771
+    23          1  (d)                -63     1     0    24    24   101     0      0.343      0.760     47.467     47.476      0.330
+    24          1  (d)                -71    23    23    26    29   101     0      0.343      0.760     47.467     47.476      0.330
+    25         -4  (cbar)             -71    19    19    26    29     0   101      0.369      3.274     25.068     25.328      1.500
+    26        111  (pi0)              -83    24    25    41    42     0     0     -0.229      0.747     37.660     37.668      0.135
+    27       -211  pi-                 84    24    25     0     0     0     0      0.364      0.683      5.771      5.824      0.140
+    28        211  pi+                 84    24    25     0     0     0     0      0.310      0.458      6.907      6.931      0.140
+    29       -411  (D-)               -84    24    25    43    44     0     0      0.266      2.146     22.198     22.381      1.870
+    30        423  (D*0)              -83    20    22    45    46     0     0    -10.162     -1.394      8.901     13.728      2.007
+    31        111  (pi0)              -84    20    22    47    48     0     0     -0.793     -0.369      1.793      2.000      0.135
+    32        323  (K*+)              -84    20    22    36    37     0     0      0.098     -0.127      0.503      1.041      0.897
+    33       -311  (Kbar0)            -84    20    22    38    38     0     0     -0.416     -0.308      0.787      1.065      0.498
+    34       2212  p+                  84    20    22     0     0     0     0      0.311     -0.139      3.752      3.882      0.938
+    35        113  (rho0)             -84    20    22    39    40     0     0      0.191     -0.010      7.027      7.093      0.947
+    36        321  K+                  91    32     0     0     0     0     0      0.274      0.072      0.477      0.743      0.494
+    37        111  (pi0)              -91    32     0    49    50     0     0     -0.175     -0.199      0.026      0.299      0.135
+    38        310  (K_S0)             -91    33    33    51    52     0     0     -0.416     -0.308      0.787      1.065      0.498
+    39        211  pi+                 91    35     0     0     0     0     0     -0.301     -0.195      3.918      3.937      0.140
+    40       -211  pi-                 91    35     0     0     0     0     0      0.492      0.185      3.108      3.155      0.140
+    41         22  gamma               91    26     0     0     0     0     0     -0.205      0.533     29.372     29.377      0.000
+    42         22  gamma               91    26     0     0     0     0     0     -0.024      0.214      8.288      8.291      0.000
+    43     -20213  (a_1(1260)-)       -91    29     0    53    54     0     0      0.005      1.592     16.186     16.317      1.322
+    44       -311  (Kbar0)            -91    29     0    55    55     0     0      0.261      0.553      6.012      6.064      0.498
+    45        421  (D0)               -91    30     0    56    58     0     0     -9.273     -1.300      8.135     12.543      1.865
+    46        111  (pi0)              -91    30     0    59    60     0     0     -0.889     -0.094      0.765      1.185      0.135
+    47         22  gamma               91    31     0     0     0     0     0     -0.002      0.004      0.041      0.041      0.000
+    48         22  gamma               91    31     0     0     0     0     0     -0.791     -0.374      1.752      1.959      0.000
+    49         22  gamma               91    37     0     0     0     0     0     -0.098     -0.109     -0.053      0.156      0.000
+    50         22  gamma               91    37     0     0     0     0     0     -0.077     -0.089      0.079      0.142      0.000
+    51        211  pi+                 91    38     0     0     0     0     0     -0.054      0.079      0.159      0.232      0.140
+    52       -211  pi-                 91    38     0     0     0     0     0     -0.362     -0.386      0.627      0.833      0.140
+    53       -321  K-                  91    43     0     0     0     0     0      0.003      0.861      7.846      7.908      0.494
+    54        313  (K*0)              -91    43     0    61    62     0     0      0.003      0.731      8.340      8.409      0.791
+    55        130  K_L0                91    44    44     0     0     0     0      0.261      0.553      6.012      6.064      0.498
+    56       -321  K-                  91    45     0     0     0     0     0     -6.138     -0.193      4.859      7.846      0.494
+    57        211  pi+                 91    45     0     0     0     0     0     -1.570     -0.750      1.879      2.565      0.140
+    58        111  (pi0)              -91    45     0    63    64     0     0     -1.565     -0.356      1.397      2.132      0.135
+    59         22  gamma               91    46     0     0     0     0     0     -0.822     -0.053      0.677      1.066      0.000
+    60         22  gamma               91    46     0     0     0     0     0     -0.067     -0.041      0.088      0.118      0.000
+    61        321  K+                  91    54     0     0     0     0     0     -0.130      0.303      5.316      5.349      0.494
+    62       -211  pi-                 91    54     0     0     0     0     0      0.133      0.427      3.024      3.060      0.140
+    63         22  gamma               91    58     0     0     0     0     0     -1.343     -0.287      1.250      1.857      0.000
+    64         22  gamma               91    58     0     0     0     0     0     -0.222     -0.070      0.147      0.275      0.000
+                                   Charge sum:  0.000           Momentum sum:      0.000      0.000     79.997    120.001     89.448
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+=======================================================================
+======       Pre-compound/De-excitation Physics Parameters     ========
+=======================================================================
+Type of pre-compound inverse x-section              3
+Pre-compound model active                           1
+Pre-compound excitation low energy (MeV)            0.1
+Pre-compound excitation high energy (MeV)           30
+Type of de-excitation inverse x-section             3
+Type of de-excitation factory                       Evaporation+GEM
+Number of de-excitation channels                    68
+Min excitation energy (keV)                         0.01
+Min energy per nucleon for multifragmentation (MeV) 2e+05
+Limit excitation energy for Fermi BreakUp (MeV)     20
+Level density (1/MeV)                               0.075
+Use simple level density model                      1
+Use discrete excitation energy of the residual      0
+Time limit for long lived isomeres (ns)             1000
+Internal e- conversion flag                         1
+Store e- internal conversion data                   0
+Electron internal conversion ID                     2
+Correlated gamma emission flag                      0
+Max 2J for sampling of angular correlations         10
+Upload data before 1st event for                Z < 9
+=======================================================================
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-24.72530408693648,-16.12382008936045,3390.503155349647)
+     in direction: (-0.3113250711016721,-0.8531912725500328,-0.418498927774008)
+    (local position: (-24.72530408693648,-16.12382008936045,3390.503155349647))
+    (local direction: (-0.3113250711016721,-0.8531912725500328,-0.418498927774008)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.62688396122781,-7.693748738526303,2693.153601041527)
+     in direction: (-0.843792520335512,-0.07870567744437587,0.5308668373178592)
+    (local position: (-28.62688396122781,-7.693748738526303,2693.153601041527))
+    (local direction: (-0.843792520335512,-0.07870567744437587,0.5308668373178592)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.99567641458713,-14.48228691751315,2738.369148008988)
+     in direction: (-0.5854317639808743,-0.6767829011225986,0.4463569809808299)
+    (local position: (-25.99567641458713,-14.48228691751315,2738.369148008988))
+    (local direction: (-0.5854317639808743,-0.6767829011225986,0.4463569809808299)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.61224281882291,-7.841967096509762,2615.12455111801)
+     in direction: (-0.08240570146290455,-0.8833087053245732,-0.4614921792015905)
+    (local position: (-28.61224281882291,-7.841967096509762,2615.12455111801))
+    (local direction: (-0.08240570146290455,-0.8833087053245732,-0.4614921792015905)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.24597235871836,-8.930534499460155,3135.002391257217)
+     in direction: (-0.01692101090214914,-0.09636432331514654,0.9952022892769407)
+    (local position: (-28.24597235871836,-8.930534499460155,3135.002391257217))
+    (local direction: (-0.01692101090214914,-0.09636432331514654,0.9952022892769407)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.64073675844637,-11.26440081462913,3457.284186266665)
+     in direction: (-0.01140070663941123,-0.0723517112706515,0.9973140196369097)
+    (local position: (-27.64073675844637,-11.26440081462913,3457.284186266665))
+    (local direction: (-0.01140070663941123,-0.0723517112706515,0.9973140196369097)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.45426348568169,-13.76803548900456,2846.529479043555)
+     in direction: (-0.0764400539954956,-0.5420284911141728,0.8368763546460485)
+    (local position: (-26.45426348568169,-13.76803548900456,2846.529479043555))
+    (local direction: (-0.0764400539954956,-0.5420284911141728,0.8368763546460485)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.69267554853668,-14.90308526312542,2809.551474901893)
+     in direction: (-0.8321990333273989,-0.0258686987341041,0.5538732520665239)
+    (local position: (-25.69267554853668,-14.90308526312542,2809.551474901893))
+    (local direction: (-0.8321990333273989,-0.0258686987341041,0.5538732520665239)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.09952593434367,-14.09578153919455,3412.250185973527)
+     in direction: (-0.01493520237682473,-0.09190948432229197,0.9956553552417491)
+    (local position: (-26.09952593434367,-14.09578153919455,3412.250185973527))
+    (local direction: (-0.01493520237682473,-0.09190948432229197,0.9956553552417491)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-24.9543978528069,-15.7646506586497,3454.88055006086)
+     in direction: (-0.00671762716295718,-0.08646943424331376,0.9962318557579559)
+    (local position: (-24.9543978528069,-15.7646506586497,3454.88055006086))
+    (local direction: (-0.00671762716295718,-0.08646943424331376,0.9962318557579559)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.45737086644668,-12.08262565550439,3431.343608861734)
+     in direction: (-0.01352547397608876,-0.08230558621567219,0.9965153546390625)
+    (local position: (-27.45737086644668,-12.08262565550439,3431.343608861734))
+    (local direction: (-0.01352547397608876,-0.08230558621567219,0.9965153546390625)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.25883133380181,-15.50347821117662,2917.572450331399)
+     in direction: (-0.02200039947189464,-0.2134191151267416,0.9767129894301578)
+    (local position: (-25.25883133380181,-15.50347821117662,2917.572450331399))
+    (local direction: (-0.02200039947189464,-0.2134191151267416,0.9767129894301578)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.43014880254145,-13.6775902204918,3216.506689531739)
+     in direction: (-0.1276536856336915,-0.2610689148416784,0.9568424939599636)
+    (local position: (-26.43014880254145,-13.6775902204918,3216.506689531739))
+    (local direction: (-0.1276536856336915,-0.2610689148416784,0.9568424939599636)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.48258791621876,-7.996143388479197,3017.304107513619)
+     in direction: (-0.5522199733021742,-0.6805000803031551,0.4816354864350689)
+    (local position: (-28.48258791621876,-7.996143388479197,3017.304107513619))
+    (local direction: (-0.5522199733021742,-0.6805000803031551,0.4816354864350689)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.11411384006174,-9.631336425580738,3030.63512313427)
+     in direction: (-0.9263811065628056,0.374562237950588,-0.03900224743420255)
+    (local position: (-28.11411384006174,-9.631336425580738,3030.63512313427))
+    (local direction: (-0.9263811065628056,0.374562237950588,-0.03900224743420255)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+No Cluster for this leading electron
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+No Cluster for this leading electron
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-24.91815489272072,-15.82907644813184,3422.778652205948)
+     in direction: (0.1487240338358078,-0.7356855852622625,0.6607933726944663)
+    (local position: (-24.91815489272072,-15.82907644813184,3422.778652205948))
+    (local direction: (0.1487240338358078,-0.7356855852622625,0.6607933726944663)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.24696214140172,-8.627831186141691,3416.485066534943)
+     in direction: (-0.0308087276638046,-0.746544411830444,0.6646218951136609)
+    (local position: (-28.24696214140172,-8.627831186141691,3416.485066534943))
+    (local direction: (-0.0308087276638046,-0.746544411830444,0.6646218951136609)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.97611064653318,-10.45642986629338,2749.51571127156)
+     in direction: (-0.7521348811461883,0.5366326610990302,0.3825160226774594)
+    (local position: (-27.97611064653318,-10.45642986629338,2749.51571127156))
+    (local direction: (-0.7521348811461883,0.5366326610990302,0.3825160226774594)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.98260808262805,-10.38743998971892,2827.667528364163)
+     in direction: (-0.4284928267573301,0.7137021218083037,0.5540967232747708)
+    (local position: (-27.98260808262805,-10.38743998971892,2827.667528364163))
+    (local direction: (-0.4284928267573301,0.7137021218083037,0.5540967232747708)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.54200355564953,-11.82131186574593,2826.293497161318)
+     in direction: (-0.4533500890948097,0.7372413598551203,0.5009479753793812)
+    (local position: (-27.54200355564953,-11.82131186574593,2826.293497161318))
+    (local direction: (-0.4533500890948097,0.7372413598551203,0.5009479753793812)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.4231540527976,-13.91737982523149,2439.987729245038)
+     in direction: (0.006592978162844964,-0.9989893849972551,0.04446055894554544)
+    (local position: (-26.4231540527976,-13.91737982523149,2439.987729245038))
+    (local direction: (0.006592978162844964,-0.9989893849972551,0.04446055894554544)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.91322639514359,-13.87058942481407,2877.838052010447)
+     in direction: (0.9939634652676832,0.06443722076801121,0.08879456229270961)
+    (local position: (-25.91322639514359,-13.87058942481407,2877.838052010447))
+    (local direction: (0.9939634652676832,0.06443722076801121,0.08879456229270961)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.65443385361057,-7.5342561190708,2727.294242193703)
+     in direction: (-0.3173882901014803,0.08497000848920538,0.944481217898907)
+    (local position: (-28.65443385361057,-7.5342561190708,2727.294242193703))
+    (local direction: (-0.3173882901014803,0.08497000848920538,0.944481217898907)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.1562698030114,-12.64780789407348,2376.345196818064)
+     in direction: (-0.6518497223893167,0.6523323519895722,-0.3867226938889463)
+    (local position: (-27.1562698030114,-12.64780789407348,2376.345196818064))
+    (local direction: (-0.6518497223893167,0.6523323519895722,-0.3867226938889463)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.89427879142385,-12.99900845189624,3205.497228708844)
+     in direction: (-0.4346755033019407,-0.4507944219879922,-0.7796419665036745)
+    (local position: (-26.89427879142385,-12.99900845189624,3205.497228708844))
+    (local direction: (-0.4346755033019407,-0.4507944219879922,-0.7796419665036745)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.71045368283548,-11.35633031670698,2107.151266591723)
+     in direction: (-0.9908789766091839,-0.1050775052103794,0.08436570163697521)
+    (local position: (-27.71045368283548,-11.35633031670698,2107.151266591723))
+    (local direction: (-0.9908789766091839,-0.1050775052103794,0.08436570163697521)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.37218252776712,-13.99249056239961,2450.892924253419)
+     in direction: (-0.173334880748184,0.1694229741715773,0.9701808465120663)
+    (local position: (-26.37218252776712,-13.99249056239961,2450.892924253419))
+    (local direction: (-0.173334880748184,0.1694229741715773,0.9701808465120663)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-24.74049126164318,-16.01531324080185,3638.873661022594)
+     in direction: (-0.04686850734989476,-0.9435660107960242,-0.3278513783549949)
+    (local position: (-24.74049126164318,-16.01531324080185,3638.873661022594))
+    (local direction: (-0.04686850734989476,-0.9435660107960242,-0.3278513783549949)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.47696552478892,-11.71668142942741,3468.202266595614)
+     in direction: (-0.228370961800665,0.6364968019996239,0.7366943225317342)
+    (local position: (-27.47696552478892,-11.71668142942741,3468.202266595614))
+    (local direction: (-0.228370961800665,0.6364968019996239,0.7366943225317342)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.53238298874495,-11.76611045877112,2147.9050373942)
+     in direction: (-0.01281700545402048,-0.005477416153570385,0.9999028564232988)
+    (local position: (-27.53238298874495,-11.76611045877112,2147.9050373942))
+    (local direction: (-0.01281700545402048,-0.005477416153570385,0.9999028564232988)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.43232827613219,-8.265951677341219,2974.986201508646)
+     in direction: (-0.125136298568212,0.2747795554075595,0.9533294827658858)
+    (local position: (-28.43232827613219,-8.265951677341219,2974.986201508646))
+    (local direction: (-0.125136298568212,0.2747795554075595,0.9533294827658858)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.9217009326259,-14.58139042066501,2613.029839533748)
+     in direction: (0.8190390510813089,0.3225769801034079,-0.474467200880308)
+    (local position: (-25.9217009326259,-14.58139042066501,2613.029839533748))
+    (local direction: (0.8190390510813089,0.3225769801034079,-0.474467200880308)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.47558227971597,-15.18814719467705,2907.906263982578)
+     in direction: (-0.424965265242306,-0.616617490039461,-0.662712150420506)
+    (local position: (-25.47558227971597,-15.18814719467705,2907.906263982578))
+    (local direction: (-0.424965265242306,-0.616617490039461,-0.662712150420506)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.24536054860405,-10.71952880892265,2786.93683346632)
+     in direction: (0.4214369848162159,0.1584723996869269,0.8929038953697556)
+    (local position: (-27.24536054860405,-10.71952880892265,2786.93683346632))
+    (local direction: (0.4214369848162159,0.1584723996869269,0.8929038953697556)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'P-PI-FLG-0062-2'
+   - at position : (-28.15702883776108,-9.691982684549616,2792.124931102401)
+     in direction: (-0.2595245556969475,-0.3897110243437898,0.8836132199640384)
+    (local position: (-28.15702883776108,-9.691982684549616,2792.124931102401))
+    (local direction: (-0.2595245556969475,-0.3897110243437898,0.8836132199640384)).
+  Previous phys volume: 'HadronForwardEnvelope_0'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.41957645712286,-12.07444857266232,2602.67702963248)
+     in direction: (-0.3742854815514318,-0.5088696329051526,0.7752174372437635)
+    (local position: (-27.41957645712286,-12.07444857266232,2602.67702963248))
+    (local direction: (-0.3742854815514318,-0.5088696329051526,0.7752174372437635)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.47023423246436,-10.74281893242537,2445.75014742498)
+     in direction: (0.9454325249043078,0.2596670938746287,0.1968002571435568)
+    (local position: (-27.47023423246436,-10.74281893242537,2445.75014742498))
+    (local direction: (0.9454325249043078,0.2596670938746287,0.1968002571435568)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.38435356340926,-12.14073934991928,2480.808152996634)
+     in direction: (-0.6217093376540177,-0.7301399736329075,0.2835015315252096)
+    (local position: (-27.38435356340926,-12.14073934991928,2480.808152996634))
+    (local direction: (-0.6217093376540177,-0.7301399736329075,0.2835015315252096)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.94852131076293,-10.7081154221218,2491.99872082899)
+     in direction: (-0.4295582966706875,0.3771253303673531,0.8205218796331347)
+    (local position: (-27.94852131076293,-10.7081154221218,2491.99872082899))
+    (local direction: (-0.4295582966706875,0.3771253303673531,0.8205218796331347)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.59459389345378,-13.34399577212412,2390.925120514898)
+     in direction: (0.9982450750432093,0.03306717220988886,-0.04912567835683314)
+    (local position: (-26.59459389345378,-13.34399577212412,2390.925120514898))
+    (local direction: (0.9982450750432093,0.03306717220988886,-0.04912567835683314)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.04945879624675,-11.70891577698841,2491.608390345719)
+     in direction: (0.1256996704872629,0.03797592398392056,0.9913412238159781)
+    (local position: (-27.04945879624675,-11.70891577698841,2491.608390345719))
+    (local direction: (0.1256996704872629,0.03797592398392056,0.9913412238159781)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.83817428399303,-12.23430674030833,2490.99370648137)
+     in direction: (0.1364863717481584,0.02128427454693637,0.9904132723181946)
+    (local position: (-26.83817428399303,-12.23430674030833,2490.99370648137))
+    (local direction: (0.1364863717481584,0.02128427454693637,0.9904132723181946)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.87214824278391,-12.12754868306696,2504.16624779065)
+     in direction: (0.08897378369824673,0.01664988496136507,0.9958947972276946)
+    (local position: (-26.87214824278391,-12.12754868306696,2504.16624779065))
+    (local direction: (0.08897378369824673,0.01664988496136507,0.9958947972276946)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.86804922410231,-12.14319096961388,2500.956152168587)
+     in direction: (0.08950909244897379,0.01701591193829393,0.9958406404188721)
+    (local position: (-26.86804922410231,-12.14319096961388,2500.956152168587))
+    (local direction: (0.08950909244897379,0.01701591193829393,0.9958406404188721)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.15473153449466,-9.701938369599173,2792.43373783981)
+     in direction: (-0.6353345890392542,-0.2339361010902464,-0.7359509906080811)
+    (local position: (-28.15473153449466,-9.701938369599173,2792.43373783981))
+    (local direction: (-0.6353345890392542,-0.2339361010902464,-0.7359509906080811)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.20176926930544,-13.58291153870672,2626.420681754699)
+     in direction: (0.4475768886671874,0.1662556046993703,0.8786546549339205)
+    (local position: (-26.20176926930544,-13.58291153870672,2626.420681754699))
+    (local direction: (0.4475768886671874,0.1662556046993703,0.8786546549339205)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.52197031957843,-11.87820047416812,2925.809230201891)
+     in direction: (-0.6167023865989145,-0.3785678704022382,0.6901916645847854)
+    (local position: (-27.52197031957843,-11.87820047416812,2925.809230201891))
+    (local direction: (-0.6167023865989145,-0.3785678704022382,0.6901916645847854)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.72304518423487,-11.38677528983864,2627.168177730314)
+     in direction: (-0.86293913530023,0.4244949735349742,0.2741168842133459)
+    (local position: (-27.72304518423487,-11.38677528983864,2627.168177730314))
+    (local direction: (-0.86293913530023,0.4244949735349742,0.2741168842133459)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.81852127309875,-12.05728215650637,2623.509412142871)
+     in direction: (0.5956728992072332,0.1004464235379876,0.7969217735439763)
+    (local position: (-26.81852127309875,-12.05728215650637,2623.509412142871))
+    (local direction: (0.5956728992072332,0.1004464235379876,0.7969217735439763)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.74113976814918,-14.59700401354851,3486.337229811021)
+     in direction: (-0.114190016676596,-0.2368452347648662,0.9648134404435782)
+    (local position: (-25.74113976814918,-14.59700401354851,3486.337229811021))
+    (local direction: (-0.114190016676596,-0.2368452347648662,0.9648134404435782)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.8441978126811,-14.67669169384787,2819.964982598888)
+     in direction: (-0.05102936996538976,-0.805225596427749,0.5907687722438544)
+    (local position: (-25.8441978126811,-14.67669169384787,2819.964982598888))
+    (local direction: (-0.05102936996538976,-0.805225596427749,0.5907687722438544)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.26595084228454,-12.41681570445846,2539.633788898502)
+     in direction: (-0.5005357985033491,-0.8474771264195158,0.1767666105697984)
+    (local position: (-27.26595084228454,-12.41681570445846,2539.633788898502))
+    (local direction: (-0.5005357985033491,-0.8474771264195158,0.1767666105697984)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.13090469682146,-9.958226698136789,2547.861409314693)
+     in direction: (-0.1735150161349726,-0.5036112321876592,0.8463263353991222)
+    (local position: (-28.13090469682146,-9.958226698136789,2547.861409314693))
+    (local direction: (-0.1735150161349726,-0.5036112321876592,0.8463263353991222)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.36561647119827,-8.429652248339627,2499.215767033279)
+     in direction: (0.9797230652119807,0.1862909495869143,-0.07374549202254209)
+    (local position: (-28.36561647119827,-8.429652248339627,2499.215767033279))
+    (local direction: (0.9797230652119807,0.1862909495869143,-0.07374549202254209)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.84184254353463,-8.987469372265847,2934.697349677126)
+     in direction: (0.9613319189030056,0.2628158733770478,0.08227246440531896)
+    (local position: (-27.84184254353463,-8.987469372265847,2934.697349677126))
+    (local direction: (0.9613319189030056,0.2628158733770478,0.08227246440531896)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-24.72039622184681,-16.07828687617221,3542.530608161584)
+     in direction: (-0.1976584309695316,-0.342808046165104,0.9183756247588056)
+    (local position: (-24.72039622184681,-16.07828687617221,3542.530608161584))
+    (local direction: (-0.1976584309695316,-0.342808046165104,0.9183756247588056)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.14399626637877,-8.865888076915059,2565.977814591979)
+     in direction: (0.957840535452347,-0.04110863017717917,-0.2843441386231075)
+    (local position: (-28.14399626637877,-8.865888076915059,2565.977814591979))
+    (local direction: (0.957840535452347,-0.04110863017717917,-0.2843441386231075)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.49588808309331,-13.8012855375209,2460.015530574107)
+     in direction: (-0.4590203399332835,-0.8844077107771224,-0.08439981425040315)
+    (local position: (-26.49588808309331,-13.8012855375209,2460.015530574107))
+    (local direction: (-0.4590203399332835,-0.8844077107771224,-0.08439981425040315)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.51066950705006,-10.58216637369861,2481.141625670777)
+     in direction: (0.8439509036534673,-0.05693209566556974,-0.5333906717459749)
+    (local position: (-27.51066950705006,-10.58216637369861,2481.141625670777))
+    (local direction: (0.8439509036534673,-0.05693209566556974,-0.5333906717459749)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.17692859754445,-13.33606818252556,2807.467143352167)
+     in direction: (0.01719421068393689,-0.001640025552688947,0.9998508235907709)
+    (local position: (-26.17692859754445,-13.33606818252556,2807.467143352167))
+    (local direction: (0.01719421068393689,-0.001640025552688947,0.9998508235907709)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.08214021761807,-11.47983510864682,2578.452015281905)
+     in direction: (0.9142215744475802,0.4022561672365401,-0.04887625941861926)
+    (local position: (-27.08214021761807,-11.47983510864682,2578.452015281905))
+    (local direction: (0.9142215744475802,0.4022561672365401,-0.04887625941861926)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.22684411403802,-11.15698915064967,2557.168916983089)
+     in direction: (0.4089738463719519,0.1791927086169773,0.8947795070084262)
+    (local position: (-27.22684411403802,-11.15698915064967,2557.168916983089))
+    (local direction: (0.4089738463719519,0.1791927086169773,0.8947795070084262)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.54810045120715,-8.091310066007846,2650.762151350367)
+     in direction: (-0.6370516875156739,0.6939015045003045,-0.335657339388916)
+    (local position: (-28.54810045120715,-8.091310066007846,2650.762151350367))
+    (local direction: (-0.6370516875156739,0.6939015045003045,-0.335657339388916)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.3088458991942,-12.35763013510082,2877.637818951256)
+     in direction: (-0.4870894520885794,-0.507570644763873,-0.7107150668432698)
+    (local position: (-27.3088458991942,-12.35763013510082,2877.637818951256))
+    (local direction: (-0.4870894520885794,-0.507570644763873,-0.7107150668432698)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'P-PI-FLG-0062-2'
+   - at position : (-27.91584125239089,-10.71194524886338,2717.163040071633)
+     in direction: (-0.01629700645135366,-0.8757276517149978,0.4825302970824323)
+    (local position: (-27.91584125239089,-10.71194524886338,2717.163040071633))
+    (local direction: (-0.01629700645135366,-0.8757276517149978,0.4825302970824323)).
+  Previous phys volume: 'HadronForwardEnvelope_0'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.79086011762,-9.378560413555508,2779.427825139834)
+     in direction: (0.01343177132739386,0.01274016277011333,0.999828623200796)
+    (local position: (-27.79086011762,-9.378560413555508,2779.427825139834))
+    (local direction: (0.01343177132739386,0.01274016277011333,0.999828623200796)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.3612912425417,-12.22865606988088,2792.721456581357)
+     in direction: (-0.7429688378329332,-0.4051978911589379,0.5327400632668151)
+    (local position: (-27.3612912425417,-12.22865606988088,2792.721456581357))
+    (local direction: (-0.7429688378329332,-0.4051978911589379,0.5327400632668151)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.46205266961253,-13.35427720429195,2471.640334141062)
+     in direction: (0.7419283304836419,0.3314133846746125,-0.5828443367523384)
+    (local position: (-26.46205266961253,-13.35427720429195,2471.640334141062))
+    (local direction: (0.7419283304836419,0.3314133846746125,-0.5828443367523384)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.32560492207286,-13.89142237317859,2471.354123923158)
+     in direction: (0.4392444160837597,0.006183084795067962,0.8983463209707344)
+    (local position: (-26.32560492207286,-13.89142237317859,2471.354123923158))
+    (local direction: (0.4392444160837597,0.006183084795067962,0.8983463209707344)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.7274277035942,-12.52698990100295,2480.521441913354)
+     in direction: (0.1473005320597404,0.04626848678321422,0.9880089981299304)
+    (local position: (-26.7274277035942,-12.52698990100295,2480.521441913354))
+    (local direction: (0.1473005320597404,0.04626848678321422,0.9880089981299304)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.29595730027179,-13.44501517188751,2570.168607096943)
+     in direction: (0.09123806918745817,0.02229728243603605,0.9955794523426607)
+    (local position: (-26.29595730027179,-13.44501517188751,2570.168607096943))
+    (local direction: (0.09123806918745817,0.02229728243603605,0.9955794523426607)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.06116890430499,-12.77718177821474,3102.042532397832)
+     in direction: (-0.1829983156723166,-0.6783515288341947,0.7115833189370069)
+    (local position: (-27.06116890430499,-12.77718177821474,3102.042532397832))
+    (local direction: (-0.1829983156723166,-0.6783515288341947,0.7115833189370069)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.93529677715578,-13.13267369123499,2450.268027370299)
+     in direction: (-0.9252063788011112,0.2387528475805764,0.294941069364544)
+    (local position: (-26.93529677715578,-13.13267369123499,2450.268027370299))
+    (local direction: (-0.9252063788011112,0.2387528475805764,0.294941069364544)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.04948693906372,-11.85966277973492,2403.09716311115)
+     in direction: (0.1207338493021421,0.04148291415721032,0.9918177783573519)
+    (local position: (-27.04948693906372,-11.85966277973492,2403.09716311115))
+    (local direction: (0.1207338493021421,0.04148291415721032,0.9918177783573519)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.19611749853687,-9.741321821861099,2475.550626000519)
+     in direction: (-0.05219007601118428,-0.4721571328511097,0.8799680891167396)
+    (local position: (-28.19611749853687,-9.741321821861099,2475.550626000519))
+    (local direction: (-0.05219007601118428,-0.4721571328511097,0.8799680891167396)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.1168073379954,-14.322780268049,2684.791493930567)
+     in direction: (-0.5318424219131291,-0.6325701401309947,0.563026336922378)
+    (local position: (-26.1168073379954,-14.322780268049,2684.791493930567))
+    (local direction: (-0.5318424219131291,-0.6325701401309947,0.563026336922378)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.50533089086282,-13.72810773478458,2694.583337413948)
+     in direction: (-0.3639302893637665,-0.8802281142199917,-0.3045541190335841)
+    (local position: (-26.50533089086282,-13.72810773478458,2694.583337413948))
+    (local direction: (-0.3639302893637665,-0.8802281142199917,-0.3045541190335841)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.02175007334683,-14.2801908067248,2598.567470697665)
+     in direction: (0.9688670880900139,0.1486731701700006,0.1979718517556963)
+    (local position: (-26.02175007334683,-14.2801908067248,2598.567470697665))
+    (local direction: (0.9688670880900139,0.1486731701700006,0.1979718517556963)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.13614631706061,-9.886895476755111,2639.149005694974)
+     in direction: (-0.03023582257668203,0.04011142646713926,0.9987376374703633)
+    (local position: (-28.13614631706061,-9.886895476755111,2639.149005694974))
+    (local direction: (-0.03023582257668203,0.04011142646713926,0.9987376374703633)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.83492425792006,-13.25268530692003,2583.106147806253)
+     in direction: (-0.01674258460930831,0.01667436766981103,0.9997207866816673)
+    (local position: (-26.83492425792006,-13.25268530692003,2583.106147806253))
+    (local direction: (-0.01674258460930831,0.01667436766981103,0.9997207866816673)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.22234801646389,-14.19896217094507,2540.124877331442)
+     in direction: (-0.6809934082401294,-0.5671136467846634,0.4632818683739874)
+    (local position: (-26.22234801646389,-14.19896217094507,2540.124877331442))
+    (local direction: (-0.6809934082401294,-0.5671136467846634,0.4632818683739874)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.67812697020141,-11.48740588128436,2613.370141790503)
+     in direction: (-0.4885479109648544,-0.2119751039615479,0.8463967710195778)
+    (local position: (-27.67812697020141,-11.48740588128436,2613.370141790503))
+    (local direction: (-0.4885479109648544,-0.2119751039615479,0.8463967710195778)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.11905970781474,-13.79278838331365,2623.711067015965)
+     in direction: (0.7172798893614397,0.28000190051472,0.6380505434726825)
+    (local position: (-26.11905970781474,-13.79278838331365,2623.711067015965))
+    (local direction: (0.7172798893614397,0.28000190051472,0.6380505434726825)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.13071195137835,-14.00836069242873,3532.054412076041)
+     in direction: (-0.6579991295272831,-0.1196997106999098,0.7434440966203818)
+    (local position: (-26.13071195137835,-14.00836069242873,3532.054412076041))
+    (local direction: (-0.6579991295272831,-0.1196997106999098,0.7434440966203818)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.91466076024243,-12.86611344755968,3502.143624005979)
+     in direction: (0.10349699190135,-0.6814491233109657,-0.7245105002731763)
+    (local position: (-26.91466076024243,-12.86611344755968,3502.143624005979))
+    (local direction: (0.10349699190135,-0.6814491233109657,-0.7245105002731763)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.82276341322929,-10.59866939763743,3348.452190524752)
+     in direction: (-0.9381190011218071,-0.2326682713667151,0.2565116278718134)
+    (local position: (-27.82276341322929,-10.59866939763743,3348.452190524752))
+    (local direction: (-0.9381190011218071,-0.2326682713667151,0.2565116278718134)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.46456387991999,-7.917556017765616,3167.603233673437)
+     in direction: (-0.6336352383305218,-0.7368509486261311,0.2357054608077502)
+    (local position: (-28.46456387991999,-7.917556017765616,3167.603233673437))
+    (local direction: (-0.6336352383305218,-0.7368509486261311,0.2357054608077502)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.50883331788313,-13.49292904965341,3415.291984792765)
+     in direction: (-0.09471833312129942,-0.9690078232907755,-0.2281496784393872)
+    (local position: (-26.50883331788313,-13.49292904965341,3415.291984792765))
+    (local direction: (-0.09471833312129942,-0.9690078232907755,-0.2281496784393872)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.67047830527213,-14.81302767108863,3163.165169347762)
+     in direction: (-0.7396320184477196,-0.4774549663237987,0.4743218658460648)
+    (local position: (-25.67047830527213,-14.81302767108863,3163.165169347762))
+    (local direction: (-0.7396320184477196,-0.4774549663237987,0.4743218658460648)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.63535105188102,-13.39813262473706,3152.387618504126)
+     in direction: (-0.3269795699594025,-0.280871620448055,0.9023278193960597)
+    (local position: (-26.63535105188102,-13.39813262473706,3152.387618504126))
+    (local direction: (-0.3269795699594025,-0.280871620448055,0.9023278193960597)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.83560613117941,-6.107610294519354,3308.339515888849)
+     in direction: (-0.7818457557687792,0.2138421487734682,0.5856524136331144)
+    (local position: (-28.83560613117941,-6.107610294519354,3308.339515888849))
+    (local direction: (-0.7818457557687792,0.2138421487734682,0.5856524136331144)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-24.6770381069766,-16.22106268916529,3314.7677104854)
+     in direction: (-0.153066930157595,-0.9665599081137203,-0.2057485332130616)
+    (local position: (-24.6770381069766,-16.22106268916529,3314.7677104854))
+    (local direction: (-0.153066930157595,-0.9665599081137203,-0.2057485332130616)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.17907018334547,-12.56789152238053,3218.751562022533)
+     in direction: (-0.8947228079426346,-0.2349176607315261,0.3798483771502456)
+    (local position: (-27.17907018334547,-12.56789152238053,3218.751562022533))
+    (local direction: (-0.8947228079426346,-0.2349176607315261,0.3798483771502456)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.75305759452646,-11.05343662769841,3213.729858765384)
+     in direction: (-0.4763004166051802,0.4303214770936325,0.7667863714840571)
+    (local position: (-27.75305759452646,-11.05343662769841,3213.729858765384))
+    (local direction: (-0.4763004166051802,0.4303214770936325,0.7667863714840571)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.50937119429166,-9.3315186665067,3217.01133721957)
+     in direction: (0.9591174606898293,0.2322801192777383,-0.161677589010393)
+    (local position: (-27.50937119429166,-9.3315186665067,3217.01133721957))
+    (local direction: (0.9591174606898293,0.2322801192777383,-0.161677589010393)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.45592694760785,-15.08592402136857,3285.810893648376)
+     in direction: (0.0182464225513775,-0.2058865695553401,0.9784057381990411)
+    (local position: (-25.45592694760785,-15.08592402136857,3285.810893648376))
+    (local direction: (0.0182464225513775,-0.2058865695553401,0.9784057381990411)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.27035530615499,-8.6333243559422,3312.485737431348)
+     in direction: (-0.3084407252178606,0.5891113289436385,0.7468682354587991)
+    (local position: (-28.27035530615499,-8.6333243559422,3312.485737431348))
+    (local direction: (-0.3084407252178606,0.5891113289436385,0.7468682354587991)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.73267320369727,-6.773794081003338,3114.456698124243)
+     in direction: (-0.6313546177644284,-0.7162726599005199,0.2972285708113656)
+    (local position: (-28.73267320369727,-6.773794081003338,3114.456698124243))
+    (local direction: (-0.6313546177644284,-0.7162726599005199,0.2972285708113656)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.85860562025811,-14.64406251766573,2852.952277793095)
+     in direction: (0.1060440595407925,-0.6370591956461389,0.7634855851152682)
+    (local position: (-25.85860562025811,-14.64406251766573,2852.952277793095))
+    (local direction: (0.1060440595407925,-0.6370591956461389,0.7634855851152682)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.94073104619418,-10.71006160997469,2543.811884216072)
+     in direction: (-0.2787044807315575,-0.2257633904763606,-0.9334638203705441)
+    (local position: (-27.94073104619418,-10.71006160997469,2543.811884216072))
+    (local direction: (-0.2787044807315575,-0.2257633904763606,-0.9334638203705441)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.45250928197704,-11.94322514948441,2107.292415629978)
+     in direction: (-0.00085644574118654,-0.6658168309291134,0.7461147459688793)
+    (local position: (-27.45250928197704,-11.94322514948441,2107.292415629978))
+    (local direction: (-0.00085644574118654,-0.6658168309291134,0.7461147459688793)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.31244468729449,-8.851478915486926,2928.821152594312)
+     in direction: (-0.3498649656809033,-0.8260731052592512,0.4418118723579518)
+    (local position: (-28.31244468729449,-8.851478915486926,2928.821152594312))
+    (local direction: (-0.3498649656809033,-0.8260731052592512,0.4418118723579518)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.65862311385949,-6.837440282499163,3367.189221332791)
+     in direction: (-0.4383156921245301,-0.6638641220716464,0.6059404108189486)
+    (local position: (-28.65862311385949,-6.837440282499163,3367.189221332791))
+    (local direction: (-0.4383156921245301,-0.6638641220716464,0.6059404108189486)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.14025353542437,-9.314739727929304,3218.993019032275)
+     in direction: (-0.7557540101176574,0.6072345430210527,0.2451572677957826)
+    (local position: (-28.14025353542437,-9.314739727929304,3218.993019032275))
+    (local direction: (-0.7557540101176574,0.6072345430210527,0.2451572677957826)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.61224054928412,-13.40612042790858,3227.296247557637)
+     in direction: (-0.7573409231093579,0.5833604926611151,0.2934710578337268)
+    (local position: (-26.61224054928412,-13.40612042790858,3227.296247557637))
+    (local direction: (-0.7573409231093579,0.5833604926611151,0.2934710578337268)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+No Cluster for this leading electron
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.29138720458412,-8.699231712947231,3161.447294932174)
+     in direction: (-0.3539465478107832,-0.2533489126652854,-0.90029782280318)
+    (local position: (-28.29138720458412,-8.699231712947231,3161.447294932174))
+    (local direction: (-0.3539465478107832,-0.2533489126652854,-0.90029782280318)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-25.74969992740353,-14.38437438027454,2814.477288810025)
+     in direction: (0.8273091111546995,0.1828352094191097,-0.5311599766521297)
+    (local position: (-25.74969992740353,-14.38437438027454,2814.477288810025))
+    (local direction: (0.8273091111546995,0.1828352094191097,-0.5311599766521297)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.43411549920538,-13.80763276254618,2811.287439974962)
+     in direction: (-0.1542127902385352,-0.009121699472398243,-0.9879955515717573)
+    (local position: (-26.43411549920538,-13.80763276254618,2811.287439974962))
+    (local direction: (-0.1542127902385352,-0.009121699472398243,-0.9879955515717573)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.76932336309664,-11.24336215294901,2291.71186822667)
+     in direction: (-0.2166534481849239,0.1523703069475416,0.964284487560748)
+    (local position: (-27.76932336309664,-11.24336215294901,2291.71186822667))
+    (local direction: (-0.2166534481849239,0.1523703069475416,0.964284487560748)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.50820377566025,-13.80460775126853,2371.667174923331)
+     in direction: (-0.6421931934619677,0.6540522605613899,-0.3997543529789956)
+    (local position: (-26.50820377566025,-13.80460775126853,2371.667174923331))
+    (local direction: (-0.6421931934619677,0.6540522605613899,-0.3997543529789956)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.0840688254228,-12.7943161818086,2220.019729356247)
+     in direction: (-0.1106715344305227,-0.9937462822106455,-0.01483705022279542)
+    (local position: (-27.0840688254228,-12.7943161818086,2220.019729356247))
+    (local direction: (-0.1106715344305227,-0.9937462822106455,-0.01483705022279542)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.05476631468578,-9.792360507708489,3129.366033469468)
+     in direction: (-0.5001712489455666,0.09552921616815564,0.8606409765904303)
+    (local position: (-28.05476631468578,-9.792360507708489,3129.366033469468))
+    (local direction: (-0.5001712489455666,0.09552921616815564,0.8606409765904303)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.45386895712434,-12.00374268415568,2667.065183185262)
+     in direction: (-0.2349441944756762,-0.5933883969665826,-0.7698645568069782)
+    (local position: (-27.45386895712434,-12.00374268415568,2667.065183185262))
+    (local direction: (-0.2349441944756762,-0.5933883969665826,-0.7698645568069782)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.25421409088237,-12.40747802846276,2222.473060670643)
+     in direction: (0.07119751036549948,-0.5850612797378636,0.8078577928504795)
+    (local position: (-27.25421409088237,-12.40747802846276,2222.473060670643))
+    (local direction: (0.07119751036549948,-0.5850612797378636,0.8078577928504795)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.55804177910637,-8.422616286580309,2281.245473312785)
+     in direction: (-0.01251754019006034,-0.003691796306136759,0.9999148372874682)
+    (local position: (-28.55804177910637,-8.422616286580309,2281.245473312785))
+    (local direction: (-0.01251754019006034,-0.003691796306136759,0.9999148372874682)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.99346396829328,-10.44810750992782,2641.281582795404)
+     in direction: (-0.4658127782950843,0.5249112988004726,0.7123809261684479)
+    (local position: (-27.99346396829328,-10.44810750992782,2641.281582795404))
+    (local direction: (-0.4658127782950843,0.5249112988004726,0.7123809261684479)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.93696515100687,-8.840036109538167,2882.681110409319)
+     in direction: (0.9877284391107497,0.1350645989686699,0.07842247558751432)
+    (local position: (-27.93696515100687,-8.840036109538167,2882.681110409319))
+    (local direction: (0.9877284391107497,0.1350645989686699,0.07842247558751432)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.62970005720339,-6.984245078294894,2962.869142278934)
+     in direction: (0.9807914201313954,0.1470301676590262,-0.1281808097758745)
+    (local position: (-28.62970005720339,-6.984245078294894,2962.869142278934))
+    (local direction: (0.9807914201313954,0.1470301676590262,-0.1281808097758745)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.71190463272091,-11.40602989573484,2914.887257657584)
+     in direction: (-0.5359471024604407,-0.6273956641109091,-0.5649206882555189)
+    (local position: (-27.71190463272091,-11.40602989573484,2914.887257657584))
+    (local direction: (-0.5359471024604407,-0.6273956641109091,-0.5649206882555189)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.32305464142512,-13.80998999078445,3288.72821441141)
+     in direction: (-0.01509083345016187,-0.01803149176286503,0.9997235278068559)
+    (local position: (-26.32305464142512,-13.80998999078445,3288.72821441141))
+    (local direction: (-0.01509083345016187,-0.01803149176286503,0.9997235278068559)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.28825038655404,-7.861067732481029,2945.586187710864)
+     in direction: (0.3127437964625673,0.07399979088186333,0.9469505524174009)
+    (local position: (-28.28825038655404,-7.861067732481029,2945.586187710864))
+    (local direction: (0.3127437964625673,0.07399979088186333,0.9469505524174009)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.55310031586109,-8.117152389554619,2605.25454114894)
+     in direction: (-0.5142630916594054,0.8375463725418745,0.1845251917729875)
+    (local position: (-28.55310031586109,-8.117152389554619,2605.25454114894))
+    (local direction: (-0.5142630916594054,0.8375463725418745,0.1845251917729875)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.63163740607783,-13.55843170584199,2601.901203436891)
+     in direction: (-0.08791908087016145,-0.5843353828265019,-0.8067356417042396)
+    (local position: (-26.63163740607783,-13.55843170584199,2601.901203436891))
+    (local direction: (-0.08791908087016145,-0.5843353828265019,-0.8067356417042396)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-27.33659845128432,-12.28610202674434,2803.849530984556)
+     in direction: (-0.7842597114672987,-0.1027405758575614,-0.6118668801640484)
+    (local position: (-27.33659845128432,-12.28610202674434,2803.849530984556))
+    (local direction: (-0.7842597114672987,-0.1027405758575614,-0.6118668801640484)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.26833585417218,-14.00193580913138,2967.393822603346)
+     in direction: (-0.4729645431168777,0.3193665377513276,0.8211635376214491)
+    (local position: (-26.26833585417218,-14.00193580913138,2967.393822603346))
+    (local direction: (-0.4729645431168777,0.3193665377513276,0.8211635376214491)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.52378926400775,-13.41846149167383,3531.747354494228)
+     in direction: (-0.5249745691215915,0.8497125966190348,-0.0488897220541975)
+    (local position: (-26.52378926400775,-13.41846149167383,3531.747354494228))
+    (local direction: (-0.5249745691215915,0.8497125966190348,-0.0488897220541975)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-28.6489811668379,-7.557765076074604,2728.141411225837)
+     in direction: (-0.9495013476777601,-0.01745468119508132,0.3132770736305089)
+    (local position: (-28.6489811668379,-7.557765076074604,2728.141411225837))
+    (local direction: (-0.9495013476777601,-0.01745468119508132,0.3132770736305089)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'HadronForwardEnvelope_0'
+   - at position : (-26.0271090327347,-14.20100989081347,3415.838030478265)
+     in direction: (-0.8060399281814438,-0.2463710601547555,0.5381458305101648)
+    (local position: (-26.0271090327347,-14.20100989081347,3415.838030478265))
+    (local direction: (-0.8060399281814438,-0.2463710601547555,0.5381458305101648)).
+  Previous phys volume: 'P-PI-FLG-0062-2'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+Error in <TDecompChol::Decompose()>: matrix not positive definite
+genfit::Exception thrown with excString:
+KalmanFitterInfo::calcAverageState: ill-conditioned covariance matrix.
+in line: 149 in file: /phenix/u/phnxbld/workarea/sPHENIX_SL7.3/gcc-8.3/need_root_version/root-6.22.02/genfit/core/src/MeasuredStateOnPlane.cc
+with fatal flag 0
+/global/project/projectdirs/alice/ftorales/Singularity/coresoftware/simulation/g4simulation/g4eval/SvtxVertexEval.cc:419: Did not find_vertexmap on node tree

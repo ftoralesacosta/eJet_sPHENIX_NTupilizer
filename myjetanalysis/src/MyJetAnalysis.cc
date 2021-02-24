@@ -358,8 +358,6 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
         track = temp;
     }
     if (!track) continue;
-    //TLorentzVector e_vec_reco;
-    //e_vec_reco.SetPxPyPzE(electron_recopX,electron_recopY,electron_recopZ,m_electron_recoE);
     TVector3 e_vec_reco(track->get_px(), track->get_py(), track->get_pz());
     m_electron_recoEta = e_vec_reco.Eta();
     m_electron_recoPhi = e_vec_reco.Phi();
@@ -458,15 +456,15 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
       m_pt[j] = jet->get_pt();
 
       for (Jet::ConstIter iter = jet->begin_comp(); iter != jet->end_comp(); ++iter)
-      {                                                                                                                                                      
-        Jet::SRC source = iter->first;                                                                                                                       
-        unsigned int c_index = iter->second;                                                                                                                 
-        if (source == Jet::TRACK)                                                                                                                            
-        {                                                                                                                                                    
-          SvtxTrack* track = trackmap->get(c_index);                                                                                                         
-          if (!track) continue;                                                                                                                              
-          TVector3 vec(track->get_px(), track->get_py(), track->get_pz());                                                                                   
-          m_Constituent_recoP[j][c_index] = vec.Mag();                                                                                                       
+      {
+        Jet::SRC source = iter->first;
+        unsigned int c_index = iter->second;
+        if (source == Jet::TRACK)
+        {
+          SvtxTrack* track = trackmap->get(c_index);
+          if (!track) continue;
+          TVector3 vec(track->get_px(), track->get_py(), track->get_pz());
+          m_Constituent_recoP[j][c_index] = vec.Mag();
           m_Constituent_recoEta[j][c_index] = vec.Eta();
           m_Constituent_recoPhi[j][c_index] = vec.Phi();
           m_Constituent_recoPt[j][c_index] = vec.Pt();
