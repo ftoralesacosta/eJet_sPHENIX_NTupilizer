@@ -51,8 +51,8 @@ class MyJetAnalysis : public SubsysReco
 
   //! cache the jet evaluation modules
   std::shared_ptr<JetEvalStack> m_jetEvalStack;
-//  std::shared_ptr<CaloEvalStack> m_eemcEvalStack;
-//  std::shared_ptr<CaloEvalStack> m_cemcEvalStack;
+  std::shared_ptr<CaloEvalStack> m_eemcEvalStack;
+  std::shared_ptr<CaloEvalStack> m_cemcEvalStack;
   std::string m_recoJetName;
   std::string m_truthJetName;
   std::string m_outputFileName;

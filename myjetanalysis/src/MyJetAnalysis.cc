@@ -220,9 +220,9 @@ int MyJetAnalysis::InitRun(PHCompositeNode* topNode)
 {
   m_jetEvalStack = shared_ptr<JetEvalStack>(new JetEvalStack(topNode, m_recoJetName, m_truthJetName));
   m_jetEvalStack->get_stvx_eval_stack()->set_use_initial_vertex(initial_vertex);
-  //m_eemcEvalStack = shared_ptr<CaloEvalStack>(new CaloEvalStack(topNode, "EEMC"));
-  //m_cemcEvalStack = shared_ptr<CaloEvalStack>(new CaloEvalStack(topNode, "CEMC"));
-  //if(!m_cemcEvalStack) cout<<"NO CEMC STACK"<<endl<<endl;
+  m_eemcEvalStack = shared_ptr<CaloEvalStack>(new CaloEvalStack(topNode, "EEMC"));
+  m_cemcEvalStack = shared_ptr<CaloEvalStack>(new CaloEvalStack(topNode, "CEMC"));
+  if(!m_cemcEvalStack) cout<<"NO CEMC STACK"<<endl<<endl;
   return Fun4AllReturnCodes::EVENT_OK;
 }
 
@@ -271,17 +271,17 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
   }
 
   //Interface to Clusters
-  //CaloRawClusterEval* eemc_clustereval = m_eemcEvalStack->get_rawcluster_eval();
-  //if (!eemc_clustereval)
-  //{
-  //  cout<< "MyJetAnalysis::process_event - Error cannot find CLUSTER EEMC node"<<endl;
-  //}    
+  CaloRawClusterEval* eemc_clustereval = m_eemcEvalStack->get_rawcluster_eval();
+  if (!eemc_clustereval)
+  {
+    cout<< "MyJetAnalysis::process_event - Error cannot find CLUSTER EEMC node"<<endl;
+  }    
 
-  //CaloRawClusterEval* cemc_clustereval = m_cemcEvalStack->get_rawcluster_eval();
-  //if (!cemc_clustereval)
-  //{
-  //  cout<< "MyJetAnalysis::process_event - Error cannot find CLUSTER CEMC node"<<endl;
-  //} 
+  CaloRawClusterEval* cemc_clustereval = m_cemcEvalStack->get_rawcluster_eval();
+  if (!cemc_clustereval)
+  {
+    cout<< "MyJetAnalysis::process_event - Error cannot find CLUSTER CEMC node"<<endl;
+  } 
 
   //Interface to True Electrons
   PHG4TruthInfoContainer* truthinfo = findNode::getClass<PHG4TruthInfoContainer>(topNode,"G4TruthInfo");
@@ -332,14 +332,17 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
     m_electron_truthP = e_vec.P();
 
     //Reco Electron Information. Loof at EEMC, then CEMC
-    //RawCluster* cluster = eemc_clustereval->best_cluster_from(g4particle);
-    //if (!cluster)
-    //  {
-    //    cout<<"No Cluster for this leading electron"<<endl<<endl;
-    //    //FIXME: Add cemc option if no eemc. cemc_clustereval->best_cluster_from(g4particle) currently crashes
-    //  }
-    //else
-    //  m_electron_recoE = cluster->get_energy();
+    RawCluster* cluster = eemc_clustereval->best_cluster_from(g4particle);
+    if (!cluster)
+      {
+        //FIXME: Add cemc option if no eemc. 
+        cluster = cemc_clustereval->best_cluster_from(g4particle); //currently crashes
+        if (!cluster)
+          cout<<"No Cluster for this leading electron (EEMC or CEMC)"<<endl<<endl;
+      }
+    else
+      m_electron_recoE = cluster->get_energy();
+    std::cout<<"Electron Reco Energy = "<<m_electron_recoE<<std:endl;
 
     //map track to true electron
     SvtxTrack_FastSim *track = nullptr;
