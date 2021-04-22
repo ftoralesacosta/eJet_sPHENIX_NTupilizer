@@ -342,7 +342,7 @@ int MyJetAnalysis::process_event(PHCompositeNode* topNode)
       }
     else
       m_electron_recoE = cluster->get_energy();
-    std::cout<<"Electron Reco Energy = "<<m_electron_recoE<<std:endl;
+    std::cout<<"Electron Reco Energy = "<<m_electron_recoE<<std::endl;
 
     //map track to true electron
     SvtxTrack_FastSim *track = nullptr;

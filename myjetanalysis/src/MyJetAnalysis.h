@@ -7,6 +7,7 @@
 #include <string>
 #include <utility>  // std::pair, std::make_pair
 #include <limits>
+#include <iostream>
 
 #if ! defined(__CINT__) || defined(__CLING__)
 #include <array>
@@ -70,7 +71,7 @@ class MyJetAnalysis : public SubsysReco
   double m_eEmin;
   
   //! flag to use initial vertex in track evaluator
-  bool initial_vertex = false;
+  bool initial_vertex =false;
 
   //! Output histograms
   TH1 *m_hInclusiveE;
