@@ -633,9 +633,6 @@ ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIB@&t@OBJS
-MAKEROOT6_FALSE
-MAKEROOT6_TRUE
-CINTDEFS
 CXXCPP
 CPP
 OTOOL64
@@ -14971,19 +14968,6 @@ if test $ac_cv_cxx_compiler_gnu = yes; then
    CXXFLAGS="$CXXFLAGS -Wall -Werror"
 fi
 
-if test `root-config --version | gawk '{print $1>=6.?"1":"0"}'` = 1; then
-CINTDEFS=" -noIncludePaths  -inlineInputHeader "
-
-fi
- if test `root-config --version | gawk '{print $1>=6.?"1":"0"}'` = 1; then
-  MAKEROOT6_TRUE=
-  MAKEROOT6_FALSE='#'
-else
-  MAKEROOT6_TRUE='#'
-  MAKEROOT6_FALSE=
-fi
-
-
 ac_config_files="$ac_config_files Makefile"
 
 cat >confcache <<\_ACEOF
@@ -15157,10 +15141,6 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${am__fastdepCC_TRUE}" && test -z "${am__fastdepCC_FALSE}"; then
   as_fn_error $? "conditional \"am__fastdepCC\" was never defined.
-Usually this means the macro was only invoked conditionally." "$LINENO" 5
-fi
-if test -z "${MAKEROOT6_TRUE}" && test -z "${MAKEROOT6_FALSE}"; then
-  as_fn_error $? "conditional \"MAKEROOT6\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 
