@@ -2,7 +2,7 @@
 
 dir="/global/project/projectdirs/alice/ftorales" #replace per user, often with ~
 singularity_dir="/Singularity/" #parent dir in https://github.com/sPHENIX-Collaboration/Singularity
-outdir="no_calo_gnu_allsi_reco_branches"
+outdir="with_calo_gnu_allsi_reco_branches"
 if [[ ! -e $dir/$outdir ]]; then
     mkdir $dir/$outdir
 fi
